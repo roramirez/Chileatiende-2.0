@@ -1,0 +1,18 @@
+syntax: regexp
+
+^node_modules
+^public/hot
+^public/storage
+^public/js
+^public/css
+^public/fonts
+^public/images
+^public/files
+^storage
+^vendor
+^\.idea
+^\.vagrant
+^Homestead\.json$
+^Homestead\.yaml$
+^npm-debug\.log$
+^\.env$
