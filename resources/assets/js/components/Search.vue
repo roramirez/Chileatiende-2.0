@@ -29,7 +29,7 @@
         props: ['name','value'],
         methods:{
             changed: function(){
-                if(this.query.length >= 3)
+                if(this.query.length >= 1)
                     this.refreshSuggestions();
                 else
                     this.suggestions = [];
