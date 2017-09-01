@@ -8,6 +8,7 @@ syntax: regexp
 ^public/fonts
 ^public/images
 ^public/files
+^bootstrap/cache
 ^storage
 ^vendor
 ^\.idea
