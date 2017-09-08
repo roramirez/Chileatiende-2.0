@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-sm-8">
                 <form action="search">
-                    <search name="query" value="<?=$query?>"></search>
+                    <search id="search" name="query" value="<?=$query?>"></search>
                 </form>
 
                 <h3>Resultados</h3>

@@ -1,10 +1,10 @@
 <template>
     <div class="search dropdown" :class="{open: suggestions.length > 0}">
         <div class="input-group">
-            <input v-model="query" @input="changed()" :name="name" type="search" class="form-control" placeholder="¿Que trámite o servicios buscas?" autocomplete="off"
+            <input v-model="query" @input="changed()" :name="name" type="search" class="form-control" placeholder="Ej: Bono marzo" autocomplete="off"
                    @keyup="suggestKeyUp">
             <span class="input-group-btn">
-                            <button class="btn btn-default" type="submit" ref="submitButton">Buscar</button>
+                            <button class="btn btn-default" type="submit" ref="submitButton"><img src="../../images/search.svg" /> Buscar</button>
                         </span>
         </div>
         <ul class="dropdown-menu" ref="dropdownMenu">

@@ -21,5 +21,9 @@ const app = new Vue({
     el: '#app',
     components:{
         Search
+    },
+    mounted: function(){
+        var searchInput = document.querySelector('#search input');
+        searchInput.focus();
     }
 });
