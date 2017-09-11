@@ -26,7 +26,10 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href=""><img src="images/logo.svg" alt="ChileAtiende" /></a>
+                    <a class="navbar-brand" href="">
+                        <img class="gob" src="images/gob.svg" alt="Gobierno de Chile" />
+                        <img src="images/logo.svg" alt="ChileAtiende" />
+                    </a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->

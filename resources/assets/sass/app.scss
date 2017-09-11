@@ -25,6 +25,12 @@ a{
   height: 90px;
   background: none;
   border: none;
+  .navbar-brand{
+    padding: 0;
+    .gob{
+      margin-bottom: 10px;
+    }
+  }
   .navbar-nav{
     li{
       a{
@@ -32,6 +38,10 @@ a{
         color: white;
         padding-top: 35px;
         padding-bottom: 35px;
+        &:hover{
+          color: white;
+          text-decoration: underline;
+        }
       }
     }
   }
