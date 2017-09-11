@@ -296,6 +296,40 @@ main{
         margin-bottom: 30px;
       }
     }
+    .pagination{
+      >li{
+
+        >*{
+          margin-right: 10px;
+          font-size: 16px;
+          border: 1px solid $red;
+          color: $red;
+        }
+        &.active{
+          >*{
+            background: $red;
+            color: white;
+          }
+        }
+        &:last-child{
+          >*{
+            margin-right: 0;
+          }
+        }
+      }
+    }
+
+    .filter{
+      h3{
+        font-size: 14px;
+        color: $red;
+        font-weight: normal;
+        margin-top: 0;
+      }
+      label{
+        font-weight: normal;
+      }
+    }
   }
 }
 

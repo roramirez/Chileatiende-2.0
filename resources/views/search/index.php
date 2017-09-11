@@ -21,6 +21,31 @@
 
                 <?=$results->render()?>
             </div>
+            <div class="col-sm-4">
+                <div class="filter">
+                    <h3>Filtrar por</h3>
+
+                    <div class="form-group">
+                        <label for="category">Categoría</label>
+                        <select id="category" class="form-control">
+                            <option value="">Todas</option>
+                            <?php foreach ($categories as $c): ?>
+                                <option><?= $c->name ?></option>
+                            <?php endforeach ?>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="institution">Institución</label>
+                        <select id="institution" class="form-control">
+                            <option value="">Todas</option>
+                            <?php foreach ($institutions as $c): ?>
+                                <option><?= $c->name ?></option>
+                            <?php endforeach ?>
+                        </select>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
