@@ -59,22 +59,26 @@ a{
     border-top-left-radius: 2px;
     border-bottom-left-radius: 2px;
   }
-  .btn{
+  .input-group-btn{
     background: $red;
-    color: white;
-    height: 60px;
-    border: none;
-    font-weight: bold;
-    font-size: 16px;
-    padding-left: 32px;
-    padding-right: 32px;
-    box-shadow: none;
-    border-top-right-radius: 2px;
-    border-bottom-right-radius: 2px;
-    &:hover{
-      background: darken($red,10%);
+    .btn{
+      background: transparent;
+      color: white;
+      height: 60px;
+      border: none;
+      font-weight: bold;
+      font-size: 16px;
+      padding-left: 32px;
+      padding-right: 32px;
+      box-shadow: none;
+      border-top-right-radius: 2px;
+      border-bottom-right-radius: 2px;
+      &:hover{
+        background: darken($red,10%);
+      }
     }
   }
+
   .dropdown-menu{
     border-top-left-radius: 0;
     border-top-right-radius: 0;
