@@ -21,6 +21,77 @@ a{
   color: $blue;
 }
 
+.navbar-default{
+  height: 90px;
+  background: none;
+  border: none;
+  .navbar-nav{
+    li{
+      a{
+        font-size: 16px;
+        color: white;
+        padding-top: 35px;
+        padding-bottom: 35px;
+      }
+    }
+  }
+}
+
+.search{
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
+  border-radius: 2px;
+  input{
+    height: 60px;
+    font-family: "Open Sans";
+    font-size: 20px;
+    border: none;
+    box-shadow: none;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+  }
+  .btn{
+    background: $red;
+    color: white;
+    height: 60px;
+    border: none;
+    font-weight: bold;
+    font-size: 16px;
+    padding-left: 32px;
+    padding-right: 32px;
+    box-shadow: none;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    &:hover{
+      background: darken($red,10%);
+    }
+  }
+  .dropdown-menu{
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    width: 80%;
+    li{
+      a{
+        font-size: 20px;
+        height: 60px;
+        line-height: 60px;
+      }
+    }
+  }
+}
+
+header.default{
+  background: $darkblue;
+  .search-area{
+    background: #F7F7F7;
+    padding: 60px 0;
+    .search{
+      border: 1px solid #D7D6D7;
+      box-shadow: none;
+      border-radius: 2px;
+    }
+  }
+}
+
 header.home{
   min-height: 550px;
   background-image: url('../images/home.jpg');
@@ -28,18 +99,7 @@ header.home{
   background-position: 0;
   color: white;
   position: relative;
-  .navbar-default{
-    background: none;
-    border: none;
-    .navbar-nav{
-      li{
-        a{
-          font-size: 16px;
-          color: white;
-        }
-      }
-    }
-  }
+
   .main{
     margin-top: 70px;
     h2{
@@ -72,47 +132,7 @@ header.home{
     label{
       margin-top: 44px;
     }
-    .search{
-      box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
-      border-radius: 2px;
-      input{
-        height: 60px;
-        font-family: "Open Sans";
-        font-size: 20px;
-        border: none;
-        box-shadow: none;
-        border-top-left-radius: 2px;
-        border-bottom-left-radius: 2px;
-      }
-      .btn{
-        background: $red;
-        color: white;
-        height: 60px;
-        border: none;
-        font-weight: bold;
-        font-size: 16px;
-        padding-left: 32px;
-        padding-right: 32px;
-        box-shadow: none;
-        border-top-right-radius: 2px;
-        border-bottom-right-radius: 2px;
-        &:hover{
-          background: darken($red,10%);
-        }
-      }
-      .dropdown-menu{
-        border-top-left-radius: 0;
-        border-top-right-radius: 0;
-        width: 80%;
-        li{
-          a{
-            font-size: 20px;
-            height: 60px;
-            line-height: 60px;
-          }
-        }
-      }
-    }
+
     h4{
       font-size: 14px;
       font-weight: bold;
@@ -251,22 +271,36 @@ main{
 
   }
   #search{
-    ol{
+    .total{
+      color: #757575;
+    }
+    ol.search-results{
+      list-style: none;
+      padding-left: 0;
       >li{
+        .author{
+          font-size: 12px;
+          color: $lightblue;
+        }
+        h4{
+          font-size: 20px;
+          font-weight: normal;
+          margin-top: 0;
+        }
+        p{
+          color: #757575;
+        }
         em{
           font-weight: bold;
         }
-        border-bottom: 1px solid lightgray;
-        &:last-child{
-          border-bottom: none;
-        }
+        margin-bottom: 30px;
       }
     }
   }
 }
 
 footer{
-  background: #09132E;
+  background: $darkblue;
   color: white;
   padding: 74px 0;
   a{

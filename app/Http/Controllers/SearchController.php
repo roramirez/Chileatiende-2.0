@@ -11,10 +11,13 @@ class SearchController extends Controller{
 
     public function getIndex(Request $request){
 
-        $data['query'] = $request->input('query');
-        $data['results'] = Page::search($data['query'])->get();
+        $query = $request->input('query');
+
+        $data['query'] = $query;
+        $data['results'] = Page::search($query)->paginate(10);
 
         return view('layout',[
+            'query' => $query,
             'title' => 'Resultados de búsqueda',
             'content' => view('search/index',$data)
         ]);

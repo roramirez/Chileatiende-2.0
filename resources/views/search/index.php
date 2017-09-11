@@ -1,21 +1,25 @@
 <div id="search">
     <div class="container">
+
+        <h3>Búsqueda: <?=$query?></h3>
+        <div class="total"><?=$results->total()?> Resultados</div>
+
+        <hr />
+
         <div class="row">
             <div class="col-sm-8">
-                <form action="search">
-                    <search id="search" name="query" value="<?=$query?>"></search>
-                </form>
 
-                <h3>Resultados</h3>
-
-                <ol>
+                <ol class="search-results">
                     <?php foreach($results as $r):?>
                     <li>
-                        <h4><?=isset($r->highlight['title']) ? $r->highlight['title'][0] : $r->title?></h4>
+                        <div class="author">Publicado por <?=$r->institution->name?></div>
+                        <h4><a href="pages/<?=$r->id?>"><?=isset($r->highlight['title']) ? $r->highlight['title'][0] : $r->title?></a></h4>
                         <p><?=isset($r->highlight['objective']) ? $r->highlight['objective'][0] : strip_tags($r->objective)?></p>
                     </li>
                     <?php endforeach ?>
                 </ol>
+
+                <?=$results->render()?>
             </div>
         </div>
     </div>

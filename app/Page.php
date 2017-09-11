@@ -14,6 +14,10 @@ class Page extends Model
         return $this->hasMany('\App\Hit');
     }
 
+    public function institution(){
+        return $this->belongsTo('\App\Institution');
+    }
+
     public function toSearchableArray()
     {
         return [
