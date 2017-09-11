@@ -14,7 +14,8 @@ body{
   font-family: Roboto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: $black;
+  color: white;
+  background: $darkblue;
 }
 
 a{
@@ -187,6 +188,8 @@ header.home{
 }
 
 main{
+  background: white;
+  color: $black;
   #home{
     .title{
       padding-bottom: 12px;
@@ -343,6 +346,14 @@ main{
       label{
         font-weight: normal;
       }
+    }
+  }
+  #page{
+    padding: 30px 0;
+    h3{
+      font-size: 28px;
+      font-weight: normal;
+      margin-top: 0;
     }
   }
 }

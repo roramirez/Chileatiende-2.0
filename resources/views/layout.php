@@ -44,7 +44,7 @@
         <div class="search-area">
             <div class="container">
                 <form action="search">
-                    <search id="search" name="query" value="<?=$query?>"></search>
+                    <search id="search" name="query" value="<?=@$query?>"></search>
                 </form>
             </div>
         </div>

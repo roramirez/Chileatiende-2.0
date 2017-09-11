@@ -18,6 +18,10 @@ class Page extends Model
         return $this->belongsTo('\App\Institution');
     }
 
+    public function categories(){
+        return $this->belongsToMany('\App\Category');
+    }
+
     public function toSearchableArray()
     {
         return [
