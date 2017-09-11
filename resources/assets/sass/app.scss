@@ -100,6 +100,18 @@ header.home{
           background: darken($red,10%);
         }
       }
+      .dropdown-menu{
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        width: 80%;
+        li{
+          a{
+            font-size: 20px;
+            height: 60px;
+            line-height: 60px;
+          }
+        }
+      }
     }
     h4{
       font-size: 14px;
