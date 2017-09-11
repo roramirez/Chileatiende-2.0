@@ -15,6 +15,9 @@
 <style lang="scss" scoped>
     .search{
         position: relative;
+        .dropdown-menu{
+            position: absolute;
+        }
 
     }
 </style>
