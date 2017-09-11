@@ -44,7 +44,7 @@
                         <div class="category">
                             <h3><?=$c->name?></h3>
                             <ul>
-                                <?php foreach($c->pages()->popular() as $p):?>
+                                <?php foreach($c->pages()->popular()->get() as $p):?>
                                     <li><a href="pages/<?=$p->id?>"><?=$p->title?></a></li>
                                 <?php endforeach ?>
                             </ul>

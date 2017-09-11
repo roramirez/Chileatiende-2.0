@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Illuminate\Support\Facades\DB;
 use Laravel\Scout\Searchable;
 use Illuminate\Database\Eloquent\Model;
 
@@ -28,11 +29,10 @@ class Page extends Model
 
     public function scopePopular($query){
         return $query
-            ->with('hits')
-            ->get()
-            ->sortByDesc(function($d){
-                return $d->hits->sum('count');
-            })
-            ->slice(0,3);
+            ->join('hits','hits.page_id','=','pages.id')
+            ->groupBy('pages.id')
+            ->select(DB::raw('pages.*, SUM(hits.count) as hits'))
+            ->orderBy('hits','desc')
+            ->limit(3);
     }
 }
