@@ -23,7 +23,7 @@
             </div>
             <div class="col-sm-4">
                 <div class="filter">
-                    <h3>Filtrar por</h3>
+                    <h3><i class="material-icons">filter_list</i> Filtrar por</h3>
 
                     <div class="form-group">
                         <label for="category">Categoría</label>

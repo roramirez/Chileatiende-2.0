@@ -2,7 +2,7 @@
     <div class="container">
 
         <ol class="breadcrumb">
-            <li><a href="">Inicio</a></li>
+            <li><a href=""><i class="material-icons">home</i></a></li>
             <li><a href="categories/<?= $page->categories[0]->id ?>"><?= $page->categories[0]->name ?></a></li>
             <li><?= $page->title ?></li>
         </ol>
