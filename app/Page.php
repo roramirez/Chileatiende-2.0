@@ -25,4 +25,14 @@ class Page extends Model
     public function hitCount(){
         return $this->hits()->sum('count');
     }
+
+    public function scopePopular($query){
+        return $query
+            ->with('hits')
+            ->get()
+            ->sortByDesc(function($d){
+                return $d->hits->sum('count');
+            })
+            ->slice(0,3);
+    }
 }

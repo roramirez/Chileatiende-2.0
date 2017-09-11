@@ -14,11 +14,12 @@ body{
   font-family: Roboto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #F7F7F7;
   color: $black;
 }
 
-
+a{
+  color: $blue;
+}
 
 header.home{
   min-height: 550px;
@@ -143,14 +144,98 @@ main{
   #home{
     .title{
       padding-bottom: 12px;
+      margin-bottom: 28px;
       border-bottom: 1px solid #D7D6D7;
       h2{
         font-size: 28px;
+        margin: 0;
       }
-      .date{
+      .subtitle{
         color: #8F8F8F;
       }
     }
+    .featured-area{
+      background: #F7F7F7;
+      padding: 54px 0;
+      .featured{
+        background: white;
+        height: 230px;
+        >a.header{
+          height: 120px;
+          display: block;
+          &:hover{
+            text-decoration: none;
+          }
+          img, .image{
+            height: 100%;
+          }
+          .image{
+            background: $black;
+            font-size: 24px;
+            font-family: "Roboto Slab";
+            text-align: center;
+            color: white;
+            padding: 16px;
+          }
+        }
+
+        >.caption{
+          padding: 16px;
+          h3{
+            margin: 0;
+            line-height: 1;
+            a{
+              color: $black;
+              text-decoration: none;
+              font-size: 18px;
+              font-weight: normal;
+              &:hover{
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+
+      }
+    }
+    .categories-area{
+      padding: 54px 0;
+      .category{
+        margin-bottom: 65px;
+        h3{
+          font-family: "Roboto Slab";
+          font-size: 20px;
+          font-weight: normal;
+          border-bottom: 3px solid $red;
+          padding-bottom: 18px;
+          margin-bottom: 18px;
+          display: inline-block;
+        }
+        ul{
+          height: 200px;
+          color: #D7D6D7;
+          padding-left: 15px;
+          li{
+            margin-bottom: 20px;
+            a{
+              text-decoration: underline;
+              font-size: 16px;
+            }
+          }
+        }
+        .btn{
+          color: $red;
+          border: 1px solid $red;
+          padding: 10px 24px;
+          line-height: 1;
+          &:hover{
+            background: $red;
+            color: white;
+          }
+        }
+      }
+    }
+
 
   }
   #search{
@@ -162,6 +247,32 @@ main{
         border-bottom: 1px solid lightgray;
         &:last-child{
           border-bottom: none;
+        }
+      }
+    }
+  }
+}
+
+footer{
+  background: #09132E;
+  color: white;
+  padding: 74px 0;
+  a{
+    color: white;
+  }
+  h3{
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: normal;
+  }
+  ul{
+    list-style: none;
+    padding-left: 0;
+    li{
+      a{
+        color: #8F8F8F;
+        &:hover{
+          color: white;
         }
       }
     }

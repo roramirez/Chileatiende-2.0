@@ -44,6 +44,8 @@
     <main>
         <?=$content?>
     </main>
+
+    <?=view('chunks/footer')?>
 </div>
 
 <script src="js/app.js"></script>
