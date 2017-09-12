@@ -12,5 +12,5 @@
 */
 
 Route::get('/', 'HomeController@getIndex');
-Route::get('/search', 'SearchController@getIndex');
-Route::resource('/pages', 'PageController');
+Route::get('/buscar', 'SearchController@getIndex');
+Route::resource('/fichas', 'PageController');

@@ -52,13 +52,13 @@
                 </div>
 
                 <label>¿Qué trámite o servicio buscas?</label>
-                <form action="search">
+                <form action="buscar">
                     <search id="search" class="search" name="query" value=""></search>
                 </form>
                 <h4>Lo mas buscado</h4>
                 <ul class="search-list">
                     <?php foreach($suggestions as $s):?>
-                        <li><a href="search?query=<?=htmlspecialchars($s->query)?>"><?=htmlspecialchars($s->query)?></a></li>
+                        <li><a href="buscar?query=<?=htmlspecialchars($s->query)?>"><?=htmlspecialchars($s->query)?></a></li>
                     <?php endforeach ?>
                 </ul>
             </div>

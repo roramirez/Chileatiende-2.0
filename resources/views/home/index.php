@@ -20,7 +20,7 @@
                                 <?php endif ?>
                             </a>
                             <div class="caption">
-                                <h3><a href="pages/<?= $f->id ?>"><?= $f->title ?></a></h3>
+                                <h3><a href="fichas/<?= $f->id ?>"><?= $f->title ?></a></h3>
                             </div>
                         </div>
                     </div>
@@ -46,12 +46,12 @@
                             <ul>
                                 <?php foreach($c->pages()->popular()->get() as $p):?>
                                     <li>
-                                        <a href="pages/<?=$p->id?>"><?=$p->title?></a>
+                                        <a href="fichas/<?=$p->id?>"><?=$p->title?></a>
                                         <?php if($p->online):?><div>Trámite Online</div><?php endif ?>
                                     </li>
                                 <?php endforeach ?>
                             </ul>
-                            <a class="btn" href="categories/<?=$c->id?>">Ir a <?=$c->name?></a>
+                            <a class="btn" href="categorias/<?=$c->id?>">Ir a <?=$c->name?></a>
                         </div>
                     </div>
                 <?php endforeach ?>
