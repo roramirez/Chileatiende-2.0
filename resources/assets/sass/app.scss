@@ -470,6 +470,7 @@ main{
             border-bottom: 1px solid #D7D6D7;
             &:before{
               content: counter(step-counter);
+              font-weight: normal;
               background: $red;
               width: 20px;
               height: 20px;
