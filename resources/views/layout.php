@@ -1,18 +1,4 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <base href="<?=url('')?>" />
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="<?=csrf_token()?>">
-    <title>ChileAtiende - <?=$title?></title>
-
-    <!-- Bootstrap -->
-    <link href="css/app.css" rel="stylesheet">
-
-</head>
-<body>
+<?=view('chunks/head', ['title' => $title])?>
 <div id="app">
     <header class="default">
         <nav class="navbar navbar-default navbar-static-top">
@@ -57,7 +43,4 @@
 
     <?=view('chunks/footer')?>
 </div>
-
-<script src="js/app.js"></script>
-</body>
-</html>
+<?=view('chunks/foot')?>
