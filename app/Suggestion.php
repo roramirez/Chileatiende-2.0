@@ -25,7 +25,7 @@ class Suggestion extends Model
     public static function suggest($query){
         $client = new Client();
 
-        $response = $client->request('GET', env('ELASTICSEARCH_HOST').':9200/'.env('ELASTICSEARCH_INDEX').'/_search', [
+        $response = $client->request('GET', env('ELASTICSEARCH_HOST').'/'.env('ELASTICSEARCH_INDEX').'/_search', [
             'json' => [
                 'suggest' => [
                     'suggestions' => [
