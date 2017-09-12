@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\ScoutEngines\Elasticsearch\ElasticsearchEngine;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Scout\EngineManager;
 use Elasticsearch\ClientBuilder as ElasticBuilder;
