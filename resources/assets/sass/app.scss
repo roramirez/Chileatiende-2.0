@@ -113,7 +113,12 @@ header.default{
   background: $darkblue;
   .search-area{
     background: #F7F7F7;
-    padding: 60px 0;
+    padding: 30px 0;
+    label{
+      font-size: 16px;
+      color: #757575;
+      font-weight: bold;
+    }
     .search{
       border: 1px solid #D7D6D7;
       box-shadow: none;
@@ -379,8 +384,23 @@ main{
   #page{
     padding: 30px 0;
     font-weight: 300;
-    .index{
+    .sidebar{
       font-weight: normal;
+      &.affix{
+        top: 0;
+      }
+      .index{
+        padding-left: 15px;
+        margin-bottom: 20px;
+        li{
+          margin-bottom: 10px;
+          a{
+            font-size: 16px;
+            text-decoration: underline;
+          }
+        }
+
+      }
     }
     .online{
       font-weight: 500;
@@ -402,6 +422,17 @@ main{
     }
     .updated-at{
       font-weight: normal;
+    }
+    .btn.btn-online{
+      padding: 10px 80px;
+      background: $red;
+      border: 1px solid darken($red,10%);
+      border-radius: 2px;
+      /* name: */
+      font-weight: 500;
+      font-size: 16px;
+      color: #FFFFFF;
+
     }
     .howto{
       ul.nav-tabs{
@@ -450,17 +481,7 @@ main{
             }
           }
         }
-        .btn.btn-online{
-          padding: 10px 80px;
-          background: $red;
-          border: 1px solid darken($red,10%);
-          border-radius: 2px;
-          /* name: */
-          font-weight: 500;
-          font-size: 16px;
-          color: #FFFFFF;
 
-        }
       }
     }
   }

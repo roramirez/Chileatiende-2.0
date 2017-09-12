@@ -54,12 +54,16 @@
 
             </div>
             <div class="col-sm-4">
-                <ol class="index">
-                    <li><a href="<?=url()->current()?>#objective">Descripción</a></li>
-                    <li><a href="<?=url()->current()?>#beneficiaries">¿A quién está dirigido?</a></li>
-                    <li><a href="<?=url()->current()?>#requirements">¿Qué necesito para hacer el trámite?</a></li>
-                    <li><a href="<?=url()->current()?>#howto">¿Cómo y dónde hago el trámite? </a></li>
-                </ol>
+                <div class="sidebar" data-spy="affix" data-offset-top="345">
+                    <ol class="index">
+                        <li><a href="<?= url()->current() ?>#objective">Descripción</a></li>
+                        <li><a href="<?= url()->current() ?>#beneficiaries">¿A quién está dirigido?</a></li>
+                        <li><a href="<?= url()->current() ?>#requirements">¿Qué necesito para hacer el trámite?</a></li>
+                        <li><a href="<?= url()->current() ?>#howto">¿Cómo y dónde hago el trámite? </a></li>
+                    </ol>
+
+                    <a class="btn btn-online" href="<?=$page->online_url?>" target="_blank">Ir al trámite en línea</a>
+                </div>
             </div>
         </div>
     </div>

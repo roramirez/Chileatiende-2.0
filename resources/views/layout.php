@@ -43,6 +43,7 @@
         </nav>
         <div class="search-area">
             <div class="container">
+                <label>¿Qué trámite o servicio buscas?</label>
                 <form action="search">
                     <search id="search" name="query" value="<?=@$query?>"></search>
                 </form>
