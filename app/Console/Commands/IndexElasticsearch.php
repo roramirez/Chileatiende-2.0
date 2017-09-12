@@ -47,14 +47,14 @@ class IndexElasticsearch extends Command
         if($operation == 'create'){
             try {
                 $this->info('Se borra índice');
-                $response = $client->request('DELETE', env('ELASTICSEARCH_HOST').':9200/'.env('ELASTICSEARCH_INDEX'));
+                $response = $client->request('DELETE', env('ELASTICSEARCH_HOST').'/'.env('ELASTICSEARCH_INDEX'));
             }catch(ClientException $e){
                 $this->line($e->getMessage());
             }
 
 
             $this->info('Se crea índice');
-            $response = $client->request('PUT', env('ELASTICSEARCH_HOST').':9200/'.env('ELASTICSEARCH_INDEX'), [
+            $response = $client->request('PUT', env('ELASTICSEARCH_HOST').'/'.env('ELASTICSEARCH_INDEX'), [
                 'json' => [
                     'mappings' => [
                         'pages' => [
