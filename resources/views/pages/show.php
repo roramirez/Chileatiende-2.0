@@ -3,7 +3,7 @@
 
         <ol class="breadcrumb">
             <li><a href=""><i class="material-icons">home</i></a></li>
-            <li><a href="categories/<?= $page->categories[0]->id ?>"><?= $page->categories[0]->name ?></a></li>
+            <li><a href="categories/<?= $page->categories->count() ? $page->categories[0]->id : 'null' ?>"><?= $page->categories->count() ? $page->categories[0]->name : 'Sin Categoría' ?></a></li>
             <li><?= $page->title ?></li>
         </ol>
 
