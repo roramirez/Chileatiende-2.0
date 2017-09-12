@@ -15,12 +15,16 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+var SelectFirstTab = require('./directives/SelectFirstTab');
 var Search = require('./components/Search.vue');
 
 const app = new Vue({
     el: '#app',
     components:{
         Search
+    },
+    directives:{
+        SelectFirstTab
     },
     mounted: function(){
         var searchInput = document.querySelector('#search input');
