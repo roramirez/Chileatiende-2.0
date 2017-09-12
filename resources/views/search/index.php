@@ -14,6 +14,7 @@
                     <li>
                         <div class="author">Publicado por <?=$r->institution->name?></div>
                         <h4><a href="pages/<?=$r->id?>"><?=isset($r->highlight['title']) ? $r->highlight['title'][0] : $r->title?></a></h4>
+                        <?php if($r->online):?><div class="online">Trámite Online</div><?php endif ?>
                         <p><?=isset($r->highlight['objective']) ? $r->highlight['objective'][0] : strip_tags($r->objective)?></p>
                     </li>
                     <?php endforeach ?>
