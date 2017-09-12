@@ -30,7 +30,7 @@
         <div class="search-area">
             <div class="container">
                 <label>¿Qué trámite o servicio buscas?</label>
-                <form action="search">
+                <form action="buscar">
                     <search id="search" name="query" value="<?=@$query?>"></search>
                 </form>
             </div>

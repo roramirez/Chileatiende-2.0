@@ -10,7 +10,7 @@
                 <?php foreach ($featured as $f): ?>
                     <div class="col-sm-3">
                         <div class="featured">
-                            <a class="header" href="pages/<?= $f->id ?>">
+                            <a class="header" href="fichas/<?= $f->guid ?>">
                                 <?php if ($f->image): ?>
                                     <img src="<?= $f->image ?>" class="img-responsive"/>
                                 <?php else: ?>
@@ -20,7 +20,7 @@
                                 <?php endif ?>
                             </a>
                             <div class="caption">
-                                <h3><a href="fichas/<?= $f->id ?>"><?= $f->title ?></a></h3>
+                                <h3><a href="fichas/<?= $f->guid ?>"><?= $f->title ?></a></h3>
                             </div>
                         </div>
                     </div>
@@ -46,7 +46,7 @@
                             <ul>
                                 <?php foreach($c->pages()->popular()->get() as $p):?>
                                     <li>
-                                        <a href="fichas/<?=$p->id?>"><?=$p->title?></a>
+                                        <a href="fichas/<?=$p->guid?>"><?=$p->title?></a>
                                         <?php if($p->online):?><div>Trámite Online</div><?php endif ?>
                                     </li>
                                 <?php endforeach ?>

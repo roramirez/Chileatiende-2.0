@@ -7,7 +7,8 @@ use App\Page;
 
 class PageController extends Controller{
 
-    public function show($id){
+    public function show($guid){
+        $id = explode('-',$guid)[0];
         $data['page'] = Page::where('id',$id)->with('categories')->first();
 
         return view('layout',[

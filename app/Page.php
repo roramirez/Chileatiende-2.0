@@ -43,4 +43,8 @@ class Page extends Model
             ->orderBy('hits','desc')
             ->limit(3);
     }
+
+    public function getGuidAttribute(){
+        return $this->id.'-'.$this->alias;
+    }
 }
