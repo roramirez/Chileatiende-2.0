@@ -386,8 +386,11 @@ main{
     font-weight: 300;
     .sidebar{
       font-weight: normal;
+      transition: margin-top ease-out 0.3s;
+      margin-top: 0;
       &.affix{
         top: 0;
+        margin-top: 20px;
       }
       .index{
         padding-left: 15px;
