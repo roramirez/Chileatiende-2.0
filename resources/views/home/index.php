@@ -45,7 +45,10 @@
                             <h3><?=$c->name?></h3>
                             <ul>
                                 <?php foreach($c->pages()->popular()->get() as $p):?>
-                                    <li><a href="pages/<?=$p->id?>"><?=$p->title?></a></li>
+                                    <li>
+                                        <a href="pages/<?=$p->id?>"><?=$p->title?></a>
+                                        <?php if($p->online):?><div>Trámite Online</div><?php endif ?>
+                                    </li>
                                 <?php endforeach ?>
                             </ul>
                             <a class="btn" href="categories/<?=$c->id?>">Ir a <?=$c->name?></a>

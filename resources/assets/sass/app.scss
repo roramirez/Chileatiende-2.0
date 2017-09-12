@@ -1,8 +1,8 @@
 
 // Fonts
-@import url("https://fonts.googleapis.com/css?family=Roboto");
-@import url("https://fonts.googleapis.com/css?family=Roboto+Slab");
-@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Slab:400,700");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700");
 @import url("https://fonts.googleapis.com/css?family=Material+Icons");
 
 // Variables
@@ -211,6 +211,8 @@ main{
       margin-bottom: 28px;
       border-bottom: 1px solid #D7D6D7;
       h2{
+        font-weight: normal;
+        font-family: "Roboto Slab";
         font-size: 28px;
         margin: 0;
       }
@@ -276,12 +278,15 @@ main{
           display: inline-block;
         }
         ul{
-          height: 200px;
+          height: 240px;
           color: #D7D6D7;
           padding-left: 15px;
           li{
+            color: #8F8F8F;
+            font-weight: 500;
             margin-bottom: 20px;
             a{
+              font-weight: normal;
               text-decoration: underline;
               font-size: 16px;
             }
