@@ -54,7 +54,7 @@
 
             </div>
             <div class="col-sm-4">
-                <div class="sidebar" data-spy="affix" data-offset-top="345">
+                <div class="sidebar" data-spy="affix" data-offset-top="345" data-offset-bottom="466">
                     <ol class="index">
                         <li><a href="<?= url()->current() ?>#objective">Descripción</a></li>
                         <li><a href="<?= url()->current() ?>#beneficiaries">¿A quién está dirigido?</a></li>

@@ -499,12 +499,17 @@ main{
 
 footer{
   background: $darkblue;
-  color: white;
+  color: #8F8F8F;
   padding: 74px 0;
   a{
+    text-decoration: underline;
     color: white;
+    &:hover{
+      color: inherit;
+    }
   }
   h3{
+    color: white;
     font-size: 14px;
     text-transform: uppercase;
     font-weight: normal;
@@ -514,6 +519,7 @@ footer{
     padding-left: 0;
     li{
       a{
+        text-decoration: none;
         color: #8F8F8F;
         &:hover{
           color: white;
@@ -521,4 +527,13 @@ footer{
       }
     }
   }
+  .container{
+    position: relative;
+    .gob{
+      position: absolute;
+      bottom: -74px;
+      left: 15px;
+    }
+  }
+
 }
