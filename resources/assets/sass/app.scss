@@ -419,6 +419,10 @@ main{
       font-family:"Roboto Slab";
       font-size: 20px;
       font-weight: normal;
+      margin-top: 30px;
+      &:first-of-type{
+        margin-top: 0;
+      }
     }
     .author{
       color: $lightblue;
@@ -428,7 +432,7 @@ main{
       font-weight: normal;
     }
     .btn.btn-online{
-      padding: 10px 80px;
+      padding: 20px 100px;
       background: $red;
       border: 1px solid darken($red,10%);
       border-radius: 2px;
@@ -468,6 +472,7 @@ main{
         ol{
           list-style: none;
           padding-left: 0;
+          margin-bottom: 20px;
           >li{
             counter-increment: step-counter;
             padding: 12px 0;
