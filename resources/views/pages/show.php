@@ -35,7 +35,7 @@
                     </ul>
 
                     <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane active" id="online">
+                        <div role="tabpanel" class="tab-pane" id="online">
                             <?=$page->online_guide?>
                             <a class="btn btn-online" href="<?=$page->online_url?>" target="_blank">Ir al trámite en línea</a>
                         </div>
