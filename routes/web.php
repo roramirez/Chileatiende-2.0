@@ -11,6 +11,12 @@
 |
 */
 
+Route::auth();
+
 Route::get('/', 'HomeController@getIndex');
 Route::get('/buscar', 'SearchController@getIndex');
 Route::resource('/fichas', 'PageController');
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/backend', 'Backend\HomeController@getIndex');
+});

@@ -11,7 +11,7 @@ class PageController extends Controller{
         $id = explode('-',$guid)[0];
         $data['page'] = Page::where('id',$id)->with('categories')->first();
 
-        return view('layout',[
+        return view('layouts/layout',[
             'title' => $data['page']->title,
             'content' => view('pages/show', $data)
         ]);

@@ -20,7 +20,7 @@ class SearchController extends Controller{
         $data['categories'] = Category::orderBy('name')->get();
         $data['institutions'] = Institution::orderBy('name')->get();
 
-        return view('layout',[
+        return view('layouts/layout',[
             'query' => $query,
             'title' => 'Resultados de búsqueda',
             'content' => view('search/index',$data)

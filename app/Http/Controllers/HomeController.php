@@ -16,7 +16,7 @@ class HomeController extends Controller{
             'categories' => Category::where('featured',1)->limit(9)->get()
         ]);
 
-        return view('home-layout',[
+        return view('layouts/home-layout',[
             'suggestions' => Suggestion::orderBy('count', 'desc')->limit(5)->get(),
             'title' => 'Inicio',
             'content' => $content
