@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Suggestion;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 use Illuminate\Console\Command;
@@ -84,6 +85,8 @@ class IndexElasticsearch extends Command
             ]);
         }elseif ($operation == 'index'){
             $this->call('scout:import', ['model' => 'App\Page']);
+
+            Suggestion::refreshData();
             $this->call('scout:import', ['model' => 'App\Suggestion']);
         }
 

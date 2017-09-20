@@ -10,6 +10,17 @@ class Suggestion extends Model
 {
     use Searchable;
 
+    public static function refreshData(){
+        self::truncate();
+
+        $searches = Search::selectRaw('query, COUNT(*) as count')
+            ->groupBy('query')
+            ->where('updated_at', '>=', '2017-07-21')
+            ->having('count','>=',100)
+            ->get();
+
+        self::insert($searches->toArray());
+    }
 
     public function toSearchableArray()
     {
