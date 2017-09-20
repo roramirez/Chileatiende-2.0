@@ -13,7 +13,7 @@ class Suggestion extends Model
     public static function refreshData(){
         self::truncate();
 
-        $searches = Search::selectRaw('query, COUNT(*) as count')
+        $searches = Search::selectRaw('LOWER(query) as query, COUNT(*) as count')
             ->groupBy('query')
             ->where('updated_at', '>=', '2017-07-21')
             ->having('count','>=',100)
