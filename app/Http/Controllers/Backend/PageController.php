@@ -18,9 +18,9 @@ class PageController extends Controller{
         ]);
     }
 
-    public function edit($pageId){
-
-        $data['page'] = Page::find($pageId);
+    public function create(){
+        $data['page'] = new Page();
+        $data['edit'] = false;
 
         return view('layouts/backend',[
             'title' => 'Inicio',
@@ -28,14 +28,31 @@ class PageController extends Controller{
         ]);
     }
 
+    public function edit($pageId){
+        $data['page'] = Page::find($pageId);
+        $data['edit'] = true;
+
+        return view('layouts/backend',[
+            'title' => 'Inicio',
+            'content' => view('backend/pages/edit', $data)
+        ]);
+    }
+
+    public function store(Request $request){
+        $this->save($request, new Page());
+    }
+
     public function update(Request $request, $pageId){
+        $this->save($request, Page::find($pageId));
+    }
+
+    private function save(Request $request, Page $page){
         $this->validate($request, [
             'title' => 'required|string',
             'institution_id' => 'required|exists:institutions,id',
             'objective' => 'required|string'
         ]);
 
-        $page = Page::find($pageId);
         $page->title = $request->input('title');
         $page->institution_id = $request->input('institution_id');
         $page->objective = $request->input('objective');
@@ -43,5 +60,4 @@ class PageController extends Controller{
 
         $request->session()->flash('status', 'Ficha guardada con éxito');
     }
-
 }

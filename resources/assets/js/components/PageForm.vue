@@ -44,7 +44,7 @@
                 errors: {}
             }
         },
-        props: ['page'],
+        props: ['page','edit'],
         components:{
             InstitutionSelect,
             VueQuillEditor
@@ -54,8 +54,8 @@
                 var self = this;
 
                 axios({
-                    url: 'backend/fichas/'+self.data.id,
-                    method: 'PUT',
+                    url: self.edit ? 'backend/fichas/'+self.data.id : 'backend/fichas',
+                    method: self.edit ? 'PUT' : 'POST',
                     data: self.data,
                 }).then(function(response){
                     window.location.replace('backend/fichas');

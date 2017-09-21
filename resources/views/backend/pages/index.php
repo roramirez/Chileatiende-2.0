@@ -10,8 +10,11 @@
     </div>
     <?php endif ?>
 
-    <div class="text-center"><?=$pages->links()?></div>
+    <div>
+        <a class="btn btn-success" href="backend/fichas/create">Agregar ficha</a>
+    </div>
 
+    <div class="text-center"><?=$pages->links()?></div>
 
     <table class="table">
         <thead>
