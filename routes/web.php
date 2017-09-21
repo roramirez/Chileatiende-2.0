@@ -17,6 +17,7 @@ Route::get('/', 'HomeController@getIndex');
 Route::get('/buscar', 'SearchController@getIndex');
 Route::resource('/fichas', 'PageController');
 
-Route::middleware(['auth'])->group(function () {
-    Route::get('/backend', 'Backend\HomeController@getIndex');
+Route::group(['middleware' => ['auth'], 'prefix'=>'backend', 'namespace'=>'Backend'],function () {
+    Route::get('/', 'HomeController@getIndex');
+    Route::resource('/fichas', 'PageController');
 });

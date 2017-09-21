@@ -18,16 +18,20 @@ window.Vue = require('vue');
 var SelectFirstTab = require('./directives/SelectFirstTab');
 var Search = require('./components/Search.vue');
 
+var PageForm = require('./components/PageForm.vue');
+
 const app = new Vue({
     el: '#app',
     components:{
-        Search
+        Search,
+        PageForm
     },
     directives:{
         SelectFirstTab
     },
     mounted: function(){
         var searchInput = document.querySelector('#search input');
-        searchInput.focus();
+        if(searchInput)
+            searchInput.focus();
     }
 });
