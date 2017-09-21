@@ -20,4 +20,8 @@ Route::resource('/fichas', 'PageController');
 Route::group(['middleware' => ['auth'], 'prefix'=>'backend', 'namespace'=>'Backend'],function () {
     Route::get('/', 'HomeController@getIndex');
     Route::resource('/fichas', 'PageController');
+
+    Route::group(['prefix'=>'api','namespace'=>'API'], function (){
+        Route::resource('institutions', 'InstitutionController');
+    });
 });

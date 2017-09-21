@@ -30,12 +30,18 @@ class PageController extends Controller{
 
     public function update(Request $request, $pageId){
         $this->validate($request, [
-            'title' => 'required|string'
+            'title' => 'required|string',
+            'institution_id' => 'required|exists:institutions,id',
+            'objective' => 'required|string'
         ]);
 
         $page = Page::find($pageId);
         $page->title = $request->input('title');
+        $page->institution_id = $request->input('institution_id');
+        $page->objective = $request->input('objective');
         $page->save();
+
+        $request->session()->flash('status', 'Ficha guardada con éxito');
     }
 
 }
