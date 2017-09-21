@@ -19,9 +19,16 @@
         <div class="form-group" :class="{'has-error': errors['objective']}">
             <label for="objective" class="col-sm-2 control-label">Descripción</label>
             <div class="col-sm-10">
-                <!--<textarea class="form-control" id="objective" v-model="data.objective"></textarea>-->
                 <vue-quill-editor id="objective" v-model="data.objective"></vue-quill-editor>
                 <div class="help-block" v-for="e in errors['objective']">{{e}}</div>
+            </div>
+        </div>
+
+        <div class="form-group" :class="{'has-error': errors['details']}">
+            <label for="details" class="col-sm-2 control-label">Detalles</label>
+            <div class="col-sm-10">
+                <vue-quill-editor id="details" v-model="data.details"></vue-quill-editor>
+                <div class="help-block" v-for="e in errors['details']">{{e}}</div>
             </div>
         </div>
 

@@ -50,12 +50,14 @@ class PageController extends Controller{
         $this->validate($request, [
             'title' => 'required|string',
             'institution_id' => 'required|exists:institutions,id',
-            'objective' => 'required|string'
+            'objective' => 'required|string',
+            'details' => 'string'
         ]);
 
         $page->title = $request->input('title');
         $page->institution_id = $request->input('institution_id');
         $page->objective = $request->input('objective');
+        $page->details = $request->input('details');
         $page->save();
 
         $request->session()->flash('status', 'Ficha guardada con éxito');

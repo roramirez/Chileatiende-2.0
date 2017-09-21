@@ -19,6 +19,9 @@
                 <h4 id="objective">Descripción</h4>
                 <?=App\Twig::render($page->objective)?>
 
+                <h4 id="details">Detalles</h4>
+                <?=App\Twig::render($page->details)?>
+
                 <h4 id="beneficiaries">¿A quién esta dirigido?</h4>
                 <?=App\Twig::render($page->beneficiaries)?>
 
@@ -57,6 +60,7 @@
                 <div class="sidebar" data-spy="affix" data-offset-top="345" data-offset-bottom="466">
                     <ol class="index">
                         <li><a href="<?= url()->current() ?>#objective">Descripción</a></li>
+                        <li><a href="<?= url()->current() ?>#details">Detalles</a></li>
                         <li><a href="<?= url()->current() ?>#beneficiaries">¿A quién está dirigido?</a></li>
                         <li><a href="<?= url()->current() ?>#requirements">¿Qué necesito para hacer el trámite?</a></li>
                         <li><a href="<?= url()->current() ?>#howto">¿Cómo y dónde hago el trámite? </a></li>
