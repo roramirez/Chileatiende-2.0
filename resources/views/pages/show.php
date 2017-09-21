@@ -17,13 +17,13 @@
                 <hr />
 
                 <h4 id="objective">Descripción</h4>
-                <?=$page->objective?>
+                <?=App\Twig::render($page->objective)?>
 
                 <h4 id="beneficiaries">¿A quién esta dirigido?</h4>
-                <?=$page->beneficiaries?>
+                <?=App\Twig::render($page->beneficiaries)?>
 
                 <h4 id="requirements">¿Qué necesito para hacer el trámite?</h4>
-                <?=$page->requirements?>
+                <?=App\Twig::render($page->requirements)?>
 
                 <h4 id="howto">¿Cómo y donde hago el trámite?</h4>
                 <div class="howto">
@@ -36,17 +36,17 @@
 
                     <div class="tab-content">
                         <div role="tabpanel" class="tab-pane" id="online">
-                            <?=$page->online_guide?>
+                            <?=App\Twig::render($page->online_guide)?>
                             <a class="btn btn-online" href="<?=$page->online_url?>" target="_blank">Ir al trámite en línea</a>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="office">
-                            <?=$page->office_guide?>
+                            <?=App\Twig::render($page->office_guide)?>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="phone">
-                            <?=$page->phone_guide?>
+                            <?=App\Twig::render($page->phone_guide)?>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="mail">
-                            <?=$page->mail_guide?>
+                            <?=App\Twig::render($page->mail_guide)?>
                         </div>
                     </div>
 
