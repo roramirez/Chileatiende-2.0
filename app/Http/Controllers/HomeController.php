@@ -12,7 +12,7 @@ class HomeController extends Controller{
     public function getIndex(){
 
         $content = view('home/index',[
-            'featured' => Page::where('featured',1)->limit(4)->get(),
+            'featured' => Page::masters()->where('featured',1)->limit(4)->get(),
             'categories' => Category::where('featured',1)->limit(9)->get()
         ]);
 
