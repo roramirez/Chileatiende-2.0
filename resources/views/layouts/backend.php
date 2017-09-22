@@ -63,6 +63,11 @@
                         </div>
                     </div>
                     <div class="col-sm-9">
+                        <?php if(session()->has('status')):?>
+                            <div class="alert alert-success">
+                                <?=session('status')?>
+                            </div>
+                        <?php endif ?>
                         <div><?= $content ?></div>
                     </div>
                 </div>

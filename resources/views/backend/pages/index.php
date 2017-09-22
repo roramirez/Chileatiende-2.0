@@ -4,12 +4,6 @@
         <li class="active">Fichas</li>
     </ol>
 
-    <?php if(session()->has('status')):?>
-    <div class="alert alert-success">
-        <?=session('status')?>
-    </div>
-    <?php endif ?>
-
     <div>
         <a class="btn btn-success" href="backend/fichas/create">Agregar ficha</a>
     </div>

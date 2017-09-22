@@ -65,7 +65,7 @@
                     method: self.edit ? 'PUT' : 'POST',
                     data: self.data,
                 }).then(function(response){
-                    window.location.replace('backend/fichas');
+                    window.location.replace(response.data.redirect);
                 }).catch(function(error){
                     self.errors = error.response.data.errors;
                 });

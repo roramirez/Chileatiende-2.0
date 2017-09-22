@@ -31,13 +31,17 @@ class Page extends Model
         return $this->belongsToMany('\App\Category');
     }
 
-    public function toSearchableArray()
-    {
-        return [
-            'title'=>$this->title,
-            'objective' => strip_tags($this->objective),
-            'hit_count' => $this->hitCount()
+    public function toSearchableArray(){
+        if(!$this->master && $this->published){
+            return [
+                'id' => $this->master_id,
+                'title'=>$this->title,
+                'objective' => strip_tags($this->objective),
+                'hit_count' => $this->hitCount()
             ];
+        }
+
+        return [];
     }
 
     public function hitCount(){

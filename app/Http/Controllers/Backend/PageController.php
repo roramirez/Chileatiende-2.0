@@ -18,6 +18,10 @@ class PageController extends Controller{
         ]);
     }
 
+    public function show($pageId){
+        return redirect('backend/fichas/'.$pageId.'/edit');
+    }
+
     public function create(){
         $data['page'] = new Page();
         $data['edit'] = false;
@@ -39,19 +43,22 @@ class PageController extends Controller{
     }
 
     public function store(Request $request){
-        $this->save($request, new Page());
+        $page = $this->save($request, new Page());
+
+        return response()->json(['redirect' => 'backend/fichas/'.$page->id]);
     }
 
     public function update(Request $request, $pageId){
-        $this->save($request, Page::find($pageId));
+        $page = $this->save($request, Page::find($pageId));
+
+        return response()->json(['redirect' => 'backend/fichas/'.$page->id]);
     }
 
     private function save(Request $request, Page $page){
         $this->validate($request, [
-            'title' => 'required|string',
+            'title' => 'required',
             'institution_id' => 'required|exists:institutions,id',
-            'objective' => 'required|string',
-            'details' => 'string'
+            'objective' => 'required',
         ]);
 
         $page->title = $request->input('title');
@@ -60,6 +67,44 @@ class PageController extends Controller{
         $page->details = $request->input('details');
         $page->save();
 
+        $version = $page->replicate();
+        $version->id = null;
+        $version->master = 0;
+        $version->master_id = $page->id;
+        $version->published = 0;
+        $version->save();
+
         $request->session()->flash('status', 'Ficha guardada con éxito');
+
+        return $page;
+    }
+
+    public function versions($pageId){
+        $data['edit'] = true;
+        $data['page'] = Page::find($pageId);
+
+        return view('layouts/backend',[
+            'title' => 'Inicio',
+            'content' => view('backend/pages/versions', $data)
+        ]);
+    }
+
+    public function publishVersion(Request $request, $pageId, $versionId){
+        $page = Page::find($pageId);
+        $version = Page::find($versionId);
+
+        foreach($page->versions as $v){
+            if($v->published){
+                $v->published = 0;
+                $v->save();
+            }
+        }
+
+        $version->published = 1;
+        $version->save();
+
+        $request->session()->flash('status', 'Ficha publicada con éxito');
+
+        return redirect('backend/fichas/'.$page->id.'/versions');
     }
 }

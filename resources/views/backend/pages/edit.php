@@ -6,6 +6,13 @@
         <li class="active"><?=$edit?'Editar':'Crear'?></li>
     </ol>
 
+    <ul class="nav nav-tabs">
+        <li role="presentation" class="active"><a href="backend/fichas/<?=$page->id?>/edit">Editar</a></li>
+        <li role="presentation"><a href="backend/fichas/<?=$page->id?>/versions">Versiones</a></li>
+    </ul>
+
+    <br />
+
     <page-form :page="<?=e($page)?>" :edit="<?=$edit ? 'true' : 'false'?>"></page-form>
 
 </div>
