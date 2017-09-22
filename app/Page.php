@@ -11,6 +11,14 @@ class Page extends Model
 {
     use Searchable;
 
+    public function master(){
+        return $this->belongsTo('\App\Page','master_id');
+    }
+
+    public function versions(){
+        return $this->hasMany('\App\Page','master_id');
+    }
+
     public function hits(){
         return $this->hasMany('\App\Hit');
     }
@@ -36,6 +44,16 @@ class Page extends Model
         return $this->hits()->sum('count');
     }
 
+    public function scopeMasters($query){
+        return $query
+            ->where('master',1);
+    }
+
+    public function scopePublished($query){
+        return $query
+            ->where('published',1);
+    }
+
     public function scopePopular($query){
         return $query
             ->join('hits','hits.page_id','=','pages.id')
@@ -47,5 +65,14 @@ class Page extends Model
 
     public function getGuidAttribute(){
         return $this->id.'-'.$this->alias;
+    }
+
+    public function getPublishedVersion(){
+        return $this->versions()->published()->first();
+    }
+
+    public function getLastVersion(){
+        return $this->versions()->orderBy('id','desc')->first();
+
     }
 }

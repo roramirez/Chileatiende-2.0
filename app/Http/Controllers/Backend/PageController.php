@@ -10,7 +10,7 @@ class PageController extends Controller{
 
     public function index(){
 
-        $data['pages'] = Page::paginate(30);
+        $data['pages'] = Page::masters()->paginate(30);
 
         return view('layouts/backend',[
             'title' => 'Inicio',

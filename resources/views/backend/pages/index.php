@@ -31,7 +31,14 @@
         <tr>
             <td><?=$p->id?></td>
             <td><a href="backend/fichas/<?=$p->id?>/edit"><?=$p->title?></a></td>
-            <td class="text-center"><?=$p->published ? '<i class="material-icons">check</i>' : ''?></td>
+            <td class="text-center">
+                <?php if($p->published):?>
+                    <i class="material-icons" title="Publicado">check</i>
+                    <?=$p->getLastVersion()->published ? '' : '<i class="material-icons">call_merge</i>'?>
+                <?php else: ?>
+                    <i class="material-icons" title="Publicado">cross</i>
+                <?php endif ?>
+            </td>
             <td><?=$p->updated_at?></td>
             <td class="text-center"><a href="backend/fichas/<?=$p->id?>/edit"><i class="material-icons">edit</i></a></td>
         </tr>

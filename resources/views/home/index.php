@@ -44,7 +44,7 @@
                         <div class="category">
                             <h3><?=$c->name?></h3>
                             <ul>
-                                <?php foreach($c->pages()->popular()->get() as $p):?>
+                                <?php foreach($c->pages()->masters()->published()->popular()->get() as $p):?>
                                     <li>
                                         <a href="fichas/<?=$p->guid?>"><?=$p->title?></a>
                                         <?php if($p->online):?><div>Trámite Online</div><?php endif ?>
