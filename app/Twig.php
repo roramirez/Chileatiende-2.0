@@ -14,4 +14,10 @@ class Twig{
 
         return $response;
     }
+
+    public static function convertPMLToTwig($string){
+        $twig = preg_replace('/{{mensaje\[(.+)\]:(.+)}}/', "{{mensaje(tipo='$1', texto='$2')}}" ,$string);
+
+        return $twig;
+    }
 }
