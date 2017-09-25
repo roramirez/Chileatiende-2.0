@@ -7,7 +7,6 @@
     require('tinymce/plugins/code/index.js');
     require('tinymce/themes/modern/theme');
     require('tinymce/skins/lightgray/skin.min.css');
-    require('tinymce/skins/lightgray/content.min.css');
 
     export default {
         props: ['value'],
