@@ -9,8 +9,12 @@ class PageController extends Controller{
 
     public function show($guid){
         $id = explode('-',$guid)[0];
+        $master = Page::masters()->where('id',$id)->first();
+        if(!$master || !$master->published){
+            abort(404);
+        }
+
         $data['page'] = Page::find($id)->getPublishedVersion();
-        //$data['page'] = Page::where('id',$id)->with('categories')->first();
 
         return view('layouts/layout',[
             'title' => $data['page']->title,
