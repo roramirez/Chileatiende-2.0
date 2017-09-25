@@ -25,9 +25,12 @@
                 <h4 id="beneficiaries">¿A quién esta dirigido?</h4>
                 <?=App\Twig::render($page->beneficiaries)?>
 
+                <?php if($page->requirements):?>
                 <h4 id="requirements">¿Qué necesito para hacer el trámite?</h4>
                 <?=App\Twig::render($page->requirements)?>
+                <?php endif ?>
 
+                <?php if($page->howto):?>
                 <h4 id="howto">¿Cómo y donde hago el trámite?</h4>
                 <div class="howto">
                     <ul class="nav nav-tabs" role="tablist" v-select-first-tab>
@@ -52,8 +55,8 @@
                             <?=App\Twig::render($page->mail_guide)?>
                         </div>
                     </div>
-
                 </div>
+                <?php endif ?>
 
             </div>
             <div class="col-sm-4">
@@ -62,8 +65,8 @@
                         <li><a href="<?= url()->current() ?>#objective">Descripción</a></li>
                         <li><a href="<?= url()->current() ?>#details">Detalles</a></li>
                         <li><a href="<?= url()->current() ?>#beneficiaries">¿A quién está dirigido?</a></li>
-                        <li><a href="<?= url()->current() ?>#requirements">¿Qué necesito para hacer el trámite?</a></li>
-                        <li><a href="<?= url()->current() ?>#howto">¿Cómo y dónde hago el trámite? </a></li>
+                        <?php if($page->requirements):?><li><a href="<?= url()->current() ?>#requirements">¿Qué necesito para hacer el trámite?</a></li><?php endif ?>
+                        <?php if($page->howto):?><li><a href="<?= url()->current() ?>#howto">¿Cómo y dónde hago el trámite? </a></li><?php endif ?>
                     </ol>
 
                     <a class="btn btn-online" href="<?=$page->online_url?>" target="_blank">Ir al trámite en línea</a>

@@ -71,6 +71,10 @@ class Page extends Model
         return $this->id.'-'.$this->alias;
     }
 
+    public function getHowtoAttribute(){
+        return $this->online || $this->office || $this->phone || $this->mail;
+    }
+
     public function getPublishedVersion(){
         return $this->versions()->published()->first();
     }
