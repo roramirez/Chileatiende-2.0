@@ -17,6 +17,7 @@ window.Vue = require('vue');
 
 var SelectFirstTab = require('./directives/SelectFirstTab');
 var Search = require('./components/Search.vue');
+var Steps = require('./components/Steps.vue');
 
 var PageForm = require('./components/PageForm.vue');
 
@@ -24,6 +25,7 @@ const app = new Vue({
     el: '#app',
     components:{
         Search,
+        Steps,
         PageForm
     },
     directives:{

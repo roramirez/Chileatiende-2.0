@@ -19,9 +19,16 @@ class Twig{
     }
 
     public static function convertPMLToHTML($string){
-        $twig = preg_replace('/{{mensaje\[(.+)\]:(.+)}}/', "<div class='mensaje mensaje-$1'>$2</div>" ,$string);
+        $string = preg_replace('/{{mensaje\[(.+)\]:(.+)}}/sU', "<div class='message message-$1'>$2</div>" ,$string);
 
-        return $twig;
+        $count = preg_match_all('/{{paso:(.+)}}.*{{contenido:(.+)}}/sU', $string, $matches);
+        if ($count){
+            $string = preg_replace('/{{paso:.+}}/sU','',$string);
+            $string = preg_replace('/{{contenido:.+}}/sU','',$string);
+            $string .= "<steps :terms='".json_encode($matches[1])."' :definitions='".json_encode($matches[2])."'></steps>";
+        }
+
+        return $string;
     }
 
     public static function convertPMLToTwig($string){
