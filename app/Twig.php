@@ -21,6 +21,8 @@ class Twig{
     public static function convertPMLToHTML($string){
         $string = preg_replace('/{{mensaje\[(.+)\]:(.+)}}/sU', "<div class='message message-$1'>$2</div>" ,$string);
 
+        $string = preg_replace('/{{youtube:(.*)}}/sU', '<iframe width="560" height="315" src="https://www.youtube.com/embed/$1" frameborder="0" allowfullscreen></iframe>' ,$string);
+
         $count = preg_match_all('/{{paso:(.+)}}.*{{contenido:(.+)}}/sU', $string, $matches);
         if ($count){
             $string = preg_replace('/{{paso:.+}}/sU','',$string);
@@ -32,7 +34,7 @@ class Twig{
     }
 
     public static function convertPMLToTwig($string){
-        $twig = preg_replace('/\[\[(\d+)\]\]/', "{{page_url($1)}}" ,$string);
+        $twig = preg_replace('/\[\[(\d+)\]\]/sU', "{{page_url($1)}}" ,$string);
 
         return $twig;
     }
