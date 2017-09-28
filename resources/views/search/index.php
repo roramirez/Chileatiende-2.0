@@ -11,12 +11,12 @@
 
                 <ol class="search-results">
                     <?php foreach($results as $r):?>
-                    <?php $r = $r->getPublishedVersion() ?>
+                    <?php $publishedVersion = $r->getPublishedVersion() ?>
                     <li>
                         <div class="author">Publicado por <?=$r->institution->name?></div>
-                        <h4><a href="fichas/<?=$r->guid?>"><?=isset($r->highlight['title']) ? $r->highlight['title'][0] : $r->title?></a></h4>
+                        <h4><a href="fichas/<?=$r->guid?>"><?=isset($r->highlight['title']) ? $r->highlight['title'][0] : $publishedVersion->title?></a></h4>
                         <?php if($r->online):?><div class="online">Trámite Online</div><?php endif ?>
-                        <p><?=isset($r->highlight['objective']) ? $r->highlight['objective'][0] : strip_tags(\App\Twig::render($r->objective))?></p>
+                        <p><?=strip_tags(\App\Twig::render(isset($r->highlight['objective']) ? $r->highlight['objective'][0] : $publishedVersion->objective))?></p>
                     </li>
                     <?php endforeach ?>
                 </ol>
