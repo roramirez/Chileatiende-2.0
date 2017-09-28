@@ -67,6 +67,15 @@ class PageController extends Controller{
         $page->details = $request->input('details');
         $page->beneficiaries = $request->input('beneficiaries');
         $page->requirements = $request->input('requirements');
+        $page->online = $request->input('online');
+        $page->online_guide = $request->input('online_guide');
+        $page->online_guide_url = $request->input('online_guide_url');
+        $page->office = $request->input('office');
+        $page->office_guide = $request->input('office_guide');
+        $page->phone = $request->input('phone');
+        $page->phone_guide = $request->input('phone_guide');
+        $page->mail = $request->input('mail');
+        $page->mail_guide = $request->input('mail_guide');
         $page->save();
 
         $version = $page->replicate();

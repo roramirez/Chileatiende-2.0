@@ -49,6 +49,43 @@
         </div>
 
         <div class="form-group">
+            <label class="col-sm-2 control-label">Guías</label>
+
+            <div class="col-sm-10">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#online" aria-controls="online" role="tab" data-toggle="tab"><input @click.stop="" type="checkbox" v-model="data.online" /> Online</a></li>
+                    <li role="presentation"><a href="#office" aria-controls="office" role="tab" data-toggle="tab"><input @click.stop="" type="checkbox" v-model="data.office" /> Oficina</a></li>
+                    <li role="presentation"><a href="#phone" aria-controls="phone" role="tab" data-toggle="tab"><input @click.stop="" type="checkbox" v-model="data.phone" /> Telefónico</a></li>
+                    <li role="presentation"><a href="#mail" aria-controls="mail" role="tab" data-toggle="tab"><input @click.stop="" type="checkbox" v-model="data.mail" /> Correo</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="online">
+                        <editor v-model="data.online_guide"></editor>
+                        <div class="help-block" v-for="e in errors['online_guide']">{{e}}</div>
+                        <br />
+                        <label>URL trámite en línea</label>
+                        <input type="text" class="form-control" id="online_guide_url" v-model="data.online_guide_url">
+                        <div class="help-block" v-for="e in errors['online_guide_url']">{{e}}</div>
+
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="office">
+                        <editor v-model="data.office_guide"></editor>
+                        <div class="help-block" v-for="e in errors['office_guide']">{{e}}</div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="phone">
+                        <editor v-model="data.phone_guide"></editor>
+                        <div class="help-block" v-for="e in errors['phone_guide']">{{e}}</div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="mail">
+                        <editor v-model="data.mail_guide"></editor>
+                        <div class="help-block" v-for="e in errors['mail_guide']">{{e}}</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
                 <a class="btn btn-default" href="backend/fichas">Cancelar</a>
                 <button type="submit" class="btn btn-primary">Guardar</button>

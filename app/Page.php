@@ -11,6 +11,16 @@ class Page extends Model
 {
     use Searchable;
 
+    protected $casts = [
+        'online' => 'boolean',
+        'office' => 'boolean',
+        'phone' => 'boolean',
+        'mail' => 'boolean',
+        'featured' => 'boolean',
+        'published' => 'boolean',
+        'master' => 'boolean',
+    ];
+
     public function master(){
         return $this->belongsTo('\App\Page','master_id');
     }
