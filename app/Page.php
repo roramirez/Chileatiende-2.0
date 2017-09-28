@@ -32,14 +32,23 @@ class Page extends Model
     }
 
     public function hits(){
+        if(!$this->master)
+            return $this->masterPage->hasMany('\App\Hit');
+
         return $this->hasMany('\App\Hit');
     }
 
     public function institution(){
+        if(!$this->master)
+            return $this->masterPage->belongsTo('\App\Institution');
+
         return $this->belongsTo('\App\Institution');
     }
 
     public function categories(){
+        if(!$this->master)
+            return $this->masterPage->belongsToMany('\App\Category');
+
         return $this->belongsToMany('\App\Category');
     }
 
@@ -51,8 +60,8 @@ class Page extends Model
                 'title'=>$publishedVersion->title,
                 'objective' => strip_tags($publishedVersion->objective),
                 'keywords' => $publishedVersion->keywords,
-                'institution_id' => $this->institution_id,          //Pendiente: Revisar si esto deberia pertenecer a la version publicada
-                'category_id' => $this->categories->pluck('id'),    //Pendiente: Revisar si esto deberia pertenecer a la version publicada
+                'institution_id' => $this->institution_id,
+                'category_id' => $this->categories->pluck('id'),
                 'hit_count' => $this->hitCount(),
             ];
         }
