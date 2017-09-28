@@ -4,7 +4,8 @@
 
 <script>
     var tinymce = require('tinymce');
-    require('tinymce/plugins/code/index.js');
+    require('tinymce/plugins/code/plugin.js');
+    require('tinymce/plugins/media/plugin.js');
     require('tinymce/themes/modern/theme');
     require('tinymce/skins/lightgray/skin.min.css');
 
@@ -18,7 +19,8 @@
                 height: 300,
                 skin: false,
                 entity_encoding : "raw",
-                plugins: 'code',
+                plugins: 'code media',
+                toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | code media',
                 content_style: '.message{border: 1px solid #ccc; padding: 5px;} .message-alerta:before{content:"[Alerta] "} .message-reloj:before{content:"[Reloj] "}',
                 style_formats: [
                     { title: 'Alerta', block:'div' ,classes: 'message message-alerta' },
