@@ -24,7 +24,7 @@ class ElasticsearchEngine extends \ScoutEngines\Elasticsearch\ElasticsearchEngin
                         'query' => [
                             'multi_match' => [
                                 'query' => $builder->query,
-                                'fields' => ['title^2', 'objective'],
+                                'fields' => ['title^3', 'keywords^2', 'objective'],
                                 'fuzziness' => 'AUTO'
                             ]
                         ],
@@ -84,7 +84,7 @@ class ElasticsearchEngine extends \ScoutEngines\Elasticsearch\ElasticsearchEngin
         )->get()->keyBy($model->getKeyName());
         return collect($results['hits']['hits'])->map(function ($hit) use ($model, $models) {
             $result = isset($models[$hit['_id']]) ? $models[$hit['_id']] : null;
-            $result->highlight = $hit['highlight'];
+            $result->highlight = isset($hit['highlight']) ? $hit['highlight'] : null;
             return $result;
         })->filter()->values();
     }

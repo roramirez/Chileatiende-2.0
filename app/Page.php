@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use Laravel\Scout\Searchable;
 use Illuminate\Database\Eloquent\Model;
@@ -19,6 +20,7 @@ class Page extends Model
         'featured' => 'boolean',
         'published' => 'boolean',
         'master' => 'boolean',
+        'published_at' => 'date'
     ];
 
     public function masterPage(){
@@ -48,6 +50,7 @@ class Page extends Model
                 'id' => $this->id,
                 'title'=>$publishedVersion->title,
                 'objective' => strip_tags($publishedVersion->objective),
+                'keywords' => $publishedVersion->keywords,
                 'hit_count' => $this->hitCount()
             ];
         }
@@ -56,7 +59,7 @@ class Page extends Model
     }
 
     public function hitCount(){
-        return $this->hits()->sum('count');
+        return $this->hits()->where('date','>=', Carbon::now()->subYear())->sum('count');
     }
 
     public function scopeMasters($query){

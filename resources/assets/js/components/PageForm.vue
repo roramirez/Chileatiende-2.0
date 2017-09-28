@@ -85,6 +85,14 @@
 
         </div>
 
+        <div class="form-group" :class="{'has-error': errors['keywords']}">
+            <label for="keywords" class="col-sm-2 control-label">Keywords</label>
+            <div class="col-sm-10">
+                <textarea id="keywords" class="form-control" rows="5" v-model="data.keywords"></textarea>
+                <div class="help-block" v-for="e in errors['keywords']">{{e}}</div>
+            </div>
+        </div>
+
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
                 <a class="btn btn-default" href="backend/fichas">Cancelar</a>

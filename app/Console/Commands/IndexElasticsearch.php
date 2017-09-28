@@ -64,6 +64,10 @@ class IndexElasticsearch extends Command
                                     'type' => 'text',
                                     'analyzer' => 'spanish'
                                 ],
+                                'keywords' => [
+                                    'type' => 'text',
+                                    'analyzer' => 'spanish'
+                                ],
                                 'objective' => [
                                     'type' => 'text',
                                     'analyzer' => 'spanish'
