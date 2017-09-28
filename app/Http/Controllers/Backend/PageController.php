@@ -69,7 +69,7 @@ class PageController extends Controller{
         $page->requirements = $request->input('requirements');
         $page->online = $request->input('online');
         $page->online_guide = $request->input('online_guide');
-        $page->online_guide_url = $request->input('online_guide_url');
+        $page->online_url = $request->input('online_url');
         $page->office = $request->input('office');
         $page->office_guide = $request->input('office_guide');
         $page->phone = $request->input('phone');

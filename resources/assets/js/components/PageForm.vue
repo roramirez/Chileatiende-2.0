@@ -64,8 +64,8 @@
                         <div class="help-block" v-for="e in errors['online_guide']">{{e}}</div>
                         <br />
                         <label>URL trámite en línea</label>
-                        <input type="text" class="form-control" id="online_guide_url" v-model="data.online_guide_url">
-                        <div class="help-block" v-for="e in errors['online_guide_url']">{{e}}</div>
+                        <input type="text" class="form-control" id="online_url" v-model="data.online_url">
+                        <div class="help-block" v-for="e in errors['online_url']">{{e}}</div>
 
                     </div>
                     <div role="tabpanel" class="tab-pane" id="office">
