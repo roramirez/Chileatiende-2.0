@@ -19,7 +19,12 @@ class PageController extends Controller{
     }
 
     public function show($pageId){
-        return redirect('backend/fichas/'.$pageId.'/edit');
+        $data['page'] = Page::find($pageId);
+
+        return view('layouts/backend',[
+            'title' => 'Inicio',
+            'content' => view('backend/pages/show', $data)
+        ]);
     }
 
     public function create(){
@@ -45,11 +50,15 @@ class PageController extends Controller{
     public function store(Request $request){
         $page = $this->save($request, new Page());
 
+        $request->session()->flash('status', 'Ficha creada con éxito');
+
         return response()->json(['redirect' => 'backend/fichas/'.$page->id]);
     }
 
     public function update(Request $request, $pageId){
         $page = $this->save($request, Page::find($pageId));
+
+        $request->session()->flash('status', 'Ficha editada con éxito');
 
         return response()->json(['redirect' => 'backend/fichas/'.$page->id]);
     }
@@ -84,8 +93,6 @@ class PageController extends Controller{
         $version->master_id = $page->id;
         $version->published = 0;
         $version->save();
-
-        $request->session()->flash('status', 'Ficha guardada con éxito');
 
         return $page;
     }
