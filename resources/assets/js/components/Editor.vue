@@ -21,10 +21,11 @@
                 entity_encoding : "raw",
                 plugins: 'code media',
                 toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | code media',
-                content_style: '.message{border: 1px solid #ccc; padding: 5px;} .message-alerta:before{content:"[Alerta] "} .message-reloj:before{content:"[Reloj] "}',
+                content_css: '/css/tinymce.css',
                 style_formats: [
                     { title: 'Alerta', block:'div' ,classes: 'message message-alerta' },
                     { title: 'Reloj', block:'div' ,classes: 'message message-reloj' },
+                    { title: 'Doc', block:'div' ,classes: 'doc doc-doc' },
                 ],
                 setup: function (editor) {
                     editor.on('change', function () {

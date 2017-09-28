@@ -51,6 +51,15 @@ ol.breadcrumb{
   }
 }
 
+.doc{
+  border: 1px solid #d5d5d5;
+  padding: 10px 40px 10px 60px;
+  &.doc-doc{
+    background: url(../images/doc.svg) 10px 10px no-repeat;
+    background-size: 32px;
+  }
+}
+
 .navbar-default{
   height: 90px;
   background: none;

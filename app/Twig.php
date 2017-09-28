@@ -23,6 +23,8 @@ class Twig{
 
         $string = preg_replace('/{{youtube:(.*)}}/sU', '<div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" src="https://www.youtube.com/embed/$1"></iframe></div>' ,$string);
 
+        $string = preg_replace('/{{doc\[(.+)\]:(.+)}}/sU', "<div class='doc doc-$1'>$2</div>" ,$string);
+
         $count = preg_match_all('/{{paso:(.+)}}.*{{contenido:(.+)}}/sU', $string, $matches);
         if ($count){
             $string = preg_replace('/{{paso:.+}}/sU','',$string);
