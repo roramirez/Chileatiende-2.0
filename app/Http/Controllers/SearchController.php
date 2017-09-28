@@ -14,8 +14,12 @@ class SearchController extends Controller{
     public function getIndex(Request $request){
 
         $query = $request->input('query');
+        $institutionId = $request->input('institution');
+        $categoryId = $request->input('category');
 
         $data['query'] = $query;
+        $data['institution'] = Institution::find($institutionId);
+        $data['category'] = Category::find($categoryId);
         $data['results'] = Page::search($query)->paginate(10);
         $data['categories'] = Category::orderBy('name')->get();
         $data['institutions'] = Institution::orderBy('name')->get();

@@ -11,6 +11,7 @@
 
                 <ol class="search-results">
                     <?php foreach($results as $r):?>
+                    <?php $r = $r->getPublishedVersion() ?>
                     <li>
                         <div class="author">Publicado por <?=$r->institution->name?></div>
                         <h4><a href="fichas/<?=$r->guid?>"><?=isset($r->highlight['title']) ? $r->highlight['title'][0] : $r->title?></a></h4>
@@ -26,25 +27,28 @@
                 <div class="filter">
                     <h3><i class="material-icons">filter_list</i> Filtrar por</h3>
 
-                    <div class="form-group">
-                        <label for="category">Categoría</label>
-                        <select id="category" class="form-control">
-                            <option value="">Todas</option>
-                            <?php foreach ($categories as $c): ?>
-                                <option><?= $c->name ?></option>
-                            <?php endforeach ?>
-                        </select>
-                    </div>
+                    <form action="buscar">
+                        <input type="hidden" name="query" value="<?=$query?>" />
+                        <div class="form-group">
+                            <label for="category">Categoría</label>
+                            <select id="category" name="category" class="form-control" onchange="this.form.submit()">
+                                <option value="">Todas</option>
+                                <?php foreach ($categories as $c): ?>
+                                    <option value="<?=$c->id?>" <?=$category && $category->id == $c->id ? 'selected' : ''?>><?= $c->name ?></option>
+                                <?php endforeach ?>
+                            </select>
+                        </div>
 
-                    <div class="form-group">
-                        <label for="institution">Institución</label>
-                        <select id="institution" class="form-control">
-                            <option value="">Todas</option>
-                            <?php foreach ($institutions as $c): ?>
-                                <option><?= $c->name ?></option>
-                            <?php endforeach ?>
-                        </select>
-                    </div>
+                        <div class="form-group">
+                            <label for="institution">Institución</label>
+                            <select id="institution" name="institution" class="form-control" onchange="this.form.submit()">
+                                <option value="">Todas</option>
+                                <?php foreach ($institutions as $c): ?>
+                                    <option value="<?=$c->id?>" <?=$institution && $institution->id == $c->id ? 'selected' : ''?>><?= $c->name ?></option>
+                                <?php endforeach ?>
+                            </select>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

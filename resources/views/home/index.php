@@ -8,6 +8,7 @@
 
             <div class="row">
                 <?php foreach ($featured as $f): ?>
+                    <?php $f->getPublishedVersion() ?>
                     <div class="col-sm-3">
                         <div class="featured">
                             <a class="header" href="fichas/<?= $f->guid ?>">
@@ -45,6 +46,7 @@
                             <h3><?=$c->name?></h3>
                             <ul>
                                 <?php foreach($c->pages()->masters()->published()->popular()->get() as $p):?>
+                                    <?php $p = $p->getPublishedVersion() ?>
                                     <li>
                                         <a href="fichas/<?=$p->guid?>"><?=$p->title?></a>
                                         <?php if($p->online):?><div>Trámite Online</div><?php endif ?>

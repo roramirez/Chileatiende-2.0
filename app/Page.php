@@ -21,7 +21,7 @@ class Page extends Model
         'master' => 'boolean',
     ];
 
-    public function master(){
+    public function masterPage(){
         return $this->belongsTo('\App\Page','master_id');
     }
 
@@ -42,11 +42,12 @@ class Page extends Model
     }
 
     public function toSearchableArray(){
-        if(!$this->master && $this->published){
+        if($this->master && $this->published){
+            $publishedVersion = $this->getPublishedVersion();
             return [
-                'id' => $this->master_id,
-                'title'=>$this->title,
-                'objective' => strip_tags($this->objective),
+                'id' => $this->id,
+                'title'=>$publishedVersion->title,
+                'objective' => strip_tags($publishedVersion->objective),
                 'hit_count' => $this->hitCount()
             ];
         }
@@ -78,7 +79,7 @@ class Page extends Model
     }
 
     public function getGuidAttribute(){
-        return $this->id.'-'.$this->alias;
+        return ($this->master ? $this->id : $this->master_id).'-'.$this->alias;
     }
 
     public function getHowtoAttribute(){
