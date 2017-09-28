@@ -20,6 +20,8 @@ class SearchController extends Controller{
         $results = Page::search($query);
         if($institutionId)
             $results->where('institution_id',[$institutionId]);
+        if($categoryId)
+            $results->where('category_id',[$categoryId]);
 
         $data['query'] = $query;
         $data['institution'] = Institution::find($institutionId);

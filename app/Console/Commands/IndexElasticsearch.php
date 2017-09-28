@@ -77,6 +77,9 @@ class IndexElasticsearch extends Command
                                 ],
                                 'institution_id' => [
                                     'type' => 'keyword'
+                                ],
+                                'category_id' => [
+                                    'type' => 'integer'
                                 ]
                             ]
                         ],

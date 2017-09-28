@@ -51,7 +51,8 @@ class Page extends Model
                 'title'=>$publishedVersion->title,
                 'objective' => strip_tags($publishedVersion->objective),
                 'keywords' => $publishedVersion->keywords,
-                'institution_id' => $publishedVersion->institution_id,
+                'institution_id' => $this->institution_id,
+                'category_id' => $this->categories->pluck('id'),
                 'hit_count' => $this->hitCount(),
             ];
         }
