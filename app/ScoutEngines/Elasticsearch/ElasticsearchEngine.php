@@ -20,19 +20,25 @@ class ElasticsearchEngine extends \ScoutEngines\Elasticsearch\ElasticsearchEngin
             'type' => $builder->index ?: $builder->model->searchableAs(),
             'body' => [
                 'query' => [
-                    'function_score' => [
-                        'query' => [
-                            'multi_match' => [
-                                'query' => $builder->query,
-                                'fields' => ['title^3', 'keywords^2', 'objective'],
-                                'fuzziness' => 'AUTO'
+                    'bool' => [
+                        'must' => [
+                            'function_score' => [
+                                'query' => [
+
+                                    'multi_match' => [
+                                        'query' => $builder->query,
+                                        'fields' => ['title^3', 'keywords^2', 'objective'],
+                                        'fuzziness' => 'AUTO'
+                                    ]
+                                ],
+                                'field_value_factor' => [
+                                    'field' => 'hit_count',
+                                    'modifier' => 'log1p'
+                                ]
                             ]
-                        ],
-                        'field_value_factor' => [
-                            'field' => 'hit_count',
-                            'modifier' => 'log1p'
                         ]
                     ]
+
                 ],
                 'highlight' => [
                     'fields' => [
@@ -57,8 +63,9 @@ class ElasticsearchEngine extends \ScoutEngines\Elasticsearch\ElasticsearchEngin
             $params['body']['size'] = $options['size'];
         }
         if (isset($options['numericFilters']) && count($options['numericFilters'])) {
-            $params['body']['query']['bool']['must'] = array_merge($params['body']['query']['bool']['must'],
-                $options['numericFilters']);
+            $params['body']['query']['bool']['filter'] = $options['numericFilters'];
+            //$params['body']['query']['bool']['must'] = array_merge($params['body']['query']['bool']['must'],
+                //$options['numericFilters']);
         }
 
         return $this->elastic->search($params);

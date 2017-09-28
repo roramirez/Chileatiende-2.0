@@ -74,6 +74,9 @@ class IndexElasticsearch extends Command
                                 ],
                                 'hit_count' => [
                                     'type' => 'integer'
+                                ],
+                                'institution_id' => [
+                                    'type' => 'keyword'
                                 ]
                             ]
                         ],
