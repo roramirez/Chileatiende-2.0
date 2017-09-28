@@ -32,6 +32,22 @@
             </div>
         </div>
 
+        <div class="form-group" :class="{'has-error': errors['beneficiaries']}">
+            <label for="beneficiaries" class="col-sm-2 control-label">Beneficiarios</label>
+            <div class="col-sm-10">
+                <editor id="beneficiaries" v-model="data.beneficiaries"></editor>
+                <div class="help-block" v-for="e in errors['beneficiaries']">{{e}}</div>
+            </div>
+        </div>
+
+        <div class="form-group" :class="{'has-error': errors['requirements']}">
+            <label for="requirements" class="col-sm-2 control-label">Requerimientos</label>
+            <div class="col-sm-10">
+                <editor id="requirements" v-model="data.requirements"></editor>
+                <div class="help-block" v-for="e in errors['requirements']">{{e}}</div>
+            </div>
+        </div>
+
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
                 <a class="btn btn-default" href="backend/fichas">Cancelar</a>

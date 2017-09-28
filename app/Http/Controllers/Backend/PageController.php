@@ -65,6 +65,8 @@ class PageController extends Controller{
         $page->institution_id = $request->input('institution_id');
         $page->objective = $request->input('objective');
         $page->details = $request->input('details');
+        $page->beneficiaries = $request->input('beneficiaries');
+        $page->requirements = $request->input('requirements');
         $page->save();
 
         $version = $page->replicate();
