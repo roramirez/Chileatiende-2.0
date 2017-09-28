@@ -4,7 +4,7 @@
             <input v-model="query" @input="changed()" :name="name" type="search" class="form-control" placeholder="Ej: Bono marzo" autocomplete="off"
                    @keyup="suggestKeyUp">
             <span class="input-group-btn">
-                            <button @click="removeLastCharacter()" class="btn btn-default" type="submit" ref="submitButton"><img src="../../images/search.svg" /> Buscar</button>
+                            <button class="btn btn-default" type="submit" ref="submitButton"><img src="../../images/search.svg" /> Buscar</button>
                         </span>
         </div>
         <ul class="dropdown-menu" ref="dropdownMenu">
@@ -63,14 +63,12 @@
                     return;
                 }
 
-                if (event.keyCode == 13) {   //Si apreto enter
-                    this.removeLastCharacter();
-                    return;
-                }
+                //if (event.keyCode == 13) {   //Si apreto enter
+                //    event.target.blur();
+                //    return;
+                //}
 
-            },
-            removeLastCharacter: function(){
-                this.query = this.query.replace(/.$/,'');
+                //self.suggest();
             }
         }
     }
