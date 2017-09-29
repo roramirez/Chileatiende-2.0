@@ -21,7 +21,7 @@
                     <?php endforeach ?>
                 </ol>
 
-                <?=$results->render()?>
+                <?=$results->appends(['category' => $category ? $category->id : null, 'institution' => $institution ? $institution->id : null])->links()?>
             </div>
             <div class="col-sm-4">
                 <div class="filter">
