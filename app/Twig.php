@@ -18,6 +18,11 @@ class Twig{
         return $response;
     }
 
+    public static function strip($string){
+        $caca = preg_replace('/{{.*}}/sU','', $string);
+        return $caca;
+    }
+
     public static function convertPMLToHTML($string){
         $string = preg_replace('/{{mensaje\[(.+)\]:(.+)}}/sU', "<div class='message message-$1'>$2</div>" ,$string);
 

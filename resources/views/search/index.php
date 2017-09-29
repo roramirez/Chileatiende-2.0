@@ -16,7 +16,7 @@
                         <div class="author">Publicado por <?=$r->institution->name?></div>
                         <h4><a href="fichas/<?=$r->guid?>"><?=isset($r->highlight['title']) ? $r->highlight['title'][0] : $publishedVersion->title?></a></h4>
                         <?php if($r->online):?><div class="online">Trámite Online</div><?php endif ?>
-                        <p><?=strip_tags(\App\Twig::render(isset($r->highlight['objective']) ? $r->highlight['objective'][0] : $publishedVersion->objective))?></p>
+                        <p><?=str_limit(strip_tags(\App\Twig::strip(isset($r->highlight['objective']) ? $r->highlight['objective'][0] : $publishedVersion->objective),'<em>'),500)?></p>
                     </li>
                     <?php endforeach ?>
                 </ol>
