@@ -14,10 +14,10 @@
 
     <br />
 
-    <?php if(!$page->getLastVersion()->published):?>
+    <?php if(!$page->lastVersion()->published):?>
         <div class="alert alert-warning">
             Ficha no se encuentra publicada en su última versión.
-            <a href="backend/fichas/<?=$page->id?>/versions/<?=$page->getLastVersion()->id?>/publish">¿Desea publicar esta ficha en su última versión?</a></div>
+            <a href="backend/fichas/<?=$page->id?>/versions/<?=$page->lastVersion()->id?>/publish">¿Desea publicar esta ficha en su última versión?</a></div>
     <?php endif ?>
 
     <table class="table table-bordered">

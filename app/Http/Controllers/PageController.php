@@ -14,7 +14,7 @@ class PageController extends Controller{
             abort(404);
         }
 
-        $data['page'] = Page::find($id)->getPublishedVersion();
+        $data['page'] = Page::find($id)->publishedVersion();
 
         return view('layouts/layout',[
             'title' => $data['page']->title,

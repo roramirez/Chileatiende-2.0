@@ -11,7 +11,7 @@
 
                 <ol class="search-results">
                     <?php foreach($results as $r):?>
-                    <?php $publishedVersion = $r->getPublishedVersion() ?>
+                    <?php $publishedVersion = $r->publishedVersion() ?>
                     <li>
                         <div class="author">Publicado por <?=$r->institution->name?></div>
                         <h4><a href="fichas/<?=$r->guid?>"><?=isset($r->highlight['title']) ? $r->highlight['title'][0] : $publishedVersion->title?></a></h4>

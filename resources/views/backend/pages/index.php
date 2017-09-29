@@ -28,7 +28,7 @@
             <td class="text-center">
                 <?php if($p->published):?>
                     <i class="material-icons" title="Publicado">check</i>
-                    <?=$p->getLastVersion()->published ? '' : '<i class="material-icons">call_merge</i>'?>
+                    <?=$p->lastVersion()->published ? '' : '<i class="material-icons">call_merge</i>'?>
                 <?php else: ?>
                     <i class="material-icons" title="Publicado">cross</i>
                 <?php endif ?>

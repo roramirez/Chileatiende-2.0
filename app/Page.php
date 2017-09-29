@@ -54,7 +54,7 @@ class Page extends Model
 
     public function toSearchableArray(){
         if($this->master && $this->published){
-            $publishedVersion = $this->getPublishedVersion();
+            $publishedVersion = $this->publishedVersion();
             return [
                 'id' => $this->id,
                 'title'=>$publishedVersion->title,
@@ -100,11 +100,11 @@ class Page extends Model
         return $this->online || $this->office || $this->phone || $this->mail;
     }
 
-    public function getPublishedVersion(){
+    public function publishedVersion(){
         return $this->versions()->published()->first();
     }
 
-    public function getLastVersion(){
+    public function lastVersion(){
         return $this->versions()->orderBy('id','desc')->first();
 
     }
