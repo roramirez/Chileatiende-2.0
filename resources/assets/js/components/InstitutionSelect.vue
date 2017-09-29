@@ -1,8 +1,13 @@
 <template>
-    <select class="form-control" v-model="institutionId">
-        <option v-for="i in institutions" :value="i.id">{{i.name}}</option>
-    </select>
+    <el-select filterable v-model="institutionId">
+        <el-option v-for="i in institutions" :label="i.name" :value="i.id"></el-option>
+    </el-select>
 </template>
+<style lang="scss" scoped>
+    .el-select{
+        display: block;
+    }
+</style>
 <script>
     export default{
         data: function(){
