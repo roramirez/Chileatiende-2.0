@@ -3,11 +3,6 @@
         <el-option v-for="c in categories" :label="c.name" :value="c.id" :key="c.id"></el-option>
     </el-select>
 </template>
-<style lang="scss" scoped>
-    .el-select{
-        display: block;
-    }
-</style>
 <script>
     export default{
         data: function(){

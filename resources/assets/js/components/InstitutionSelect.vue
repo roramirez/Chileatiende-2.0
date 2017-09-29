@@ -1,13 +1,8 @@
 <template>
     <el-select filterable v-model="institutionId">
-        <el-option v-for="i in institutions" :label="i.name" :value="i.id"></el-option>
+        <el-option v-for="i in institutions" :key="i.id" :label="i.name" :value="i.id"></el-option>
     </el-select>
 </template>
-<style lang="scss" scoped>
-    .el-select{
-        display: block;
-    }
-</style>
 <script>
     export default{
         data: function(){

@@ -109,6 +109,11 @@
         </div>
     </form>
 </template>
+<style lang="scss" scoped>
+    .el-select{
+        display: block;
+    }
+</style>
 <script>
     var InstitutionSelect = require('./InstitutionSelect.vue');
     var CategoriesSelect = require('./CategoriesSelect.vue');
