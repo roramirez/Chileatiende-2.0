@@ -16,6 +16,14 @@
             </div>
         </div>
 
+        <div class="form-group" :class="{'has-error': errors['categories']}">
+            <label for="categories" class="col-sm-2 control-label">Categorías</label>
+            <div class="col-sm-10">
+                <categories-select id="categories" v-model="data.categories"></categories-select>
+                <div class="help-block" v-for="e in errors['categories']">{{e}}</div>
+            </div>
+        </div>
+
         <div class="form-group" :class="{'has-error': errors['objective']}">
             <label for="objective" class="col-sm-2 control-label">Descripción</label>
             <div class="col-sm-10">
@@ -103,6 +111,7 @@
 </template>
 <script>
     var InstitutionSelect = require('./InstitutionSelect.vue');
+    var CategoriesSelect = require('./CategoriesSelect.vue');
     var Editor = require('./Editor.vue');
 
     export default {
@@ -115,6 +124,7 @@
         props: ['page','edit'],
         components:{
             InstitutionSelect,
+            CategoriesSelect,
             Editor
         },
         methods:{

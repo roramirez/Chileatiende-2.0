@@ -25,5 +25,6 @@ Route::group(['middleware' => ['auth'], 'prefix'=>'backend', 'namespace'=>'Backe
 
     Route::group(['prefix'=>'api','namespace'=>'API'], function (){
         Route::resource('institutions', 'InstitutionController');
+        Route::resource('categories', 'CategoryController');
     });
 });

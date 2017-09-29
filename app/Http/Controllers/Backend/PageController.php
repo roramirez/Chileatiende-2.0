@@ -38,7 +38,10 @@ class PageController extends Controller{
     }
 
     public function edit($pageId){
-        $data['page'] = Page::find($pageId);
+        $page = Page::find($pageId);
+        $page->categories = $page->categories()->pluck('id');
+
+        $data['page'] = $page;
         $data['edit'] = true;
 
         return view('layouts/backend',[
@@ -67,11 +70,13 @@ class PageController extends Controller{
         $this->validate($request, [
             'title' => 'required',
             'institution_id' => 'required|exists:institutions,id',
+            'categories' => 'array',
             'objective' => 'required',
         ]);
 
         $page->title = $request->input('title');
         $page->institution_id = $request->input('institution_id');
+        $page->categories()->sync($request->input('categories'));
         $page->objective = $request->input('objective');
         $page->details = $request->input('details');
         $page->beneficiaries = $request->input('beneficiaries');
