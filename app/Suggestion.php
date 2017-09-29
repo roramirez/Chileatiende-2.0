@@ -15,7 +15,7 @@ class Suggestion extends Model
 
         $searches = Search::selectRaw('LOWER(query) as query, COUNT(*) as count')
             ->groupBy('query')
-            ->where('updated_at', '>=', '2017-07-21')
+            ->where('updated_at', '>=', Carbon::now()->subYear())
             ->having('count','>=',100)
             ->get();
 
