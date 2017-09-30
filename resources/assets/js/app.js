@@ -5,16 +5,21 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
+import './bootstrap';
 
-window.Vue = require('vue');
+import Vue from 'vue';
+window.Vue = Vue;
 
 /* Element UI */
 
-import ElementUI from 'element-ui'
-import 'element-ui/lib/theme-default/index.css'
-import locale from 'element-ui/lib/locale/lang/es'
-Vue.use(ElementUI, { locale });
+import 'element-ui/lib/theme-default/index.css';
+import Select from 'element-ui/lib/select';
+import Option from 'element-ui/lib/option';
+import lang from 'element-ui/lib/locale/lang/es';
+import locale from 'element-ui/lib/locale';
+locale.use(lang);
+Vue.component(Select.name, Select);
+Vue.component(Option.name, Option);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -24,10 +29,10 @@ Vue.use(ElementUI, { locale });
 
 
 
-var SelectFirstTab = require('./directives/SelectFirstTab');
-var Search = require('./components/Search.vue');
-var Steps = require('./components/Steps.vue');
-var PageForm = require('./components/PageForm.vue');
+import SelectFirstTab from './directives/SelectFirstTab';
+import Search from './components/Search.vue';
+import Steps from './components/Steps.vue';
+import PageForm from './components/PageForm.vue';
 
 const app = new Vue({
     el: '#app',
