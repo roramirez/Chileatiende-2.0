@@ -69,12 +69,14 @@ class PageController extends Controller{
     private function save(Request $request, Page $page){
         $this->validate($request, [
             'title' => 'required',
+            'featured' => 'boolean',
             'institution_id' => 'required|exists:institutions,id',
             'categories' => 'array',
             'objective' => 'required',
         ]);
 
         $page->title = $request->input('title');
+        $page->featured = $request->input('featured');
         $page->institution_id = $request->input('institution_id');
         $page->categories()->sync($request->input('categories'));
         $page->objective = $request->input('objective');

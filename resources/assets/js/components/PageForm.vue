@@ -8,6 +8,14 @@
             </div>
         </div>
 
+        <div class="form-group" :class="{'has-error': errors['featured']}">
+            <label for="featured" class="col-sm-2 control-label">Destacado</label>
+            <div class="col-sm-10">
+                <el-switch id="featured" v-model="data.featured" on-text="Si" off-text="No"></el-switch>
+                <div class="help-block" v-for="e in errors['featured']">{{e}}</div>
+            </div>
+        </div>
+
         <div class="form-group" :class="{'has-error': errors['institution_id']}">
             <label for="institution_id" class="col-sm-2 control-label">Institución</label>
             <div class="col-sm-10">
@@ -115,9 +123,10 @@
     }
 </style>
 <script>
-    var InstitutionSelect = require('./InstitutionSelect.vue');
-    var CategoriesSelect = require('./CategoriesSelect.vue');
-    var Editor = require('./Editor.vue');
+    import ElSwitch from 'element-ui/lib/switch';
+    import InstitutionSelect from './InstitutionSelect.vue';
+    import CategoriesSelect from './CategoriesSelect.vue';
+    import Editor from './Editor.vue';
 
     export default {
         data: function(){
@@ -128,6 +137,7 @@
         },
         props: ['page','edit'],
         components:{
+            ElSwitch,
             InstitutionSelect,
             CategoriesSelect,
             Editor
