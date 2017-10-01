@@ -15,11 +15,15 @@ window.Vue = Vue;
 import 'element-ui/lib/theme-default/index.css';
 import Select from 'element-ui/lib/select';
 import Option from 'element-ui/lib/option';
+import AutoComplete from 'element-ui/lib/autocomplete';
+import Button from 'element-ui/lib/button';
 import lang from 'element-ui/lib/locale/lang/es';
 import locale from 'element-ui/lib/locale';
 locale.use(lang);
 Vue.component(Select.name, Select);
 Vue.component(Option.name, Option);
+Vue.component(AutoComplete.name, AutoComplete);
+Vue.component(Button.name, Button);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -43,10 +47,5 @@ const app = new Vue({
     },
     directives:{
         SelectFirstTab
-    },
-    mounted: function(){
-        var searchInput = document.querySelector('#search input');
-        if(searchInput)
-            searchInput.focus();
     }
 });

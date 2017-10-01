@@ -1,74 +1,39 @@
 <template>
-    <div class="search dropdown" :class="{open: suggestions.length > 0}">
-        <div class="input-group">
-            <input v-model="query" @input="changed()" :name="name" type="search" class="form-control" placeholder="Ej: Bono marzo" autocomplete="off"
-                   @keyup="suggestKeyUp">
-            <span class="input-group-btn">
-                            <button class="btn btn-default" type="submit" ref="submitButton"><img src="../../images/search.svg" /> Buscar</button>
-                        </span>
-        </div>
-        <ul class="dropdown-menu" ref="dropdownMenu">
-            <li v-for="s in suggestions"><a href="#" @click.prevent="selectSuggestion(s.text)">{{s.text}}</a></li>
-        </ul>
+    <div class="search">
+        <el-autocomplete v-model="query" :name="name" :autofocus="true" :trigger-on-focus="false" :fetch-suggestions="querySearchAsync" placeholder="Ej: Bono marzo" @select="handleSelect">
+            <el-button ref="caca" slot="append" native-type="submit"><img src="../../images/search.svg" /> Buscar</el-button>
+        </el-autocomplete>
     </div>
 </template>
-<style lang="scss" scoped>
-    .search{
-        position: relative;
-        .dropdown-menu{
-            position: absolute;
-        }
-
-    }
-</style>
 <script>
     export default {
         data: function(){
             return {
                 query: this.value,
-                suggestions: []
             }
         },
         props: ['name','value'],
         methods:{
-            changed: function(){
-                if(this.query.length >= 1)
-                    this.refreshSuggestions();
-                else
-                    this.suggestions = [];
-            },
-            refreshSuggestions: _.debounce(function(){
+            querySearchAsync: _.debounce(function(queryString, cb){
                 var self = this;
 
                 axios.get('api/suggest?query=' + this.query)
                     .then(function(response) {
-                        self.suggestions = response.data;
+                        var results = response.data.map(function (d) {
+                            return {
+                                value: d.text
+                            };
+                        });
+
+                        cb(results);
                     })
             },1000,{leading: true}),
-            selectSuggestion: function(suggestion){
+            handleSelect: function(item){
                 var self = this;
-
-                this.query = suggestion;
 
                 Vue.nextTick(function(){
-                    self.$refs.submitButton.click();
+                    self.$el.querySelector('button').click();
                 });
-
-            },
-            suggestKeyUp: function (event) {
-                var self = this;
-
-                if (event.keyCode == 40) {    //Si es que se apreto la flecha abajo
-                    self.$refs.dropdownMenu.querySelector('li:first-child a').focus();
-                    return;
-                }
-
-                //if (event.keyCode == 13) {   //Si apreto enter
-                //    event.target.blur();
-                //    return;
-                //}
-
-                //self.suggest();
             }
         }
     }

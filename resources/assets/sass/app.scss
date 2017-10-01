@@ -87,49 +87,40 @@ ol.breadcrumb{
 }
 
 .search{
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
-  border-radius: 2px;
-  input{
-    height: 60px;
-    font-family: "Open Sans";
-    font-size: 20px;
-    border: none;
-    box-shadow: none;
-    border-top-left-radius: 2px;
-    border-bottom-left-radius: 2px;
-  }
-  .input-group-btn{
-    background: $red;
-    .btn{
-      background: transparent;
-      color: white;
+  .el-autocomplete{
+    display: block;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
+    border-radius: 2px;
+    .el-input__inner{
       height: 60px;
+      font-family: "Open Sans";
+      font-size: 20px;
       border: none;
-      font-weight: bold;
-      font-size: 16px;
-      padding-left: 32px;
-      padding-right: 32px;
       box-shadow: none;
-      border-top-right-radius: 2px;
-      border-bottom-right-radius: 2px;
-      &:hover{
-        background: darken($red,10%);
+      border-top-left-radius: 2px;
+      border-bottom-left-radius: 2px;
+    }
+    .el-input-group__append{
+      background: $red;
+      border: none;
+      .el-button{
+        background: transparent;
+        color: white;
+        height: 60px;
+        font-weight: bold;
+        font-size: 16px;
+        padding-left: 32px;
+        padding-right: 32px;
+        box-shadow: none;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        &:hover{
+          background: darken($red,10%);
+        }
       }
     }
   }
 
-  .dropdown-menu{
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    width: 80%;
-    li{
-      a{
-        font-size: 20px;
-        height: 60px;
-        line-height: 60px;
-      }
-    }
-  }
 }
 
 header.default{
@@ -143,9 +134,15 @@ header.default{
       font-weight: bold;
     }
     .search{
-      border: 1px solid #D7D6D7;
-      box-shadow: none;
-      border-radius: 2px;
+      .el-autocomplete{
+
+        box-shadow: none;
+        //border-radius: 2px;
+        .el-input__inner{
+          border: 1px solid #D7D6D7;
+          border-right: none;
+        }
+      }
     }
   }
 }
