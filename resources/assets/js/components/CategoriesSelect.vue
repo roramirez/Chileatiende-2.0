@@ -4,6 +4,9 @@
     </el-select>
 </template>
 <script>
+    import ElSelect from 'element-ui/lib/select';
+    import ElOption from 'element-ui/lib/option';
+
     export default{
         data: function(){
             return{
@@ -12,6 +15,10 @@
             }
         },
         props: ['value'],
+        components:{
+            ElSelect,
+            ElOption
+        },
         watch:{
             data: function(value){
                 this.$emit('input', value);

@@ -6,6 +6,9 @@
     </div>
 </template>
 <script>
+    import ElAutocomplete from 'element-ui/lib/autocomplete';
+    import ElButton from 'element-ui/lib/button';
+
     export default {
         data: function(){
             return {
@@ -13,6 +16,10 @@
             }
         },
         props: ['name','value'],
+        components: {
+            ElAutocomplete,
+            ElButton
+        },
         methods:{
             querySearchAsync: _.debounce(function(queryString, cb){
                 var self = this;
