@@ -19,7 +19,7 @@
         <div class="form-group" :class="{'has-error': errors['published_at']}">
             <label for="published_at" class="col-sm-2 control-label">Fecha de actualización</label>
             <div class="col-sm-10">
-                <el-date-picker id="published_at" v-model="data.published_at" type="date" format="dd-MM-yyyy" placeholder="Seleccione una fecha"></el-date-picker>
+                <el-date-picker id="published_at" v-model="data.published_at" type="date" format="dd-MM-yyyy" :picker-options="{firstDayOfWeek: 1}" placeholder="Seleccione una fecha"></el-date-picker>
                 <div class="help-block">Fecha que aparecerá en la ficha del portal</div>
                 <div class="help-block" v-for="e in errors['published_at']">{{e}}</div>
             </div>
