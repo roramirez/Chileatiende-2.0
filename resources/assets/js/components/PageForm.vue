@@ -3,8 +3,16 @@
         <div class="form-group" :class="{'has-error': errors['title']}">
             <label for="title" class="col-sm-2 control-label">Título</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="title" v-model="data.title">
+                <input type="text" class="form-control" id="title" @blur="refreshAlias" v-model="data.title">
                 <div class="help-block" v-for="e in errors['title']">{{e}}</div>
+            </div>
+        </div>
+
+        <div class="form-group" :class="{'has-error': errors['alias']}">
+            <label for="alias" class="col-sm-2 control-label">Alias</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="alias" v-model="data.alias">
+                <div class="help-block" v-for="e in errors['alias']">{{e}}</div>
             </div>
         </div>
 
@@ -150,6 +158,10 @@
                 }).catch(function(error){
                     self.errors = error.response.data.errors;
                 });
+            },
+            refreshAlias: function(){
+                if(!this.data.alias)
+                    this.data.alias = _.kebabCase(this.data.title);
             },
             imageUploadChanged: function(file){
                 if(file.status == "success"){

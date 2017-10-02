@@ -75,12 +75,13 @@ class PageController extends Controller{
     private function save(Request $request, Page $page){
         $this->validate($request, [
             'title' => 'required',
+            'alias' => 'required',
             'image' => 'url',
             'objective' => 'required',
         ]);
 
         $page->title = $request->input('title');
-
+        $page->alias = $request->input('alias');
         $page->objective = $request->input('objective');
         $page->details = $request->input('details');
         $page->beneficiaries = $request->input('beneficiaries');
