@@ -37,7 +37,7 @@
         <?php foreach($pages as $p):?>
         <tr>
             <td><?=$p->id?></td>
-            <td><a href="backend/fichas/<?=$p->id?>/edit"><?=$p->title?></a></td>
+            <td><a href="backend/fichas/<?=$p->id?>"><?=$p->title?></a></td>
             <td class="text-center">
                 <?php if($p->published):?>
                     <i class="material-icons" title="Publicado">check</i>
