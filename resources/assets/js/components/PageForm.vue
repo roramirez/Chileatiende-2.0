@@ -1,5 +1,5 @@
 <template>
-    <form class="form-horizontal" @submit.prevent="submit()">
+    <form class="page-form form-horizontal" @submit.prevent="submit()">
         <div class="form-group" :class="{'has-error': errors['title']}">
             <label for="title" class="col-sm-2 control-label">Título</label>
             <div class="col-sm-10">
@@ -13,6 +13,19 @@
             <div class="col-sm-10">
                 <el-switch id="featured" v-model="data.featured" on-text="Si" off-text="No"></el-switch>
                 <div class="help-block" v-for="e in errors['featured']">{{e}}</div>
+            </div>
+        </div>
+
+        <div class="form-group" :class="{'has-error': errors['image']}">
+            <label for="image" class="col-sm-2 control-label">Imagen</label>
+            <div class="col-sm-10">
+                <el-upload action="backend/api/files" :headers="{'X-CSRF-TOKEN': token, 'X-Requested-With': 'XMLHttpRequest'}" :on-change="imageUploadChanged" :show-file-list="false">
+                    <el-button size="small" type="primary">Click para subir imagen</el-button>
+                </el-upload>
+                <br />
+                <input id="image" type="url" class="form-control" v-model="data.image" />
+                <div class="help-block">URL de la imagen</div>
+                <div class="help-block" v-for="e in errors['image']">{{e}}</div>
             </div>
         </div>
 
@@ -117,13 +130,22 @@
         </div>
     </form>
 </template>
-<style lang="scss" scoped>
-    .el-select{
-        display: block;
+<style lang="scss">
+    .page-form{
+        .el-select{
+            display: block;
+        }
+        .el-upload{
+            .el-upload__input{
+                display: none;
+            }
+        }
     }
 </style>
 <script>
     import ElSwitch from 'element-ui/lib/switch';
+    import ElUpload from 'element-ui/lib/upload';
+    import ElButton from 'element-ui/lib/button';
     import InstitutionSelect from './InstitutionSelect.vue';
     import CategoriesSelect from './CategoriesSelect.vue';
     import Editor from './Editor.vue';
@@ -132,12 +154,15 @@
         data: function(){
             return{
                 data: _.cloneDeep(this.page),
+                token: window.token.content,
                 errors: {}
             }
         },
         props: ['page','edit'],
         components:{
             ElSwitch,
+            ElUpload,
+            ElButton,
             InstitutionSelect,
             CategoriesSelect,
             Editor
@@ -155,6 +180,13 @@
                 }).catch(function(error){
                     self.errors = error.response.data.errors;
                 });
+            },
+            imageUploadChanged: function(file){
+                if(file.status == "success"){
+                    this.data.image = file.response;
+                }else if (file.status == "fail"){
+                    alert("No se pudo subir archivo");
+                }
             }
         }
     }

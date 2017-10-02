@@ -24,6 +24,7 @@ Route::group(['middleware' => ['auth'], 'prefix'=>'backend', 'namespace'=>'Backe
     Route::get('/fichas/{pageId}/versions/{versionId}/publish', 'PageController@publishVersion');
 
     Route::group(['prefix'=>'api','namespace'=>'API'], function (){
+        Route::resource('files', 'FileController');
         Route::resource('institutions', 'InstitutionController');
         Route::resource('categories', 'CategoryController');
     });

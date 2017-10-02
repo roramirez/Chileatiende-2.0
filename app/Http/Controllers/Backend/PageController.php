@@ -69,6 +69,7 @@ class PageController extends Controller{
     private function save(Request $request, Page $page){
         $this->validate($request, [
             'title' => 'required',
+            'image' => 'url',
             'featured' => 'boolean',
             'institution_id' => 'required|exists:institutions,id',
             'categories' => 'array',
