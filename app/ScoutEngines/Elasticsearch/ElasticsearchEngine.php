@@ -27,7 +27,7 @@ class ElasticsearchEngine extends \ScoutEngines\Elasticsearch\ElasticsearchEngin
 
                                     'multi_match' => [
                                         'query' => $builder->query,
-                                        'fields' => ['title^3', 'keywords^2', 'objective'],
+                                        'fields' => ['id','title^3', 'keywords^2', 'objective'],
                                         'fuzziness' => 'AUTO'
                                     ]
                                 ],

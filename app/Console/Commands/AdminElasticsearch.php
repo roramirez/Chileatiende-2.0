@@ -60,6 +60,9 @@ class AdminElasticsearch extends Command
                     'mappings' => [
                         'pages' => [
                             'properties' => [
+                                'id' => [
+                                    'type' => 'keyword',
+                                ],
                                 'title' => [
                                     'type' => 'text',
                                     'analyzer' => 'spanish'
