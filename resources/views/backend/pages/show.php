@@ -38,7 +38,7 @@
         </tr>
         <tr>
             <td>Descripción</td>
-            <td><?=$page->objective?></td>
+            <td><?=App\Twig::render($page->objective)?></td>
         </tr>
         </tbody>
     </table>
