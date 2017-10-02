@@ -8,6 +8,19 @@
         <a class="btn btn-success" href="backend/fichas/create">Agregar ficha</a>
     </div>
 
+    <div class="row">
+        <div class="col-sm-offset-6 col-sm-6">
+            <form>
+                <div class="input-group">
+                    <input type="text" class="form-control" name="query" value="<?=$query?>" placeholder="Ej: bono marzo">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="submit">Buscar</button>
+                    </span>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <div class="text-center"><?=$pages->links()?></div>
 
     <table class="table">

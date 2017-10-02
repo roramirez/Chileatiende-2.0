@@ -53,24 +53,32 @@ class Page extends Model
     }
 
     public function toSearchableArray(){
-        if($this->master && $this->published){
-            $publishedVersion = $this->publishedVersion();
+        if(!$this->master && !$this->published){    //No indexamos las versiones no publicadas
+            return [];
+        }else{
             return [
                 'id' => $this->id,
-                'title'=>$publishedVersion->title,
-                'objective' => strip_tags($publishedVersion->objective),
-                'keywords' => $publishedVersion->keywords,
+                'master' => $this->master,
+                'master_id' => $this->master_id,
+                'published' => $this->published,
+                'title'=>$this->title,
+                'objective' => strip_tags($this->objective),
+                'keywords' => $this->keywords,
                 'institution_id' => $this->institution_id,
                 'category_id' => $this->categories->pluck('id'),
                 'hit_count' => $this->hitCount(),
             ];
         }
-
-        return [];
     }
 
     public function hitCount(){
-        return $this->hits()->where('date','>=', Carbon::now()->subYear())->sum('count');
+        if($this->master)
+            $page = $this;
+        else
+            $page = $this->masterPage;
+
+
+        return $page->hits()->where('date','>=', Carbon::now()->subYear())->sum('count');
     }
 
     public function scopeMasters($query){

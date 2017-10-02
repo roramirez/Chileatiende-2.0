@@ -7,14 +7,14 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 use Illuminate\Console\Command;
 
-class IndexElasticsearch extends Command
+class AdminElasticsearch extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'elasticsearch:index {operation}';
+    protected $signature = 'elasticsearch:admin {operation}';
 
     /**
      * The console command description.
@@ -63,6 +63,15 @@ class IndexElasticsearch extends Command
                                 'title' => [
                                     'type' => 'text',
                                     'analyzer' => 'spanish'
+                                ],
+                                'master' => [
+                                    'type' => 'boolean'
+                                ],
+                                'master_id' => [
+                                    'type' => 'integer'
+                                ],
+                                'published' => [
+                                    'type' => 'boolean',
                                 ],
                                 'keywords' => [
                                     'type' => 'text',

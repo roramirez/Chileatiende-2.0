@@ -8,9 +8,15 @@ use Illuminate\Http\Request;
 
 class PageController extends Controller{
 
-    public function index(){
+    public function index(Request $request){
+        $query = $request->input('query');
+        if($query)
+            $pages = Page::search($query)->where('master',true);
+        else
+            $pages = Page::masters();
 
-        $data['pages'] = Page::masters()->paginate(30);
+        $data['query'] = $query;
+        $data['pages'] = $pages->paginate(30);
 
         return view('layouts/backend',[
             'title' => 'Inicio',

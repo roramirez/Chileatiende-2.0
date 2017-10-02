@@ -17,7 +17,7 @@ class SearchController extends Controller{
         $institutionId = $request->input('institution');
         $categoryId = $request->input('category');
 
-        $results = Page::search($query);
+        $results = Page::search($query)->where('published',true)->where('master',false);
         if($institutionId)
             $results->where('institution_id',[$institutionId]);
         if($categoryId)

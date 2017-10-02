@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use GuzzleHttp\Client;
 use Laravel\Scout\Searchable;
 use Illuminate\Database\Eloquent\Model;
