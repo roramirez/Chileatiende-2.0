@@ -14,7 +14,7 @@
                 <div class="input-group">
                     <input type="text" class="form-control" name="query" value="<?=$query?>" placeholder="Ej: bono marzo">
                     <span class="input-group-btn">
-                        <button class="btn btn-default" type="submit">Buscar</button>
+                        <button class="btn btn-primary" type="submit">Buscar</button>
                     </span>
                 </div>
             </form>
