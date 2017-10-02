@@ -55,7 +55,7 @@
                                 <div class="panel-heading">Trámites y servicios</div>
                                 <div class="panel-body">
                                     <ul>
-                                        <li><a>Agregar ficha</a></li>
+                                        <li><a href="backend/fichas/create">Agregar ficha</a></li>
                                         <li><a href="backend/fichas">Ver fichas</a></li>
                                     </ul>
                                 </div>
