@@ -32,7 +32,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-7">
-                        <h2>¡Hola! Estas en ChileAtiende</h2>
+                        <h2>¡Hola! Estás en ChileAtiende</h2>
                         <h3>Guía de Trámites y Servicios del Estado</h3>
                     </div>
                     <div class="col-sm-5">
