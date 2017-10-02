@@ -33,13 +33,15 @@ import SelectFirstTab from './directives/SelectFirstTab';
 import Search from './components/Search.vue';
 import Steps from './components/Steps.vue';
 import PageForm from './components/PageForm.vue';
+import PageMasterForm from './components/PageMasterForm.vue';
 
 const app = new Vue({
     el: '#app',
     components:{
         Search,
         Steps,
-        PageForm
+        PageForm,
+        PageMasterForm
     },
     directives:{
         SelectFirstTab

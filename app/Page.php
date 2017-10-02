@@ -96,6 +96,10 @@ class Page extends Model
         return ($this->master ? $this->id : $this->master_id).'-'.$this->alias;
     }
 
+    public function getFeaturedAttribute(){
+        return ($this->master ? $this->attributes['featured'] : $this->masterPage->attributes['featured']);
+    }
+
     public function getHowtoAttribute(){
         return $this->online || $this->office || $this->phone || $this->mail;
     }

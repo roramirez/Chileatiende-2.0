@@ -8,14 +8,6 @@
             </div>
         </div>
 
-        <div class="form-group" :class="{'has-error': errors['featured']}">
-            <label for="featured" class="col-sm-2 control-label">Destacado</label>
-            <div class="col-sm-10">
-                <el-switch id="featured" v-model="data.featured" on-text="Si" off-text="No"></el-switch>
-                <div class="help-block" v-for="e in errors['featured']">{{e}}</div>
-            </div>
-        </div>
-
         <div class="form-group" :class="{'has-error': errors['image']}">
             <label for="image" class="col-sm-2 control-label">Imagen</label>
             <div class="col-sm-10">
@@ -26,22 +18,6 @@
                 <input id="image" type="url" class="form-control" v-model="data.image" />
                 <div class="help-block">URL de la imagen</div>
                 <div class="help-block" v-for="e in errors['image']">{{e}}</div>
-            </div>
-        </div>
-
-        <div class="form-group" :class="{'has-error': errors['institution_id']}">
-            <label for="institution_id" class="col-sm-2 control-label">Institución</label>
-            <div class="col-sm-10">
-                <institution-select id="institution_id" v-model="data.institution_id"></institution-select>
-                <div class="help-block" v-for="e in errors['institution_id']">{{e}}</div>
-            </div>
-        </div>
-
-        <div class="form-group" :class="{'has-error': errors['categories']}">
-            <label for="categories" class="col-sm-2 control-label">Categorías</label>
-            <div class="col-sm-10">
-                <categories-select id="categories" v-model="data.categories"></categories-select>
-                <div class="help-block" v-for="e in errors['categories']">{{e}}</div>
             </div>
         </div>
 
@@ -143,11 +119,8 @@
     }
 </style>
 <script>
-    import ElSwitch from 'element-ui/lib/switch';
     import ElUpload from 'element-ui/lib/upload';
     import ElButton from 'element-ui/lib/button';
-    import InstitutionSelect from './InstitutionSelect.vue';
-    import CategoriesSelect from './CategoriesSelect.vue';
     import Editor from './Editor.vue';
 
     export default {
@@ -160,11 +133,8 @@
         },
         props: ['page','edit'],
         components:{
-            ElSwitch,
             ElUpload,
             ElButton,
-            InstitutionSelect,
-            CategoriesSelect,
             Editor
         },
         methods:{

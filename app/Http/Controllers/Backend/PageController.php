@@ -70,16 +70,11 @@ class PageController extends Controller{
         $this->validate($request, [
             'title' => 'required',
             'image' => 'url',
-            'featured' => 'boolean',
-            'institution_id' => 'required|exists:institutions,id',
-            'categories' => 'array',
             'objective' => 'required',
         ]);
 
         $page->title = $request->input('title');
-        $page->featured = $request->input('featured');
-        $page->institution_id = $request->input('institution_id');
-        $page->categories()->sync($request->input('categories'));
+
         $page->objective = $request->input('objective');
         $page->details = $request->input('details');
         $page->beneficiaries = $request->input('beneficiaries');
@@ -104,6 +99,29 @@ class PageController extends Controller{
         $version->save();
 
         return $page;
+    }
+
+    public function updateMaster(Request $request, $pageId){
+
+        $this->validate($request, [
+            'published' => 'required|boolean',
+            'featured' => 'required|boolean',
+            'institution_id' => 'required|exists:institutions,id',
+            'categories' => 'array',
+        ]);
+
+        $page = Page::find($pageId);
+        $page->published = $request->input('published');
+        $page->featured = $request->input('featured');
+        $page->categories()->sync($request->input('categories'));
+        $page->institution_id = $request->input('institution_id');
+
+        $page->save();
+
+
+        $request->session()->flash('status', 'Ficha guardada con éxito');
+
+        return response()->json(['redirect' => 'backend/fichas/'.$page->id]);
     }
 
     public function versions($pageId){

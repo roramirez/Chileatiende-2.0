@@ -20,6 +20,7 @@ Route::resource('/fichas', 'PageController');
 Route::group(['middleware' => ['auth'], 'prefix'=>'backend', 'namespace'=>'Backend'],function () {
     Route::get('/', 'HomeController@getIndex');
     Route::resource('/fichas', 'PageController');
+    Route::put('/fichas/{id}/master', 'PageController@updateMaster');
     Route::get('/fichas/{pageId}/versions', 'PageController@versions');
     Route::get('/fichas/{pageId}/versions/{versionId}/publish', 'PageController@publishVersion');
 

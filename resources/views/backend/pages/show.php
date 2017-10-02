@@ -20,6 +20,10 @@
             <a href="backend/fichas/<?=$page->id?>/versions/<?=$page->lastVersion()->id?>/publish">¿Desea publicar esta ficha en su última versión?</a></div>
     <?php endif ?>
 
+    <div class="well">
+        <page-master-form :page="<?=e($page)?>"></page-master-form>
+    </div>
+
     <table class="table table-bordered">
         <thead>
         <tr>
