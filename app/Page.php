@@ -3,6 +3,7 @@
 namespace App;
 
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 use Laravel\Scout\Searchable;
 use Illuminate\Database\Eloquent\Model;
@@ -96,12 +97,27 @@ class Page extends Model
     }
 
     public function scopePopular($query){
+
+        $cacheKey = 'pageIdsOrderedByPopularity';
+
+        if(!Cache::has($cacheKey)){
+            $popular = Page::masters()
+                ->join('hits','hits.page_id','=','pages.id')
+                ->groupBy('pages.id')
+                ->select(DB::raw('pages.id, SUM(hits.count) as hits'))
+                ->where('hits.date', '>=', Carbon::now()->subYear())
+                ->orderBy('hits','desc')
+                ->get()
+                ->pluck('id')
+                ->toArray();
+
+            Cache::put($cacheKey, $popular, 24 * 60);
+        }
+
+        $popular = Cache::get($cacheKey);
+
         return $query
-            ->join('hits','hits.page_id','=','pages.id')
-            ->groupBy('pages.id')
-            ->select(DB::raw('pages.*, SUM(hits.count) as hits'))
-            ->where('hits.date', '>=', Carbon::now()->subYear())
-            ->orderBy('hits','desc')
+            ->orderByRaw('FIELD(id,'.implode(',',$popular).')')
             ->limit(3);
     }
 
