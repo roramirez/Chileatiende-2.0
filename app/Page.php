@@ -31,6 +31,10 @@ class Page extends Model
         return $this->hasMany('\App\Page','master_id');
     }
 
+    public function publishedVersions(){
+        return $this->hasMany('\App\Page','master_id')->where('published',1);
+    }
+
     public function hits(){
         if(!$this->master)
             return $this->masterPage->hasMany('\App\Hit');
@@ -96,6 +100,7 @@ class Page extends Model
             ->join('hits','hits.page_id','=','pages.id')
             ->groupBy('pages.id')
             ->select(DB::raw('pages.*, SUM(hits.count) as hits'))
+            ->where('hits.date', '>=', Carbon::now()->subYear())
             ->orderBy('hits','desc')
             ->limit(3);
     }
