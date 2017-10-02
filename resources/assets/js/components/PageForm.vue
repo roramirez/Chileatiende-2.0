@@ -16,6 +16,15 @@
             </div>
         </div>
 
+        <div class="form-group" :class="{'has-error': errors['published_at']}">
+            <label for="published_at" class="col-sm-2 control-label">Fecha de actualización</label>
+            <div class="col-sm-10">
+                <el-date-picker id="published_at" v-model="data.published_at" type="date" format="dd-MM-yyyy" placeholder="Seleccione una fecha"></el-date-picker>
+                <div class="help-block">Fecha que aparecerá en la ficha del portal</div>
+                <div class="help-block" v-for="e in errors['published_at']">{{e}}</div>
+            </div>
+        </div>
+
         <div class="form-group" :class="{'has-error': errors['image']}">
             <label for="image" class="col-sm-2 control-label">Imagen</label>
             <div class="col-sm-10">
@@ -127,6 +136,7 @@
     }
 </style>
 <script>
+    import ElDatePicker from 'element-ui/lib/date-picker';
     import ElUpload from 'element-ui/lib/upload';
     import ElButton from 'element-ui/lib/button';
     import Editor from './Editor.vue';
@@ -141,6 +151,7 @@
         },
         props: ['page','edit'],
         components:{
+            ElDatePicker,
             ElUpload,
             ElButton,
             Editor

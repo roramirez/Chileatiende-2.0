@@ -45,6 +45,7 @@ class PageController extends Controller{
 
     public function edit($pageId){
         $page = Page::find($pageId);
+        $page->published_at = \Carbon\Carbon::now();
         $page->categories = $page->categories()->pluck('id');
 
         $data['page'] = $page;
@@ -76,12 +77,14 @@ class PageController extends Controller{
         $this->validate($request, [
             'title' => 'required',
             'alias' => 'required',
+            'published_at' => 'required|date',
             'image' => 'url',
             'objective' => 'required',
         ]);
 
         $page->title = $request->input('title');
         $page->alias = $request->input('alias');
+        $page->published_at = \Carbon\Carbon::parse($request->input('published_at'));
         $page->objective = $request->input('objective');
         $page->details = $request->input('details');
         $page->beneficiaries = $request->input('beneficiaries');
