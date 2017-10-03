@@ -23,7 +23,7 @@
                 plugins: 'code image media',
                 toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | code image media',
                 content_css: '/css/tinymce.css',
-                document_base_url : "http://localhost:3000/",
+                document_base_url : window.baseUrl,
                 images_upload_url: 'backend/api/files',
                 images_upload_handler: function(blobInfo, success, failure){
                     let data = new FormData();
