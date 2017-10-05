@@ -34,7 +34,7 @@
 
                 <?php if($page->howto):?>
                 <h4 id="howto">¿Cómo y donde hago el trámite?</h4>
-                <div class="howto">
+                <div class="howto main-tabs">
                     <ul class="nav nav-tabs" role="tablist" v-select-first-tab>
                         <?php if($page->online):?><li role="presentation"><a href="#online" aria-controls="online" role="tab" data-toggle="tab">Online</a></li><?php endif ?>
                         <?php if($page->office):?><li role="presentation"><a href="#office" aria-controls="office" role="tab" data-toggle="tab">Oficina</a></li><?php endif ?>

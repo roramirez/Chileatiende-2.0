@@ -30,3 +30,7 @@ Route::group(['middleware' => ['auth'], 'prefix'=>'backend', 'namespace'=>'Backe
         Route::resource('categories', 'CategoryController');
     });
 });
+
+/* rutas a páginas estáticas */
+Route::get('/que-es-chileatiende', 'AboutController');
+Route::get('/ayuda/{content?}', 'FaqController');

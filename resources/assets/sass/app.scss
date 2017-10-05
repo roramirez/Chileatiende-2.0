@@ -23,6 +23,20 @@ a{
   color: $blue;
 }
 
+p {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.5;
+  &.slab {
+    font-family: $robotoslab;
+    font-weight: 400;
+  }
+}
+
+h2 {
+  font-family: $robotoslab;
+}
+
 ol.breadcrumb{
   padding-left: 0;
   background: none;
@@ -64,6 +78,7 @@ ol.breadcrumb{
   height: 90px;
   background: none;
   border: none;
+  margin-bottom: 0;
   .navbar-brand{
     padding: 0;
     .gob{
@@ -75,11 +90,81 @@ ol.breadcrumb{
       a{
         font-size: 16px;
         color: white;
-        padding-top: 35px;
-        padding-bottom: 35px;
+        margin-top: 35px;
+        margin-bottom: 35px;
+        padding: 0 20px;
         &:hover{
           color: white;
           text-decoration: underline;
+        }
+      }
+      &:first-child {
+        a {
+          border-right: 1px solid #fff;
+        }
+      }
+    }
+    .open {
+      a.dropdown-toggle {
+        background-color: transparent;
+        color: inherit;
+      }
+    }
+    .dropdown-menu {
+      top: 80%;
+      padding: 0;
+      overflow: hidden;
+      position: absolute;
+      border-radius: 4px;
+      border: 1px solid #D7D6D7;
+      li a {
+        margin: 0;
+        padding: 0;
+        white-space: normal;
+      }
+    }
+    .help-menu {
+      .media {
+        background-color: #fff;
+        border-bottom: 1px solid #D7D6D7;
+        padding: 15px;
+        color: #000;
+        width: 270px;
+        .media-left {
+          color: $red;
+          .material-icons {
+            font-size: 30px;
+          }
+        }
+        .media-body {
+          .media-heading {
+            color: $darkblue;
+            font-size: 18px;
+            font-family: $robotoslab;
+            line-height: 1;
+          }
+          p {
+            font-size: 14px;
+            color: #757575;
+            font-weight: 400;
+            line-height: 1.3;
+            margin: 0;
+          }
+        }
+        &:hover {
+          text-decoration: none;
+          .media-heading {
+            text-decoration: underline;
+          }
+          .media-heading {
+            color: $red;
+          }
+        }
+        &.active {
+          background-color: $red;
+          .media-left, .media-heading, p {
+            color: #fff;
+          }
         }
       }
     }
@@ -126,7 +211,7 @@ ol.breadcrumb{
 header.default{
   background: $darkblue;
   .search-area{
-    background: #F7F7F7;
+    background: $lightbg;
     padding: 30px 0;
     label{
       font-size: 16px;
@@ -154,7 +239,6 @@ header.home{
   background-position: 0;
   color: white;
   position: relative;
-
   .main{
     margin-top: 70px;
     h2{
@@ -212,7 +296,6 @@ header.home{
       }
     }
   }
-
   &:before {
     content: '';
     position: absolute;
@@ -220,6 +303,7 @@ header.home{
     right: 0;
     bottom: 0;
     left: 0;
+    opacity: 0.6;
     background-image: linear-gradient(0deg, rgba(0,0,0,0.00) 0%, #000000 100%);
   }
   *{
@@ -227,7 +311,7 @@ header.home{
   }
 }
 
-main{
+main {
   background: white;
   color: $black;
   #home{
@@ -246,27 +330,29 @@ main{
       }
     }
     .featured-area{
-      background: #F7F7F7;
+      background: $lightbg;
       padding: 54px 0;
       .featured{
         background: white;
         height: 230px;
         >a.header{
           height: 120px;
-          display: block;
+          display: grid;
+          background: $black;
+          overflow: hidden;
           &:hover{
             text-decoration: none;
           }
-          img, .image{
+          img {
             height: 100%;
           }
           .image{
-            background: $black;
-            font-size: 24px;
+            font-size: 20px;
             font-family: "Roboto Slab";
+            margin: auto;
             text-align: center;
             color: white;
-            padding: 16px;
+            padding: 0 16px;
           }
         }
 
@@ -329,8 +415,6 @@ main{
         }
       }
     }
-
-
   }
   #search{
     .total{
@@ -385,7 +469,6 @@ main{
         }
       }
     }
-
     .filter{
       h3{
         font-size: 14px;
@@ -456,70 +539,260 @@ main{
       background: $red;
       border: 1px solid darken($red,10%);
       border-radius: 2px;
-      /* name: */
       font-weight: 500;
       font-size: 16px;
       color: #FFFFFF;
 
     }
     .howto{
-      ul.nav-tabs{
-        border-bottom: 1px solid $red;
-        >li{
-          margin-right: 20px;
-          >a{
-            background: #F7F7F7;
-            color: #8F8F8F;
-            border-color: #D7D6D7;
-            font-size: 16px;
-            border-bottom: 1px solid $red;
-          }
-          &.active{
-            >a{
-              background: white;
-              border-color: $red;
-              border-bottom: 1px solid transparent;
-              color: $red;
-            }
-          }
-          &:last-child{
-            margin-right: 0;
+    }
+  }
+  .inner-heading {
+    margin-bottom: 30px;
+    &.cover-image {
+      min-height: 300px;
+      background-image: url('../images/bg_about.jpg');
+      background-size: cover;
+      background-position: 0;
+      color: white;
+      position: relative;
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-image: linear-gradient(0deg, rgba(0,0,0,0.00) 0%, #000000 100%);
+        opacity: 0.6;
+      }
+    }
+    .bottom-content {
+      padding-top: 90px;
+      .main-btn {
+        margin-top: 70px;
+      }
+    }
+    h1 {
+      font-family: $robotoslab;
+      font-size: 36px;
+      line-height: 1.3;
+      margin: 0;
+      margin-bottom: 20px;
+    }
+    .page-description {
+      color: #fff;
+      font-size: 20px;
+      line-height: 1.2;
+    }
+  }
+  #what-is-it {
+    padding-bottom: 150px;
+    h2 {
+      font-family: $robotoslab;
+    }
+    .channel-card {
+      margin-bottom: 30px;
+      .card-heading {
+        color: $red;
+        margin-bottom: 7px;
+        img {
+          display: inline-block;
+        }
+        h3 {
+          font-size: 16px;
+          text-transform: uppercase;
+          display: inline-block;
+          line-height: 1;
+        }
+      }
+      .card-body {
+        background-color: $lightbg;
+        padding: 20px;
+        border-left: 2px solid $red;
+        p {
+          margin: 0;
+          a {
+            color: $red;
           }
         }
       }
-      .tab-content{
-        padding: 12px 0;
-        ol{
-          list-style: none;
-          padding-left: 0;
-          margin-bottom: 20px;
-          >li{
-            counter-increment: step-counter;
-            padding: 12px 0;
-            border-bottom: 1px solid #D7D6D7;
-            &:before{
-              content: counter(step-counter);
-              font-weight: normal;
-              background: $red;
-              width: 20px;
-              height: 20px;
-              color: white;
-              display: inline-block;
-              border-radius: 10px;
-              text-align: center;
-              margin-right: 16px;
-            }
-          }
-        }
-
-      }
+    }
+  }
+  .video-container {
+    margin: 15px 0;
+    p {
+      margin-top: 10px;
     }
   }
   #backend{
     padding: 20px 0;
   }
 }
-
+.main-tabs {
+  ul.nav-tabs{
+    border-bottom: 1px solid $red;
+    >li{
+      margin-right: 20px;
+      >a{
+        background: $lightbg;
+        color: #8F8F8F;
+        border-color: #D7D6D7;
+        font-size: 16px;
+        border-bottom: 1px solid $red;
+      }
+      &.active{
+        >a{
+          background: white;
+          border-color: $red;
+          border-bottom: 1px solid transparent;
+          color: $red;
+        }
+      }
+      &:last-child{
+        margin-right: 0;
+      }
+    }
+  }
+  .tab-content{
+    padding: 12px 0;
+    ol{
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 20px;
+      >li{
+        counter-increment: step-counter;
+        padding: 12px 0;
+        border-bottom: 1px solid #D7D6D7;
+        &:before{
+          content: counter(step-counter);
+          font-weight: normal;
+          background: $red;
+          width: 20px;
+          height: 20px;
+          color: white;
+          display: inline-block;
+          border-radius: 10px;
+          text-align: center;
+          margin-right: 16px;
+        }
+      }
+    }
+  }
+}
+.help-cards {
+  border-top: 1px solid #D7D6D7;
+  border-bottom: 1px solid #D7D6D7;
+  margin-bottom: 30px;
+  .help-card {
+    height: 100px;
+    margin: 20px 0;
+    padding: 20px 15px;
+    display: inline-block;
+    border: 1px solid #D7D6D7;
+    border-radius: 4px;
+    transition: .2s ease;
+    .media-left {
+      color: $red;
+      .material-icons {
+        font-size: 30px;
+      }
+    }
+    .media-body {
+      .media-heading {
+        color: $darkblue;
+        font-size: 18px;
+        font-family: $robotoslab;
+        line-height: 1;
+      }
+      p {
+        font-size: 14px;
+        color: #757575;
+        font-weight: 400;
+        line-height: 1.3;
+      }
+    }
+    &:hover {
+      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+      text-decoration: none;
+      .media-heading {
+        text-decoration: underline;
+      }
+      .media-heading {
+        color: $red;
+      }
+    }
+    &.active {
+      background-color: $red;
+      .media-left, .media-heading, p {
+        color: #fff;
+      }
+    }
+  }
+}
+.help-heading {
+  .subheading {
+    font-size: 14px;
+    font-family: $roboto;
+    color: #8F8F8F;
+  }
+  h2 {
+    margin: 0;
+    margin-bottom: 20px;
+    font-family: $robotoslab;
+  }
+}
+.questions {
+  margin-bottom: 150px;
+  h2 {
+    font-family: $robotoslab;
+    margin: 0;
+    margin-bottom: 40px;
+  }
+  .question {
+    border-bottom: 1px solid #D7D6D7;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    .question-heading {
+      font-family: $robotoslab;
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+    p {
+      margin: 0;
+    }
+  }
+}
+.main-btn {
+  border-radius: 2px;
+  font-size: 16px;
+  color: #FFFFFF;
+  padding: 18px 70px;
+  display: inline-block;
+  font-weight: 500;
+  line-height: 1;
+  &.red-btn {
+    background: $red;
+    border: 1px solid darken($red,20%);;
+  }
+  &.blue-btn {
+    background: $blue;
+    border: 1px solid lighten($blue,20%);;
+  }
+}
+.claveunica-banner {
+  background-color: $blue;
+  padding: 80px 0;
+  color: #fff;
+  h1 {
+    font-family: $robotoslab;
+    margin: 0;
+    margin-bottom: 15px;
+  }
+  .main-btn {
+    margin: 50px 0 10px 0;
+  }
+}
 footer{
   background: $darkblue;
   color: #8F8F8F;
@@ -558,5 +831,133 @@ footer{
       left: 15px;
     }
   }
-
 }
+#sidebar-get-help {
+  margin-top: 70px;
+  h3 {
+    color: $red;
+    font-size: 18px;
+    margin: 0 0 30px 0;
+  }
+  p,label {
+    font-size: 12px;
+    font-weight: normal;
+    color: #757575;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+  }
+  .get-help-online {
+    margin-top: 40px;
+    .media {
+      margin-bottom: 30px;
+      .material-icons {
+        font-size: 46px;
+        color: #25AF7C;
+        margin-left: -3px;
+      }
+    }
+    .option {
+      font-size: 16px;
+      text-decoration: underline;
+      color: $blue;
+    }
+    .name {
+      font-size: 14px;
+      color: #8F8F8F;
+    }
+  }
+}
+.callcenter-info {
+  h2 {
+    margin-bottom: 30px;
+  }
+  .callcenter-schedule {
+    padding: 15px;
+    background-color: $lightbg;
+    border-left: 2px solid $red;
+    margin: 30px 0;
+    .heading {
+      color: $red;
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 400;
+    }
+    ul {
+      margin: 0;
+      padding-left: 0;
+      list-style-type: none;
+      li {
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 1.5;
+        &:before {
+          content: ' ';
+          width: 6px;
+          height: 6px;
+          display: inline-block;
+          background-color: $red;
+          border-radius: 50%;
+          margin-right: 10px;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+}
+.option-details {
+  margin-bottom: 100px;
+  .option-heading {
+    h3 {
+      color: $red;
+      font-size: 20px;
+      font-weight: 400;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+    h4 {
+      font-family: $robotoslab;
+      font-size: 20px;
+    }
+  }
+  .options-available {
+    border: 1px solid #D7D6D7;
+    border-radius: 2px;
+    padding: 0 15px;
+    .option-card {
+      border-bottom: 1px solid #D7D6D7;
+      padding: 20px 0;
+      .top {
+        color: $red;
+        font-size: 12px;
+        text-transform: uppercase;
+      }
+      .heading {
+        font-family: $robotoslab;
+        font-size: 20px;
+        .number {
+          background: $lightbg;
+          border: 1px solid #D7D6D7;
+          border-radius: 4px;
+          padding: 0px 7px;
+          font-size: 17px;
+        }
+      }
+      .category {
+        color: $lightblue;
+        font-size: 14px;
+        margin-bottom: 10px;        
+      }
+      &:last-child {
+        border: 0;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+

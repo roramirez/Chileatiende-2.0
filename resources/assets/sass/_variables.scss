@@ -3,6 +3,22 @@ $red: #ED3232;
 $blue: #0053AB;
 $darkblue: #09132E;
 $lightblue: #13B0FF;
+$lightbg: #F7F7F7;
+
+$robotoslab: "Roboto Slab", sans-serif;
+$roboto: "Roboto", sans-serif;
+$opensans: "Open Sans", sans-serif;
+
+.h1 {
+	font-family: $robotoslab;
+	font-size: 36px;
+	line-height: 1.3;
+}
+.h2 {
+	font-family: $robotoslab;
+	font-size: 28px;
+	line-height: 1.3;
+}
 /*
 // Body
 $body-bg: #f5f8fa;

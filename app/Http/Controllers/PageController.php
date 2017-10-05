@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-
 use App\Page;
 
 class PageController extends Controller{
