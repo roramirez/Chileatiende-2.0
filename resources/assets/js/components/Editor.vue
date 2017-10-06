@@ -7,6 +7,7 @@
     require('tinymce/plugins/code/plugin.js');
     require('tinymce/plugins/media/plugin.js');
     require('tinymce/plugins/image/plugin.js');
+    require('tinymce/plugins/table/plugin.js');
     require('tinymce/themes/modern/theme');
     require('tinymce/skins/lightgray/skin.min.css');
 
@@ -20,9 +21,19 @@
                 height: 300,
                 skin: false,
                 entity_encoding : "raw",
-                plugins: 'code image media',
-                toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | code image media',
-                content_css: '/css/tinymce.css',
+                plugins: 'code image media table',
+                toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | code image media | table',
+                content_css: '/css/app.css',
+                content_style: "body{background: white; color: #272727; padding: 20px;}",
+                body_id: 'page',
+                table_default_attributes: {
+                    class: 'table table-bordered'
+                },
+                table_class_list: [
+                    {title: 'Bordered', value: 'table table-bordered'},
+                    {title: 'Striped', value: 'table table-bordered'},
+                    {title: 'Fechas', value: 'table table-dates'},
+                ],
                 document_base_url : window.baseUrl,
                 images_upload_url: 'backend/api/files',
                 images_upload_handler: function(blobInfo, success, failure){
