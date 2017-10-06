@@ -34,6 +34,7 @@ import Search from './components/Search.vue';
 import Steps from './components/Steps.vue';
 import PageForm from './components/PageForm.vue';
 import PageMasterForm from './components/PageMasterForm.vue';
+import SucursalesCollapse from './components/SucursalesCollapse.vue'
 
 const app = new Vue({
     el: '#app',
@@ -41,7 +42,8 @@ const app = new Vue({
         Search,
         Steps,
         PageForm,
-        PageMasterForm
+        PageMasterForm,
+        SucursalesCollapse
     },
     directives:{
         SelectFirstTab
