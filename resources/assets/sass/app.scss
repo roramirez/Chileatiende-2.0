@@ -65,6 +65,30 @@ ol.breadcrumb{
   }
 }
 
+.table{
+  &.table-dates{
+    background: $green;
+    tr{
+      td{
+        position: relative;
+        color: white;
+        border: none;
+        padding: 20px 28px;
+        &:not(:last-child):after{
+          content: '';
+          height: 50%;
+          width: 1px;
+          background: white;
+          position: absolute;
+          right: 0;
+          top: 25%;
+        }
+      }
+    }
+
+  }
+}
+
 .doc{
   border: 1px solid #d5d5d5;
   padding: 10px 40px 10px 60px;
