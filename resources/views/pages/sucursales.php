@@ -21,7 +21,7 @@
 		<div class="row">
 			<div class="col-md-9">
 				<h2><?= $title ?></h2>
-
+				<sucursales-collapse></sucursales-collapse>
 			</div>
 			<div class="col-md-3">
 				<?=view('chunks/help/sidebar')?>

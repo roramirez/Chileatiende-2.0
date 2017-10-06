@@ -14,7 +14,14 @@ class FaqController extends Controller{
 	];
 
     public function __invoke($page = 'preguntas-frecuentes')
-    {
+    {	
+    	if (!array_key_exists($page, self::TITLES)) {
+    		return view('layouts/layout',[
+	            'content' =>  view('errors/404'),
+	            'title' => '404'
+	        ]);
+    	}
+
         $content = view('pages/' . $page);
 
         view()->share([

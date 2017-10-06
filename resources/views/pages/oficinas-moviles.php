@@ -18,5 +18,24 @@
 			</div>
 		</div>
 		<?=view('chunks/help/help-cards')?>
+		<div class="row">
+			<div class="col-md-9">
+				<h2>Oficinas Móviles</h2>
+				<p>Seis oficinas móviles distribuidas en las regiones de O'Higgins, Bío Bío, La Araucanía, Metropolitana, Valparaíso y Coquimbo donde encontrarás información y orientación para postulaciones, reclamos y obtención de certificados, entre otros trámites del Estado.</p>
+				<div class="main-tabs">
+	                <ul class="nav nav-tabs" role="tablist" v-select-first-tab>
+	                    <li role="presentation" class="active"><a href="#op1" aria-controls="online" role="tab" data-toggle="tab">Región 1</a></li>
+	                </ul>
+	                <div class="tab-content">
+	                    <div role="tabpanel" class="tab-pane active" id="op1">
+	                    	<p>Contenido</p>
+	                    </div>
+	                </div>
+               	</div>
+			</div>
+			<div class="col-md-3">
+				<?= view('chunks/help/sidebar') ?>
+			</div>
+		</div>
 	</div>
 </div>

@@ -13,8 +13,9 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="">
-                        <img class="gob" src="images/gob.svg" alt="Gobierno de Chile" />
-                        <img src="images/logo.svg" alt="ChileAtiende" />
+                        <img class="gob hidden-xs" src="images/gob.svg" alt="Gobierno de Chile" />
+                        <img src="images/logo.svg" alt="ChileAtiende" class="hidden-xs" />
+                        <img src="images/logo-color.svg" alt="ChileAtiende" class="visible-xs img-responsive logo-mobile" />
                     </a>
                 </div>
 

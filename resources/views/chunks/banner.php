@@ -14,9 +14,9 @@
             </div> 
         </div>
         <div class="col-md-6 text-right">
-            <div class="main-btn blue-btn">
+            <a href="/fichas/11331-obtencion-de-la-clave-unica" class="main-btn blue-btn">
                 Conoce la Clave Única →
-            </div>
+            </a>
             <p>Podrás realizar en línea <strong>82 trámites del Estado.</strong></p>
         </div>
     </div>

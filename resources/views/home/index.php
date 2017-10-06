@@ -15,20 +15,18 @@
                                 <?php if ($f->image): ?>
                                     <img src="<?= $f->image ?>" class="img-responsive"/>
                                 <?php else: ?>
-                                    <div class="image">
+                                    <div class="image <?= (strlen($f->title) > 50 ? 'long-h' : 'short-h' );  ?>">
                                         <?= $f->title ?>
                                     </div>
                                 <?php endif ?>
                             </a>
                             <div class="caption">
-                                <h3><a href="fichas/<?= $f->guid ?>"><?= $f->title ?></a></h3>
+                                <h3><a href="fichas/<?= $f->guid ?>"><?= $f->title .' →' ?></a></h3>
                             </div>
                         </div>
                     </div>
                 <?php endforeach ?>
             </div>
-
-
         </div>
     </div>
 

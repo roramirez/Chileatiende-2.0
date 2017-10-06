@@ -1,13 +1,7 @@
 <div id="sidebar-get-help">
 	<h3>¿No encuentras lo que buscas?</h3>
-	<div class="search-bar-mini">
-		<label>utiliza el buscador de tramites</label>
-	    <form action="buscar">
-	        <search id="search" name="query" value="<?=@$query?>"></search>
-	    </form>
-	</div>
 	<div class="get-help-online">
-		<p>o solicita información en línea</p>
+		<p>solicita información en línea</p>
 		<div class="media">
 			<div class="media-left">
 				<img src="images/facebook-logo.svg" alt="Facebook logo">
