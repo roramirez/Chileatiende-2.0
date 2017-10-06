@@ -32,7 +32,7 @@
                     <el-button size="small" type="primary">Click para subir imagen</el-button>
                 </el-upload>
                 <br />
-                <input id="image" type="url" class="form-control" v-model="data.image" placeholder="Ej: http://www.ejemplo.com/imagen.jpg" />
+                <input id="image" type="text" class="form-control" v-model="data.image" placeholder="Ej: http://www.ejemplo.com/imagen.jpg" />
                 <div class="help-block">URL de la imagen</div>
                 <div class="help-block" v-for="e in errors['image']">{{e}}</div>
             </div>
