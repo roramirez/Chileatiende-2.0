@@ -35,6 +35,7 @@ import Steps from './components/Steps.vue';
 import PageForm from './components/PageForm.vue';
 import PageMasterForm from './components/PageMasterForm.vue';
 import SucursalesCollapse from './components/SucursalesCollapse.vue'
+import MobileMenu from './components/MobileMenu.vue'
 
 const app = new Vue({
     el: '#app',
@@ -43,7 +44,8 @@ const app = new Vue({
         Steps,
         PageForm,
         PageMasterForm,
-        SucursalesCollapse
+        SucursalesCollapse,
+        MobileMenu
     },
     directives:{
         SelectFirstTab
