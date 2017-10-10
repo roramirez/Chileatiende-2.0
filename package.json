@@ -16,6 +16,7 @@
     "browser-sync-webpack-plugin": "^1.2.0",
     "cross-env": "^5.0.1",
     "element-ui": "^1.4.6",
+    "google-maps": "^3.2.1",
     "jquery": "^3.1.1",
     "laravel-mix": "^1.4.5",
     "lodash": "^4.17.4",

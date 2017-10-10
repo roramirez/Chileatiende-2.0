@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Office;
 use App\Page;
 
 class FaqController extends Controller{
 
 	const TITLES = [
 		'preguntas-frecuentes' => 'Preguntas Frecuentes',
-		'sucursales' => 'Sucursales',
 		'atencion-telefonica' => 'Atención Telefónica',
 		'oficinas-moviles' => 'Oficinas Móviles'
 	];
@@ -22,7 +22,7 @@ class FaqController extends Controller{
 	        ]);
     	}
 
-        $content = view('pages/' . $page);
+        $content = view('faq/' . $page);
 
         view()->share([
         	'title' => self::TITLES[$page]
@@ -30,6 +30,15 @@ class FaqController extends Controller{
     	
     	return view('layouts/layout',[
             'content' => $content
+        ]);
+    }
+
+    public function getOffices(){
+        return view('layouts/layout',[
+            'title' => 'Sucursales',
+            'content' => view('faq/offices',[
+                'offices' => Office::with('location','location.parent','location.parent.parent')->get()
+            ])
         ]);
     }
 

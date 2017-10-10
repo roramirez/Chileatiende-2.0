@@ -20,8 +20,8 @@
 		<?=view('chunks/help/help-cards')?>
 		<div class="row">
 			<div class="col-md-9">
-				<h2><?= $title ?></h2>
-				<sucursales-collapse></sucursales-collapse>
+				<h2>Sucursales</h2>
+				<offices-collapse :data="<?=e($offices)?>"></offices-collapse>
 			</div>
 			<div class="col-md-3">
 				<?=view('chunks/help/sidebar')?>
