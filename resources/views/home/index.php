@@ -2,8 +2,13 @@
     <div class="featured-area">
         <div class="container">
             <div class="title">
-                <h2>Destacados</h2>
-                <div class="subtitle">Actualizado al 05 de septiembre, 2017</div>
+                <div class="heading-container">
+                    <h2>Destacados</h2>
+                    <div class="subtitle">Actualizado al 05 de septiembre, 2017</div>
+                </div>
+                <div class="featured-button hidden-xs">
+                    Ver todos los destacados
+                </div>
             </div>
 
             <div class="row">
