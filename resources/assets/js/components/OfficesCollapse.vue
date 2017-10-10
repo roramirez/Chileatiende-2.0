@@ -29,7 +29,7 @@
         },
         data() {
             return {
-                activeNames: ['01']
+                activeNames: []
             };
         },
         props: ['data'],
@@ -41,7 +41,11 @@
                     })
                     .values()
                     .orderBy(function(d){
-                        return d[0].location.parent.parent.id;
+                        var location = d[0].location.parent.parent.id;
+                        if(location == '13')
+                            return 0;
+
+                        return 1 * location;
                     })
                     .value();
             }
