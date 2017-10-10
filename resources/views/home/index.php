@@ -16,10 +16,8 @@
                     <?php $f->publishedVersion() ?>
                     <div class="col-sm-3">
                         <div class="featured">
-                            <a class="header" href="fichas/<?= $f->guid ?>">
-                                <?php if ($f->image): ?>
-                                    <img src="<?= $f->image ?>" class="img-responsive"/>
-                                <?php else: ?>
+                            <a class="header" href="fichas/<?= $f->guid ?>" <?=$f->image ? 'style="background-image: url('.$f->image.')"':''?>>
+                                <?php if (!$f->image): ?>
                                     <div class="image <?= (strlen($f->title) > 50 ? 'long-h' : 'short-h' );  ?>">
                                         <?= $f->title ?>
                                     </div>

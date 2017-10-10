@@ -16,6 +16,9 @@ Route::auth();
 Route::get('/', 'HomeController@getIndex');
 Route::get('/buscar', 'SearchController@getIndex');
 Route::resource('/fichas', 'PageController');
+Route::get('/que-es-chileatiende', 'AboutController');
+Route::get('/ayuda/sucursales', 'FaqController@getOffices');
+Route::get('/ayuda/{content?}', 'FaqController');
 
 Route::group(['middleware' => ['auth'], 'prefix'=>'backend', 'namespace'=>'Backend'],function () {
     Route::get('/', 'HomeController@getIndex');
@@ -31,6 +34,3 @@ Route::group(['middleware' => ['auth'], 'prefix'=>'backend', 'namespace'=>'Backe
     });
 });
 
-/* rutas a páginas estáticas */
-Route::get('/que-es-chileatiende', 'AboutController');
-Route::get('/ayuda/{content?}', 'FaqController');

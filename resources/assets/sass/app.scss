@@ -458,7 +458,8 @@ main {
         >a.header{
           height: 120px;
           display: grid;
-          background: $black;
+          background-color: $black;
+          background-size: cover;
           overflow: hidden;
           &:hover{
             text-decoration: none;

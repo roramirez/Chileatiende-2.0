@@ -4,14 +4,14 @@
 			<div class="row">
 				<div class="col-md-8">
 					<div class="office-info">
-						<div class="name">IPS-ChileAtiende Porvenir</div>
+						<div class="name">{{data.name}}</div>
 						<div class="address">
 							<div class="heading">
 								<i class="material-icons">location_on</i>
 								Dirección
 							</div>
 							<div class="value">
-								<p>Muñoz Gamero 366.</p>
+								<p>{{data.address}}</p>
 							</div>
 						</div>
 						<div class="schedule">
@@ -20,23 +20,33 @@
 								Horario de atención
 							</div>
 							<div class="value">
-								<p>Lunes a Jueves, de 8:30 a 15:30 hrs.</p>
-								<p>Viernes, de 8:30 a 14:00 hrs.</p>
+								<p>{{data.schedules}}</p>
 							</div>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-4">
-					<div class="main-btn white-btn">
+					<button class="main-btn white-btn" @click="displayMap = !displayMap">
 						Ver Mapa
-					</div>
+					</button>
 				</div>
 			</div>
+			<office-map v-if="displayMap" :data="data"></office-map>
 		</div>
 	</div>
 </template>
 <script>
-	export default {
+    import OfficeMap from './OfficeMap.vue';
 
+	export default {
+	    data: function(){
+	        return{
+	            displayMap: false,
+            }
+        },
+		props: ['data'],
+        components:{
+            OfficeMap
+        }
 	}
 </script>

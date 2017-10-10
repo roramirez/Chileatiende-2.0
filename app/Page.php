@@ -126,7 +126,7 @@ class Page extends Model
     }
 
     public function getFeaturedAttribute(){
-        return ($this->master ? $this->attributes['featured'] : $this->masterPage->attributes['featured']);
+        return (boolean)($this->master ? $this->attributes['featured'] : $this->masterPage->attributes['featured']);
     }
 
     public function getHowtoAttribute(){

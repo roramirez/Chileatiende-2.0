@@ -78,13 +78,13 @@ class PageController extends Controller{
             'title' => 'required',
             'alias' => 'required',
             'published_at' => 'required|date',
-            'image' => 'url',
             'objective' => 'required',
         ]);
 
         $page->title = $request->input('title');
         $page->alias = $request->input('alias');
         $page->published_at = \Carbon\Carbon::parse($request->input('published_at'));
+        $page->image = $request->input('image');
         $page->objective = $request->input('objective');
         $page->details = $request->input('details');
         $page->beneficiaries = $request->input('beneficiaries');
