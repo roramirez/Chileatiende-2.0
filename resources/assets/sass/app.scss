@@ -377,6 +377,7 @@ header.home{
       position: relative;
       white-space: nowrap;
       overflow: scroll;
+      -webkit-overflow-scrolling: touch;
       margin: 0 -15px 0 0;
       >li{
         display: inline-block;
@@ -457,6 +458,7 @@ main {
         margin-bottom: 20px;
         >a.header{
           height: 120px;
+          display: -ms-grid;
           display: grid;
           background-color: $black;
           background-size: cover;
