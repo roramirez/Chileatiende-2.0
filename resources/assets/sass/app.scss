@@ -383,6 +383,9 @@ header.home{
       white-space: nowrap;
       overflow-y: scroll;
       -webkit-overflow-scrolling: touch;
+      @media (max-width: 768px) {
+        -webkit-mask-image: -webkit-gradient(linear, left bottom, right bottom, color-stop(0.00, rgba(0,0,0,1)), color-stop(0.85, rgba(0,0,0,1)), color-stop(0.95, rgba(0,0,0,0)), color-stop(1.00, rgba(0,0,0,0)));
+      }
       &::-webkit-scrollbar {
           width: 0px;
           background: transparent;
