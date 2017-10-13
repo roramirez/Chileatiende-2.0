@@ -592,6 +592,9 @@ main {
         .author{
           font-size: 12px;
           color: $lightblue;
+          a{
+            color: $lightblue;
+          }
         }
         h4{
           font-size: 20px;

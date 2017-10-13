@@ -15,7 +15,7 @@
                     <ol class="search-results">
                         <?php foreach($results as $r):?>
                         <li>
-                            <div class="author">Publicado por <?=$r->institution->name?></div>
+                            <div class="author"><a href="instituciones/<?=$r->institution->id?>">Publicado por <?= $r->institution->name ?></a></div>
                             <h4><a href="fichas/<?=$r->guid?>"><?=isset($r->highlight['title']) ? $r->highlight['title'][0] : $r->title?></a></h4>
                             <?php if($r->online):?><div class="online">Trámite Online</div><?php endif ?>
                             <p><?=str_limit(strip_tags(\App\Twig::strip(isset($r->highlight['objective']) ? $r->highlight['objective'][0] : $r->objective),'<em>'),500)?></p>
