@@ -6,7 +6,7 @@
                 <ul>
                     <li><a>Sobre ChileAtiende</a></li>
                     <li><a>Mapa del Sitio</a></li>
-                    <li><a>Instituciones Asociadas</a></li>
+                    <li><a href="instituciones">Instituciones Asociadas</a></li>
                     <li><a>Preguntas Frecuentes</a></li>
                     <li><a>Centro de Ayuda</a></li>
                 </ul>

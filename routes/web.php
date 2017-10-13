@@ -16,6 +16,7 @@ Route::auth();
 Route::get('/', 'HomeController@getIndex');
 Route::get('/buscar', 'SearchController@getIndex');
 Route::resource('/fichas', 'PageController');
+Route::resource('/instituciones', 'InstitutionController');
 Route::get('/que-es-chileatiende', 'AboutController');
 Route::get('/ayuda/sucursales', 'FaqController@getOffices');
 Route::get('/ayuda/{content?}', 'FaqController');

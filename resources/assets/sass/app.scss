@@ -693,6 +693,62 @@ main {
     .howto{
     }
   }
+  #institutions{
+    h3{
+      font-size: 28px;
+      font-family:"Roboto Slab";
+      font-weight: normal;
+    }
+    hr{
+      border-color: #D7D6D7;
+    }
+    ul.index{
+      list-style: none;
+      padding-left: 0;
+      >li{
+        display: inline-block;
+        margin-right: 6px;
+        a{
+          display: block;
+          text-align: center;
+          color: $red;
+          border: 1px solid $red;
+          font-size: 16px;
+          width: 30px;
+          height: 26px;
+          line-height: 26px;
+          border-radius: 2px;
+        }
+      }
+    }
+    ul.directory{
+      list-style: none;
+      padding-left: 0;
+      >li{
+        margin-bottom: 30px;
+        >.letter{
+          color: $red;
+          font-size: 20px;
+          border-bottom: 1px solid #D7D6D7;
+          margin-bottom: 10px;
+        }
+        >ul{
+          list-style: none;
+          padding-left: 0;
+          overflow: hidden;
+          >li{
+            width: 50%;
+            float: left;
+            font-size: 16px;
+            font-weight: 300;
+            a{
+              color: black;
+            }
+          }
+        }
+      }
+    }
+  }
   .inner-heading {
     margin-bottom: 30px;
     &.cover-image {

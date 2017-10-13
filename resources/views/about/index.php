@@ -10,9 +10,9 @@
 						</div>
 					</div>
 					<div class="col-md-6 text-right">
-						<div class="main-btn red-btn">
+						<a href="instituciones" class="main-btn red-btn">
 							Instituciones Asociadas →
-						</div>
+						</a>
 					</div>
 				</div>
 			</div>
