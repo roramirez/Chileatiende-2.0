@@ -54,7 +54,7 @@
                                     </li>
                                 <?php endforeach ?>
                             </ul>
-                            <a class="btn" href="categorias/<?=$c->id?>">Ir a <?=$c->name?></a>
+                            <a class="btn" href="buscar?category=<?=$c->id?>">Ir a <?=$c->name?></a>
                         </div>
                     </div>
                 <?php endforeach ?>
