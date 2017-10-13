@@ -20,24 +20,7 @@ class ElasticsearchEngine extends \ScoutEngines\Elasticsearch\ElasticsearchEngin
             'type' => $builder->index ?: $builder->model->searchableAs(),
             'body' => [
                 'query' => [
-                    'bool' => [
-                        'must' => [
-                            'function_score' => [
-                                'query' => [
-
-                                    'multi_match' => [
-                                        'query' => $builder->query,
-                                        'fields' => ['id','title^3', 'keywords^2', 'objective'],
-                                        'fuzziness' => 'AUTO'
-                                    ]
-                                ],
-                                'field_value_factor' => [
-                                    'field' => 'hit_count',
-                                    'modifier' => 'log1p'
-                                ]
-                            ]
-                        ]
-                    ]
+                    'bool' => []
 
                 ],
                 'highlight' => [
@@ -61,6 +44,24 @@ class ElasticsearchEngine extends \ScoutEngines\Elasticsearch\ElasticsearchEngin
         }
         if (isset($options['size'])) {
             $params['body']['size'] = $options['size'];
+        }
+        if($builder->query){
+            $params['body']['query']['bool']['must'] = [
+                'function_score' => [
+                    'query' => [
+
+                        'multi_match' => [
+                            'query' => $builder->query,
+                            'fields' => ['id','title^3', 'keywords^2', 'objective'],
+                            'fuzziness' => 'AUTO'
+                        ]
+                    ],
+                    'field_value_factor' => [
+                        'field' => 'hit_count',
+                        'modifier' => 'log1p'
+                    ]
+                ]
+            ];
         }
         if (isset($options['numericFilters']) && count($options['numericFilters'])) {
             $params['body']['query']['bool']['filter'] = $options['numericFilters'];
