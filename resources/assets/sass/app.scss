@@ -370,16 +370,31 @@ header.home{
       font-weight: bold;
       text-transform: uppercase;
     }
+    .search-list-container {
+      height: 100%;
+      overflow: hidden;
+      margin: 0 -15px 0 0;
+    }
     .search-list{
       list-style: none;
       padding-left: 0;
       margin-top: 15px;
       position: relative;
       white-space: nowrap;
-      overflow: scroll;
-      margin: 0 -15px 0 0;
+      overflow-y: scroll;
+      -webkit-overflow-scrolling: touch;
+      @media (max-width: 768px) {
+        -webkit-mask-image: -webkit-gradient(linear, left bottom, right bottom, color-stop(0.00, rgba(0,0,0,1)), color-stop(0.85, rgba(0,0,0,1)), color-stop(0.95, rgba(0,0,0,0)), color-stop(1.00, rgba(0,0,0,0)));
+      }
+      &::-webkit-scrollbar {
+          width: 0px;
+          background: transparent;
+      }
       >li{
         display: inline-block;
+        &:last-child {
+          margin-right: 15px;
+        }
         >a{
           padding: 7px 15px;
           margin-right: 5px;
@@ -457,6 +472,7 @@ main {
         margin-bottom: 20px;
         >a.header{
           height: 120px;
+          display: -ms-grid;
           display: grid;
           background-color: $black;
           background-size: cover;
@@ -698,9 +714,20 @@ main {
       }
     }
     .bottom-content {
-      padding-top: 90px;
+      padding-top: 40px;
+      @media (min-width: 768px) {
+        padding-top: 90px;
+      }
       .main-btn {
-        margin-top: 70px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        float: left;
+        padding: 18px 40px;
+        @media (min-width: 768px) {
+          margin-top: 70px;
+          float: none;
+          padding: 18px 70px;
+        }
       }
     }
     h1 {
@@ -930,9 +957,18 @@ main {
     font-family: $robotoslab;
     margin: 0;
     margin-bottom: 15px;
+    font-size: 26px;
+    @media (min-width: 768px) {
+      font-size: 36px;
+    }
+
   }
   .main-btn {
     margin: 50px 0 10px 0;
+    padding: 18px 30px;
+    @media (min-width: 768px) {
+      padding: 18px 70px;
+    }
   }
 }
 footer{
