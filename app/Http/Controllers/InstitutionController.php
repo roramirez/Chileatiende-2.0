@@ -20,4 +20,14 @@ class InstitutionController extends Controller{
         ]);
     }
 
+    public function show($id){
+
+        $data['institution'] = Institution::find($id);
+
+        return view('layouts/layout',[
+            'title' => $data['institution']->name,
+            'content' => view('institutions/show', $data)
+        ]);
+    }
+
 }

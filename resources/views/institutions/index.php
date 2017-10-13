@@ -3,7 +3,7 @@
 
         <ol class="breadcrumb">
             <li><a href=""><i class="material-icons">home</i></a></li>
-            <li>Instituciones Asociadas</li>
+            <li class="active">Instituciones Asociadas</li>
         </ol>
 
         <h3>Listado de Instituciones Asociadas</h3>
@@ -25,7 +25,7 @@
                 <div class="letter"><?=$letter?></div>
                 <ul>
                     <?php foreach($i as $i2):?>
-                    <li><a href="buscar?institution=<?=$i2->id?>"><?=$i2->name?></a></li>
+                    <li><a href="instituciones/<?=$i2->id?>"><?=$i2->name?></a></li>
                     <?php endforeach ?>
                 </ul>
             </li>

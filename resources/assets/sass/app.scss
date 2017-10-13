@@ -712,6 +712,51 @@ main {
     .howto{
     }
   }
+  #institution{
+    h3{
+      font-size: 28px;
+      font-family:"Roboto Slab";
+      font-weight: normal;
+    }
+    h4{
+      font-size: 20px;
+      font-family:"Roboto Slab";
+      font-weight: normal;
+    }
+    hr{
+      border-color: #D7D6D7;
+    }
+    ul.pages{
+      list-style: none;
+      padding-left: 0;
+      >li{
+        margin-bottom: 20px;
+        >h5{
+          font-size: 20px;
+          font-weight: normal;
+          margin: 0;
+        }
+        .online{
+          font-weight:bold;
+          font-size: 14px;
+          color: #8F8F8F;
+        }
+      }
+    }
+    .sidebar{
+      h4{
+        font-size: 14px;
+        font-family:"Roboto";
+        font-weight: normal;
+        text-transform: uppercase;
+        color: $red;
+      }
+      .box{
+        background: #F7F7F7;
+        padding: 12px 10px;
+      }
+    }
+  }
   #institutions{
     h3{
       font-size: 28px;
