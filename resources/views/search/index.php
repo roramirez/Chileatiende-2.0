@@ -2,6 +2,8 @@
     <div class="container">
 
         <h3>Búsqueda: <?=$query?></h3>
+        <?php if($category):?><h4>Categoría: <?=$category->name?></h4><?php endif ?>
+        <?php if($institution):?><h4>Institución: <?=$institution->name?></h4><?php endif ?>
         <div class="total"><?=$results->total()?> Resultados</div>
 
         <hr />
