@@ -9,18 +9,25 @@
         <div class="row">
             <div class="col-sm-8">
 
-                <ol class="search-results">
-                    <?php foreach($results as $r):?>
-                    <li>
-                        <div class="author">Publicado por <?=$r->institution->name?></div>
-                        <h4><a href="fichas/<?=$r->guid?>"><?=isset($r->highlight['title']) ? $r->highlight['title'][0] : $r->title?></a></h4>
-                        <?php if($r->online):?><div class="online">Trámite Online</div><?php endif ?>
-                        <p><?=str_limit(strip_tags(\App\Twig::strip(isset($r->highlight['objective']) ? $r->highlight['objective'][0] : $r->objective),'<em>'),500)?></p>
-                    </li>
-                    <?php endforeach ?>
-                </ol>
+                <?php if($results->count()):?>
+                    <ol class="search-results">
+                        <?php foreach($results as $r):?>
+                        <li>
+                            <div class="author">Publicado por <?=$r->institution->name?></div>
+                            <h4><a href="fichas/<?=$r->guid?>"><?=isset($r->highlight['title']) ? $r->highlight['title'][0] : $r->title?></a></h4>
+                            <?php if($r->online):?><div class="online">Trámite Online</div><?php endif ?>
+                            <p><?=str_limit(strip_tags(\App\Twig::strip(isset($r->highlight['objective']) ? $r->highlight['objective'][0] : $r->objective),'<em>'),500)?></p>
+                        </li>
+                        <?php endforeach ?>
+                    </ol>
 
-                <?=$results->appends(['category' => $category ? $category->id : null, 'institution' => $institution ? $institution->id : null])->links()?>
+                    <?=$results->appends(['category' => $category ? $category->id : null, 'institution' => $institution ? $institution->id : null])->links()?>
+                <?php else: ?>
+                    <div class="no-results">
+                        <h4><i class="material-icons">youtube_searched_for</i> no hay resultados para los filtros utilizados</h4>
+                        <p>Lo sentimos, no hay resultados disponibles bajo los filtros especificados, pruebe utilizando otro término o modificando los filtros de búsqueda en el menú lateral.</p>
+                    </div>
+                <?php endif ?>
             </div>
             <div class="col-sm-4">
                 <div class="filter">

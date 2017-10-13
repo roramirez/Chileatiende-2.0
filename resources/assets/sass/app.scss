@@ -566,6 +566,25 @@ main {
     .total{
       color: #757575;
     }
+    .no-results{
+      background: #F7F7F7;
+      border-radius: 2px;
+      padding: 20px 28px;
+      color: #757575;
+      h4{
+        margin-top: 0;
+        text-transform: uppercase;
+        font-size: 12px;
+        font-weight: normal;
+        .material-icons{
+          font-size: 20px;
+          color: $red;
+        }
+      }
+      p{
+        font-size: 16px;
+      }
+    }
     ol.search-results{
       list-style: none;
       padding-left: 0;
