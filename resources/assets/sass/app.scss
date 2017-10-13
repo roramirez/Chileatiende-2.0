@@ -695,6 +695,9 @@ main {
     .author{
       color: $lightblue;
       font-weight: normal;
+      a{
+        color: $lightblue;
+      }
     }
     .updated-at{
       font-weight: normal;
