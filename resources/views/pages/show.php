@@ -71,7 +71,7 @@
                         <?php if($page->howto):?><li><a href="<?= url()->current() ?>#howto">¿Cómo y dónde hago el trámite? </a></li><?php endif ?>
                     </ol>
 
-                    <a class="btn btn-online" href="<?=$page->online_url?>" target="_blank">Ir al trámite en línea</a>
+                    <?php if($page->online):?><a class="btn btn-online" href="<?=$page->online_url?>" target="_blank">Ir al trámite en línea</a><?php endif ?>
                 </div>
             </div>
         </div>
