@@ -20,8 +20,16 @@ class ElasticsearchEngine extends \ScoutEngines\Elasticsearch\ElasticsearchEngin
             'type' => $builder->index ?: $builder->model->searchableAs(),
             'body' => [
                 'query' => [
-                    'bool' => []
-
+                    'bool' => [
+                        'must' => [
+                            'function_score' => [
+                                'field_value_factor' => [
+                                    'field' => 'hit_count',
+                                    'modifier' => 'log1p'
+                                ]
+                            ]
+                        ]
+                    ]
                 ],
                 'highlight' => [
                     'fields' => [
@@ -46,20 +54,11 @@ class ElasticsearchEngine extends \ScoutEngines\Elasticsearch\ElasticsearchEngin
             $params['body']['size'] = $options['size'];
         }
         if($builder->query){
-            $params['body']['query']['bool']['must'] = [
-                'function_score' => [
-                    'query' => [
-
-                        'multi_match' => [
-                            'query' => $builder->query,
-                            'fields' => ['id','title^3', 'keywords^2', 'objective'],
-                            'fuzziness' => 'AUTO'
-                        ]
-                    ],
-                    'field_value_factor' => [
-                        'field' => 'hit_count',
-                        'modifier' => 'log1p'
-                    ]
+            $params['body']['query']['bool']['must']['function_score']['query'] = [
+                'multi_match' => [
+                    'query' => $builder->query,
+                    'fields' => ['id','title^3', 'keywords^2', 'objective'],
+                    'fuzziness' => 'AUTO'
                 ]
             ];
         }
