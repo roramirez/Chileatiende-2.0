@@ -74,7 +74,9 @@
 		<div class="row">
 			<div class="col-md-4">
 				<div class="video-container">
-					<img src="images/video-placeholder.jpg" class="img-responsive" alt="Video">
+					<div class="embed-responsive embed-responsive-16by9">
+					  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/k50SAxXy9uw"></iframe>
+					</div>
 					<p class="slab">Presentación ChileAtiende 2014</p>
 				</div>
 			</div>
