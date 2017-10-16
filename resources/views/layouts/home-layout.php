@@ -109,8 +109,8 @@
                 <form action="buscar">
                     <search id="search" class="search" name="query" value=""></search>
                 </form>
-                <h4>Lo mas buscado</h4>
                 <div class="search-list-container">
+                    <h4>Lo mas buscado</h4>
                     <ul class="search-list searchtags-mask">
                         <?php foreach($suggestions as $s):?>
                             <li><a href="buscar?query=<?=htmlspecialchars($s->query)?>"><?=htmlspecialchars($s->query)?></a></li>
