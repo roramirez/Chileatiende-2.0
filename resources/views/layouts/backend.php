@@ -60,6 +60,14 @@
                                     </ul>
                                 </div>
                             </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">Administración</div>
+                                <div class="panel-body">
+                                    <ul>
+                                        <li><a href="backend/oficinas">Oficinas</a></li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="col-sm-9">
