@@ -40,6 +40,7 @@ h2 {
 ol.breadcrumb{
   padding-left: 0;
   background: none;
+  font-size: 14px;
   >li{
     color: #8F8F8F;
     >a{
@@ -52,16 +53,16 @@ ol.breadcrumb{
 }
 
 .message{
-  font-size: 20px;
+  font-size: 18px;
   border: 1px solid #d5d5d5;
   padding: 10px 40px 10px 60px;
   &.message-reloj{
     background: url(../images/reloj.svg) 10px 10px no-repeat;
-    background-size: 32px;
+    background-size: 25px;
   }
   &.message-alerta{
     background: url(../images/alerta.svg) 10px 10px no-repeat;
-    background-size: 32px;
+    background-size: 25px;
   }
 }
 
@@ -324,7 +325,7 @@ header.home{
       margin-top: 70px;
     }
     h2{
-      font-family: "Roboto Slab";
+      font-family: $robotoslab;
       font-weight: normal;
       font-size: 30px;
       @media (min-width: 768px) {
@@ -373,7 +374,7 @@ header.home{
     .search-list-container {
       height: 100%;
       overflow: hidden;
-      margin: 0 -15px 0 0;
+      margin: 10px -15px 0 0;
     }
     .search-list{
       list-style: none;
@@ -387,8 +388,8 @@ header.home{
         -webkit-mask-image: -webkit-gradient(linear, left bottom, right bottom, color-stop(0.00, rgba(0,0,0,1)), color-stop(0.85, rgba(0,0,0,1)), color-stop(0.95, rgba(0,0,0,0)), color-stop(1.00, rgba(0,0,0,0)));
       }
       &::-webkit-scrollbar {
-          width: 0px;
-          background: transparent;
+        width: 0px;
+        background: transparent;
       }
       >li{
         display: inline-block;
@@ -396,8 +397,8 @@ header.home{
           margin-right: 15px;
         }
         >a{
-          padding: 7px 15px;
-          margin-right: 5px;
+          padding: 9px 15px;
+          margin-right: 10px;
           background: $red;
           color: white;
           border: 1px solid darken($red, 10%);
@@ -427,6 +428,7 @@ header.home{
 }
 
 main {
+  padding-bottom: 150px;
   background: white;
   color: $black;
   #home{
@@ -656,7 +658,7 @@ main {
     padding: 30px 0;
     font-weight: 300;
     font-size: 16px;
-    .sidebar{
+    .sidebar-menu{
       font-weight: normal;
       transition: margin-top ease-out 0.3s;
       margin-top: 0;
@@ -664,14 +666,31 @@ main {
         top: 0;
         margin-top: 20px;
       }
+      &.affix-bottom{
+        position:absolute;
+      }
       .index{
-        padding-left: 15px;
         margin-bottom: 20px;
+        list-style: decimal inside;
         li{
           margin-bottom: 10px;
+          padding-left: 10px;
+          border-left: 2px solid transparent;
+          display: list-item;
+          &.active {
+            border-left: 2px solid $red;
+          }
+          &:hover {
+            border-left: 2px solid $red;
+          }
           a{
             font-size: 16px;
             text-decoration: underline;
+            padding: 0;
+            display: inline-block;
+            &:hover {
+              background-color: transparent;
+            }
           }
         }
 
@@ -682,6 +701,7 @@ main {
       color: #858585;
     }
     h3{
+      font-family: $robotoslab;
       font-size: 28px;
       font-weight: normal;
       margin-top: 0;
@@ -695,25 +715,42 @@ main {
         margin-top: 0;
       }
     }
+    hr {
+      margin: 30px 0;
+    }
+    ul:not(.nav-tabs) {
+      margin: 20px 0;
+      li {
+        margin-bottom: 20px;
+      }
+    }
     .author{
       color: $lightblue;
       font-weight: normal;
+      font-size: 14px;
       a{
         color: $lightblue;
       }
     }
     .updated-at{
       font-weight: normal;
+      font-size: 14px;
     }
     .btn.btn-online{
-      padding: 20px 100px;
+      width: 100%;
+      padding: 10px 0;
+      margin-bottom: 20px;
       background: $red;
       border: 1px solid darken($red,10%);
       border-radius: 2px;
       font-weight: 500;
       font-size: 16px;
       color: #FFFFFF;
-
+      @media (min-width: 768px) {
+        padding: 20px 100px;
+        margin-bottom: 0;
+        width: auto;
+      }
     }
     .howto{
     }
@@ -815,6 +852,52 @@ main {
               color: black;
             }
           }
+        }
+      }
+    }
+  }
+  #terms {
+    h1 {
+      font-family: $robotoslab;
+    }
+  }
+  #privacy {
+    h1 {
+      font-family: $robotoslab;
+    }
+    h2 {
+      font-size: 20px;
+      font-family: $robotoslab;
+    }
+    ul {
+      list-style-type: none;
+      counter-reset:li;
+      margin: 30px 0;
+      li {
+        &:before {
+          content:counter(li);
+          counter-increment:li;
+          color: #fff;
+          background-color: $red;
+          margin-right: 10px;
+          padding: 0 7px;
+          text-align: center;
+          border-radius: 10px;
+          display: inline-block;
+          margin-left: -32px;
+        }
+        &.type-latin {
+          &:before {
+            content:counter(li, lower-latin);
+          }
+        }
+        span {
+          color: $red;
+          font-weight: normal;
+        }
+        p {
+          display: inline-block;
+          vertical-align: top;
         }
       }
     }
@@ -1296,8 +1379,17 @@ footer{
     margin-bottom: 30px;
   }
 }
-
-
+.important-message {
+  background-color: $lightbg;
+  padding: 15px 17px;
+  border-left: 2px solid $red;
+  .importante {
+    color: $red;
+  }
+  p {
+    margin: 0;
+  }
+}
 
 
 

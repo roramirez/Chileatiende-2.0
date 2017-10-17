@@ -20,7 +20,7 @@
 	</div>
 	<div class="container">
 		<ol class="breadcrumb">
-            <li><a href=""><i class="material-icons">home</i></a></li>
+            <li><a href="/"><i class="material-icons">home</i></a></li>
             <li>Qué es Chileatiende</li>
         </ol>
 	</div>
@@ -31,6 +31,17 @@
 			</div>
 		</div>
 		<div class="row">
+			<div class="col-md-4">
+				<div class="channel-card">
+					<div class="card-heading">
+						<img src="images/sitio-web.svg" alt="ícono web">
+						<h3>Sitio Web</h3>
+					</div>
+					<div class="card-body">
+						<p>El <a href="#">portal ChileAtiende</a> permite acceder de manera simple y directa a información sobre más de 2.200 beneficios y servicios públicos.</p>
+					</div>
+				</div>
+			</div>
 			<div class="col-md-4">
 				<div class="channel-card">
 					<div class="card-heading">
@@ -53,17 +64,6 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-md-4">
-				<div class="channel-card">
-					<div class="card-heading">
-						<img src="images/sitio-web.svg" alt="ícono web">
-						<h3>Sitio Web</h3>
-					</div>
-					<div class="card-body">
-						<p>El <a href="#">portal ChileAtiende</a> permite acceder de manera simple y directa a información sobre más de 2.200 beneficios y servicios públicos.</p>
-					</div>
-				</div>
-			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-12">
@@ -74,7 +74,9 @@
 		<div class="row">
 			<div class="col-md-4">
 				<div class="video-container">
-					<img src="images/video-placeholder.jpg" class="img-responsive" alt="Video">
+					<div class="embed-responsive embed-responsive-16by9">
+					  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/k50SAxXy9uw"></iframe>
+					</div>
 					<p class="slab">Presentación ChileAtiende 2014</p>
 				</div>
 			</div>

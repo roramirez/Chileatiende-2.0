@@ -4,11 +4,10 @@
             <div class="col-sm-3">
                 <h3>Sobre ChileAtiende</h3>
                 <ul>
-                    <li><a>Sobre ChileAtiende</a></li>
-                    <li><a>Mapa del Sitio</a></li>
-                    <li><a href="instituciones">Instituciones Asociadas</a></li>
-                    <li><a>Preguntas Frecuentes</a></li>
-                    <li><a>Centro de Ayuda</a></li>
+                    <li><a href="/que-es-chileatiende">Sobre ChileAtiende</a></li>
+                    <li><a href="/instituciones">Instituciones Asociadas</a></li>
+                    <li><a href="/ayuda/preguntas-frecuentes">Preguntas Frecuentes</a></li>
+                    <li><a href="/ayuda/">Centro de Ayuda</a></li>
                 </ul>
             </div>
             <div class="col-sm-3">
@@ -23,14 +22,13 @@
                 <ul>
                     <li><a>ChileAtiende en tu sitio</a></li>
                     <li><a>Enlaces para transparencia activa</a></li>
-                    <li><a>Servicios en sucursales</a></li>
                 </ul>
             </div>
             <div class="col-sm-3">
                 <h3>Términos y Condiciones</h3>
                 <ul>
-                    <li><a>Política de privacidad</a></li>
-                    <li><a>Términos de uso</a></li>
+                    <li><a href="/politica-de-privacidad">Política de privacidad</a></li>
+                    <li><a href="/terminos-y-condiciones">Términos de uso</a></li>
                 </ul>
             </div>
         </div>
@@ -40,9 +38,9 @@
             </div>
             <div class="col-sm-6">
                 <div class="text-right">
-                    <a href="https://www.facebook.com/ChileAtiende"><img src="images/facebook.svg" alt="Facebook" /></a>
+                    <a href="https://www.facebook.com/ChileAtiende" target="_blank"><img src="images/facebook.svg" alt="Facebook" /></a>
                     &nbsp;
-                    <a href="https://twitter.com/ChileAtiende"><img src="images/twitter.svg" alt="Twitter" /></a>
+                    <a href="https://twitter.com/ChileAtiende" target="_blank"><img src="images/twitter.svg" alt="Twitter" /></a>
                 </div>
             </div>
         </div>
