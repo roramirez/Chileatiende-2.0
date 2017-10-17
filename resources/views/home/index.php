@@ -36,7 +36,7 @@
     <div class="categories-area">
         <div class="container">
             <div class="title">
-                <div class="subtitle">Trámites mas visitados</div>
+                <div class="subtitle">Trámites más visitados</div>
                 <h2>Por categoría</h2>
             </div>
 

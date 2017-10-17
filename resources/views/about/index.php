@@ -20,7 +20,7 @@
 	</div>
 	<div class="container">
 		<ol class="breadcrumb">
-            <li><a href=""><i class="material-icons">home</i></a></li>
+            <li><a href="/"><i class="material-icons">home</i></a></li>
             <li>Qué es Chileatiende</li>
         </ol>
 	</div>

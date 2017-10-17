@@ -18,6 +18,8 @@ Route::get('/buscar', 'SearchController@getIndex');
 Route::resource('/fichas', 'PageController');
 Route::resource('/instituciones', 'InstitutionController');
 Route::get('/que-es-chileatiende', 'AboutController');
+Route::get('/terminos-y-condiciones', 'TermsController');
+Route::get('/politica-de-privacidad', 'PrivacyPolicyController');
 Route::get('/ayuda/sucursales', 'FaqController@getOffices');
 Route::get('/ayuda/{content?}', 'FaqController');
 

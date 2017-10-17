@@ -27,8 +27,8 @@
             <div class="col-sm-3">
                 <h3>Términos y Condiciones</h3>
                 <ul>
-                    <li><a>Política de privacidad</a></li>
-                    <li><a>Términos de uso</a></li>
+                    <li><a href="/politica-de-privacidad">Política de privacidad</a></li>
+                    <li><a href="/terminos-y-condiciones">Términos de uso</a></li>
                 </ul>
             </div>
         </div>
@@ -38,9 +38,9 @@
             </div>
             <div class="col-sm-6">
                 <div class="text-right">
-                    <a href="https://www.facebook.com/ChileAtiende"><img src="images/facebook.svg" alt="Facebook" /></a>
+                    <a href="https://www.facebook.com/ChileAtiende" target="_blank"><img src="images/facebook.svg" alt="Facebook" /></a>
                     &nbsp;
-                    <a href="https://twitter.com/ChileAtiende"><img src="images/twitter.svg" alt="Twitter" /></a>
+                    <a href="https://twitter.com/ChileAtiende" target="_blank"><img src="images/twitter.svg" alt="Twitter" /></a>
                 </div>
             </div>
         </div>

@@ -428,6 +428,7 @@ header.home{
 }
 
 main {
+  padding-bottom: 150px;
   background: white;
   color: $black;
   #home{
@@ -850,6 +851,36 @@ main {
             a{
               color: black;
             }
+          }
+        }
+      }
+    }
+  }
+  #terms {
+    h1 {
+      font-family: $robotoslab;
+    }
+  }
+  #privacy {
+    h1 {
+      font-family: $robotoslab;
+    }
+    h2 {
+      font-size: 20px;
+      font-family: $robotoslab;
+    }
+    ul {
+      list-style-type: none;
+      li {
+        span {
+          color: $red;
+          &.item {
+            color: #fff;
+            background-color: $red;
+            margin-right: 10px;
+            padding: 2px 6px;
+            text-align: center;
+            border-radius: 11px;
           }
         }
       }
