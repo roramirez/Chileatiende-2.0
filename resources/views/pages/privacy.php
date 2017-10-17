@@ -67,7 +67,7 @@
 				</ul>
 				<div class="important-message">
 					<div class="importante">IMPORTANTE</div>
-					<p>Para ejercer sus derechos, el usuario podrá dirigirse a LA UNIDAD DE MODERNIZACIÓN Y GOBIERNO DIGITAL, ubicada en Teatinos Nº333, piso 4, Santiago (teléfono: <a href="tel:+56226887701">+562 2 688-7701</a>) o escribir al siguiente formulario de contacto, indicando claramente su solicitud.</p>
+					<p>Para ejercer sus derechos, el usuario podrá dirigirse a LA UNIDAD DE MODERNIZACIÓN Y GOBIERNO DIGITAL, ubicada en Teatinos Nº333, piso 4, Santiago (teléfono: <a href="tel:+56226887701">+562 2 688-7701</a>) o escribir al siguiente <a href="#">formulario de contacto</a>, indicando claramente su solicitud.</p>
 				</div>
 			</div>
 		</div>

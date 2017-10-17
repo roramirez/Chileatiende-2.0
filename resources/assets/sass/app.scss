@@ -1381,10 +1381,13 @@ footer{
 }
 .important-message {
   background-color: $lightbg;
-  padding: 13px 15px;
+  padding: 15px 17px;
   border-left: 2px solid $red;
   .importante {
     color: $red;
+  }
+  p {
+    margin: 0;
   }
 }
 
