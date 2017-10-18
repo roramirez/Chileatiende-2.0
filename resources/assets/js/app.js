@@ -36,7 +36,8 @@ import PageForm from './components/PageForm.vue';
 import PageMasterForm from './components/PageMasterForm.vue';
 import OfficeForm from './components/OfficeForm.vue';
 import OfficesCollapse from './components/OfficesCollapse.vue';
-import MobileMenu from './components/MobileMenu.vue'
+import MobileMenu from './components/MobileMenu.vue';
+import PageMobileNav from './components/PageMobileNav.vue';
 
 const app = new Vue({
     el: '#app',
@@ -47,6 +48,7 @@ const app = new Vue({
         PageMasterForm,
         OfficesCollapse,
         MobileMenu,
+        PageMobileNav,
         OfficeForm
     },
     directives:{

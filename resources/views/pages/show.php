@@ -13,19 +13,8 @@
                 <div class="author"><a href="instituciones/<?=$page->institution->id?>">Información proporcionada por <?= $page->institution->name ?></a></div>
                 <div class="updated-at">Actualizado al <?=$page->published_at->formatLocalized('%d de %B, %Y')?></div>
                 <hr />
-                <div class="visible-sm visible-xs">
-                    <div class="sidebar-menu">
-                        <ol type="1" class="nav index">
-                            <li><a href="<?= url()->current() ?>#objective" data-target="#objective">Descripción</a></li>
-                            <?php if($page->details):?><li><a href="<?= url()->current() ?>#details" data-target="#details">Detalles</a></li><?php endif ?>
-                            <li><a href="<?= url()->current() ?>#beneficiaries" data-target="#beneficiaries">¿A quién está dirigido?</a></li>
-                            <?php if($page->requirements):?><li><a href="<?= url()->current() ?>#requirements" data-target="#requirements">¿Qué necesito para hacer el trámite?</a></li><?php endif ?>
-                            <?php if($page->howto):?><li><a href="<?= url()->current() ?>#howto" data-target="#howto">¿Cómo y dónde hago el trámite? </a></li><?php endif ?>
-                        </ol>
-                        <?php if($page->online):?>
-                            <a class="btn btn-online" href="<?=$page->online_url?>" target="_blank">Ir al trámite en línea</a>
-                        <?php endif ?>
-                    </div>
+                <div id="page-mobile-nav-container" class="visible-sm visible-xs">
+                    <page-mobile-nav :page="<?= e(json_encode($page)) ?>" current-url="<?= url()->current() ?>"></page-mobile-nav>
                     <hr>
                 </div>
                 <h4 id="objective">Descripción</h4>
@@ -71,7 +60,6 @@
                     </div>
                 </div>
                 <?php endif ?>
-
             </div>
             <div class="col-sm-4 hidden-sm hidden-xs">
                 <div class="sidebar-menu" data-spy="affix" data-offset-top="345" data-offset-bottom="500">
