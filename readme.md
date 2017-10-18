@@ -32,11 +32,11 @@ npm run prod
 Para crear el indice:
 
 ```
-php artisan elasticsearch:index create
+php artisan elasticsearch:admin create
 ```
 
 Para indexar:
 
 ```
-php artisan elasticsearch:index index
+php artisan elasticsearch:admin index
 ```
