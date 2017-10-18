@@ -12,4 +12,4 @@
     <link href="css/app.css" rel="stylesheet">
 
 </head>
-<body data-spy="scroll" data-target="#page">
+<body>

@@ -5,7 +5,7 @@
                 <h3>Sobre ChileAtiende</h3>
                 <ul>
                     <li><a href="/que-es-chileatiende">Sobre ChileAtiende</a></li>
-                    <li><a href="/instituciones">Instituciones Asociadas</a></li>
+                    <li><a href="/instituciones">Instituciones que publican en el Portal</a></li>
                     <li><a href="/ayuda/preguntas-frecuentes">Preguntas Frecuentes</a></li>
                     <li><a href="/ayuda/">Centro de Ayuda</a></li>
                 </ul>
