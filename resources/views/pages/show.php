@@ -46,7 +46,7 @@
                     <div class="tab-content">
                         <div role="tabpanel" class="tab-pane" id="online">
                             <?=App\Twig::render($page->online_guide)?>
-                            <a class="btn btn-online" href="<?=$page->online_url?>" target="_blank">Ir al trámite en línea</a>
+                            <a class="btn btn-online" href="#" data-toggle="modal" data-target="#redirect-modal">Ir al trámite en línea</a>
                         </div>
                         <div role="tabpanel" class="tab-pane" id="office">
                             <?=App\Twig::render($page->office_guide)?>
@@ -71,8 +71,26 @@
                         <?php if($page->howto):?><li><a href="<?= url()->current() ?>#howto" data-target="#howto">¿Cómo y dónde hago el trámite? </a></li><?php endif ?>
                     </ol>
                     <?php if($page->online):?>
-                        <a class="btn btn-online" href="<?=$page->online_url?>" target="_blank">Ir al trámite en línea</a>
+                        <a class="btn btn-online" href="#" data-toggle="modal" data-target="#redirect-modal">Ir al trámite en línea</a>
                     <?php endif ?>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal modal-redirect fade" id="redirect-modal" class="" tabindex="-1" role="dialog" aria-labelledby="redirect-modal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel"><i class="material-icons">error</i> Aviso de Redirección</h4>
+                </div>
+                <div class="modal-body">
+                    Para realizar tu trámite te redirigiremos al sitio web institucional de <br />
+                    <strong><?=$page->institution->name?></strong>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-link" data-dismiss="modal">Prefiero seguir en ChileAtiende</button>
+                    <a class="btn btn-primary" href="<?=$page->online_url?>">Entendido</a>
                 </div>
             </div>
         </div>
