@@ -61,10 +61,21 @@ class OfficeController extends Controller{
         $this->validate($request, [
             'name' => 'required',
             'address' => 'required',
+            'schedules' => 'required',
+            'phones' => 'required',
+            'fax' => 'required',
+            'lat' => 'required|numeric',
+            'lng' => 'required|numeric',
         ]);
 
         $office->name = $request->input('name');
         $office->address = $request->input('address');
+        $office->schedules = $request->input('schedules');
+        $office->phones = $request->input('phones');
+        $office->fax = $request->input('fax');
+        $office->director = $request->input('director');
+        $office->lat = $request->input('lat');
+        $office->lng = $request->input('lng');
         $office->save();
 
 
