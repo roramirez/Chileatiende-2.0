@@ -82,5 +82,14 @@ class OfficeController extends Controller{
         return $office;
     }
 
+    public function destroy(Request $request, $id){
+        $office = Office::find($id);
+        $office->delete();
+
+        $request->session()->flash('status', 'Oficina eliminada con éxito');
+
+        return redirect('backend/oficinas');
+    }
+
 
 }
