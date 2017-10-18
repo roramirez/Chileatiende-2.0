@@ -6,16 +6,17 @@
             <li><?= $page->title ?></li>
         </ol>
         <div class="row">
-            <div class="col-sm-8">
+            <div class="col-md-4 col-md-push-8">
+                <div class="sidebar-menu" data-spy="affix" data-offset-top="300" data-offset-bottom="500">
+                    <page-mobile-nav :page="<?= e(json_encode($page)) ?>" current-url="<?= url()->current() ?>"></page-mobile-nav>
+                </div>
+            </div>
+            <div class="col-md-8 col-md-pull-4">
                 <?php if($page->online):?><div class="online">Trámite Online</div><?php endif ?>
                 <h3><?= $page->title ?></h3>
                 <div class="author"><a href="instituciones/<?=$page->institution->id?>">Información proporcionada por <?= $page->institution->name ?></a></div>
                 <div class="updated-at">Actualizado al <?=$page->published_at->formatLocalized('%d de %B, %Y')?></div>
                 <hr />
-                <div id="page-mobile-nav-container" class="visible-sm visible-xs">
-                    <page-mobile-nav :page="<?= e(json_encode($page)) ?>" current-url="<?= url()->current() ?>"></page-mobile-nav>
-                    <hr>
-                </div>
                 <h4 id="objective">Descripción</h4>
                 <?=App\Twig::render($page->objective)?>
 
@@ -59,20 +60,6 @@
                     </div>
                 </div>
                 <?php endif ?>
-            </div>
-            <div class="col-sm-4 hidden-sm hidden-xs">
-                <div class="sidebar-menu" data-gumshoe-header data-spy="affix" data-offset-top="345" data-offset-bottom="500">
-                    <ol type="1" class="nav index" data-gumshoe>
-                        <li><a href="<?= url()->current() ?>#objective" data-target="#objective">Descripción</a></li>
-                        <?php if($page->details):?><li><a href="<?= url()->current() ?>#details" data-target="#details">Detalles</a></li><?php endif ?>
-                        <li><a href="<?= url()->current() ?>#beneficiaries" data-target="#beneficiaries">¿A quién está dirigido?</a></li>
-                        <?php if($page->requirements):?><li><a href="<?= url()->current() ?>#requirements" data-target="#requirements">¿Qué necesito para hacer el trámite?</a></li><?php endif ?>
-                        <?php if($page->howto):?><li><a href="<?= url()->current() ?>#howto" data-target="#howto">¿Cómo y dónde hago el trámite? </a></li><?php endif ?>
-                    </ol>
-                    <?php if($page->online):?>
-                        <a class="btn btn-online" href="#" data-toggle="modal" data-target="#redirect-modal">Ir al trámite en línea</a>
-                    <?php endif ?>
-                </div>
             </div>
         </div>
     </div>

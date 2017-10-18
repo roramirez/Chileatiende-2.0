@@ -9,8 +9,41 @@
         <hr />
 
         <div class="row">
-            <div class="col-sm-8">
+            <div class="col-md-4 col-md-push-8">
+                <div class="filter">
+                    <h3 class="heading"><i class="material-icons">filter_list</i> Filtrar por</h3>
+                    <a class="filter-collapse btn" role="button" data-toggle="collapse" href="#filterCollapseMobile" aria-expanded="false" aria-controls="filterCollapseMobile">
+                        <i class="material-icons">filter_list</i> Filtrar por
+                        <span class="caret"></span>
+                    </a>
+                    <div class="collapse" id="filterCollapseMobile">
+                        <form action="buscar">
+                            <input type="hidden" name="query" value="<?=$query?>" />
+                            <div class="form-group">
+                                <label for="category">Categoría</label>
+                                <select id="category" name="category" class="form-control" onchange="this.form.submit()">
+                                    <option value="">Todas</option>
+                                    <?php foreach ($categories as $c): ?>
+                                        <option value="<?=$c->id?>" <?=$category && $category->id == $c->id ? 'selected' : ''?>><?= $c->name ?></option>
+                                    <?php endforeach ?>
+                                </select>
+                            </div>
 
+                            <div class="form-group">
+                                <label for="institution">Institución</label>
+                                <select id="institution" name="institution" class="form-control" onchange="this.form.submit()">
+                                    <option value="">Todas</option>
+                                    <?php foreach ($institutions as $c): ?>
+                                        <option value="<?=$c->id?>" <?=$institution && $institution->id == $c->id ? 'selected' : ''?>><?= $c->name ?></option>
+                                    <?php endforeach ?>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <hr>
+            </div>
+            <div class="col-md-8 col-md-pull-4">
                 <?php if($results->count()):?>
                     <ol class="search-results">
                         <?php foreach($results as $r):?>
@@ -30,34 +63,6 @@
                         <p>Lo sentimos, no hay resultados disponibles bajo los filtros especificados, pruebe utilizando otro término o modificando los filtros de búsqueda en el menú lateral.</p>
                     </div>
                 <?php endif ?>
-            </div>
-            <div class="col-sm-4">
-                <div class="filter">
-                    <h3><i class="material-icons">filter_list</i> Filtrar por</h3>
-
-                    <form action="buscar">
-                        <input type="hidden" name="query" value="<?=$query?>" />
-                        <div class="form-group">
-                            <label for="category">Categoría</label>
-                            <select id="category" name="category" class="form-control" onchange="this.form.submit()">
-                                <option value="">Todas</option>
-                                <?php foreach ($categories as $c): ?>
-                                    <option value="<?=$c->id?>" <?=$category && $category->id == $c->id ? 'selected' : ''?>><?= $c->name ?></option>
-                                <?php endforeach ?>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="institution">Institución</label>
-                            <select id="institution" name="institution" class="form-control" onchange="this.form.submit()">
-                                <option value="">Todas</option>
-                                <?php foreach ($institutions as $c): ?>
-                                    <option value="<?=$c->id?>" <?=$institution && $institution->id == $c->id ? 'selected' : ''?>><?= $c->name ?></option>
-                                <?php endforeach ?>
-                            </select>
-                        </div>
-                    </form>
-                </div>
             </div>
         </div>
     </div>

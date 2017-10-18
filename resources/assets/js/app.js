@@ -53,5 +53,11 @@ const app = new Vue({
     },
     directives:{
         SelectFirstTab
+    },
+    mounted() {
+        gumshoe.init();
+        var scroll = new SmoothScroll('.sidebar-menu a[href*="#"]', {
+            header: 'page-mobile-nav-container'
+        });
     }
 });

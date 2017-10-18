@@ -282,7 +282,6 @@ ol.breadcrumb{
   }
 
 }
-
 .modal-redirect{
   .modal-dialog{
     margin-top: 300px;
@@ -297,7 +296,6 @@ ol.breadcrumb{
     }
     .modal-body{
       padding-bottom: 70px;
-    }
     .modal-footer{
       border-top: none;
       .btn-link{
@@ -313,10 +311,8 @@ ol.breadcrumb{
       }
     }
   }
-
-
 }
-
+}
 header.default{
   background: $darkblue;
   .search-area{
@@ -673,7 +669,7 @@ main {
       }
     }
     .filter{
-      h3{
+      h3, .filter-collapse{
         font-size: 14px;
         color: $red;
         font-weight: normal;
@@ -681,9 +677,47 @@ main {
         .material-icons{
           font-size: 14px;
         }
+        &.heading {
+          display: none;
+          @media (min-width: 768px) {
+            display: block;
+          }
+        }
       }
       label{
         font-weight: normal;
+      }
+      .filter-collapse {
+        display: block;
+        width: 100%;
+        text-align: left;
+        padding: 0;
+        margin-bottom: 10px;
+        @media (min-width: 768px) {
+          display: none;
+        }
+        &:active {
+          box-shadow: none;
+        }
+        span {
+          float: right;
+          margin-top: 8px;
+          border-top: 6px dashed;
+          border-top: 4px solid \9;
+          border-right: 6px solid transparent;
+          border-left: 6px solid transparent;
+          transition: .2s ease;
+        }
+        &:not(.collapsed) {
+          span {
+            transform: rotate(180deg);
+          }
+        }
+      }
+      #filterCollapseMobile {
+        @media (min-width: 768px) {
+          display: inline-block;
+        }
       }
     }
   }
@@ -701,6 +735,18 @@ main {
       }
       &.affix-bottom{
         position:absolute;
+      }
+      .mobile-heading {
+        display: block;
+        @media (min-width: 768px) {
+          display: none;
+        }
+      }
+      #collapseNav {
+        background-color: #fff;
+        @media (min-width: 768px) {
+          padding: 12px 20px;
+        }
       }
       .index{
         margin-bottom: 20px;
@@ -730,44 +776,6 @@ main {
           }
         }
       }
-      .affix-dropdown {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        left: 0;
-        z-index: 3;
-        background-color: #fff;
-        .page-title {
-          font-size: 14px;
-          color: #8F8F8F;
-          margin-bottom: 10px;
-          padding: 5px 15px;
-        }
-        .toggle-spy {
-          width: 100%;
-          background-color: #fff;
-          box-shadow: 0 2px 4px 0 rgba(203,203,203,0.50);
-          text-align: left;
-          ol {
-            display: inline-block;
-            margin: 0;
-            li {
-              display: none;
-              margin: 0;
-              &.active {
-                display: block;
-              }
-            }
-          }
-          .caret {
-            float: right;
-          }
-        }
-      }
-      #collapseNav {
-        background-color: #fff;
-        padding: 10px 20px;
-      }
     }
     .online{
       font-weight: 500;
@@ -780,7 +788,7 @@ main {
       margin-top: 0;
     }
     h4{
-      font-family:"Roboto Slab";
+      font-family: $robotoslab;
       font-size: 20px;
       font-weight: normal;
       margin-top: 30px;
