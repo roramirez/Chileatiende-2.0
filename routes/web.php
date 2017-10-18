@@ -35,6 +35,7 @@ Route::group(['middleware' => ['auth'], 'prefix'=>'backend', 'namespace'=>'Backe
         Route::resource('files', 'FileController');
         Route::resource('institutions', 'InstitutionController');
         Route::resource('categories', 'CategoryController');
+        Route::resource('locations', 'LocationController');
     });
 });
 

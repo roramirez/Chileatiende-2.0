@@ -56,6 +56,20 @@
                 <div class="help-block" v-for="e in errors['director']">{{e}}</div>
             </div>
         </div>
+        <div class="form-group" :class="{'has-error': errors['institution_id']}">
+            <label for="institution_id" class="col-sm-2 control-label">Institución</label>
+            <div class="col-sm-10">
+                <institution-select id="institution_id" v-model="data.institution_id"></institution-select>
+                <div class="help-block" v-for="e in errors['institution_id']">{{e}}</div>
+            </div>
+        </div>
+        <div class="form-group" :class="{'has-error': errors['location_id']}">
+            <label for="location_id" class="col-sm-2 control-label">Comuna</label>
+            <div class="col-sm-10">
+                <city-select id="location_id" v-model="data.location_id"></city-select>
+                <div class="help-block" v-for="e in errors['location_id']">{{e}}</div>
+            </div>
+        </div>
 
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
@@ -65,10 +79,14 @@
         </div>
     </form>
 </template>
-<style lang="scss">
-
+<style lang="scss" scoped>
+    .el-select{
+        display: block;
+    }
 </style>
 <script>
+    import InstitutionSelect from './InstitutionSelect.vue';
+    import CitySelect from './CitySelect.vue';
 
     export default {
         data: function(){
@@ -78,6 +96,10 @@
             }
         },
         props: ['office','edit'],
+        components:{
+            InstitutionSelect,
+            CitySelect
+        },
         methods:{
             submit: function(){
                 var self = this;
