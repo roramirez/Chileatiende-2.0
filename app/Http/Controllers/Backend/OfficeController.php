@@ -61,14 +61,38 @@ class OfficeController extends Controller{
         $this->validate($request, [
             'name' => 'required',
             'address' => 'required',
+            'schedules' => 'required',
+            'phones' => 'required',
+            'fax' => 'required',
+            'lat' => 'required|numeric',
+            'lng' => 'required|numeric',
+            'institution_id' => 'required',
+            'location_id' => 'required',
         ]);
 
         $office->name = $request->input('name');
         $office->address = $request->input('address');
+        $office->schedules = $request->input('schedules');
+        $office->phones = $request->input('phones');
+        $office->fax = $request->input('fax');
+        $office->director = $request->input('director');
+        $office->lat = $request->input('lat');
+        $office->lng = $request->input('lng');
+        $office->institution_id = $request->input('institution_id');
+        $office->location_id = $request->input('location_id');
         $office->save();
 
 
         return $office;
+    }
+
+    public function destroy(Request $request, $id){
+        $office = Office::find($id);
+        $office->delete();
+
+        $request->session()->flash('status', 'Oficina eliminada con éxito');
+
+        return redirect('backend/oficinas');
     }
 
 
