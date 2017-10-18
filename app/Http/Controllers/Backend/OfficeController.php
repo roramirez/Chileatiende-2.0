@@ -66,6 +66,8 @@ class OfficeController extends Controller{
             'fax' => 'required',
             'lat' => 'required|numeric',
             'lng' => 'required|numeric',
+            'institution_id' => 'required',
+            'location_id' => 'required',
         ]);
 
         $office->name = $request->input('name');
@@ -76,6 +78,8 @@ class OfficeController extends Controller{
         $office->director = $request->input('director');
         $office->lat = $request->input('lat');
         $office->lng = $request->input('lng');
+        $office->institution_id = $request->input('institution_id');
+        $office->location_id = $request->input('location_id');
         $office->save();
 
 
