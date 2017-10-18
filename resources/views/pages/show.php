@@ -5,7 +5,6 @@
             <li><a href="instituciones/<?= $page->institution->id ?>"><?= $page->institution->name ?></a></li>
             <li><?= $page->title ?></li>
         </ol>
-
         <div class="row">
             <div class="col-sm-8">
                 <?php if($page->online):?><div class="online">Trámite Online</div><?php endif ?>
@@ -62,8 +61,8 @@
                 <?php endif ?>
             </div>
             <div class="col-sm-4 hidden-sm hidden-xs">
-                <div class="sidebar-menu" data-spy="affix" data-offset-top="345" data-offset-bottom="500">
-                    <ol type="1" class="nav index">
+                <div class="sidebar-menu" data-gumshoe-header data-spy="affix" data-offset-top="345" data-offset-bottom="500">
+                    <ol type="1" class="nav index" data-gumshoe>
                         <li><a href="<?= url()->current() ?>#objective" data-target="#objective">Descripción</a></li>
                         <?php if($page->details):?><li><a href="<?= url()->current() ?>#details" data-target="#details">Detalles</a></li><?php endif ?>
                         <li><a href="<?= url()->current() ?>#beneficiaries" data-target="#beneficiaries">¿A quién está dirigido?</a></li>
@@ -73,6 +72,25 @@
                     <?php if($page->online):?>
                         <a class="btn btn-online" href="<?=$page->online_url?>" target="_blank">Ir al trámite en línea</a>
                     <?php endif ?>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="need-help">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h3>Necesitas Ayuda?</h3>
+                    <h4>Llámanos al 101</h4>
+                    <p>Lunes a Jueves, de 8:00 a 20:00 hrs.</p>
+                    <p>Viernes, de 8:00 a 18:00 hrs.</p>
+                </div>
+                <div class="col-md-6">
+                    <p>Para hacer tu atención más expedita, indícanos este Código de Trámite</p>
+                    <div class="page-id-container">
+                        <div class="heading">código de trámite</div>
+                        <div class="number"><?= $page->master_id ?></div>
+                    </div>
                 </div>
             </div>
         </div>

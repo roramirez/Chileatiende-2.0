@@ -399,14 +399,13 @@ header.home{
         >a{
           padding: 9px 15px;
           margin-right: 10px;
-          background: $red;
+          background: $darkblue;
           color: white;
-          border: 1px solid darken($red, 10%);
           border-radius: 2px;
           display: inline-block;
           &:hover{
             text-decoration: none;
-            background: darken($red, 10%);
+            background: $red;
           }
         }
       }
@@ -428,7 +427,6 @@ header.home{
 }
 
 main {
-  padding-bottom: 150px;
   background: white;
   color: $black;
   #home{
@@ -449,6 +447,7 @@ main {
         display: inline-block;
       }
       .featured-button {
+        margin-top: -5px;
         color: $red;
         float: right;
         line-height: 1;
@@ -655,7 +654,7 @@ main {
     }
   }
   #page{
-    padding: 30px 0;
+    padding: 30px 0 0 0;
     font-weight: 300;
     font-size: 16px;
     .sidebar-menu{
@@ -684,10 +683,13 @@ main {
             border-left: 2px solid $red;
           }
           a{
-            font-size: 16px;
+            font-size: 14px;
             text-decoration: underline;
             padding: 0;
             display: inline-block;
+            @media (min-width: 768px) {
+              font-size: 16px;
+            }
             &:hover {
               background-color: transparent;
             }
@@ -700,6 +702,13 @@ main {
         width: 100%;
         left: 0;
         z-index: 3;
+        background-color: #fff;
+        .page-title {
+          font-size: 14px;
+          color: #8F8F8F;
+          margin-bottom: 10px;
+          padding: 5px 15px;
+        }
         .toggle-spy {
           width: 100%;
           background-color: #fff;
@@ -1007,6 +1016,7 @@ main {
         background-color: $lightbg;
         padding: 20px;
         border-left: 2px solid $red;
+        min-height: 160px;
         p {
           margin: 0;
           a {
@@ -1072,6 +1082,8 @@ main {
           border-radius: 10px;
           text-align: center;
           margin-right: 16px;
+          padding-top: 2px;
+          font-size: 12px;
         }
       }
     }
@@ -1419,6 +1431,35 @@ footer{
   }
   p {
     margin: 0;
+  }
+}
+.need-help {
+  background-color: $lightbg;
+  padding: 40px 0;
+  h3 {
+    font-family: $roboto;
+    color: $red;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  h4 {
+    font-size: 28px;
+    color: #757575;
+  }
+  p {
+    margin-bottom: 5px;
+  }
+  .page-id-container {
+    background-color: #fff;
+    padding: 10px;
+    .heading {
+      text-transform: uppercase;
+      font-size: 10px;
+      color: #757575;
+    }
+    .number {
+      font-size: 14px;
+    }
   }
 }
 

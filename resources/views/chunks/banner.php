@@ -13,11 +13,11 @@
                 </div>
             </div> 
         </div>
-        <div class="col-md-6 text-right">
+        <div class="col-md-6 text-center">
             <a href="/fichas/11331-obtencion-de-la-clave-unica" class="main-btn blue-btn">
                 Conoce la Clave Única →
             </a>
-            <p>Podrás realizar en línea <strong>82 trámites del Estado.</strong></p>
+            <p>Podrás realizar trámites en línea<br><strong>de 91 instituciones del Estado.</strong></p>
         </div>
     </div>
 </section>

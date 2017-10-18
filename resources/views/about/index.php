@@ -11,7 +11,7 @@
 					</div>
 					<div class="col-md-6 text-right">
 						<a href="instituciones" class="main-btn red-btn">
-							Instituciones Asociadas →
+							Instituciones que publican en este portal →
 						</a>
 					</div>
 				</div>
@@ -31,7 +31,7 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-md-4">
+			<div class="col-md-3">
 				<div class="channel-card">
 					<div class="card-heading">
 						<img src="images/sitio-web.svg" alt="ícono web">
@@ -42,7 +42,18 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-md-4">
+			<div class="col-md-3">
+				<div class="channel-card">
+					<div class="card-heading">
+						<img src="images/sitio-web.svg" alt="ícono web">
+						<h3>Kioskos</h3>
+					</div>
+					<div class="card-body">
+						<p><a href="#">Kioskos de autoatención</a> que permiten acceder de manera simple y directa a información sobre más de 2.200 beneficios y servicios públicos.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3">
 				<div class="channel-card">
 					<div class="card-heading">
 						<img src="images/callcenter-02.svg" alt="ícono callcenter">
@@ -53,7 +64,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-md-4">
+			<div class="col-md-3">
 				<div class="channel-card">
 					<div class="card-heading">
 						<img src="images/sucursales.svg" alt="ícono Sucursales">

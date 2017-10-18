@@ -1,9 +1,10 @@
 <template>
 	<div class="page-mobile-menu-component sidebar-menu" v-if="isVisible">
         <div class="dropdown affix-dropdown">
-            <div class="toggle-spy btn" role="button" data-toggle="collapse" href="#collapseNav" aria-expanded="false" aria-controls="collapseNav">
-                <ol type="1" class="nav index">
-                    <li><a :href="currentUrl+'#objective'" data-target="#objective">Descripción</a></li>
+			<div class="page-title">{{ page.title }}</div>
+            <div class="toggle-spy btn" role="button" data-toggle="collapse" href="#collapseNav" aria-expanded="false" aria-controls="collapseNav" data-gumshoe-header>
+                <ol type="1" class="nav index" data-gumshoe>
+                    <li><a href="#objective">Descripción</a></li>
                     <li v-if="page.details"><a :href="currentUrl+'#details'" data-target="#details">Detalles</a></li>
                     <li><a :href="currentUrl+'#beneficiaries'" data-target="#beneficiaries">¿A quién está dirigido?</a></li>
                     <li v-if="page.requirements"><a :href="currentUrl+'#requirements'" data-target="#requirements">¿Qué necesito para hacer el trámite?</a></li>
@@ -12,7 +13,7 @@
                 <span class="caret"></span>
             </div>
             <div class="collapse" id="collapseNav">
-	            <ol type="1" class="nav index collapse">
+	            <ol type="1" class="nav index">
 	                <li><a :href="currentUrl+'#objective'" data-target="#objective">Descripción</a></li>
 	                <li v-if="page.details"><a :href="currentUrl+'#details'" data-target="#details">Detalles</a></li>
 	                <li><a :href="currentUrl+'#beneficiaries'" data-target="#beneficiaries">¿A quién está dirigido?</a></li>
@@ -42,6 +43,7 @@
 			}
 		},
 		mounted() {
+			gumshoe.init();
 			this.calculateTop(document.getElementById('objective'));
 			window.addEventListener('scroll', (e) => {
 				this.handleScroll();
