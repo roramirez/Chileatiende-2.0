@@ -106,7 +106,7 @@
                 </div>
 
                 <label>¿Qué trámite o servicio buscas?</label>
-                <form action="buscar">
+                <form action="buscar" onsubmit="var value = document.querySelector('#search input').value; document.querySelector('#search input').value = value.substring(0,value.length - 1)">
                     <search id="search" class="search" name="query" value=""></search>
                 </form>
                 <div class="search-list-container">

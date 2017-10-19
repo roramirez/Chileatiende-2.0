@@ -84,7 +84,7 @@
         <div class="search-area">
             <div class="container">
                 <label>¿Qué trámite o servicio buscas?</label>
-                <form action="buscar">
+                <form action="buscar" onsubmit="var value = document.querySelector('#search input').value; document.querySelector('#search input').value = value.substring(0,value.length - 1)">
                     <search id="search" name="query" value="<?=@$query?>"></search>
                 </form>
             </div>
