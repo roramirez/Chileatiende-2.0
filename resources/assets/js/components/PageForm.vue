@@ -107,6 +107,14 @@
 
         </div>
 
+        <div class="form-group" :class="{'has-error': errors['legal']}">
+            <label for="legal" class="col-sm-2 control-label">Marco Legal</label>
+            <div class="col-sm-10">
+                <editor id="legal" v-model="data.legal"></editor>
+                <div class="help-block" v-for="e in errors['legal']">{{e}}</div>
+            </div>
+        </div>
+
         <div class="form-group" :class="{'has-error': errors['keywords']}">
             <label for="keywords" class="col-sm-2 control-label">Keywords</label>
             <div class="col-sm-10">

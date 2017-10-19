@@ -98,6 +98,7 @@ class PageController extends Controller{
         $page->phone_guide = $request->input('phone_guide');
         $page->mail = $request->input('mail');
         $page->mail_guide = $request->input('mail_guide');
+        $page->legal = $request->input('legal');
         $page->keywords = $request->input('keywords');
         $page->save();
 
