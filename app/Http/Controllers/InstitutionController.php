@@ -8,7 +8,7 @@ class InstitutionController extends Controller{
 
     public function index(){
 
-        $data['institutions'] = Institution::orderBy('name')
+        $data['institutions'] = Institution::has('pages')->orderBy('name')
             ->get()
             ->groupBy(function($d){
                 return $d->name[0];
