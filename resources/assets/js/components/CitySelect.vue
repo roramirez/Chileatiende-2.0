@@ -20,7 +20,7 @@
             ElOption
         },
         watch:{
-            institutionId: function(value){
+            cityId: function(value){
                 this.$emit('input', value);
             }
         },

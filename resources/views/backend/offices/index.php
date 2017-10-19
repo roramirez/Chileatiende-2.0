@@ -17,6 +17,7 @@
             <th>Dirección</th>
             <th>Latitud</th>
             <th>Longitud</th>
+            <th>Movil</th>
             <th>Acciones</th>
         </tr>
         </thead>
@@ -28,6 +29,7 @@
             <td><?=$p->address?></td>
             <td><?=$p->lat?></td>
             <td><?=$p->lng?></td>
+            <td><?=$p->mobile ? 'Sí' : 'No'?></td>
             <td class="text-center">
                 <a href="backend/oficinas/<?=$p->id?>/edit"><i class="material-icons">edit</i></a>
                 <form id="form-<?=$p->id?>" method="post" action="backend/oficinas/<?=$p->id?>" style="display: inline">

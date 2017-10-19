@@ -70,6 +70,16 @@
                 <div class="help-block" v-for="e in errors['location_id']">{{e}}</div>
             </div>
         </div>
+        <div class="form-group" :class="{'has-error': errors['mobile']}">
+            <label class="col-sm-2 control-label">¿Movil?</label>
+            <div class="col-sm-10">
+                <div class="radio">
+                    <label><input type="radio" v-model="data.mobile" :value="true" /> Si</label>
+                    <label><input type="radio" v-model="data.mobile" :value="false" /> No</label>
+                </div>
+                <div class="help-block" v-for="e in errors['mobile']">{{e}}</div>
+            </div>
+        </div>
 
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
