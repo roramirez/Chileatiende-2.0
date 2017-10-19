@@ -1,4 +1,4 @@
-<div id="oficinas-moviles">
+<div id="mobile-offices">
 	<div class="container">
 		<ol class="breadcrumb">
             <li><a href=""><i class="material-icons">home</i></a></li>
@@ -25,7 +25,7 @@
 				<div class="main-tabs">
 	                <ul class="nav nav-tabs" role="tablist" v-select-first-tab>
                         <?php foreach($offices->groupBy('location.parent.parent.id') as $location => $off):?>
-                            <li role="presentation"><a href="#location-<?=$location?>" aria-controls="online" role="tab" data-toggle="tab"><?=$off[0]->location->parent->parent->name?></a></li>
+                            <li role="presentation"><a href="#location-<?=$location?>" aria-controls="online" role="tab" data-toggle="tab"><?=$off[0]->location->parent->parent->shortname?></a></li>
                         <?php endforeach ?>
 	                </ul>
 	                <div class="tab-content">
@@ -42,7 +42,7 @@
                                 <?php foreach($off as $o):?>
                                 <tr>
                                     <td>
-                                        <div class="city"><?=$o->location->name?></div>
+                                        <div class="title"><?=$o->name?></div>
                                         <?=$o->address?>
                                     </td>
                                     <td><?=$o->schedules?></td>
