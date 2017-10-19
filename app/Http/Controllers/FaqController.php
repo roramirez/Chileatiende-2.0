@@ -33,11 +33,20 @@ class FaqController extends Controller{
         ]);
     }
 
+    public function getMobileOffices(){
+        return view('layouts/layout',[
+            'title' => 'Sucursales',
+            'content' => view('faq/mobile-offices',[
+                'offices' => Office::with('location','location.parent','location.parent.parent')->where('mobile',1)->get()
+            ])
+        ]);
+    }
+
     public function getOffices(){
         return view('layouts/layout',[
             'title' => 'Sucursales',
             'content' => view('faq/offices',[
-                'offices' => Office::with('location','location.parent','location.parent.parent')->get()
+                'offices' => Office::with('location','location.parent','location.parent.parent')->where('mobile',0)->get()
             ])
         ]);
     }

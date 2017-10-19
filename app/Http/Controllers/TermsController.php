@@ -7,7 +7,7 @@ use App\Page;
 class TermsController extends Controller{
 
     public function __invoke() {
-        $content = view('pages/terms');
+        $content = view('terms/index');
 
         return view('layouts/layout',[
             'title' => 'Términos y condiciones de uso',

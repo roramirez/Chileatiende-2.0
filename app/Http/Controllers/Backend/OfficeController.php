@@ -20,7 +20,10 @@ class OfficeController extends Controller{
     }
 
     public function create(){
-        $data['office'] = new Office();
+        $office = new Office();
+        $office->mobile = false;
+
+        $data['office'] = $office;
         $data['edit'] = false;
 
         return view('layouts/backend',[
@@ -62,24 +65,24 @@ class OfficeController extends Controller{
             'name' => 'required',
             'address' => 'required',
             'schedules' => 'required',
-            'phones' => 'required',
-            'fax' => 'required',
-            'lat' => 'required|numeric',
-            'lng' => 'required|numeric',
+            'lat' => 'required_if:mobile,false|numeric',
+            'lng' => 'required_if:mobile,false|numeric',
             'institution_id' => 'required',
             'location_id' => 'required',
+            'mobile' => 'required|boolean'
         ]);
 
         $office->name = $request->input('name');
         $office->address = $request->input('address');
         $office->schedules = $request->input('schedules');
-        $office->phones = $request->input('phones');
-        $office->fax = $request->input('fax');
-        $office->director = $request->input('director');
+        $office->phones = $request->input('phones','');
+        $office->fax = $request->input('fax','');
+        $office->director = $request->input('director','');
         $office->lat = $request->input('lat');
         $office->lng = $request->input('lng');
         $office->institution_id = $request->input('institution_id');
         $office->location_id = $request->input('location_id');
+        $office->mobile = $request->input('mobile');
         $office->save();
 
 
