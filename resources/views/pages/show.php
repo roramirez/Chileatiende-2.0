@@ -7,9 +7,7 @@
         </ol>
         <div class="row">
             <div class="col-md-4 col-md-push-8">
-                <div class="sidebar-menu" data-spy="affix" data-offset-top="300" data-offset-bottom="500">
-                    <page-mobile-nav :page="<?= e(json_encode($page)) ?>" current-url="<?= url()->current() ?>"></page-mobile-nav>
-                </div>
+                <page-mobile-nav :page="<?= e(json_encode($page)) ?>" current-url="<?= url()->current() ?>"></page-mobile-nav>
             </div>
             <div class="col-md-8 col-md-pull-4">
                 <?php if($page->online):?><div class="online">Trámite Online</div><?php endif ?>
@@ -68,7 +66,7 @@
             </div>
         </div>
     </div>
-    <div class="need-help">
+    <div id="need-help">
         <div class="container">
             <div class="row">
                 <div class="col-md-3">

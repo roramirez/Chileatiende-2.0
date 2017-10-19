@@ -654,12 +654,19 @@ main {
           font-size: 16px;
           border: 1px solid $red;
           color: $red;
+          border-radius: 3px;
+          padding: 3px 10px;
+          margin-bottom: 10px;
         }
         &.active{
           >*{
             background: $red;
             color: white;
           }
+        }
+        &:hover {
+          background-color: $red;
+          color: #fff;
         }
         &:last-child{
           >*{
@@ -708,11 +715,6 @@ main {
           border-left: 6px solid transparent;
           transition: .2s ease;
         }
-        &:not(.collapsed) {
-          span {
-            transform: rotate(180deg);
-          }
-        }
       }
       #filterCollapseMobile {
         @media (min-width: 768px) {
@@ -741,9 +743,13 @@ main {
       font-weight: normal;
       transition: margin-top ease-out 0.3s;
       margin-top: 0;
+      background-color: #fff;
       &.affix{
         top: 0;
-        margin-top: 20px;
+        z-index: 2;
+        @media (min-width: 768px) {
+          margin-top: 20px;
+        }
       }
       &.affix-bottom{
         position:absolute;
@@ -758,6 +764,7 @@ main {
         background-color: #fff;
         @media (min-width: 768px) {
           padding: 12px 20px;
+          display: inline-block;
         }
       }
       .index{
@@ -902,6 +909,19 @@ main {
     hr{
       border-color: #D7D6D7;
     }
+    .index-container {
+      width: 100%;
+      min-height: 70px;
+      background-color: #fff;
+      z-index: 2;
+      &.affix{
+        top: 0;
+        padding: 30px 0;
+      }
+      &.affix-bottom{
+        position:absolute;
+      }
+    }
     ul.index{
       list-style: none;
       padding-left: 0;
@@ -918,6 +938,11 @@ main {
           height: 26px;
           line-height: 26px;
           border-radius: 2px;
+          margin-bottom: 10px;
+          &.active {
+            background-color: $red;
+            color: #fff;
+          }
         }
       }
     }
@@ -1487,7 +1512,7 @@ footer{
     margin: 0;
   }
 }
-.need-help {
+#need-help {
   background-color: $lightbg;
   padding: 40px 0;
   h3 {

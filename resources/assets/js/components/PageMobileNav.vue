@@ -1,13 +1,13 @@
 <template>
-	<div class="page-mobile-menu-component sidebar-menu" v-if="isVisible">
+	<div id="page-nav" class="page-mobile-menu-component sidebar-menu" v-bind:class="{ affix: isVisible, 'affix-bottom': isAffix }" style="">
 		<div class="mobile-heading">
 			<div class="page-title">{{ page.title }}</div>
-			<div class="current">
-				contenido
+			<a class="current" role="button" data-toggle="collapse" href="#collapseNav">
+				{{ activeNavPage }}
 				<span class="caret"></span>
-			</div>
+			</a>
 		</div>
-        <div id="collapseNav">
+        <div id="collapseNav" class="collapse">
             <ol type="1" class="nav index" data-gumshoe>
                 <li><a :href="currentUrl+'#objective'" data-target="#objective">Descripción</a></li>
                 <li v-if="page.details"><a :href="currentUrl+'#details'" data-target="#details">Detalles</a></li>
@@ -20,7 +20,7 @@
     </div>
 </template>
 <script>
-
+	
 	export default {
 		props: {
 			'page': {
@@ -33,20 +33,39 @@
 		data() {
 			return {
 				top: null,
-				scrollTop: null
+				scrollTop: null,
+				pageHeight: null,
+				activeNavPage: null
 			}
 		},
 		mounted() {
+			var self = this;
+			gumshoe.init({
+	            offset: 100,
+	            callback: function(nav) {
+	            	if (typeof nav !== 'undefined') {
+	                	self.activeNavPage = $(nav.target).text();
+	            	}
+	            }
+	        });
 			this.calculateTop(document.getElementById('objective'));
 			window.addEventListener('scroll', (e) => {
 				this.handleScroll();
 			});
-			console.log('lala');
+			this.pageHeight = document.getElementById('page').clientHeight - document.getElementById('need-help').clientHeight;
 		},
 		computed: {
 			isVisible() {
-				// return this.scrollTop > this.top;
-				return true;
+				return this.scrollTop > 330 && this.scrollTop < this.pageHeight;
+			},
+			isAffix() {
+				if (this.scrollTop >= this.pageHeight) {
+					$("#page-nav").attr('style', 'top:' + this.pageHeight + 'px');
+				}
+				else {
+					$("#page-nav").attr('style', '');
+				}
+				return this.scrollTop >= this.pageHeight;
 			}
 		},
 		methods: {
