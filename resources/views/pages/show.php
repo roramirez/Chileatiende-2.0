@@ -19,6 +19,7 @@
                 <hr />
                 <h4 id="objective">Descripción</h4>
                 <?=App\Twig::render($page->objective)?>
+                <br />
                 <div class="important">
                     <h4>Marco Legal</h4>
                     <?=$page->legal?>
