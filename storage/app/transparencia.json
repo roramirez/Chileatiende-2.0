@@ -1,0 +1,590 @@
+{
+	"letters": {
+		"a":[
+			{
+				"title":"Agencia de Calidad de la Educación",
+				"url":"https://www.chileatiende.gob.cl/servicios/ver/AJ012"
+			},
+			{
+				"title":"Agencia de Cooperación Internacional",
+				"url":"https://www.chileatiende.gob.cl/transparencia/AgCI"
+			},
+			{
+				"title":"Agencia de Promoción de la Inversión Extranjera",
+				"url":"https://www.chileatiende.gob.cl/transparencia/InvestChile"
+			},
+			{
+				"title":"Automóvil Club de Chile",
+				"url":"https://www.chileatiende.gob.cl/servicios/ver/ZC001"
+			},
+			{
+				"title":"Autoridad Sanitaria",
+				"url":"https://www.chileatiende.gob.cl/servicios/ver/AO998"
+			}
+		],
+		"b": [
+			{
+				"title":"BancoEstado",
+				"url":"https://www.chileatiende.gob.cl/servicios/ver/ZA001"
+			}
+		],
+		"c": [
+			{
+				"title":"Caja de Previsión de la Defensa Nacional",
+				"url":"https://www.chileatiende.gob.cl/transparencia/CAPREDENA"
+			},
+			{
+				"title":"Carabineros de Chile",
+				"url":"https://www.chileatiende.gob.cl/servicios/ver/AD009"
+			},
+			{
+				"title":"ChileAtiende",
+				"url":"https://www.chileatiende.gob.cl/servicios/ver/ZZ001"
+			},
+			{
+				"title":"ChileAtiende Pymes",
+				"url":"https://www.chileatiende.gob.cl/servicios/ver/ZY000"
+			},
+			{
+				"title":"Comisión Administradora del Sistema de Créditos para Estudios Superiores (Comisión Ingresa)",
+				"url":"https://www.chileatiende.gob.cl/servicios/ver/AJ004"
+			},
+			{
+				"title":"Comisión Chilena de Energía Nuclear",
+				"url":"https://www.chileatiende.gob.cl/transparencia/CCHEN"
+			},
+			{
+				"title":"Comisión Chilena del Cobre",
+				"url":"https://www.chileatiende.gob.cl/transparencia/COCHILCO"
+			},
+			{
+				"title":"Comisión de Medicina Preventiva e Invalidez",
+				"url":"https://www.chileatiende.gob.cl/transparencia/COMPIN"
+			},
+			{
+				"title":"Comisión Defensora Ciudadana",
+				"url":"https://www.chileatiende.gob.cl/transparencia/CDC"
+			},
+			{
+				"title":"Comisión del Sistema Nacional de Certificación de Competencias Laborales",
+				"url":"https://www.chileatiende.gob.cl/transparencia/ChileValora"
+			},
+			{
+				"title":"Comisión Nacional de Investigación Científica y Tecnológica",
+				"url":"https://www.chileatiende.gob.cl/transparencia/CONICYT"
+			},
+			{
+				"title":"Comisión Nacional de Riego",
+				"url":"https://www.chileatiende.gob.cl/transparencia/CNR"
+			},
+			{
+				"title":"Comité de Seguros del Agro",
+				"url":"https://www.chileatiende.gob.cl/transparencia/Agroseguros"
+			},
+			{
+				"title":"Comité Innova Bío Bío",
+				"url":"https://www.chileatiende.gob.cl/servicios/ver/AH999"
+			},
+			{
+				"title":"Consejo de Calificación Cinematográfica",
+				"url":"https://www.chileatiende.gob.cl/transparencia/CCC"
+			},
+			{
+				"title":"Consejo de Defensa del Estado",
+				"url":"https://www.chileatiende.gob.cl/transparencia/CDE"
+			},
+			{
+				"title":"Consejo Nacional de Educación",
+				"url":"https://www.chileatiende.gob.cl/transparencia/CNED"
+			},
+			{
+				"title":"Consejo Nacional de la Cultura y las Artes",
+				"url":"https://www.chileatiende.gob.cl/transparencia/CNCA"
+			},
+			{
+				"title":"Consejo Nacional de Televisión",
+				"url":"https://www.chileatiende.gob.cl/transparencia/CNTV"
+			},
+			{
+				"title":"Conservador de Bienes Raíces de Santiago",
+				"url":"https://www.chileatiende.gob.cl/transparencia/CBRS"
+			},
+			{
+				"title":"Contraloría General de la República",
+				"url":"https://www.chileatiende.gob.cl/transparencia/CGR"
+			},
+			{
+				"title":"Corporación de Asistencia Judicial Región Metropolitana",
+				"url":"https://www.chileatiende.gob.cl/servicios/ver/AK008"
+			},
+			{
+				"title":"Corporación de Fomento de la Producción",
+				"url":"https://www.chileatiende.gob.cl/transparencia/CORFO"
+			},
+			{
+				"title":"Corporación Nacional de Desarrollo Indígena",
+				"url":"https://www.chileatiende.gob.cl/transparencia/CONADI"
+			},
+			{
+				"title":"Corporación Nacional Forestal",
+				"url":"https://www.chileatiende.gob.cl/transparencia/CONAF"
+			},
+			{
+				"title":"CorreosChile",
+				"url":"https://www.chileatiende.gob.cl/servicios/ver/ZA002"
+			}
+		],
+		"d": [
+			{
+				"title":"Defensa Civil de Chile",
+				"url":"https://www.chileatiende.gob.cl/servicios/ver/AD012"
+			},
+			{
+				"title":"Defensoría Penal Pública",
+				"url":"https://www.chileatiende.gob.cl/transparencia/DPP"
+			},
+			{
+				"title":"Diario Oficial",
+				"url":"https://www.chileatiende.gob.cl/servicios/ver/ZA003"
+			},
+			{
+				"title":"Dirección de Aeropuertos",
+				"url":"https://www.chileatiende.gob.cl/transparencia/DAP"
+			},
+			{
+				"title":"Dirección de Arquitectura",
+				"url":"https://www.chileatiende.gob.cl/transparencia/DA"
+			},
+			{
+				"title":"Dirección de Bibliotecas, Archivos y Museos",
+				"url":"https://www.chileatiende.gob.cl/transparencia/DIBAM"
+			},
+			{
+				"title":"Dirección de Compras y Contratación Pública",
+				"url":"https://www.chileatiende.gob.cl/transparencia/ChileCompra"
+			},
+			{
+				"title":"Dirección de Contabilidad y Finanzas",
+				"url":"https://www.chileatiende.gob.cl/servicios/ver/AM003"
+			},
+			{
+				"title":"Dirección de Obras Hidráulicas",
+				"url":"https://www.chileatiende.gob.cl/transparencia/DOH"
+			},
+			{
+				"title":"Dirección de Obras Portuarias",
+				"url":"https://www.chileatiende.gob.cl/transparencia/DOP"
+			},
+			{
+				"title":"Dirección de Planeamiento",
+				"url":"https://www.chileatiende.gob.cl/transparencia/DIRPLAN"
+			},
+			{
+				"title":"Dirección de Presupuestos",
+				"url":"https://www.chileatiende.gob.cl/transparencia/DIP®RES"
+			},
+			{
+				"title":"Dirección de Previsión de Carabineros de Chile",
+				"url":"https://www.chileatiende.gob.cl/transparencia/DIPRECA"
+			},
+			{
+				"title":"Dirección de Promoción de Exportaciones",
+				"url":"https://www.chileatiende.gob.cl/transparencia/PROCHILE"
+			},
+			{
+				"title":"Dirección de Vialidad",
+				"url":"https://www.chileatiende.gob.cl/servicios/ver/AM010"
+			},
+			{
+				"title":"Dirección del Trabajo",
+				"url":"https://www.chileatiende.gob.cl/transparencia/DT"
+			},
+			{
+				"title":"Dirección General de Aeronáutica Civil",
+				"url":"https://www.chileatiende.gob.cl/transparencia/DGAC"
+			},
+			{
+				"title":"Dirección General de Aguas",
+				"url":"https://www.chileatiende.gob.cl/transparencia/DGA"
+			},
+			{
+				"title":"Dirección General de Movilización Nacional",
+				"url":"https://www.chileatiende.gob.cl/transparencia/DGMN"
+			},
+			{
+				"title":"Dirección General de Obras Públicas",
+				"url":"https://www.chileatiende.gob.cl/transparencia/DGOP"
+			},
+			{
+				"title":"Dirección General del Crédito Prendario",
+				"url":"https://www.chileatiende.gob.cl/transparencia/DICREP"
+			},
+			{
+			"title":"Dirección General del Territorio Marítimo y de Marina Mercante",
+				"url":"https://www.chileatiende.gob.cl/transparencia/DIRECTEMAR"
+			},
+			{
+			"title":"Dirección Nacional de Fronteras y Límites del Estado",
+				"url":"https://www.chileatiende.gob.cl/transparencia/DIFROL"
+			}
+		],
+		"e": [
+			{
+				"title":"Empresa de Ferrocarriles del Estado",
+				"url":"https://www.chileatiende.gob.cl/transparencia/EFE"
+			},
+			{
+				"title":"Empresa Nacional de Minería",
+				"url":"https://www.chileatiende.gob.cl/transparencia/ENAMI"
+			}
+		],
+		"f": [
+			{
+				"title":"Fiscalía Nacional Económica",
+				"url":"https://www.chileatiende.gob.cl/transparencia/FNE"
+			},
+			{
+				"title":"Fondo de Solidaridad e Inversión Social",
+				"url":"https://www.chileatiende.gob.cl/transparencia/FOSIS"
+			},
+			{
+				"title":"Fondo Nacional de Salud",
+				"url":"https://www.chileatiende.gob.cl/transparencia/FONASA"
+			},
+			{
+				"title":"Fundación de Comunicaciones, Capacitación y Cultura",
+				"url":"https://www.chileatiende.gob.cl/transparencia/FUCOA"
+			},
+			{
+				"title":"Fundación de las Familias",
+				"url":"https://www.chileatiende.gob.cl/servicios/ver/ZB003"
+			},
+			{
+				"title":"Fundación Integra",
+				"url":"https://www.chileatiende.gob.cl/transparencia/INTEGRA"
+			},
+			{
+				"title":"Fundación para la Innovación Agraria",
+				"url":"https://www.chileatiende.gob.cl/transparencia/FIA"
+			},
+			{
+				"title":"Fundación para la Promoción y Desarrollo de la Mujer",
+				"url":"https://www.chileatiende.gob.cl/transparencia/PRODEMU"
+			}
+		],
+		"g": [
+			{
+				"title":"Gendarmería de Chile",
+				"url":"https://www.chileatiende.gob.cl/transparencia/GENCHI"
+			}
+		],
+		"i": [
+			{
+				"title":"Instituto Antártico Chileno",
+				"url":"https://www.chileatiende.gob.cl/transparencia/INACH"
+			},
+			{
+				"title":"Instituto de Desarrollo Agropecuario",
+				"url":"https://www.chileatiende.gob.cl/transparencia/INDAP"
+			},
+			{
+				"title":"Instituto de Previsión Social",
+				"url":"https://www.chileatiende.gob.cl/transparencia/IPS"
+			},
+			{
+				"title":"Instituto de Salud Pública",
+				"url":"https://www.chileatiende.gob.cl/transparencia/ISP"
+			},
+			{
+				"title":"Instituto de Seguridad Laboral",
+				"url":"https://www.chileatiende.gob.cl/transparencia/ISL"
+			},
+			{
+				"title":"Instituto Nacional de Estadísticas",
+				"url":"https://www.chileatiende.gob.cl/transparencia/INE"
+			},
+			{
+				"title":"Instituto Nacional de Hidráulica",
+				"url":"https://www.chileatiende.gob.cl/transparencia/INH"
+			},
+			{
+				"title":"Instituto Nacional de la Juventud",
+				"url":"https://www.chileatiende.gob.cl/transparencia/INJUV"
+			},
+			{
+				"title":"Instituto Nacional de Normalización",
+				"url":"https://www.chileatiende.gob.cl/transparencia/INN"
+			},
+			{
+				"title":"Instituto Nacional de Propiedad Industrial",
+				"url":"https://www.chileatiende.gob.cl/transparencia/INAPI"
+			},
+			{
+				"title":"Instituto Nacional del Deporte",
+				"url":"https://www.chileatiende.gob.cl/transparencia/IND"
+			}
+		],
+		"j": [
+			{
+				"title":"Junta de Aeronáutica Civil",
+				"url":"https://www.chileatiende.gob.cl/transparencia/JAC"
+			},
+			{
+				"title":"Junta Nacional de Auxilio Escolar y Becas",
+				"url":"https://www.chileatiende.gob.cl/transparencia/JUNAEB"
+			},
+			{
+				"title":"Junta Nacional de Jardines Infantiles",
+				"url":"https://www.chileatiende.gob.cl/transparencia/JUNJI"
+			}
+		],
+		"m": [
+			{
+				"title":"Metro S.A.",
+				"url":"https://www.chileatiende.gob.cl/servicios/ver/ZA004"
+			},
+			{
+				"title":"Ministerio de Agricultura",
+				"url":"https://www.chileatiende.gob.cl/servicios/ver/AR000"
+			},
+			{
+				"title":"Ministerio de Desarrollo Social",
+				"url":"https://www.chileatiende.gob.cl/transparencia/MINDES"
+			},
+			{
+				"title":"Ministerio de Educación",
+				"url":"https://www.chileatiende.gob.cl/transparencia/MINEDUC"
+			},
+			{
+				"title":"Ministerio de Energía",
+				"url":"https://www.chileatiende.gob.cl/servicios/ver/AU000"
+			},
+			{
+				"title":"Ministerio de Justicia",
+				"url":"https://www.chileatiende.gob.cl/servicios/ver/AK000"
+			},
+			{
+				"title":"Ministerio de Relaciones Exteriores",
+				"url":"https://www.chileatiende.gob.cl/servicios/ver/AC000"
+			},
+			{
+				"title":"Ministerio de Salud",
+				"url":"https://www.chileatiende.gob.cl/transparencia/MINSAL"
+			},
+			{
+				"title":"Ministerio de Vivienda y Urbanismo",
+				"url":"https://www.chileatiende.gob.cl/transparencia/MINVU"
+			},
+			{
+				"title":"Ministerio del Medio Ambiente",
+				"url":"https://www.chileatiende.gob.cl/servicios/ver/AW000"
+			},
+			{
+				"title":"Ministerio del Trabajo",
+				"url":"https://www.chileatiende.gob.cl/servicios/ver/AL000"
+			},
+			{
+				"title":"Museo Interactivo Mirador",
+				"url":"https://www.chileatiende.gob.cl/transparencia/MIM"
+			}
+		],
+		"p": [
+			{
+				"title":"Parque Metropolitano de Santiago",
+				"url":"https://www.chileatiende.gob.cl/servicios/ver/AP017"
+			},
+			{
+				"title":"Poder Judicial",
+				"url":"https://www.chileatiende.gob.cl/servicios/ver/ZD001"
+			},
+			{
+				"title":"Policía de Investigaciones",
+				"url":"https://www.chileatiende.gob.cl/transparencia/PDI"
+			},
+			{
+				"title":"Presidencia de la República",
+				"url":"https://www.chileatiende.gob.cl/transparencia/Presidencia"
+			}
+		],
+		"s": [
+			{	
+				"title":"Servicio Agrícola y Ganadero",
+				"url":"https://www.chileatiende.gob.cl/transparencia/SAG"
+			},
+			{	
+				"title":"Servicio de Cooperación Técnica",
+				"url":"https://www.chileatiende.gob.cl/transparencia/SERCOTEC"
+			},
+			{	
+				"title":"Servicio de Evaluación Ambiental",
+				"url":"https://www.chileatiende.gob.cl/transparencia/SEA"
+			},
+			{	
+				"title":"Servicio de Impuestos Internos",
+				"url":"https://www.chileatiende.gob.cl/transparencia/SII"
+			},
+			{	
+				"title":"Servicio de Registro Civil e Identificación",
+				"url":"https://www.chileatiende.gob.cl/transparencia/SRCeI"
+			},
+			{	
+				"title":"Servicio Electoral",
+				"url":"https://www.chileatiende.gob.cl/transparencia/SERVEL"
+			},
+			{	
+				"title":"Servicio Hidrográfico y Oceanográfico de la Armada",
+				"url":"https://www.chileatiende.gob.cl/transparencia/SHOA"
+			},
+			{	
+				"title":"Servicio Médico Legal",
+				"url":"https://www.chileatiende.gob.cl/transparencia/SML"
+			},
+			{	
+				"title":"Servicio Nacional de Aduanas",
+				"url":"https://www.chileatiende.gob.cl/servicios/ver/AE007"
+			},
+			{	
+				"title":"Servicio Nacional de Capacitación y Empleo",
+				"url":"https://www.chileatiende.gob.cl/transparencia/SENCE"
+			},
+			{	
+				"title":"Servicio Nacional de Geología y Minería",
+				"url":"https://www.chileatiende.gob.cl/transparencia/SERNAGEOMIN"
+			},
+			{	
+				"title":"Servicio Nacional de la Discapacidad",
+				"url":"https://www.chileatiende.gob.cl/transparencia/SENADIS"
+			},
+			{	
+				"title":"Servicio Nacional de la Mujer y Equidad de Género",
+				"url":"https://www.chileatiende.gob.cl/transparencia/SernamEG"
+			},
+			{	
+				"title":"Servicio Nacional de Menores",
+				"url":"https://www.chileatiende.gob.cl/transparencia/SENAME"
+			},
+			{	
+				"title":"Servicio Nacional de Pesca y Acuicultura",
+				"url":"https://www.chileatiende.gob.cl/transparencia/SERNAPESCA"
+			},
+			{	
+				"title":"Servicio Nacional de Turismo",
+				"url":"https://www.chileatiende.gob.cl/transparencia/SERNATUR"
+			},
+			{	
+				"title":"Servicio Nacional del Adulto Mayor",
+				"url":"https://www.chileatiende.gob.cl/transparencia/SENAMA"
+			},
+			{	
+				"title":"Servicio Nacional del Consumidor",
+				"url":"https://www.chileatiende.gob.cl/transparencia/SERNAC"
+			},
+			{	
+				"title":"Subsecretaría de Bienes Nacionales",
+				"url":"https://www.chileatiende.gob.cl/servicios/ver/AQ001"
+			},
+			{	
+				"title":"Subsecretaría de Desarrollo Regional",
+				"url":"https://www.chileatiende.gob.cl/transparencia/SUBDERE"
+			},
+			{	
+				"title":"Subsecretaría de Economía y Empresas de Menor Tamaño",
+				"url":"https://www.chileatiende.gob.cl/servicios/ver/AH001"
+			},
+			{	
+				"title":"Subsecretaría de Evaluación Social",
+				"url":"https://www.chileatiende.gob.cl/servicios/ver/AI007"
+			},
+			{	
+				"title":"Subsecretaría de Hacienda ",
+				"url":"https://www.chileatiende.gob.cl/servicios/ver/AE001"
+			},
+			{	
+				"title":"Subsecretaría de Obras Públicas",
+				"url":"https://www.chileatiende.gob.cl/transparencia/MOP"
+			},
+			{	
+				"title":"Subsecretaría de Pesca",
+				"url":"https://www.chileatiende.gob.cl/transparencia/SUBPESCA"
+			},
+			{	
+				"title":"Subsecretaría de Prevención del Delito",
+				"url":"https://www.chileatiende.gob.cl/servicios/ver/AB091"
+			},
+			{	
+				"title":"Subsecretaría de Previsión Social",
+				"url":"https://www.chileatiende.gob.cl/servicios/ver/AL002"
+			},
+			{	
+				"title":"Subsecretaría de Telecomunicaciones",
+				"url":"https://www.chileatiende.gob.cl/transparencia/SUBTEL"
+			},
+			{	
+				"title":"Subsecretaría de Transportes",
+				"url":"https://www.chileatiende.gob.cl/transparencia/SUBTRANS"
+			},
+			{	
+				"title":"Subsecretaría del Interior",
+				"url":"https://www.chileatiende.gob.cl/servicios/ver/AB001"
+			},
+			{	
+				"title":"Subsecretaría del Trabajo",
+				"url":"https://www.chileatiende.gob.cl/servicios/ver/AL001"
+			},
+			{	
+				"title":"Subsecretaría General de Gobierno",
+				"url":"https://www.chileatiende.gob.cl/transparencia/SEGEGOB"
+			},
+			{	
+				"title":"Subsecretaría para las Fuerzas Armadas",
+				"url":"https://www.chileatiende.gob.cl/transparencia/SSFFAA"
+			},
+			{	
+				"title":"Superintendencia de Bancos e Instituciones Financieras",
+				"url":"https://www.chileatiende.gob.cl/transparencia/SBIF"
+			},
+			{	
+				"title":"Superintendencia de Casinos de Juego",
+				"url":"https://www.chileatiende.gob.cl/transparencia/SCJ"
+			},
+			{	
+				"title":"Superintendencia de Educación Escolar",
+				"url":"https://www.chileatiende.gob.cl/transparencia/SUPEREDUC"
+			},
+			{	
+				"title":"Superintendencia de Electricidad y Combustibles",
+				"url":"https://www.chileatiende.gob.cl/transparencia/SEC"
+			},
+			{	
+				"title":"Superintendencia de Insolvencia y Reemprendimiento",
+				"url":"https://www.chileatiende.gob.cl/transparencia/SIR"
+			},
+			{	
+				"title":"Superintendencia de Pensiones",
+				"url":"https://www.chileatiende.gob.cl/transparencia/SP"
+			},
+			{	
+				"title":"Superintendencia de Salud",
+				"url":"https://www.chileatiende.gob.cl/servicios/ver/AO006"
+			},
+			{	
+				"title":"Superintendencia de Seguridad Social",
+				"url":"https://www.chileatiende.gob.cl/transparencia/SUSESO"
+			},
+			{	
+				"title":"Superintendencia de Servicios Sanitarios",
+				"url":"https://www.chileatiende.gob.cl/transparencia/SISS"
+			},
+			{	
+				"title":"Superintendencia de Valores y Seguros",
+				"url":"https://www.chileatiende.gob.cl/transparencia/SVS"
+			}
+		],
+		"t": [
+			{
+				"title": "Tesorería General de la República",
+				"url": "https://www.chileatiende.gob.cl/transparencia/TGR"
+			}
+		]
+	}
+}
