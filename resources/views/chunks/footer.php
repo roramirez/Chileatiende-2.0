@@ -22,7 +22,7 @@
                     <h3>Accesos Directos</h3>
                     <ul>
                         <li><a>ChileAtiende en tu sitio</a></li>
-                        <li><a>Enlaces para transparencia activa</a></li>
+                        <li><a href="/enlaces-transparencia">Enlaces para transparencia activa</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-3">
