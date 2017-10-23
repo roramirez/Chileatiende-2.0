@@ -773,6 +773,7 @@ main {
       margin-top: 0;
       background-color: #fff;
       &.affix{
+        position: fixed;
         top: 0;
         z-index: 2;
         width: 100%;
@@ -785,9 +786,12 @@ main {
           width: auto;
           box-shadow: none;
         }
+        .related-pages {
+          margin-top: 30px;
+        }
       }
       &.affix-bottom{
-        position:absolute;
+        position: absolute;
       }
       .mobile-heading {
         display: block;
@@ -811,8 +815,8 @@ main {
       #collapseNav {
         background-color: #fff;
         @media (min-width: 768px) {
-          padding: 12px 20px;
           display: inline-block;
+          width: 100%;
         }
       }
       .index{
@@ -839,6 +843,36 @@ main {
             }
             &:hover {
               background-color: transparent;
+            }
+          }
+        }
+      }
+      .related-pages {
+        border-top: 1px solid $red;
+        margin-top: 150px;
+        transition: .3s ease-in;
+        h4 {
+          font-family: Roboto, sans-serif;
+          margin: 10px 0;
+          color: $red;
+          font-size: 14px;
+          text-transform: uppercase;
+        }
+        ul {
+          list-style-type: none;
+          padding: 0;
+          li {
+            margin-bottom: 15px;
+            .title {
+              font-family: $robotoslab;
+              font-size: 16px;
+              a {
+                color: $darkblue;
+              }
+            }
+            .online {
+              font-weight: bold;
+              font-size: 14px;
             }
           }
         }
@@ -895,9 +929,10 @@ main {
       font-size: 16px;
       color: #FFFFFF;
       @media (min-width: 768px) {
-        padding: 20px 100px;
+        padding: 20px 40px;
         margin-bottom: 0;
-        width: auto;
+        width: 100%;
+        display: block;
       }
     }
     .howto{
@@ -1565,6 +1600,7 @@ footer{
 #need-help {
   background-color: $lightbg;
   padding: 40px 0;
+  margin-top: 150px;
   h3 {
     font-family: $roboto;
     color: $red;

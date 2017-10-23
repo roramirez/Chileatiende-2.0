@@ -38,7 +38,7 @@ import OfficeForm from './components/OfficeForm.vue';
 import CategoryForm from './components/CategoryForm.vue';
 import OfficesCollapse from './components/OfficesCollapse.vue';
 import MobileMenu from './components/MobileMenu.vue';
-import PageMobileNav from './components/PageMobileNav.vue';
+import PageNav from './components/PageNav.vue';
 import TransparencyList from './components/TransparencyList.vue';
 
 const app = new Vue({
@@ -50,7 +50,7 @@ const app = new Vue({
         PageMasterForm,
         OfficesCollapse,
         MobileMenu,
-        PageMobileNav,
+        PageNav,
         OfficeForm,
         CategoryForm,
         TransparencyList
@@ -60,7 +60,7 @@ const app = new Vue({
     },
     mounted() {
         var scroll = new SmoothScroll('.sidebar-menu a[href*="#"]', {
-            header: 'page-mobile-nav-container'
+            header: 'mobile-heading'
         });
         var indexScroll = new SmoothScroll('.index-container a[href*="#"]', {
             offset: 100

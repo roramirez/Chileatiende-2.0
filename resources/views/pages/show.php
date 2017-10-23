@@ -7,7 +7,7 @@
         </ol>
         <div class="row">
             <div class="col-md-4 col-md-push-8">
-                <page-mobile-nav :page="<?= e(json_encode($page)) ?>" current-url="<?= url()->current() ?>"></page-mobile-nav>
+                <page-nav :page="<?= e(json_encode($page)) ?>" current-url="<?= url()->current() ?>"></page-nav>
             </div>
             <div class="col-md-8 col-md-pull-4">
                 <?php if($page->online):?><div class="online">Trámite Online</div><?php endif ?>

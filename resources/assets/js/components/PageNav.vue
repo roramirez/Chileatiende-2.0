@@ -1,6 +1,6 @@
 <template>
-	<div id="page-nav" class="page-mobile-menu-component sidebar-menu" v-bind:class="{ affix: isVisible, 'affix-bottom': isAffix }" style="">
-		<div class="mobile-heading">
+	<div id="page-nav" class="page-mobile-menu-component sidebar-menu" v-bind:class="{ affix: isAffix,'affix-bottom': isAffixBottom  }" style="">
+		<div class="mobile-heading" data-gumshoe-header>
 			<div class="page-title">{{ page.title }}</div>
 			<a class="current" role="button" data-toggle="collapse" href="#collapseNav">
 				{{ activeNavPage }}
@@ -15,16 +15,19 @@
                 <li v-if="page.requirements"><a :href="currentUrl+'#requirements'" data-target="#requirements">¿Qué necesito para hacer el trámite?</a></li>
                 <li v-if="page.howto"><a :href="currentUrl+'#howto'" data-target="#howto">¿Cómo y dónde hago el trámite? </a></li>
             </ol>
-            <a v-if="page.online" class="btn btn-online" href="<?=$page->online_url?>" target="_blank">Ir al trámite en línea</a>
+            <a v-if="page.online" class="btn btn-online" :href="page.online_url" target="_blank">Ir al trámite en línea</a>
         </div>
-        <div v-if="page.related_pages.length > 0">
-            <h4>Trámites Relacionados</h4>
-            <ul>
-                <li v-for="p in page.related_pages">
-                    <div><a :href="'fichas/'+p.guid">{{p.title}}</a></div>
-                    <div v-if="p.online" class="online">Trámite Online</div>
-                </li>
-            </ul>
+        <div class="clearfix"></div>
+        <div v-if="page.related_pages.length > 0" class="hidden-xs hidden-sm">
+        	<div class="related-pages">
+	            <h4>Trámites Relacionados</h4>
+	            <ul>
+	                <li v-for="p in page.related_pages">
+	                    <div class="title"><a :href="'fichas/'+p.guid">{{p.title}}</a></div>
+	                    <div v-if="p.online" class="online">Trámite Online</div>
+	                </li>
+	            </ul>
+            </div>
         </div>
     </div>
 </template>
@@ -44,7 +47,8 @@
 				top: null,
 				scrollTop: null,
 				pageHeight: null,
-				activeNavPage: null
+				navHeight: null,
+				activeNavPage: 'Descripción'
 			}
 		},
 		mounted() {
@@ -61,20 +65,21 @@
 			window.addEventListener('scroll', (e) => {
 				this.handleScroll();
 			});
-			this.pageHeight = document.getElementById('page').clientHeight - document.getElementById('need-help').clientHeight;
+			this.pageHeight = document.getElementById('page').offsetHeight - document.getElementById('need-help').offsetHeight;
+			this.navHeight = document.getElementById('page-nav').offsetHeight;
 		},
 		computed: {
-			isVisible() {
-				return this.scrollTop > 330 && this.scrollTop < this.pageHeight;
-			},
 			isAffix() {
-				if (this.scrollTop >= this.pageHeight) {
-					$("#page-nav").attr('style', 'top:' + this.pageHeight + 'px');
+				return this.scrollTop > 350 && this.scrollTop < (this.pageHeight + 350);
+			},
+			isAffixBottom() {
+				if (this.scrollTop >= (this.pageHeight - 350)) {
+					$("#page-nav").attr('style', 'top:' + (this.pageHeight - this.navHeight)  + 'px');
 				}
 				else {
 					$("#page-nav").attr('style', '');
 				}
-				return this.scrollTop >= this.pageHeight;
+				return this.scrollTop >= (this.pageHeight-350);
 			}
 		},
 		methods: {
@@ -89,6 +94,7 @@
 			    this.top = offsetTop;
 			},
 			handleScroll() {
+				this.pageHeight = document.getElementById('page').offsetHeight - document.getElementById('need-help').offsetHeight;
 				this.scrollTop = window.scrollY || window.scrollTop || document.getElementsByTagName("html")[0].scrollTop;
 			}
 		}
