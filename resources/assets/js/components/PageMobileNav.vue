@@ -41,7 +41,7 @@
 		mounted() {
 			var self = this;
 			gumshoe.init({
-	            offset: 100,
+	            offset: 30,
 	            callback: function(nav) {
 	            	if (typeof nav !== 'undefined') {
 	                	self.activeNavPage = $(nav.target).text();

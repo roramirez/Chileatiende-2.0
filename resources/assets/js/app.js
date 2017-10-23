@@ -38,6 +38,7 @@ import OfficeForm from './components/OfficeForm.vue';
 import OfficesCollapse from './components/OfficesCollapse.vue';
 import MobileMenu from './components/MobileMenu.vue';
 import PageMobileNav from './components/PageMobileNav.vue';
+import TransparencyList from './components/TransparencyList.vue';
 
 const app = new Vue({
     el: '#app',
@@ -49,7 +50,8 @@ const app = new Vue({
         OfficesCollapse,
         MobileMenu,
         PageMobileNav,
-        OfficeForm
+        OfficeForm,
+        TransparencyList
     },
     directives:{
         SelectFirstTab

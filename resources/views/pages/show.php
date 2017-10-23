@@ -37,7 +37,7 @@
                 <?php endif ?>
 
                 <?php if($page->howto):?>
-                <h4 id="howto">¿Cómo y donde hago el trámite?</h4>
+                <h4 id="howto">¿Cómo y dónde hago el trámite?</h4>
                 <div class="howto main-tabs">
                     <ul class="nav nav-tabs" role="tablist" v-select-first-tab>
                         <?php if($page->online):?><li role="presentation"><a href="#online" aria-controls="online" role="tab" data-toggle="tab">Online</a></li><?php endif ?>
@@ -70,7 +70,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
-                    <h3>Necesitas Ayuda?</h3>
+                    <h3>¿Necesitas Ayuda?</h3>
                     <h4>Llámanos al 101</h4>
                     <p>Lunes a Jueves, de 8:00 a 20:00 hrs.</p>
                     <p>Viernes, de 8:00 a 18:00 hrs.</p>
