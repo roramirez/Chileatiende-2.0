@@ -15,11 +15,7 @@
                 <li v-if="page.requirements"><a :href="currentUrl+'#requirements'" data-target="#requirements">¿Qué necesito para hacer el trámite?</a></li>
                 <li v-if="page.howto"><a :href="currentUrl+'#howto'" data-target="#howto">¿Cómo y dónde hago el trámite? </a></li>
             </ol>
-<<<<<<< HEAD:resources/assets/js/components/PageNav.vue
-            <a v-if="page.online" class="btn btn-online" :href="page.online_url" target="_blank">Ir al trámite en línea</a>
-=======
             <a v-if="page.online" class="btn btn-online" :href="page.online_url" data-toggle="modal" data-target="#redirect-modal">Ir al trámite en línea</a>
->>>>>>> 7995aba52166a1490f366ba3e8e196dc24d83506:resources/assets/js/components/PageMobileNav.vue
         </div>
         <div class="clearfix"></div>
         <div v-if="page.related_pages.length > 0" class="hidden-xs hidden-sm">
@@ -77,13 +73,13 @@
 				return this.scrollTop > 350 && this.scrollTop < (this.pageHeight + 350);
 			},
 			isAffixBottom() {
-				if (this.scrollTop >= (this.pageHeight - 350)) {
-					$("#page-nav").attr('style', 'top:' + (this.pageHeight - this.navHeight)  + 'px');
+				if (this.scrollTop >= (this.pageHeight - this.navHeight)) {
+					$("#page-nav").attr('style', 'top:' + ((this.pageHeight - this.navHeight) - 350 )  + 'px');
 				}
 				else {
 					$("#page-nav").attr('style', '');
 				}
-				return this.scrollTop >= (this.pageHeight-350);
+				return this.scrollTop >= (this.pageHeight - this.navHeight);
 			}
 		},
 		methods: {

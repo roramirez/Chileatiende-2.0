@@ -155,7 +155,7 @@ ol.breadcrumb{
         margin-top: 35px;
         margin-bottom: 35px;
         padding: 0 20px;
-        &:hover{
+        &:hover, &:active{
           @media (min-width: 768px) {
             color: white;
             text-decoration: underline;
@@ -316,21 +316,44 @@ ol.breadcrumb{
 #cha-heading {
   background-color: #272727;
   height: 30px;
-  ul {
+  font-size: 0;
+  .container {
     padding: 0;
-    margin: 0;
-    list-style-type: none;
-    li {
-      display: inline-block;
-      vertical-align: top;
-      a.cha-btn {
-        color: #fff;
-        padding: 6px 25px;
-        font-size: 12px;
-        display: block;
-        &.active {
-          background-color: $red;
-        }
+  }
+  a.cha-btn {
+    color: #fff;
+    padding: 7px 0;
+    font-size: 12px;
+    display: inline-block;
+    text-align: center;
+    width: 33.3%;
+    transition: .2s ease;
+    @media (min-width: 768px) {
+      padding: 7px 25px;
+      width: auto;
+    }
+    span {
+      display: none;
+      @media (min-width: 768px) {
+        display: inline-block;
+      }
+    }
+    &:nth-child(1) {
+      &.active, &:hover, &:focus {
+        background-color: $red;
+        text-decoration: none;
+      }
+    }
+    &:nth-child(2) {
+      &.active, &:hover, &:focus {
+        background-color: $yellow;
+        text-decoration: none;
+      }
+    }
+    &:nth-child(3) {
+      &.active, &:hover, &:focus {
+        background-color: $lighterblue;
+        text-decoration: none;
       }
     }
   }
