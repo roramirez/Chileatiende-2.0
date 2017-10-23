@@ -37,6 +37,7 @@ Route::group(['middleware' => ['auth'], 'prefix'=>'backend', 'namespace'=>'Backe
         Route::resource('institutions', 'InstitutionController');
         Route::resource('categories', 'CategoryController');
         Route::resource('locations', 'LocationController');
+        Route::resource('pages', 'PageController');
     });
 });
 

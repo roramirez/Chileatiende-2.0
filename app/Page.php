@@ -32,8 +32,8 @@ class Page extends Model
         return $this->hasMany('\App\Page','master_id');
     }
 
-    public function publishedVersions(){
-        return $this->hasMany('\App\Page','master_id')->where('published',1);
+    public function relatedPages(){
+        return $this->belongsToMany('\App\Page','page_page','page_id','related_page_id');
     }
 
     public function hits(){

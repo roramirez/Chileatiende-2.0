@@ -47,6 +47,7 @@ class PageController extends Controller{
         $page = Page::find($pageId);
         $page->published_at = \Carbon\Carbon::now();
         $page->categories = $page->categories()->pluck('id');
+        $page->related_pages = $page->relatedPages()->pluck('id');;
 
         $data['page'] = $page;
         $data['edit'] = true;
@@ -79,6 +80,7 @@ class PageController extends Controller{
             'alias' => 'required',
             'published_at' => 'required|date',
             'objective' => 'required',
+            'related_pages' => 'array'
         ]);
 
         $page->title = $request->input('title');
@@ -100,13 +102,18 @@ class PageController extends Controller{
         $page->mail_guide = $request->input('mail_guide');
         $page->legal = $request->input('legal');
         $page->keywords = $request->input('keywords');
+        $page->relatedPages()->sync($request->input('related_pages'));
         $page->save();
 
+        //Guardamos la versión
         $version = $page->replicate();
         $version->id = null;
         $version->master = 0;
         $version->master_id = $page->id;
         $version->published = 0;
+        $version->save();
+        //Ahora guardamos las relaciones
+        $version->relatedPages()->sync($request->input('related_pages'));
         $version->save();
 
         return $page;

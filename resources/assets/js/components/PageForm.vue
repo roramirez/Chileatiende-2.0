@@ -123,6 +123,14 @@
             </div>
         </div>
 
+        <div class="form-group" :class="{'has-error': errors['related_pages']}">
+            <label for="related_pages" class="col-sm-2 control-label">Fichas Relacionadas</label>
+            <div class="col-sm-10">
+                <pages-select id="related_pages" v-model="data.related_pages"></pages-select>
+                <div class="help-block" v-for="e in errors['related_pages']">{{e}}</div>
+            </div>
+        </div>
+
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
                 <a class="btn btn-default" href="backend/fichas">Cancelar</a>
@@ -148,6 +156,7 @@
     import ElUpload from 'element-ui/lib/upload';
     import ElButton from 'element-ui/lib/button';
     import Editor from './Editor.vue';
+    import PagesSelect from './PagesSelect.vue';
 
     export default {
         data: function(){
@@ -162,7 +171,8 @@
             ElDatePicker,
             ElUpload,
             ElButton,
-            Editor
+            Editor,
+            PagesSelect
         },
         methods:{
             submit: function(){
