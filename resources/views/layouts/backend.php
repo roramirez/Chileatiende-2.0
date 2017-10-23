@@ -65,6 +65,7 @@
                                 <div class="panel-body">
                                     <ul>
                                         <li><a href="backend/oficinas">Oficinas</a></li>
+                                        <li><a href="backend/categorias">Categorías</a></li>
                                     </ul>
                                 </div>
                             </div>

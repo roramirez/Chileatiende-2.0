@@ -28,6 +28,7 @@ Route::get('/ayuda/{content?}', 'FaqController');
 Route::group(['middleware' => ['auth'], 'prefix'=>'backend', 'namespace'=>'Backend'],function () {
     Route::get('/', 'HomeController@getIndex');
     Route::resource('/oficinas', 'OfficeController');
+    Route::resource('/categorias', 'CategoryController');
     Route::resource('/fichas', 'PageController');
     Route::put('/fichas/{id}/master', 'PageController@updateMaster');
     Route::get('/fichas/{pageId}/versions', 'PageController@versions');

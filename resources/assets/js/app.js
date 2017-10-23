@@ -35,6 +35,7 @@ import Steps from './components/Steps.vue';
 import PageForm from './components/PageForm.vue';
 import PageMasterForm from './components/PageMasterForm.vue';
 import OfficeForm from './components/OfficeForm.vue';
+import CategoryForm from './components/CategoryForm.vue';
 import OfficesCollapse from './components/OfficesCollapse.vue';
 import MobileMenu from './components/MobileMenu.vue';
 import PageMobileNav from './components/PageMobileNav.vue';
@@ -51,6 +52,7 @@ const app = new Vue({
         MobileMenu,
         PageMobileNav,
         OfficeForm,
+        CategoryForm,
         TransparencyList
     },
     directives:{

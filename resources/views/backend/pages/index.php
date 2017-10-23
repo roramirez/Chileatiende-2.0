@@ -42,8 +42,6 @@
                 <?php if($p->published):?>
                     <i class="material-icons" title="Publicado">check</i>
                     <?=$p->lastVersion()->published ? '' : '<i class="material-icons">call_merge</i>'?>
-                <?php else: ?>
-                    <i class="material-icons" title="Publicado">cross</i>
                 <?php endif ?>
             </td>
             <td><?=$p->updated_at?></td>

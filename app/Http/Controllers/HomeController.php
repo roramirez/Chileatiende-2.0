@@ -13,7 +13,7 @@ class HomeController extends Controller{
 
         $content = view('home/index',[
             'featured' => Page::masters()->published()->where('featured',1)->limit(4)->get(),
-            'categories' => Category::where('featured',1)->limit(9)->get()
+            'categories' => Category::where('featured',1)->orderBy('order')->limit(9)->get()
         ]);
 
         return view('layouts/home-layout',[

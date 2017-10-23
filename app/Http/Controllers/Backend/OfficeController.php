@@ -21,7 +21,6 @@ class OfficeController extends Controller{
 
     public function create(){
         $office = new Office();
-        $office->mobile = false;
 
         $data['office'] = $office;
         $data['edit'] = false;

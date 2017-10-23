@@ -10,6 +10,10 @@ class Office extends Model
         'mobile' => 'boolean'
     ];
 
+    protected $attributes = [
+        'mobile' => false
+    ];
+
     public function location(){
         return $this->belongsTo('App\Location');
     }
