@@ -17,6 +17,15 @@
             </ol>
             <a v-if="page.online" class="btn btn-online" href="<?=$page->online_url?>" target="_blank">Ir al trámite en línea</a>
         </div>
+        <div v-if="page.related_pages.length > 0">
+            <h4>Trámites Relacionados</h4>
+            <ul>
+                <li v-for="p in page.related_pages">
+                    <div><a :href="'fichas/'+p.guid">{{p.title}}</a></div>
+                    <div v-if="p.online" class="online">Trámite Online</div>
+                </li>
+            </ul>
+        </div>
     </div>
 </template>
 <script>

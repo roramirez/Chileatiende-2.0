@@ -24,6 +24,8 @@ class Page extends Model
         'published_at' => 'date'
     ];
 
+    protected $appends = ['guid'];
+
     public function masterPage(){
         return $this->belongsTo('\App\Page','master_id');
     }
