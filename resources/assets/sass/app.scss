@@ -766,6 +766,12 @@ main {
       ul{
         padding-left: 20px;
       }
+      .truncate-button{
+        font-size: 14px;
+        .material-icons{
+          font-size: 20px;
+        }
+      }
     }
     .sidebar-menu{
       font-weight: normal;

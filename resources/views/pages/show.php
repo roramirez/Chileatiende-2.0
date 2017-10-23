@@ -18,10 +18,7 @@
                 <h4 id="objective">Descripción</h4>
                 <?=App\Twig::render($page->objective)?>
                 <br />
-                <div class="important">
-                    <h4>Marco Legal</h4>
-                    <?=$page->legal?>
-                </div>
+                <expandable class="important" :max-length="100" title="Marco Legal" content="<?=e($page->legal)?>"></expandable>
 
                 <?php if($page->details):?>
                 <h4 id="details">Detalles</h4>
