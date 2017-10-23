@@ -28,7 +28,7 @@ class SearchController extends Controller{
         $data['category'] = Category::find($categoryId);
         $data['results'] = $results->paginate(10);
         $data['categories'] = Category::orderBy('name')->get();
-        $data['institutions'] = Institution::orderBy('name')->get();
+        $data['institutions'] = Institution::has('pages')->orderBy('name')->get();
 
         return view('layouts/layout',[
             'query' => $query,
