@@ -6,10 +6,19 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Page;
 use App\Suggestion;
+use Illuminate\Http\Request;
 
 class HomeController extends Controller{
 
-    public function getIndex(){
+    public function getIndex(Request $request){
+
+        $skin = $request->input('skin');
+        if($skin != null){
+            if($skin == 'default')
+                $skin = null;
+            session()->put('skin', $skin);
+        }
+
 
         $content = view('home/index',[
             'featured' => Page::masters()->published()->where('featured',1)->limit(4)->get(),
