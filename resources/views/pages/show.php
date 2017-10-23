@@ -17,8 +17,11 @@
                 <hr />
                 <h4 id="objective">Descripción</h4>
                 <?=App\Twig::render($page->objective)?>
-                <br />
-                <expandable class="important" :max-length="100" title="Marco Legal" content="<?=e($page->legal)?>"></expandable>
+
+                <?php if($page->legal):?>
+                    <br />
+                    <expandable class="important" :max-length="100" title="Marco Legal" content="<?=e($page->legal)?>"></expandable>
+                <?php endif ?>
 
                 <?php if($page->details):?>
                 <h4 id="details">Detalles</h4>
