@@ -323,12 +323,12 @@ ol.breadcrumb{
     li {
       display: inline-block;
       vertical-align: top;
-      a {
+      a.cha-btn {
         color: #fff;
         padding: 6px 25px;
         font-size: 12px;
         display: block;
-        &.cha-btn {
+        &.active {
           background-color: $red;
         }
       }
@@ -765,6 +765,12 @@ main {
       }
       ul{
         padding-left: 20px;
+      }
+      .truncate-button{
+        font-size: 14px;
+        .material-icons{
+          font-size: 20px;
+        }
       }
     }
     .sidebar-menu{
