@@ -592,7 +592,6 @@ main {
             }
           }
         }
-
       }
     }
     .categories-area{
@@ -836,6 +835,7 @@ main {
           margin-bottom: 10px;
           display: block;
           color: #09132E;
+          font-size: 14px;
         }
         @media (min-width: 768px) {
           display: none;
@@ -1013,6 +1013,7 @@ main {
     }
   }
   #institutions{
+    padding: 30px 0;
     h3{
       font-size: 28px;
       font-family:"Roboto Slab";
@@ -1738,7 +1739,20 @@ footer{
     }
   } 
 }
-
+.claveunica-modal {
+  .modal-dialog {
+    margin-top: 300px;
+  }
+  h4 {
+    font-size: 25px;
+    font-family: $robotoslab;
+    color: $red;
+  }
+  p {
+    font-size: 18px;
+    color: $darkblue;
+  }
+}
 
 
 

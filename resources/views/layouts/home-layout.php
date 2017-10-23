@@ -99,7 +99,7 @@
                                 <div class="media-body">
                                     <p>Con tu <a href="#">Clave Única</a>, accede a los trámites del Estado desde
                                         cualquier lugar.</p>
-                                    <a class="btn">Accede a mi ChileAtiende →</a>
+                                    <a class="btn" href="#" data-toggle="modal" data-target="#claveunica-modal">Accede a mi ChileAtiende →</a>
                                 </div>
                             </div>
                         </div>
@@ -126,6 +126,23 @@
         <?=$content?>
     </main>
     <?=view('chunks/banner')?>
+    <div class="modal fade claveunica-modal" id="claveunica-modal" class="" tabindex="-1" role="dialog" aria-labelledby="claveunica-modal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <!-- <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Sección en desarrollo</h4>
+                </div> -->
+                <div class="modal-body">
+                    <h4>Sección en Desarrollo</h4>
+                    <p>Portal Chileatiende en etapa Beta</p>
+                </div>
+                <div class="text-right">
+                    <button type="button" class="btn btn-link" data-dismiss="modal">Volver</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <?=view('chunks/footer')?>
 </div>
 <?=view('chunks/foot')?>
