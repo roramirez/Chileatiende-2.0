@@ -66,6 +66,21 @@
             </div>
         </div>
     </div>
+    <div class="similar-pages">
+        <div class="container">
+            <h3>Los usuarios también visitaron</h3>
+            <div class="row">
+                <?php foreach($page->masterPage->similarPages as $s):?>
+                    <div class="col-sm-4">
+                        <div class="institution"><a href="buscar?institution=<?=$s->institution->id?>">Publicado por <?=$s->institution->name?></a></div>
+                        <h4><a href="fichas/<?=$s->guid?>"><?=$s->title?></a></h4>
+                        <?php if($s->online):?><div class="online">Trámite online</div><?php endif ?>
+                        <p><?=str_limit(strip_tags(\App\Twig::strip($s->objective)),100)?></p>
+                    </div>
+                <?php endforeach ?>
+            </div>
+        </div>
+    </div>
     <div id="need-help">
         <div class="container">
             <div class="row">

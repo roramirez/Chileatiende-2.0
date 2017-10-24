@@ -35,7 +35,11 @@ class Page extends Model
     }
 
     public function relatedPages(){
-        return $this->belongsToMany('\App\Page','page_page','page_id','related_page_id');
+        return $this->belongsToMany('\App\Page','page_related_page','page_id','related_page_id');
+    }
+
+    public function similarPages(){
+        return $this->belongsToMany('\App\Page','page_similar_page','page_id','similar_page_id');
     }
 
     public function hits(){

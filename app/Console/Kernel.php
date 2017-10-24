@@ -13,7 +13,8 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        Commands\AdminElasticsearch::class
+        Commands\AdminElasticsearch::class,
+        Commands\SimilarityML::class
     ];
 
     /**
