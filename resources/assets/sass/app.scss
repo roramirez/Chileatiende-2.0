@@ -917,13 +917,26 @@ main {
       font-weight: normal;
       margin-top: 0;
     }
-    h4{
-      font-family: $robotoslab;
-      font-size: 20px;
-      font-weight: normal;
-      margin-top: 30px;
-      &:first-of-type{
-        margin-top: 0;
+    .page-content {
+      counter-reset: titles;
+      h4 {
+        font-family: $robotoslab;
+        font-size: 20px;
+        font-weight: normal;
+        margin-top: 30px;
+        margin-bottom: 15px;
+        &:first-of-type{
+          margin-top: 0;
+        }
+        &:before {
+          content:counter(titles) ". ";
+          counter-increment:titles;
+        }
+      }
+    }
+    p {
+      strong {
+        font-weight: 500;
       }
     }
     hr {
@@ -965,6 +978,7 @@ main {
       }
     }
     .howto{
+      margin-top: 30px;
     }
     .similar-pages{
       font-size: 14px;
@@ -1661,6 +1675,7 @@ footer{
     margin-bottom: 10px;
   }
   h4 {
+    font-family: $robotoslab;
     font-size: 28px;
     color: #757575;
   }

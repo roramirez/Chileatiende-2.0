@@ -15,54 +15,56 @@
                 <div class="author"><a href="instituciones/<?=$page->institution->id?>">Información proporcionada por <?= $page->institution->name ?></a></div>
                 <div class="updated-at">Actualizado al <?=$page->published_at->formatLocalized('%d de %B, %Y')?></div>
                 <hr />
-                <h4 id="objective">Descripción</h4>
-                <?=App\Twig::render($page->objective)?>
+                <div class="page-content">
+                    <h4 id="objective">Descripción</h4>
+                    <?=App\Twig::render($page->objective)?>
 
-                <?php if($page->legal):?>
-                    <br />
-                    <expandable class="important" :max-length="100" title="Marco Legal" content="<?=e($page->legal)?>"></expandable>
-                <?php endif ?>
+                    <?php if($page->legal):?>
+                        <br />
+                        <expandable class="important" :max-length="100" title="Marco Legal" content="<?=e($page->legal)?>"></expandable>
+                    <?php endif ?>
 
-                <?php if($page->details):?>
-                <h4 id="details">Detalles</h4>
-                <?=App\Twig::render($page->details)?>
-                <?php endif ?>
+                    <?php if($page->details):?>
+                    <h4 id="details">Detalles</h4>
+                    <?=App\Twig::render($page->details)?>
+                    <?php endif ?>
 
-                <h4 id="beneficiaries">¿A quién esta dirigido?</h4>
-                <?=App\Twig::render($page->beneficiaries)?>
+                    <h4 id="beneficiaries">¿A quién esta dirigido?</h4>
+                    <?=App\Twig::render($page->beneficiaries)?>
 
-                <?php if($page->requirements):?>
-                <h4 id="requirements">¿Qué necesito para hacer el trámite?</h4>
-                <?=App\Twig::render($page->requirements)?>
-                <?php endif ?>
+                    <?php if($page->requirements):?>
+                    <h4 id="requirements">¿Qué necesito para hacer el trámite?</h4>
+                    <?=App\Twig::render($page->requirements)?>
+                    <?php endif ?>
 
-                <?php if($page->howto):?>
-                <h4 id="howto">¿Cómo y dónde hago el trámite?</h4>
-                <div class="howto main-tabs">
-                    <ul class="nav nav-tabs" role="tablist" v-select-first-tab>
-                        <?php if($page->online):?><li role="presentation"><a href="#online" aria-controls="online" role="tab" data-toggle="tab">Online</a></li><?php endif ?>
-                        <?php if($page->office):?><li role="presentation"><a href="#office" aria-controls="office" role="tab" data-toggle="tab">Oficina</a></li><?php endif ?>
-                        <?php if($page->phone):?><li role="presentation"><a href="#phone" aria-controls="phone" role="tab" data-toggle="tab">Teléfonico</a></li><?php endif ?>
-                        <?php if($page->mail):?><li role="presentation"><a href="#mail" aria-controls="mail" role="tab" data-toggle="tab">Correo</a></li><?php endif ?>
-                    </ul>
+                    <?php if($page->howto):?>
+                    <h4 id="howto">¿Cómo y dónde hago el trámite?</h4>
+                    <div class="howto main-tabs">
+                        <ul class="nav nav-tabs" role="tablist" v-select-first-tab>
+                            <?php if($page->online):?><li role="presentation"><a href="#online" aria-controls="online" role="tab" data-toggle="tab">Online</a></li><?php endif ?>
+                            <?php if($page->office):?><li role="presentation"><a href="#office" aria-controls="office" role="tab" data-toggle="tab">Oficina</a></li><?php endif ?>
+                            <?php if($page->phone):?><li role="presentation"><a href="#phone" aria-controls="phone" role="tab" data-toggle="tab">Teléfonico</a></li><?php endif ?>
+                            <?php if($page->mail):?><li role="presentation"><a href="#mail" aria-controls="mail" role="tab" data-toggle="tab">Correo</a></li><?php endif ?>
+                        </ul>
 
-                    <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane" id="online">
-                            <?=App\Twig::render($page->online_guide)?>
-                            <a class="btn btn-online" href="#" data-toggle="modal" data-target="#redirect-modal">Ir al trámite en línea</a>
-                        </div>
-                        <div role="tabpanel" class="tab-pane" id="office">
-                            <?=App\Twig::render($page->office_guide)?>
-                        </div>
-                        <div role="tabpanel" class="tab-pane" id="phone">
-                            <?=App\Twig::render($page->phone_guide)?>
-                        </div>
-                        <div role="tabpanel" class="tab-pane" id="mail">
-                            <?=App\Twig::render($page->mail_guide)?>
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane" id="online">
+                                <?=App\Twig::render($page->online_guide)?>
+                                <a class="btn btn-online" href="#" data-toggle="modal" data-target="#redirect-modal">Ir al trámite en línea</a>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="office">
+                                <?=App\Twig::render($page->office_guide)?>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="phone">
+                                <?=App\Twig::render($page->phone_guide)?>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="mail">
+                                <?=App\Twig::render($page->mail_guide)?>
+                            </div>
                         </div>
                     </div>
+                    <?php endif ?>
                 </div>
-                <?php endif ?>
             </div>
         </div>
     </div>
