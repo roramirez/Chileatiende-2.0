@@ -66,6 +66,17 @@ ol.breadcrumb{
   }
 }
 
+.highlight{
+  border: 1px solid $black;
+  border-radius: 2px;
+  font-weight: 500;
+  padding: 0 4px;
+  &.highlight-green{
+    border-color: $green;
+    color: $green;
+  }
+}
+
 .table{
   &.table-dates{
     background: $green;
