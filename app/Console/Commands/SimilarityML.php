@@ -49,7 +49,7 @@ class SimilarityML extends Command
         $this->info('Capturando datos de tabla de visitas.');
         $visits = DB::select('SELECT a.page_id AS a, b.page_id AS b, COUNT(*) AS visits
           FROM session_visits AS a
-          JOIN session_visits AS b ON b.session_id = a.session_id AND b.page_id > a.page_id
+          JOIN session_visits AS b ON b.session_id = a.session_id AND b.page_id != a.page_id
           GROUP BY a.page_id, b.page_id
         ');
 
@@ -57,6 +57,14 @@ class SimilarityML extends Command
         $matrix = [];
         foreach($visits as $v){
             $matrix[$v->a][$v->b] = $v->visits;
+        }
+
+        $this->info('Normalizamos por Jaccard Similarity');
+        foreach($matrix as $a => $row){
+            foreach($row as $b => $visits){
+                $den = array_sum($matrix[$a]) + array_sum($matrix[$b]) - $visits;
+                $matrix[$a][$b] = $matrix[$a][$b] / $den;
+            }
         }
 
         $this->info('Almacenamos en base de datos.');
