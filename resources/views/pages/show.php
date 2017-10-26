@@ -68,7 +68,7 @@
             </div>
         </div>
     </div>
-    <div class="similar-pages">
+    <div id="similar-pages" class="similar-pages">
         <div class="container">
             <h3>Los usuarios también visitaron</h3>
             <div class="row">

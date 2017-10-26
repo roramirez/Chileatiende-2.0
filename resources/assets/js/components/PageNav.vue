@@ -65,7 +65,7 @@
 			window.addEventListener('scroll', (e) => {
 				this.handleScroll();
 			});
-			this.pageHeight = document.getElementById('page').offsetHeight - document.getElementById('need-help').offsetHeight;
+			this.pageHeight = document.getElementById('page').offsetHeight - document.getElementById('need-help').offsetHeight - document.getElementById('similar-pages').offsetHeight;
 			this.navHeight = document.getElementById('page-nav').offsetHeight;
 		},
 		computed: {
@@ -94,7 +94,7 @@
 			    this.top = offsetTop;
 			},
 			handleScroll() {
-				this.pageHeight = document.getElementById('page').offsetHeight - document.getElementById('need-help').offsetHeight;
+				this.pageHeight = document.getElementById('page').offsetHeight - document.getElementById('need-help').offsetHeight - document.getElementById('similar-pages').offsetHeight;
 				this.scrollTop = window.scrollY || window.scrollTop || document.getElementsByTagName("html")[0].scrollTop;
 			}
 		}
