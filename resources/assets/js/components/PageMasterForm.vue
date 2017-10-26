@@ -17,6 +17,15 @@
             </div>
         </div>
 
+        <div class="form-group" :class="{'has-error': errors['featured']}">
+            <label for="featured" class="col-sm-2 control-label">Boosting</label>
+            <div class="col-sm-10">
+                <input type="number" class="form-control" v-model.number="data.boost" />
+                <div class="help-block" v-for="e in errors['featured']">{{e}}</div>
+                <div class="help-block">Boosting multiplicador en búsquedas.<br />Un valor de 1 (Por defecto) deja el puntaje de busqueda igual. Un valor 2 lo multiplica por 2 y asi sucesivamente.</div>
+            </div>
+        </div>
+
         <div class="form-group" :class="{'has-error': errors['institution_id']}">
             <label for="institution_id" class="col-sm-2 control-label">Institución</label>
             <div class="col-sm-10">

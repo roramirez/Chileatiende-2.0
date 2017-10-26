@@ -699,6 +699,10 @@ main {
           font-weight: bold;
         }
         margin-bottom: 30px;
+        &.boosted{
+          background: #F7F7F7;
+          padding: 10px;
+        }
       }
     }
     .pagination{

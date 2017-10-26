@@ -124,6 +124,7 @@ class PageController extends Controller{
         $this->validate($request, [
             'published' => 'required|boolean',
             'featured' => 'required|boolean',
+            'boost' => 'required|numeric',
             'institution_id' => 'required|exists:institutions,id',
             'categories' => 'array',
         ]);
@@ -131,10 +132,13 @@ class PageController extends Controller{
         $page = Page::find($pageId);
         $page->published = $request->input('published');
         $page->featured = $request->input('featured');
+        $page->boost = $request->input('boost');
         $page->categories()->sync($request->input('categories'));
         $page->institution_id = $request->input('institution_id');
-
         $page->save();
+
+        //Indexamos sus versiones
+        $page->versions()->searchable();
 
 
         $request->session()->flash('status', 'Ficha guardada con éxito');

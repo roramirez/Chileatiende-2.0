@@ -23,9 +23,18 @@ class ElasticsearchEngine extends \ScoutEngines\Elasticsearch\ElasticsearchEngin
                     'bool' => [
                         'must' => [
                             'function_score' => [
-                                'field_value_factor' => [
-                                    'field' => 'hit_count',
-                                    'modifier' => 'log1p'
+                                'functions' => [
+                                    [
+                                        'field_value_factor' => [
+                                            'field' => 'hit_count',
+                                            'modifier' => 'log1p'
+                                            ]
+                                    ],
+                                    [
+                                        'field_value_factor' => [
+                                            'field' => 'boost'
+                                        ]
+                                    ]
                                 ]
                             ]
                         ]

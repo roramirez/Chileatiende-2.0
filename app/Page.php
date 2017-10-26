@@ -78,6 +78,7 @@ class Page extends Model
                 'institution_id' => $this->institution_id,
                 'category_id' => $this->categories->pluck('id'),
                 'hit_count' => $this->hitCount(),
+                'boost' => $this->boost
             ];
         }
     }
@@ -137,6 +138,10 @@ class Page extends Model
 
     public function getHowtoAttribute(){
         return $this->online || $this->office || $this->phone || $this->mail;
+    }
+
+    public function getBoostAttribute(){
+        return $this->master ? $this->attributes['boost'] : $this->masterPage->attributes['boost'];
     }
 
     public function publishedVersion(){

@@ -87,6 +87,9 @@ class AdminElasticsearch extends Command
                                 'hit_count' => [
                                     'type' => 'integer'
                                 ],
+                                'boost' => [
+                                    'type' => 'integer'
+                                ],
                                 'institution_id' => [
                                     'type' => 'keyword'
                                 ],
