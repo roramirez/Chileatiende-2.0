@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use App\Page;
 use App\SessionVisit;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\DB;
 
 class SimilarityML extends Command
 {
@@ -46,35 +47,24 @@ class SimilarityML extends Command
     private function calculatePageSimilarity(){
 
         $this->info('Capturando datos de tabla de visitas.');
-        $visits = SessionVisit::all();
-
-        $visitsGroupedByPageId = $visits->groupBy('page_id');
-        $visitsGroupedBySessionId = $visits->groupBy('session_id');
+        $visits = DB::select('SELECT a.page_id AS a, b.page_id AS b, COUNT(*) AS visits
+          FROM session_visits AS a
+          JOIN session_visits AS b ON b.session_id = a.session_id AND b.page_id > a.page_id
+          GROUP BY a.page_id, b.page_id
+        ');
 
         $this->info('Construyendo matriz de co-ocurrencia.');
         $matrix = [];
-        foreach($visitsGroupedByPageId as $pageId => $pageVisits) {
-            foreach($pageVisits as $v){
-                $sessionVisits = $visitsGroupedBySessionId[$v->session_id];
-                foreach($sessionVisits as $s){
-                    if($pageId != $s->page_id){
-                        $matrix[$pageId][$s->page_id] = 1 + @$matrix[$pageId][$s->page_id];
-                    }
-                }
-            }
-        }
-
-        $this->info('Ordenamos.');
-        foreach($matrix as &$row){
-            arsort($row);
-            $row = array_slice($row, 0, 3, true);
+        foreach($visits as $v){
+            $matrix[$v->a][$v->b] = $v->visits;
         }
 
         $this->info('Almacenamos en base de datos.');
         foreach($matrix as $pageId => $row){
+            arsort($row);
+            $bestMatches = array_keys(array_slice($row, 0, 3, true));
             $page = Page::find($pageId);
-            if($page)
-                $page->similarPages()->sync(array_keys($row));
+            $page->similarPages()->sync($bestMatches);
         }
 
         return;
