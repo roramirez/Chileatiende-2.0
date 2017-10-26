@@ -1124,6 +1124,40 @@ main {
       }
     }
   }
+  #featured-pages{
+    .featured{
+      height: 120px;
+      overflow: hidden;
+      margin-bottom: 30px;
+      .header{
+        float: left;
+        height: 100%;
+        width: 50%;
+        background-color: black;
+        background-size: cover;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        font-size: 22px;
+      }
+      .caption{
+        height: 100%;
+        width: 50%;
+        border-top: 1px solid #ccc;
+        border-right: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        padding: 20px;
+        float: left;
+        h3{
+          font-size: 18px;
+          font-weight: normal;
+          a{
+            color: $black;
+          }
+        }
+      }
+    }
+  }
   #terms {
     padding-bottom: 150px;
     h1 {

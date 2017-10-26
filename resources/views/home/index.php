@@ -5,9 +5,9 @@
                 <div class="heading-container">
                     <h2>Destacados</h2>
                 </div>
-                <div class="featured-button hidden-xs">
+                <a href="fichas/destacadas" class="featured-button hidden-xs">
                     Ver todos los destacados
-                </div>
+                </a>
             </div>
 
             <div class="row">

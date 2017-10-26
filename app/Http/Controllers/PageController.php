@@ -24,4 +24,13 @@ class PageController extends Controller{
         ]);
     }
 
+    public function featured(){
+        $data['pages'] = Page::masters()->published()->where('featured',1)->get();
+
+        return view('layouts/layout',[
+            'title' => 'Fichas Destacadas',
+            'content' => view('pages/featured', $data)
+        ]);
+    }
+
 }
