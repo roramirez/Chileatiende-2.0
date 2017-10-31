@@ -119,6 +119,15 @@ class PageController extends Controller{
         return $page;
     }
 
+    public function destroy(Request $request, $id){
+        $page = Page::find($id);
+        $page->delete();
+
+        $request->session()->flash('status', 'Ficha eliminada con éxito');
+
+        return redirect('backend/fichas');
+    }
+
     public function updateMaster(Request $request, $pageId){
 
         $this->validate($request, [

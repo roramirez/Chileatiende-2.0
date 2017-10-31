@@ -45,7 +45,14 @@
                 <?php endif ?>
             </td>
             <td><?=$p->updated_at?></td>
-            <td class="text-center"><a href="backend/fichas/<?=$p->id?>/edit"><i class="material-icons">edit</i></a></td>
+            <td class="text-center">
+                <a href="backend/fichas/<?=$p->id?>/edit"><i class="material-icons">edit</i></a>
+                <form id="delete-form-<?=$p->id?>" action="backend/fichas/<?=$p->id?>" method="post">
+                    <?=csrf_field()?>
+                    <input type="hidden" name="_method" value="delete" />
+                    <a href="#" onclick="event.preventDefault(); document.getElementById('delete-form-<?=$p->id?>').submit()"><i class="material-icons">delete</i></a>
+                </form>
+            </td>
         </tr>
         <?php endforeach ?>
         </tbody>
