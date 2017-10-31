@@ -137,10 +137,6 @@ class PageController extends Controller{
         $page->institution_id = $request->input('institution_id');
         $page->save();
 
-        //Indexamos sus versiones
-        $page->versions()->searchable();
-
-
         $request->session()->flash('status', 'Ficha guardada con éxito');
 
         return response()->json(['redirect' => 'backend/fichas/'.$page->id]);

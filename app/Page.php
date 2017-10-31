@@ -64,9 +64,7 @@ class Page extends Model
     }
 
     public function toSearchableArray(){
-        if(!$this->master && !$this->published){    //No indexamos las versiones no publicadas
-            return [];
-        }else{
+
             return [
                 'id' => $this->id,
                 'master' => $this->master,
@@ -80,7 +78,7 @@ class Page extends Model
                 'hit_count' => $this->hitCount(),
                 'boost' => $this->boost
             ];
-        }
+
     }
 
     public function hitCount(){
