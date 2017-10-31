@@ -45,7 +45,9 @@
                 <?=$p->title?>
                 <?php endif ?>
             </td>
-            <td><span data-toggle="tooltip" title="<?=$p->status == 'rechazado' ? $p->status_comment : ''?>"><?=$p->status?></span></td>
+            <td style="white-space: nowrap;">
+                <?php if($p->status == 'rechazado'):?><i class="material-icons" style="font-size: 16px; cursor: pointer;" data-toggle="tooltip" title="<?=$p->status_comment?>">help</i><?php endif ?> <?=$p->status?>
+            </td>
             <td class="text-center">
                 <?php if($p->published):?>
                     <i class="material-icons" data-toggle="tooltip" title="Publicado">check</i>
