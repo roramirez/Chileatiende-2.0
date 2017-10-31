@@ -73,6 +73,9 @@ class AdminElasticsearch extends Command
                                 'master_id' => [
                                     'type' => 'integer'
                                 ],
+                                'master_published' => [
+                                    'type' => 'boolean'
+                                ],
                                 'published' => [
                                     'type' => 'boolean',
                                 ],

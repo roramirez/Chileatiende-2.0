@@ -69,6 +69,7 @@ class Page extends Model
                 'id' => $this->id,
                 'master' => $this->master,
                 'master_id' => $this->master_id,
+                'master_published' => $this->master ? $this->published : $this->masterPage->published,
                 'published' => $this->published,
                 'title'=>$this->title,
                 'objective' => strip_tags($this->objective),
