@@ -26,6 +26,28 @@ class Page extends Model
 
     protected $appends = ['guid', 'howto'];
 
+    protected $attributes = [
+        'title' => '',
+        'alias' => '',
+        'published_at' => null,
+        'image' => '',
+        'objective' => '',
+        'details' => '',
+        'beneficiaries' => '',
+        'requirements' => '',
+        'online' => false,
+        'online_guide' => '',
+        'online_url' => '',
+        'office' => false,
+        'office_guide' => '',
+        'phone' => false,
+        'phone_guide' => '',
+        'mail' => false,
+        'mail_guide' => '',
+        'legal' => '',
+        'keywords' => ''
+    ];
+
     public function masterPage(){
         return $this->belongsTo('\App\Page','master_id');
     }
@@ -131,16 +153,16 @@ class Page extends Model
         return ($this->master ? $this->id : $this->master_id).'-'.$this->alias;
     }
 
-    public function getFeaturedAttribute(){
-        return (boolean)($this->master ? $this->attributes['featured'] : $this->masterPage->attributes['featured']);
+    public function getFeaturedAttribute($value){
+        return (boolean) ($this->master ? $value : $this->masterPage->featured);
     }
 
     public function getHowtoAttribute(){
         return $this->online || $this->office || $this->phone || $this->mail;
     }
 
-    public function getBoostAttribute(){
-        return $this->master ? $this->attributes['boost'] : $this->masterPage->attributes['boost'];
+    public function getBoostAttribute($value){
+        return $this->master ? $value : $this->masterPage->boost;
     }
 
     public function publishedVersion(){

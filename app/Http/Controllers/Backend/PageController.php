@@ -83,6 +83,7 @@ class PageController extends Controller{
             'related_pages' => 'array'
         ]);
 
+        $page->master = true;
         $page->title = $request->input('title');
         $page->alias = $request->input('alias');
         $page->published_at = \Carbon\Carbon::parse($request->input('published_at'));
@@ -108,13 +109,12 @@ class PageController extends Controller{
         //Guardamos la versión
         $version = $page->replicate();
         $version->id = null;
-        $version->master = 0;
+        $version->master = false;
         $version->master_id = $page->id;
-        $version->published = 0;
+        $version->published = false;
         $version->save();
         //Ahora guardamos las relaciones
         $version->relatedPages()->sync($request->input('related_pages'));
-        $version->save();
 
         return $page;
     }
