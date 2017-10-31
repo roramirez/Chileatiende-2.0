@@ -26,4 +26,15 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    protected $attributes = [
+        'name' => '',
+        'email' => '',
+        'role' => 'editor',
+        'institution_id' => null
+    ];
+
+    public function institution(){
+        return $this->belongsTo('App\Institution');
+    }
 }

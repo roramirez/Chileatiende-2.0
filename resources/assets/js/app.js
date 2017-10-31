@@ -36,6 +36,7 @@ import PageForm from './components/PageForm.vue';
 import PageMasterForm from './components/PageMasterForm.vue';
 import OfficeForm from './components/OfficeForm.vue';
 import CategoryForm from './components/CategoryForm.vue';
+import UserForm from './components/UserForm.vue';
 import OfficesCollapse from './components/OfficesCollapse.vue';
 import MobileMenu from './components/MobileMenu.vue';
 import PageNav from './components/PageNav.vue';
@@ -52,6 +53,7 @@ const app = new Vue({
         OfficesCollapse,
         MobileMenu,
         PageNav,
+        UserForm,
         OfficeForm,
         CategoryForm,
         TransparencyList,
