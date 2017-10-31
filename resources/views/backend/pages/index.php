@@ -38,8 +38,14 @@
         <?php foreach($pages as $p):?>
         <tr>
             <td><?=$p->id?></td>
-            <td><a href="backend/fichas/<?=$p->id?>"><?=$p->title?></a></td>
-            <td><span data-toggle="tooltip" title="<?=$p->status_comment?>"><?=$p->status?></span></td>
+            <td>
+                <?php if(Auth::user()->can('view',$p)): ?>
+                    <a href="backend/fichas/<?=$p->id?>"><?=$p->title?></a>
+                <?php else: ?>
+                <?=$p->title?>
+                <?php endif ?>
+            </td>
+            <td><span data-toggle="tooltip" title="<?=$p->status == 'rechazado' ? $p->status_comment : ''?>"><?=$p->status?></span></td>
             <td class="text-center">
                 <?php if($p->published):?>
                     <i class="material-icons" data-toggle="tooltip" title="Publicado">check</i>
@@ -48,12 +54,15 @@
             </td>
             <td><?=$p->updated_at?></td>
             <td class="text-center">
-                <a href="backend/fichas/<?=$p->id?>/edit"><i class="material-icons">edit</i></a>
-                <form id="delete-form-<?=$p->id?>" action="backend/fichas/<?=$p->id?>" method="post" style="display: inline">
-                    <?=csrf_field()?>
-                    <input type="hidden" name="_method" value="delete" />
-                    <a href="#" onclick="event.preventDefault(); document.getElementById('delete-form-<?=$p->id?>').submit()"><i class="material-icons">delete</i></a>
-                </form>
+                <?php if(Auth::user()->can('update',$p)):?><a href="backend/fichas/<?=$p->id?>/edit"><i class="material-icons">edit</i></a><?php endif ?>
+                <?php if(Auth::user()->can('delete',$p)):?>
+                    <form id="delete-form-<?=$p->id?>" action="backend/fichas/<?=$p->id?>" method="post" style="display: inline">
+                        <?=csrf_field()?>
+                        <input type="hidden" name="_method" value="delete" />
+                        <a href="#" onclick="event.preventDefault(); document.getElementById('delete-form-<?=$p->id?>').submit()"><i class="material-icons">delete</i></a>
+                    </form>
+                <?php endif ?>
+
             </td>
         </tr>
         <?php endforeach ?>

@@ -31,6 +31,20 @@
                 <div class="help-block" v-for="e in errors['institution_id']">{{e}}</div>
             </div>
         </div>
+        <div class="form-group" :class="{'has-error': errors['ministerial']}">
+            <label for="ministerial" class="col-sm-2 control-label">Ministerial</label>
+            <div class="col-sm-10">
+                <el-switch id="ministerial" v-model="data.ministerial"></el-switch>
+                <div class="help-block" v-for="e in errors['ministerial']">{{e}}</div>
+            </div>
+        </div>
+        <div class="form-group" :class="{'has-error': errors['interministerial']}">
+            <label for="interministerial" class="col-sm-2 control-label">InterMinisterial</label>
+            <div class="col-sm-10">
+                <el-switch id="interministerial" v-model="data.interministerial"></el-switch>
+                <div class="help-block" v-for="e in errors['interministerial']">{{e}}</div>
+            </div>
+        </div>
 
         <div class="help-block">Solamente llenar estos campos si se desea cambiar la contraseña</div>
 
@@ -64,6 +78,7 @@
 </style>
 <script>
     import InstitutionSelect from './InstitutionSelect.vue';
+    import ElSwitch from 'element-ui/lib/switch';
 
     export default {
         data: function(){
@@ -78,7 +93,8 @@
         },
         props: ['user','edit'],
         components:{
-            InstitutionSelect
+            InstitutionSelect,
+            ElSwitch
         },
         methods:{
             submit: function(){

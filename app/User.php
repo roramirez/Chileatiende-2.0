@@ -27,11 +27,18 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    protected $casts = [
+        'ministerial' => 'boolean',
+        'interministerial' => 'boolean'
+    ];
+
     protected $attributes = [
         'name' => '',
         'email' => '',
         'role' => 'editor',
-        'institution_id' => null
+        'institution_id' => null,
+        'ministerial' => false,
+        'interministerial' => false
     ];
 
     public function institution(){

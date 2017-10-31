@@ -24,8 +24,14 @@ class PageController extends Controller{
         ]);
     }
 
-    public function show($pageId){
-        $data['page'] = Page::find($pageId);
+    public function show(Request $request, $pageId){
+        $page = Page::find($pageId);
+
+        if(!$request->user()->can('view', $page)){
+            abort(403);
+        }
+
+        $data['page'] = $page;
 
         return view('layouts/backend',[
             'title' => 'Inicio',
@@ -33,8 +39,14 @@ class PageController extends Controller{
         ]);
     }
 
-    public function create(){
-        $data['page'] = new Page();
+    public function create(Request $request){
+        $page = new Page();
+
+        if(!$request->user()->can('create', $page)){
+            abort(403);
+        }
+
+        $data['page'] = $page;
         $data['edit'] = false;
 
         return view('layouts/backend',[
@@ -43,8 +55,13 @@ class PageController extends Controller{
         ]);
     }
 
-    public function edit($pageId){
+    public function edit(Request $request, $pageId){
         $page = Page::find($pageId);
+
+        if(!$request->user()->can('update', $page)){
+            abort(403);
+        }
+
         $page->published_at = \Carbon\Carbon::now();
         $page->categories = $page->categories()->pluck('id');
         $page->related_pages = $page->relatedPages()->pluck('id');;
@@ -59,7 +76,13 @@ class PageController extends Controller{
     }
 
     public function store(Request $request){
-        $page = $this->save($request, new Page());
+        $page = new Page();
+
+        if(!$request->user()->can('create', $page)){
+            abort(403);
+        }
+
+        $page = $this->save($request, $page);
 
         $request->session()->flash('status', 'Ficha creada con éxito');
 
@@ -67,7 +90,13 @@ class PageController extends Controller{
     }
 
     public function update(Request $request, $pageId){
-        $page = $this->save($request, Page::find($pageId));
+        $page = Page::find($pageId);
+
+        if(!$request->user()->can('update', $page)){
+            abort(403);
+        }
+
+        $page = $this->save($request, $page);
 
         $request->session()->flash('status', 'Ficha editada con éxito');
 
@@ -121,6 +150,11 @@ class PageController extends Controller{
 
     public function destroy(Request $request, $id){
         $page = Page::find($id);
+
+        if(!$request->user()->can('delete', $page)){
+            abort(403);
+        }
+
         $page->delete();
 
         $request->session()->flash('status', 'Ficha eliminada con éxito');

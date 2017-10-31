@@ -65,6 +65,8 @@ class UserController extends Controller{
             'email' => 'required|email',
             'role' => 'required',
             'institution_id' => 'exists:institutions,id',
+            'ministerial' => 'boolean',
+            'interministerial' => 'boolean',
             'password' => 'confirmed'
         ]);
 
@@ -72,6 +74,8 @@ class UserController extends Controller{
         $user->email = $request->input('email');
         $user->role = $request->input('role');
         $user->institution_id = $request->input('institution_id');
+        $user->ministerial = $request->input('ministerial');
+        $user->interministerial = $request->input('interministerial');
 
         if($password = $request->input('password'))
             $user->password = bcrypt($password);
