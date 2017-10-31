@@ -8,10 +8,12 @@ class HomeController extends Controller{
 
     public function getIndex(){
 
-        return view('layouts/backend',[
-            'title' => 'Inicio',
-            'content' => view('backend/home')
-        ]);
+        return redirect('backend/fichas');
+
+        //return view('layouts/backend',[
+        //    'title' => 'Inicio',
+        //    'content' => view('backend/home')
+        //]);
     }
 
 }
