@@ -28,6 +28,7 @@
         <tr>
             <th>Id</th>
             <th>Nombre del trámite</th>
+            <th>Estado</th>
             <th>Publicado</th>
             <th>Última modificación</th>
             <th>Acciones</th>
@@ -38,10 +39,11 @@
         <tr>
             <td><?=$p->id?></td>
             <td><a href="backend/fichas/<?=$p->id?>"><?=$p->title?></a></td>
+            <td><span data-toggle="tooltip" title="<?=$p->status_comment?>"><?=$p->status?></span></td>
             <td class="text-center">
                 <?php if($p->published):?>
-                    <i class="material-icons" title="Publicado">check</i>
-                    <?=$p->lastVersion()->published ? '' : '<i class="material-icons">call_merge</i>'?>
+                    <i class="material-icons" data-toggle="tooltip" title="Publicado">check</i>
+                    <?=$p->lastVersion()->published ? '' : '<i class="material-icons" data-toggle="tooltip" title="No se encuentra publicada en su última versión">call_merge</i>'?>
                 <?php endif ?>
             </td>
             <td><?=$p->updated_at?></td>

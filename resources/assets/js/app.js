@@ -69,5 +69,6 @@ const app = new Vue({
         var indexScroll = new SmoothScroll('.index-container a[href*="#"]', {
             offset: 100
         });
+        $('[data-toggle="tooltip"]').tooltip();
     }
 });
