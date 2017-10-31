@@ -18,7 +18,7 @@
                     </a>
                     <div class="collapse" id="filterCollapseMobile">
                         <form action="buscar">
-                            <input type="hidden" name="query" value="<?=$query?>" />
+                            <input type="hidden" name="query" value="<?=@e($query)?>" />
                             <div class="form-group">
                                 <label for="category">Categoría</label>
                                 <select id="category" name="category" class="form-control" onchange="this.form.submit()">

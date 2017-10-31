@@ -86,7 +86,7 @@
             <div class="container">
                 <label>¿Qué trámite o servicio buscas?</label>
                 <form action="buscar">
-                    <search id="search" name="query" value="<?=@$query?>"></search>
+                    <search id="search" name="query" value="<?=@e($query)?>"></search>
                 </form>
             </div>
         </div>

@@ -12,7 +12,7 @@
         <div class="col-sm-offset-6 col-sm-6">
             <form>
                 <div class="input-group">
-                    <input type="text" class="form-control" name="query" value="<?=$query?>" placeholder="Ej: bono marzo">
+                    <input type="text" class="form-control" name="query" value="<?=e($query)?>" placeholder="Ej: bono marzo">
                     <span class="input-group-btn">
                         <button class="btn btn-primary" type="submit">Buscar</button>
                     </span>
