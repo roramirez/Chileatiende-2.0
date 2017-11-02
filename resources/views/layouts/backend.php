@@ -46,7 +46,7 @@
                                 <div class="panel-heading">Menu Principal</div>
                                 <div class="panel-body">
                                     <ul>
-                                        <li><a>Mis datos</a></li>
+                                        <li><a href="backend/perfil">Mis datos</a></li>
                                         <li><a>Panel de control</a></li>
                                     </ul>
                                 </div>

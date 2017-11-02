@@ -28,6 +28,8 @@ Route::get('/ayuda/{content?}', 'FaqController');
 
 Route::group(['middleware' => ['auth'], 'prefix'=>'backend', 'namespace'=>'Backend'],function () {
     Route::get('/', 'HomeController@getIndex');
+    Route::get('/perfil', 'ProfileController@edit');
+    Route::put('/perfil', 'ProfileController@update');
     Route::resource('/instituciones', 'InstitutionController');
     Route::resource('/usuarios', 'UserController');
     Route::resource('/oficinas', 'OfficeController');
