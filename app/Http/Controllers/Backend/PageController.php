@@ -163,6 +163,11 @@ class PageController extends Controller{
     }
 
     public function updateMaster(Request $request, $pageId){
+        $page = Page::find($pageId);
+
+        if(!$request->user()->can('updateMaster', $page)){
+            abort(403);
+        }
 
         $this->validate($request, [
             'published' => 'required|boolean',
@@ -172,7 +177,7 @@ class PageController extends Controller{
             'categories' => 'array',
         ]);
 
-        $page = Page::find($pageId);
+
         $page->published = $request->input('published');
         $page->featured = $request->input('featured');
         $page->boost = $request->input('boost');
@@ -190,6 +195,10 @@ class PageController extends Controller{
 
     public function updateStatus(Request $request, $pageId){
         $page = Page::find($pageId);
+
+        if(!$request->user()->can('updateStatus', $page)){
+            abort(403);
+        }
 
         $page->status = $request->input('status');
         $page->status_comment = $request->input('status_comment');
@@ -212,6 +221,11 @@ class PageController extends Controller{
 
     public function publishVersion(Request $request, $pageId, $versionId){
         $page = Page::find($pageId);
+
+        if(!$request->user()->can('publishVersion', $page)){
+            abort(403);
+        }
+
         $version = Page::find($versionId);
 
         foreach($page->versions as $v){

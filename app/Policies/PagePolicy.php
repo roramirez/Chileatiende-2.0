@@ -85,4 +85,19 @@ class PagePolicy
 
         return $this->view($user,$page);
     }
+
+    public function updateMaster(User $user, Page $page)
+    {
+        return false;
+    }
+
+    public function updateStatus(User $user, Page $page)
+    {
+        return $this->view($user, $page);
+    }
+
+    public function publishVersion(User $user, Page $page)
+    {
+        return false;
+    }
 }

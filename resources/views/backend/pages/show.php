@@ -28,9 +28,11 @@
         </div>
     <?php endif ?>
 
+    <?php if (Auth::user()->can('updateMaster',$page)):?>
     <div class="well">
         <page-master-form :page="<?=e($page)?>"></page-master-form>
     </div>
+    <?php endif ?>
 
     <page-status-form :page="<?=e($page)?>"></page-status-form>
 
