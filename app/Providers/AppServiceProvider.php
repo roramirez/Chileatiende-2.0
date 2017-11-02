@@ -23,13 +23,7 @@ class AppServiceProvider extends ServiceProvider
 
         $this->bootClaveUnicaSocialite();
 
-        app(EngineManager::class)->extend('elasticsearch', function($app) {
-            return new ElasticsearchEngine(ElasticBuilder::create()
-                ->setHosts(config('scout.elasticsearch.hosts'))
-                ->build(),
-                config('scout.elasticsearch.index')
-            );
-        });
+        $this->bootElasticsearch();
     }
 
     /**
@@ -42,6 +36,16 @@ class AppServiceProvider extends ServiceProvider
         //
     }
 
+    private function bootElasticsearch()
+    {
+        app(EngineManager::class)->extend('elasticsearch', function($app) {
+            return new ElasticsearchEngine(ElasticBuilder::create()
+                ->setHosts(config('scout.elasticsearch.hosts'))
+                ->build(),
+                config('scout.elasticsearch.index')
+            );
+        });
+    }
     private function bootClaveUnicaSocialite()
     {
         $socialite = $this->app->make('Laravel\Socialite\Contracts\Factory');
