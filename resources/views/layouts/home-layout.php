@@ -99,7 +99,7 @@
                                 <div class="media-body">
                                     <p>Con tu <a href="#">Clave Única</a>, accede a los trámites del Estado desde
                                         cualquier lugar.</p>
-                                    <a class="btn" href="#" data-toggle="modal" data-target="#claveunica-modal">Accede a mi ChileAtiende →</a>
+                                    <a class="btn" href="login/claveunica">Accede a mi ChileAtiende →</a>
                                 </div>
                             </div>
                         </div>

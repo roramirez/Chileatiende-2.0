@@ -21,6 +21,8 @@ class AppServiceProvider extends ServiceProvider
 
         Schema::defaultStringLength(191);
 
+        $this->bootClaveUnicaSocialite();
+
         app(EngineManager::class)->extend('elasticsearch', function($app) {
             return new ElasticsearchEngine(ElasticBuilder::create()
                 ->setHosts(config('scout.elasticsearch.hosts'))
@@ -38,5 +40,17 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         //
+    }
+
+    private function bootClaveUnicaSocialite()
+    {
+        $socialite = $this->app->make('Laravel\Socialite\Contracts\Factory');
+        $socialite->extend(
+            'claveunica',
+            function ($app) use ($socialite) {
+                $config = $app['config']['services.claveunica'];
+                return $socialite->buildProvider(\App\ClaveUnicaProvider::class, $config);
+            }
+        );
     }
 }
