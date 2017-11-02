@@ -17,6 +17,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        setlocale(LC_ALL, env('PHP_LOCALE'));
+
         Schema::defaultStringLength(191);
 
         app(EngineManager::class)->extend('elasticsearch', function($app) {
