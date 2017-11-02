@@ -13,7 +13,7 @@
                 <?php if($page->online):?><div class="online">Trámite Online</div><?php endif ?>
                 <h3><?= $page->title ?></h3>
                 <div class="author"><a href="instituciones/<?=$page->institution->id?>">Información proporcionada por <?= $page->institution->name ?></a></div>
-                <div class="updated-at">Actualizado al <?=$page->published_at->formatLocalized('%d de %B, %Y')?></div>
+                <?php if($page->published_at):?><div class="updated-at">Actualizado al <?=$page->published_at->formatLocalized('%d de %B, %Y')?></div><?php endif ?>
                 <hr />
                 <div class="page-content">
                     <h4 id="objective">Descripción</h4>
