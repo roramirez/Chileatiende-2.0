@@ -29,7 +29,7 @@ class PagePolicy
         if($user->interministerial){
 
         }else if($user->ministerial){
-            if(substr($user->institution_id,0,2) != substr($page->institution_id,0,2)){
+            if($user->institution->ministry_id != $page->institution->ministry_id){
                 return false;
             }
         }else{
