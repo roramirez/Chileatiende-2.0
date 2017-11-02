@@ -36,6 +36,7 @@ import PageForm from './components/PageForm.vue';
 import PageMasterForm from './components/PageMasterForm.vue';
 import PageStatusForm from './components/PageStatusForm.vue';
 import OfficeForm from './components/OfficeForm.vue';
+import InstitutionForm from './components/InstitutionForm.vue';
 import CategoryForm from './components/CategoryForm.vue';
 import UserForm from './components/UserForm.vue';
 import OfficesCollapse from './components/OfficesCollapse.vue';
@@ -57,6 +58,7 @@ const app = new Vue({
         PageNav,
         UserForm,
         OfficeForm,
+        InstitutionForm,
         CategoryForm,
         TransparencyList,
         Expandable

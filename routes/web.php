@@ -28,6 +28,7 @@ Route::get('/ayuda/{content?}', 'FaqController');
 
 Route::group(['middleware' => ['auth'], 'prefix'=>'backend', 'namespace'=>'Backend'],function () {
     Route::get('/', 'HomeController@getIndex');
+    Route::resource('/instituciones', 'InstitutionController');
     Route::resource('/usuarios', 'UserController');
     Route::resource('/oficinas', 'OfficeController');
     Route::resource('/categorias', 'CategoryController');
@@ -40,6 +41,7 @@ Route::group(['middleware' => ['auth'], 'prefix'=>'backend', 'namespace'=>'Backe
     Route::group(['prefix'=>'api','namespace'=>'API'], function (){
         Route::resource('files', 'FileController');
         Route::resource('institutions', 'InstitutionController');
+        Route::resource('ministries', 'MinistryController');
         Route::resource('categories', 'CategoryController');
         Route::resource('locations', 'LocationController');
         Route::resource('pages', 'PageController');
