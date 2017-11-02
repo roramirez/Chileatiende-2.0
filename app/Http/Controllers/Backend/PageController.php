@@ -188,6 +188,18 @@ class PageController extends Controller{
         return response()->json(['redirect' => 'backend/fichas/'.$page->id]);
     }
 
+    public function updateStatus(Request $request, $pageId){
+        $page = Page::find($pageId);
+
+        $page->status = $request->input('status');
+        $page->status_comment = $request->input('status_comment');
+        $page->save();
+
+        $request->session()->flash('status', 'Ficha actualizada con éxito.');
+
+        return response()->json(['redirect' => 'backend/fichas']);
+    }
+
     public function versions($pageId){
         $data['edit'] = true;
         $data['page'] = Page::find($pageId);

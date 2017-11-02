@@ -32,6 +32,7 @@ Route::group(['middleware' => ['auth'], 'prefix'=>'backend', 'namespace'=>'Backe
     Route::resource('/oficinas', 'OfficeController');
     Route::resource('/categorias', 'CategoryController');
     Route::resource('/fichas', 'PageController');
+    Route::put('/fichas/{id}/status', 'PageController@updateStatus');
     Route::put('/fichas/{id}/master', 'PageController@updateMaster');
     Route::get('/fichas/{pageId}/versions', 'PageController@versions');
     Route::get('/fichas/{pageId}/versions/{versionId}/publish', 'PageController@publishVersion');

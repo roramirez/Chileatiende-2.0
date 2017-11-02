@@ -38,7 +38,7 @@ class PagePolicy
             }
         }
 
-        if($page->locked)
+        if($page->status == 'en_revision')
             return false;
 
 
@@ -80,6 +80,9 @@ class PagePolicy
      */
     public function delete(User $user, Page $page)
     {
+        if($page->status)
+            return false;
+
         return $this->view($user,$page);
     }
 }

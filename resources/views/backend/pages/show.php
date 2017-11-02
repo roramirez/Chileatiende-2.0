@@ -32,6 +32,11 @@
         <page-master-form :page="<?=e($page)?>"></page-master-form>
     </div>
 
+    <page-status-form :page="<?=e($page)?>"></page-status-form>
+
+    <br />
+
+
     <table class="table table-bordered">
         <thead>
         <tr>
