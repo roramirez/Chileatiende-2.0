@@ -53,7 +53,8 @@ class AppServiceProvider extends ServiceProvider
             'claveunica',
             function ($app) use ($socialite) {
                 $config = $app['config']['services.claveunica'];
-                return $socialite->buildProvider(\App\ClaveUnicaProvider::class, $config);
+
+                return $socialite->buildProvider(\App\Socialite\Two\ClaveUnicaProvider::class, $config);
             }
         );
     }

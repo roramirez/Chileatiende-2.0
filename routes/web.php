@@ -11,10 +11,10 @@
 |
 */
 
-Route::get('login/claveunica', 'Auth\SocialiteLoginController@redirectToProvider');
-Route::get('login/claveunica/callback', 'Auth\SocialiteLoginController@handleProviderCallback');
-
 Route::auth();
+
+Route::get('login/claveunica', 'Auth\LoginController@redirectToProvider');
+Route::get('login/claveunica/callback', 'Auth\LoginController@handleProviderCallback');
 
 Route::get('/', 'HomeController@getIndex');
 Route::get('/buscar', 'SearchController@getIndex');
@@ -29,7 +29,7 @@ Route::get('/ayuda/sucursales', 'FaqController@getOffices');
 Route::get('/ayuda/oficinas-moviles', 'FaqController@getMobileOffices');
 Route::get('/ayuda/{content?}', 'FaqController');
 
-Route::group(['middleware' => ['auth'], 'prefix'=>'backend', 'namespace'=>'Backend'],function () {
+Route::group(['middleware' => ['auth','backend'], 'prefix'=>'backend', 'namespace'=>'Backend'],function () {
     Route::get('/', 'HomeController@getIndex');
     Route::get('/perfil', 'ProfileController@edit');
     Route::put('/perfil', 'ProfileController@update');
