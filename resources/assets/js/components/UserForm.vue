@@ -1,10 +1,17 @@
 <template>
     <form class="category-form form-horizontal" @submit.prevent="submit()">
-        <div class="form-group" :class="{'has-error': errors['name']}">
-            <label for="name" class="col-sm-2 control-label">Nombre</label>
+        <div class="form-group" :class="{'has-error': errors['first_name']}">
+            <label for="first_name" class="col-sm-2 control-label">Nombre</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="name" v-model="data.name">
-                <div class="help-block" v-for="e in errors['name']">{{e}}</div>
+                <input type="text" class="form-control" id="first_name" v-model="data.first_name">
+                <div class="help-block" v-for="e in errors['first_name']">{{e}}</div>
+            </div>
+        </div>
+        <div class="form-group" :class="{'has-error': errors['last_name']}">
+            <label for="last_name" class="col-sm-2 control-label">Apellidos</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="last_name" v-model="data.last_name">
+                <div class="help-block" v-for="e in errors['last_name']">{{e}}</div>
             </div>
         </div>
         <div class="form-group" :class="{'has-error': errors['email']}">

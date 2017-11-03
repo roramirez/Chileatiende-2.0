@@ -11,7 +11,7 @@ class UserController extends Controller{
     public function index(Request $request){
 
 
-        $data['users'] = User::all();
+        $data['users'] = User::backend()->get();
 
         return view('layouts/backend',[
             'title' => 'Usuarios',
@@ -61,7 +61,7 @@ class UserController extends Controller{
 
     private function save(Request $request, User $user){
         $this->validate($request, [
-            'name' => 'required',
+            'first_name' => 'required',
             'email' => 'required|email',
             'role' => 'required',
             'institution_id' => 'exists:institutions,id',
@@ -70,7 +70,8 @@ class UserController extends Controller{
             'password' => 'confirmed'
         ]);
 
-        $user->name = $request->input('name');
+        $user->first_name = $request->input('first_name');
+        $user->last_name = $request->input('last_name');
         $user->email = $request->input('email');
         $user->role = $request->input('role');
         $user->institution_id = $request->input('institution_id');

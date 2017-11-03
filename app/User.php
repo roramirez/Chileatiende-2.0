@@ -49,4 +49,8 @@ class User extends Authenticatable
     public function getNameAttribute(){
         return $this->first_name.' '.$this->last_name;
     }
+
+    public function scopeBackend($query){
+        return $query->where('backend',1);
+    }
 }
