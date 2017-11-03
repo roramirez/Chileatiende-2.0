@@ -18,3 +18,4 @@ use Illuminate\Http\Request;
 //});
 
 Route::get('/suggest', 'API\SuggestController@getIndex');
+Route::resource('/categories', 'API\CategoryController');

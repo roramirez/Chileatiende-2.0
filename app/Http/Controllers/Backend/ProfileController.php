@@ -34,12 +34,13 @@ class ProfileController extends Controller{
 
     private function save(Request $request, User $user){
         $this->validate($request, [
-            'name' => 'required',
+            'first_name' => 'required',
             'email' => 'required|email',
             'password' => 'confirmed'
         ]);
 
-        $user->name = $request->input('name');
+        $user->first_name = $request->input('first_name');
+        $user->last_name = $request->input('last_name');
         $user->email = $request->input('email');
 
         if($password = $request->input('password'))

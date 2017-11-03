@@ -28,6 +28,8 @@ Route::get('/enlaces-transparencia', 'TransparencyController');
 Route::get('/ayuda/sucursales', 'FaqController@getOffices');
 Route::get('/ayuda/oficinas-moviles', 'FaqController@getMobileOffices');
 Route::get('/ayuda/{content?}', 'FaqController');
+Route::get('/perfil','ProfileController@edit');
+Route::put('/perfil','ProfileController@update');
 
 Route::group(['middleware' => ['auth','backend'], 'prefix'=>'backend', 'namespace'=>'Backend'],function () {
     Route::get('/', 'HomeController@getIndex');

@@ -32,6 +32,7 @@ locale.use(lang);
 import SelectFirstTab from './directives/SelectFirstTab';
 import Search from './components/Search.vue';
 import Steps from './components/Steps.vue';
+import ProfileCharacterizationForm from './components/ProfileCharacterizationForm.vue';
 import PageForm from './components/PageForm.vue';
 import PageMasterForm from './components/PageMasterForm.vue';
 import PageStatusForm from './components/PageStatusForm.vue';
@@ -51,6 +52,7 @@ const app = new Vue({
     components:{
         Search,
         Steps,
+        ProfileCharacterizationForm,
         PageForm,
         PageMasterForm,
         PageStatusForm,

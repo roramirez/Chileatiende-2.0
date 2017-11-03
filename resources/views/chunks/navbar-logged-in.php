@@ -21,6 +21,7 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Bienvenido/a <?=Auth::user()->first_name?> <span class="caret"></span></a>
                         <ul class="dropdown-menu">
+                            <li><a href="perfil">Perfil</a></li>
                             <li>
                                 <a href="<?= route('logout') ?>" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Cerrar Sesión</a>
                                 <form id="logout-form" action="<?= route('logout') ?>" method="POST" style="display: none;">

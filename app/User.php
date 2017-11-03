@@ -29,7 +29,9 @@ class User extends Authenticatable
 
     protected $casts = [
         'ministerial' => 'boolean',
-        'interministerial' => 'boolean'
+        'interministerial' => 'boolean',
+        'birth_date' => 'date',
+        'foreigner' => 'boolean'
     ];
 
     protected $attributes = [
