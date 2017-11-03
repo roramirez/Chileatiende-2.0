@@ -44,12 +44,8 @@ class ClaveUnicaProvider extends AbstractProvider implements ProviderInterface
      */
     protected function getUserByToken($token)
     {
-        $response = $this->getHttpClient()->get(env('OAUTH_URL', 'https://accounts.gtd.asimov.cl') . '/api/user', [
-            'query' => [
-                'prettyPrint' => 'false',
-            ],
+        $response = $this->getHttpClient()->post('https://www.claveunica.gob.cl/openid/userinfo', [
             'headers' => [
-                'Accept' => 'application/json',
                 'Authorization' => 'Bearer '.$token,
             ],
         ]);
@@ -63,12 +59,10 @@ class ClaveUnicaProvider extends AbstractProvider implements ProviderInterface
     protected function mapUserToObject(array $user)
     {
         return (new User)->setRaw($user)->map([
-            'id' => $user['id'],
-            'name' => $user['name'],
-            'email' => $user['email'],
-            'rut' => $user['rut'],
-            'dv' => $user['dv'],
-            'extra' => $user['extra']
+            'first_name' => implode(' ',$user['name']['nombres']),
+            'last_name' => implode(' ', $user['name']['apellidos']),
+            'run' => $user['RolUnico']['numero'],
+            'dv' => $user['RolUnico']['DV']
         ]);
     }
 }

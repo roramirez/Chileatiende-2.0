@@ -38,7 +38,7 @@ return [
     'claveunica' => [
         'client_id' => env('CLAVEUNICA_KEY'),
         'client_secret' => env('CLAVEUNICA_SECRET'),
-        'redirect' => env('APP_URL').'/login/claveunica/callback'
+        'redirect' => env('CLAVEUNICA_REDIRECT')
     ]
 
 ];
