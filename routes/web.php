@@ -11,8 +11,8 @@
 |
 */
 
-Route::get('login/claveunica', 'Auth\FrontendLoginController@redirectToProvider');
-Route::get('login/claveunica/callback', 'Auth\FrontendLoginController@handleProviderCallback');
+Route::get('login/claveunica', 'Auth\SocialiteLoginController@redirectToProvider');
+Route::get('login/claveunica/callback', 'Auth\SocialiteLoginController@handleProviderCallback');
 
 Route::auth();
 

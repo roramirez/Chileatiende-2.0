@@ -6,11 +6,11 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
 
-class FrontendLoginController extends Controller
+class SocialiteLoginController extends Controller
 {
     public function redirectToProvider()
     {
-        return Socialite::driver('claveunica')->redirect();
+        return Socialite::driver('claveunica')->scopes(['openid', 'run', 'name'])->redirect();
     }
 
 
