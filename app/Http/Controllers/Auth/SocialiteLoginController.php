@@ -11,7 +11,7 @@ class SocialiteLoginController extends Controller
 {
     public function redirectToProvider()
     {
-        return Socialite::driver('claveunica')->scopes(['openid run name'])->redirect();
+        return Socialite::driver('claveunica')->redirect();
     }
 
 
