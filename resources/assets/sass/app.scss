@@ -110,6 +110,51 @@ ol.breadcrumb{
   }
 }
 
+.navbar-logged-in{
+  background: $blue;
+  border-radius: 0;
+  margin-bottom: 0;
+  .navbar-brand{
+    color: white;
+    font-family: "Roboto Slab";
+    font-size: 18px;
+  }
+  .nav{
+    >li{
+      >a{
+        font-size: 16px;
+        color: white;
+        border-right: 1px solid rgba(255,255,255,0.4);
+        &:hover{
+          background: none;
+        }
+      }
+      .dropdown-menu{
+        background: $blue;
+        >li{
+          >a{
+            color: white;
+            &:hover{
+              background: none;
+            }
+          }
+        }
+      }
+      &.open{
+        >a{
+          background: none;
+        }
+      }
+      &:last-child{
+        >a{
+          border-right: none;
+          padding-right: 0;
+        }
+      }
+    }
+  }
+}
+
 .navbar-default{
   height: 70px;
   background: #F7F7F7;
@@ -120,7 +165,7 @@ ol.breadcrumb{
     height: 90px;
   }
   .navbar-brand{
-    padding: 0;
+    padding: 0 15px;
     width: 105px;
     @media (min-width: 768px) {
       width: auto;

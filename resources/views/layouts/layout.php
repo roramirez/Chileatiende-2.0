@@ -82,6 +82,9 @@
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
+
+        <?=view('chunks/navbar-logged-in') ?>
+
         <div class="search-area">
             <div class="container">
                 <label>¿Qué trámite o servicio buscas?</label>
