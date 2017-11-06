@@ -46,10 +46,10 @@
 				<div class="channel-card">
 					<div class="card-heading">
 						<img src="images/sitio-web.svg" alt="ícono web">
-						<h3>Kioskos</h3>
+						<h3>Módulos Autoatención</h3>
 					</div>
 					<div class="card-body">
-						<p><a href="#">Kioskos de autoatención</a> que permiten acceder de manera simple y directa a información sobre más de 2.200 beneficios y servicios públicos.</p>
+						<p><a href="#">Módulos Autoatención</a> que permiten acceder de manera simple y directa a información sobre más de 2.200 beneficios y servicios públicos.</p>
 					</div>
 				</div>
 			</div>
