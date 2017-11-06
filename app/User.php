@@ -48,6 +48,10 @@ class User extends Authenticatable
         return $this->belongsTo('App\Institution');
     }
 
+    public function categories(){
+        return $this->belongsToMany('App\Category');
+    }
+
     public function getNameAttribute(){
         return $this->first_name.' '.$this->last_name;
     }

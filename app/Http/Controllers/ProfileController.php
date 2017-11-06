@@ -9,8 +9,11 @@ use Illuminate\Http\Request;
 class ProfileController extends Controller{
 
     public function edit(Request $request) {
+        $user = $request->user();
+        $user->categories = $user->categories()->pluck('id');
+
         $content = view('profile/edit',[
-            'user' => $request->user()
+            'user' => $user
         ]);
 
         return view('layouts/layout',[
@@ -25,7 +28,8 @@ class ProfileController extends Controller{
             'gender' => 'required|in:m,f',
             'nationality' => 'required',
             'foreigner' => 'required|boolean',
-            'rsh' => 'nullable|integer|min:0'
+            'rsh' => 'nullable|integer|min:0',
+            'categories' => 'array'
         ]);
 
         $user = $request->user();
@@ -34,8 +38,10 @@ class ProfileController extends Controller{
         $user->nationality = $request->input('nationality');
         $user->foreigner = $request->input('foreigner');
         $user->rsh = $request->input('rsh');
-
         $user->save();
+
+        $user->categories()->sync($request->input('categories'));
+
 
         return response()->json(['redirect' => '/']);
     }

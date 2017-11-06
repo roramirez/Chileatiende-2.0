@@ -18,7 +18,7 @@
         <br />
 
 
-        <fieldset v-if="step == 1">
+        <fieldset v-show="step == 1">
             <div class="row">
                 <div class="col-sm-offset-4 col-sm-4">
                     <ol>
@@ -85,14 +85,16 @@
                 </div>
             </div>
         </fieldset>
-        <fieldset v-if="step == 2">
+        <fieldset v-show="step == 2">
             <label>Indicanos cuales son tus temas de interes</label>
 
+            <el-checkbox-group v-model="data.categories">
             <div class="row">
                 <div v-for="c in categories" class="col-sm-4">
-                    <div class="checkbox"><label><input type="checkbox" /> {{c.name}}</label></div>
+                    <el-checkbox :label="c.id">{{c.name}}</el-checkbox>
                 </div>
             </div>
+            </el-checkbox-group>
 
         </fieldset>
 
@@ -137,6 +139,8 @@
     import ElDatePicker from 'element-ui/lib/date-picker';
     import ElSelect from 'element-ui/lib/select';
     import ElOption from 'element-ui/lib/option';
+    import ElCheckboxGroup from 'element-ui/lib/checkbox-group';
+    import ElCheckbox from 'element-ui/lib/checkbox';
 
     export default {
         data: function(){
@@ -155,7 +159,9 @@
         components:{
             ElDatePicker,
             ElSelect,
-            ElOption
+            ElOption,
+            ElCheckboxGroup,
+            ElCheckbox
         },
         methods:{
             submit: function(){
