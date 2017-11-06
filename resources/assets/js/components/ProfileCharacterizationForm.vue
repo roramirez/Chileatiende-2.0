@@ -1,5 +1,5 @@
 <template>
-    <form class="profile-characterization-form" @submit.prevent="submit()">
+    <form class="profile-characterization-form" @submit.prevent>
 
         <div class="row">
             <div class="col-sm-6">
@@ -116,7 +116,7 @@
                 <div class="form-group">
                     <button class="btn btn-block btn-link" @click="step = step-1" v-show="step > 1" type="button">← Paso Anterior</button>
                     <button class="btn btn-block btn-primary" @click="step = step+1" v-show="step < maxSteps" type="button">Siguiente Paso →</button>
-                    <button class="btn btn-block btn-primary" type="submit" v-show="step == maxSteps">Enviar Formulario</button>
+                    <button class="btn btn-block btn-primary" type="button" v-show="step == maxSteps" @click="submit">Enviar Formulario</button>
                 </div>
             </div>
         </div>
