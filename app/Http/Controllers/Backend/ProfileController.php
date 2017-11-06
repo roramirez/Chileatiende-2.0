@@ -18,7 +18,7 @@ class ProfileController extends Controller{
 
         return view('layouts/backend',[
             'title' => 'Editar Perfil',
-            'content' => view('backend/profile/index', $data)
+            'content' => view('backend/profile/edit', $data)
         ]);
     }
 

@@ -1220,6 +1220,94 @@ main {
   }
   #profile{
     padding: 40px 0;
+    .profile-characterization-form{
+      fieldset{
+        margin-bottom: 100px;
+        ol{
+          list-style: none;
+          li{
+            counter-increment: count-me;
+            position: relative;
+            &:before{
+              content: counter(count-me) ". ";
+              display: block;
+              position: absolute;
+              left: -50px;
+              color: $red;
+              font-size: 20px;
+            }
+          }
+        }
+      }
+
+
+      .step-buttons{
+        .btn{
+          width: 60px;
+          height: 60px;
+          color: white;
+          background: $blue;
+          &[disabled]{
+            background: #DDDDDD;
+          }
+        }
+      }
+
+      .form-group{
+        font-family: "Roboto Slab";
+        margin-bottom: 50px;
+        .control-label{
+          font-size: 20px;
+          font-weight: normal;
+        }
+        .el-input{
+          font-size: 28px;
+          .el-input__inner{
+            height: 60px;
+          }
+        }
+        .radio-inline{
+          font-size: 28px;
+          input{
+            margin-top: 10px;
+          }
+        }
+        .form-control{
+          font-size: 28px;
+          height: 60px;
+        }
+        .btn-primary{
+          //background: #8F8F8F;
+          background: $red;
+          border: none;
+          height: 60px;
+          font-family: Roboto;
+          font-size: 16px;
+          color: white;
+        }
+      }
+      .categories{
+        .control-label{
+          display: block;
+          font-size: 20px;
+          font-family: "Roboto Slab";
+          border-bottom: 1px solid #D7D6D7;
+          padding-bottom: 10px;
+        }
+        .el-checkbox{
+          .el-checkbox__input{
+            vertical-align: baseline;
+          }
+          .el-checkbox__label{
+            font-size: 28px;
+            font-weight: normal;
+            font-family: "Roboto Slab";
+            padding-left: 20px;
+          }
+
+        }
+      }
+    }
   }
   #terms {
     padding-bottom: 150px;
