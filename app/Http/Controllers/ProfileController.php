@@ -33,7 +33,7 @@ class ProfileController extends Controller{
         ]);
 
         $user = $request->user();
-        $user->birth_date = $request->input('birth_date');
+        $user->birth_date = \Carbon\Carbon::parse($request->input('birth_date'));
         $user->gender = $request->input('gender');
         $user->nationality = $request->input('nationality');
         $user->foreigner = $request->input('foreigner');
