@@ -1,4 +1,4 @@
-<?=view('chunks/head', ['title' => $title])?>
+<?=view('chunks/head', $__data)?>
 <div id="app">
     <header class="default">
         <?= view('chunks/siteselector') ?>

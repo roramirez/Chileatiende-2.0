@@ -20,6 +20,9 @@ class PageController extends Controller{
 
         return view('layouts/layout',[
             'title' => $data['page']->title,
+            'description' => str_limit(strip_tags($data['page']->objective),300),
+            'keywords' => $data['page']->keywords,
+            'author' => $data['page']->institution->name,
             'content' => view('pages/show', $data)
         ]);
     }
