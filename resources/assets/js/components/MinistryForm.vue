@@ -1,5 +1,5 @@
 <template>
-    <form class="institution-form form-horizontal" @submit.prevent="submit()">
+    <form class="ministry-form form-horizontal" @submit.prevent="submit()">
         <div class="form-group" :class="{'has-error': errors['name']}">
             <label for="name" class="col-sm-2 control-label">Nombre</label>
             <div class="col-sm-10">
@@ -14,13 +14,6 @@
                 <div class="help-block" v-for="e in errors['shortname']">{{e}}</div>
             </div>
         </div>
-        <div class="form-group" :class="{'has-error': errors['url']}">
-            <label for="url" class="col-sm-2 control-label">URL</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control" id="url" v-model="data.url">
-                <div class="help-block" v-for="e in errors['url']">{{e}}</div>
-            </div>
-        </div>
         <div class="form-group" :class="{'has-error': errors['description']}">
             <label for="description" class="col-sm-2 control-label">Descripción</label>
             <div class="col-sm-10">
@@ -28,17 +21,10 @@
                 <div class="help-block" v-for="e in errors['description']">{{e}}</div>
             </div>
         </div>
-        <div class="form-group" :class="{'has-error': errors['ministry_id']}">
-            <label for="ministry_id" class="col-sm-2 control-label">Ministerio</label>
-            <div class="col-sm-10">
-                <ministry-select id="ministry_id" v-model="data.ministry_id"></ministry-select>
-                <div class="help-block" v-for="e in errors['ministry_id']">{{e}}</div>
-            </div>
-        </div>
 
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
-                <a class="btn btn-default" href="backend/instituciones">Cancelar</a>
+                <a class="btn btn-default" href="backend/ministerios">Cancelar</a>
                 <button type="submit" class="btn btn-primary">Guardar</button>
             </div>
         </div>
@@ -50,25 +36,21 @@
     }
 </style>
 <script>
-    import MinistrySelect from './MinistrySelect.vue';
 
     export default {
         data: function(){
             return{
-                data: _.cloneDeep(this.institution),
+                data: _.cloneDeep(this.ministry),
                 errors: {}
             }
         },
-        props: ['institution','edit'],
-        components:{
-            MinistrySelect
-        },
+        props: ['ministry','edit'],
         methods:{
             submit: function(){
                 var self = this;
 
                 axios({
-                    url: self.edit ? 'backend/instituciones/'+self.data.id : 'backend/instituciones',
+                    url: self.edit ? 'backend/ministerios/'+self.data.id : 'backend/ministerios',
                     method: self.edit ? 'PUT' : 'POST',
                     data: self.data,
                 }).then(function(response){

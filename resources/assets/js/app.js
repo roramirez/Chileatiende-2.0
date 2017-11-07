@@ -37,6 +37,7 @@ import PageForm from './components/PageForm.vue';
 import PageMasterForm from './components/PageMasterForm.vue';
 import PageStatusForm from './components/PageStatusForm.vue';
 import OfficeForm from './components/OfficeForm.vue';
+import MinistryForm from './components/MinistryForm.vue';
 import InstitutionForm from './components/InstitutionForm.vue';
 import CategoryForm from './components/CategoryForm.vue';
 import UserForm from './components/UserForm.vue';
@@ -62,6 +63,7 @@ const app = new Vue({
         UserForm,
         ProfileForm,
         OfficeForm,
+        MinistryForm,
         InstitutionForm,
         CategoryForm,
         TransparencyList,

@@ -63,6 +63,7 @@
                                 <div class="panel-heading">Administración</div>
                                 <div class="panel-body">
                                     <ul>
+                                        <li><a href="backend/ministerios">Ministerios</a></li>
                                         <li><a href="backend/instituciones">Instituciones</a></li>
                                         <li><a href="backend/usuarios">Usuarios</a></li>
                                         <li><a href="backend/oficinas">Oficinas</a></li>
