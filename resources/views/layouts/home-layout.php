@@ -1,6 +1,9 @@
 <?=view('chunks/head', ['title' => $title])?>
 <div id="app">
-    <header class="home">
+    <header class="home"
+            <?php if(Session::get('skin') == 'mujer'):?>style="background-image: url(images/home-mujer.jpg);"<?php endif ?>
+            <?php if(Session::get('skin') == 'exterior'):?>style="background-image: url(images/home-exterior.jpg);"<?php endif ?>
+    >
         <?= view('chunks/siteselector') ?>
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
