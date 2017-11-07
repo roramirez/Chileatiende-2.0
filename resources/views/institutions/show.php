@@ -17,12 +17,12 @@
                 <h4>Misión Institucional</h4>
                 <div><?=$institution->description?></div>
 
-                <h4>Servicios o Beneficios de la Institución (<?=$institution->pages()->masters()->published()->count()?>)</h4>
+                <h4>Servicios o Beneficios de la Institución (<?=$pages->total()?>)</h4>
 
                 <hr />
 
                 <ul class="pages">
-                    <?php foreach($institution->pages()->masters()->published()->get() as $p):?>
+                    <?php foreach($pages as $p):?>
                         <?php $p = $p->publishedVersion() ?>
                         <li>
                             <h5><a href="fichas/<?=$p->guid?>"><?=$p->title?></a></h5>
@@ -31,6 +31,8 @@
                         </li>
                     <?php endforeach ?>
                 </ul>
+
+                <div class="text-center"><?=$pages->links()?></div>
 
             </div>
             <div class="col-sm-4">
