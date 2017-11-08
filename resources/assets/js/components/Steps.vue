@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-sm-3 col">
                 <ul class="terms">
-                    <li v-for="(t,index) in terms" @click="selectedIndex = index" :class="{active: selectedIndex == index}">{{t}}</li>
+                    <li v-for="(t,index) in terms" @click="selectedIndex = index" :class="{active: selectedIndex == index}" v-html="t"></li>
                 </ul>
             </div>
             <div class="col-sm-9 col">

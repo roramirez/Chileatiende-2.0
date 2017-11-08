@@ -478,6 +478,7 @@ header.home{
           color: white;
           border-radius: 2px;
           display: inline-block;
+          transition: .2s ease;
           &:hover{
             text-decoration: none;
             background: $red;
