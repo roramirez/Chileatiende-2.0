@@ -49,7 +49,7 @@
                                     <?php $p = $p->publishedVersion() ?>
                                     <li>
                                         <a href="fichas/<?=$p->guid?>"><?=$p->title?></a>
-                                        <?php if($p->online):?><div>Trámite Online</div><?php endif ?>
+                                        <?php if($p->online):?><div>Trámite en Línea</div><?php endif ?>
                                     </li>
                                 <?php endforeach ?>
                             </ul>

@@ -24,7 +24,7 @@
 	            <ul>
 	                <li v-for="p in page.related_pages">
 	                    <div class="title"><a :href="'fichas/'+p.guid">{{p.title}}</a></div>
-	                    <div v-if="p.online" class="online">Trámite Online</div>
+	                    <div v-if="p.online" class="online">Trámite en Línea</div>
 	                </li>
 	            </ul>
             </div>
