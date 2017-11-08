@@ -1,7 +1,6 @@
 <?=view('chunks/head', $__data)?>
 <div id="app">
     <header class="default">
-        <?= view('chunks/siteselector') ?>
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -78,12 +77,27 @@
                                 </li>
                             </ul>
                         </li>
+                        <?php if(Auth::check()):?>
+                            <li><a href="#"><img src="images/mail.svg" alt="Notificaciones" /></a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Bienvenido/a <?=Auth::user()->first_name?> <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="perfil">Perfil</a></li>
+                                    <li>
+                                        <a href="<?= route('logout') ?>" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Cerrar Sesión</a>
+                                        <form id="logout-form" action="<?= route('logout') ?>" method="POST" style="display: none;">
+                                            <?= csrf_field() ?>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
+                        <?php else: ?>
+                            <li><a href="login/claveunica">Mi ChileAtiende</a></li>
+                        <?php endif ?>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
-
-        <?=view('chunks/navbar-logged-in') ?>
 
         <div class="search-area">
             <div class="container">
