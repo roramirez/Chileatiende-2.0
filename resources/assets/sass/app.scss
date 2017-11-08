@@ -66,6 +66,17 @@ ol.breadcrumb{
   }
 }
 
+.highlight{
+  border: 1px solid $black;
+  border-radius: 2px;
+  font-weight: 500;
+  padding: 0 4px;
+  &.highlight-green{
+    border-color: $green;
+    color: $green;
+  }
+}
+
 .table{
   &.table-dates{
     background: $green;
@@ -109,7 +120,7 @@ ol.breadcrumb{
     height: 90px;
   }
   .navbar-brand{
-    padding: 0;
+    padding: 0 15px;
     width: 105px;
     @media (min-width: 768px) {
       width: auto;
@@ -155,6 +166,7 @@ ol.breadcrumb{
         margin-top: 35px;
         margin-bottom: 35px;
         padding: 0 20px;
+        border-right: 1px solid #fff;
         &:hover, &:active{
           @media (min-width: 768px) {
             color: white;
@@ -162,9 +174,9 @@ ol.breadcrumb{
           }
         }
       }
-      &:first-child {
+      &:last-child {
         a {
-          border-right: 1px solid #fff;
+          border-right: none;
         }
       }
     }
@@ -184,10 +196,16 @@ ol.breadcrumb{
       position: absolute;
       border-radius: 4px;
       border: 1px solid #D7D6D7;
+      background: none;
+      border: none;
+      box-shadow: none;
       li a {
         margin: 0;
         padding: 0;
         white-space: normal;
+        &:hover{
+          background: none;
+        }
       }
     }
   }
@@ -313,51 +331,6 @@ ol.breadcrumb{
   }
 }
 }
-#cha-heading {
-  background-color: #272727;
-  height: 30px;
-  font-size: 0;
-  .container {
-    padding: 0;
-  }
-  a.cha-btn {
-    color: #fff;
-    padding: 7px 0;
-    font-size: 12px;
-    display: inline-block;
-    text-align: center;
-    width: 33.3%;
-    transition: .2s ease;
-    @media (min-width: 768px) {
-      padding: 7px 25px;
-      width: auto;
-    }
-    span {
-      display: none;
-      @media (min-width: 768px) {
-        display: inline-block;
-      }
-    }
-    &:nth-child(1) {
-      &.active, &:hover, &:focus {
-        background-color: $red;
-        text-decoration: none;
-      }
-    }
-    &:nth-child(2) {
-      &.active, &:hover, &:focus {
-        background-color: $yellow;
-        text-decoration: none;
-      }
-    }
-    &:nth-child(3) {
-      &.active, &:hover, &:focus {
-        background-color: $lighterblue;
-        text-decoration: none;
-      }
-    }
-  }
-}
 header.default{
   background: $darkblue;
   .search-area{
@@ -412,26 +385,6 @@ header.home{
       font-weight: normal;
       @media (min-width: 768px) {
         font-size: 20px;
-      }
-    }
-    .claveunica{
-      padding: 20px 25px;
-      background: rgba(11,16,46,0.60);
-      border-radius: 2px;
-      font-size: 16px;
-      a{
-        color: white;
-        text-decoration: underline;
-      }
-      .btn{
-        font-size: 16px;
-        border: 1px solid white;
-        text-decoration: none;
-        transition: .2s ease;
-        &:hover{
-          color: $darkblue;
-          background-color: #fff;
-        }
       }
     }
     label{
@@ -490,7 +443,7 @@ header.home{
   &:before {
     content: '';
     position: absolute;
-    top: 30px;
+    top: 0;
     right: 0;
     bottom: 0;
     left: 0;
@@ -689,6 +642,10 @@ main {
           font-weight: bold;
         }
         margin-bottom: 30px;
+        &.boosted{
+          background: #F7F7F7;
+          padding: 10px;
+        }
       }
     }
     .pagination{
@@ -981,6 +938,29 @@ main {
     .howto{
       margin-top: 30px;
     }
+    .similar-pages{
+      font-size: 14px;
+      margin-top: 100px;
+      h3{
+        color: $red;
+        font-size: 14px;
+        text-transform: uppercase;
+        border-bottom: 1px solid #D7D6D7;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+      }
+      h4{
+        font-size: 20px;
+      }
+      .institution{
+        a{
+          color: $lightblue;
+        }
+      }
+      p{
+        font-size: 14px;
+      }
+    }
   }
   #institution{
     h3{
@@ -1098,6 +1078,131 @@ main {
               color: black;
             }
           }
+        }
+      }
+    }
+  }
+  #featured-pages{
+    .featured{
+      height: 120px;
+      overflow: hidden;
+      margin-bottom: 30px;
+      .header{
+        float: left;
+        height: 100%;
+        width: 50%;
+        background-color: black;
+        background-size: cover;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        font-size: 22px;
+      }
+      .caption{
+        height: 100%;
+        width: 50%;
+        border-top: 1px solid #ccc;
+        border-right: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        padding: 20px;
+        float: left;
+        h3{
+          font-size: 18px;
+          font-weight: normal;
+          a{
+            color: $black;
+          }
+        }
+      }
+    }
+  }
+  #profile{
+    padding: 40px 0;
+    .profile-characterization-form{
+      fieldset{
+        margin-bottom: 100px;
+        ol{
+          list-style: none;
+          li{
+            counter-increment: count-me;
+            position: relative;
+            &:before{
+              content: counter(count-me) ". ";
+              display: block;
+              position: absolute;
+              left: -50px;
+              color: $red;
+              font-size: 20px;
+            }
+          }
+        }
+      }
+
+
+      .step-buttons{
+        .btn{
+          width: 60px;
+          height: 60px;
+          color: white;
+          background: $blue;
+          &[disabled]{
+            background: #DDDDDD;
+          }
+        }
+      }
+
+      .form-group{
+        font-family: "Roboto Slab";
+        margin-bottom: 50px;
+        .control-label{
+          font-size: 20px;
+          font-weight: normal;
+        }
+        .el-input{
+          font-size: 28px;
+          .el-input__inner{
+            height: 60px;
+          }
+        }
+        .radio-inline{
+          font-size: 28px;
+          input{
+            margin-top: 10px;
+          }
+        }
+        .form-control{
+          font-size: 28px;
+          height: 60px;
+        }
+        .btn-primary{
+          //background: #8F8F8F;
+          background: $red;
+          border: none;
+          height: 60px;
+          font-family: Roboto;
+          font-size: 16px;
+          color: white;
+        }
+      }
+      .categories{
+        .control-label{
+          display: block;
+          font-size: 20px;
+          font-family: "Roboto Slab";
+          border-bottom: 1px solid #D7D6D7;
+          padding-bottom: 10px;
+        }
+        .el-checkbox{
+          .el-checkbox__input{
+            vertical-align: baseline;
+          }
+          .el-checkbox__label{
+            font-size: 28px;
+            font-weight: normal;
+            font-family: "Roboto Slab";
+            padding-left: 20px;
+          }
+
         }
       }
     }

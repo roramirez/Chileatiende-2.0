@@ -52,6 +52,7 @@
                     { title: 'Alerta', block:'div' ,classes: 'message message-alerta' },
                     { title: 'Reloj', block:'div' ,classes: 'message message-reloj' },
                     { title: 'Doc', block:'div' ,classes: 'doc doc-doc' },
+                    { title: 'Moneda', inline:'span' ,classes: 'highlight highlight-green' },
                 ],
                 setup: function (editor) {
                     editor.on('change', function () {

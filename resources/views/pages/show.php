@@ -10,10 +10,10 @@
                 <page-nav :page="<?= e(json_encode($page)) ?>" current-url="<?= url()->current() ?>"></page-nav>
             </div>
             <div class="col-md-8 col-md-pull-4">
-                <?php if($page->online):?><div class="online">Trámite Online</div><?php endif ?>
+                <?php if($page->online):?><div class="online">Trámite en Línea</div><?php endif ?>
                 <h3><?= $page->title ?></h3>
                 <div class="author"><a href="instituciones/<?=$page->institution->id?>">Información proporcionada por <?= $page->institution->name ?></a></div>
-                <div class="updated-at">Actualizado al <?=$page->published_at->formatLocalized('%d de %B, %Y')?></div>
+                <?php if($page->published_at):?><div class="updated-at">Actualizado al <?=$page->published_at->formatLocalized('%d de %B, %Y')?></div><?php endif ?>
                 <hr />
                 <div class="page-content">
                     <h4 id="objective">Descripción</h4>
@@ -65,6 +65,21 @@
                     </div>
                     <?php endif ?>
                 </div>
+            </div>
+        </div>
+    </div>
+    <div id="similar-pages" class="similar-pages">
+        <div class="container">
+            <h3>Los usuarios también visitaron</h3>
+            <div class="row">
+                <?php foreach($page->masterPage->similarPages as $s):?>
+                    <div class="col-sm-4">
+                        <div class="institution"><a href="buscar?institution=<?=$s->institution->id?>">Publicado por <?=$s->institution->name?></a></div>
+                        <h4><a href="fichas/<?=$s->guid?>"><?=$s->title?></a></h4>
+                        <?php if($s->online):?><div class="online">Trámite en Línea</div><?php endif ?>
+                        <p><?=str_limit(strip_tags(\App\Twig::strip($s->objective)),100)?></p>
+                    </div>
+                <?php endforeach ?>
             </div>
         </div>
     </div>

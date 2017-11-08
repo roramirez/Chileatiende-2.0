@@ -5,9 +5,9 @@
                 <div class="heading-container">
                     <h2>Destacados</h2>
                 </div>
-                <div class="featured-button hidden-xs">
+                <a href="fichas/destacadas" class="featured-button hidden-xs">
                     Ver todos los destacados
-                </div>
+                </a>
             </div>
 
             <div class="row">
@@ -49,7 +49,7 @@
                                     <?php $p = $p->publishedVersion() ?>
                                     <li>
                                         <a href="fichas/<?=$p->guid?>"><?=$p->title?></a>
-                                        <?php if($p->online):?><div>Trámite Online</div><?php endif ?>
+                                        <?php if($p->online):?><div>Trámite en Línea</div><?php endif ?>
                                     </li>
                                 <?php endforeach ?>
                             </ul>

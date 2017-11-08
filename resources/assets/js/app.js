@@ -32,10 +32,16 @@ locale.use(lang);
 import SelectFirstTab from './directives/SelectFirstTab';
 import Search from './components/Search.vue';
 import Steps from './components/Steps.vue';
+import ProfileCharacterizationForm from './components/ProfileCharacterizationForm.vue';
 import PageForm from './components/PageForm.vue';
 import PageMasterForm from './components/PageMasterForm.vue';
+import PageStatusForm from './components/PageStatusForm.vue';
 import OfficeForm from './components/OfficeForm.vue';
+import MinistryForm from './components/MinistryForm.vue';
+import InstitutionForm from './components/InstitutionForm.vue';
 import CategoryForm from './components/CategoryForm.vue';
+import UserForm from './components/UserForm.vue';
+import ProfileForm from './components/ProfileForm.vue';
 import OfficesCollapse from './components/OfficesCollapse.vue';
 import MobileMenu from './components/MobileMenu.vue';
 import PageNav from './components/PageNav.vue';
@@ -47,12 +53,18 @@ const app = new Vue({
     components:{
         Search,
         Steps,
+        ProfileCharacterizationForm,
         PageForm,
         PageMasterForm,
+        PageStatusForm,
         OfficesCollapse,
         MobileMenu,
         PageNav,
+        UserForm,
+        ProfileForm,
         OfficeForm,
+        MinistryForm,
+        InstitutionForm,
         CategoryForm,
         TransparencyList,
         Expandable
@@ -67,5 +79,6 @@ const app = new Vue({
         var indexScroll = new SmoothScroll('.index-container a[href*="#"]', {
             offset: 100
         });
+        $('[data-toggle="tooltip"]').tooltip();
     }
 });

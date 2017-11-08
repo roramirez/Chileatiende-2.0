@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'first_name', 'last_name', 'email', 'password',
     ];
 
     /**
@@ -26,4 +26,37 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    protected $casts = [
+        'ministerial' => 'boolean',
+        'interministerial' => 'boolean',
+        'birth_date' => 'date',
+        'foreigner' => 'boolean'
+    ];
+
+    protected $attributes = [
+        'first_name' => '',
+        'last_name' => '',
+        'email' => '',
+        'role' => 'editor',
+        'institution_id' => null,
+        'ministerial' => false,
+        'interministerial' => false
+    ];
+
+    public function institution(){
+        return $this->belongsTo('App\Institution');
+    }
+
+    public function categories(){
+        return $this->belongsToMany('App\Category');
+    }
+
+    public function getNameAttribute(){
+        return $this->first_name.' '.$this->last_name;
+    }
+
+    public function scopeBackend($query){
+        return $query->where('backend',1);
+    }
 }

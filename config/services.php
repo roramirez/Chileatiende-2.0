@@ -35,4 +35,10 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
+    'claveunica' => [
+        'client_id' => env('CLAVEUNICA_KEY'),
+        'client_secret' => env('CLAVEUNICA_SECRET'),
+        'redirect' => env('CLAVEUNICA_REDIRECT')
+    ]
+
 ];

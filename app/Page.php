@@ -26,6 +26,28 @@ class Page extends Model
 
     protected $appends = ['guid', 'howto'];
 
+    protected $attributes = [
+        'title' => '',
+        'alias' => '',
+        'published_at' => null,
+        'image' => '',
+        'objective' => '',
+        'details' => '',
+        'beneficiaries' => '',
+        'requirements' => '',
+        'online' => false,
+        'online_guide' => '',
+        'online_url' => '',
+        'office' => false,
+        'office_guide' => '',
+        'phone' => false,
+        'phone_guide' => '',
+        'mail' => false,
+        'mail_guide' => '',
+        'legal' => '',
+        'keywords' => ''
+    ];
+
     public function masterPage(){
         return $this->belongsTo('\App\Page','master_id');
     }
@@ -35,7 +57,11 @@ class Page extends Model
     }
 
     public function relatedPages(){
-        return $this->belongsToMany('\App\Page','page_page','page_id','related_page_id');
+        return $this->belongsToMany('\App\Page','page_related_page','page_id','related_page_id');
+    }
+
+    public function similarPages(){
+        return $this->belongsToMany('\App\Page','page_similar_page','page_id','similar_page_id');
     }
 
     public function hits(){
@@ -60,13 +86,12 @@ class Page extends Model
     }
 
     public function toSearchableArray(){
-        if(!$this->master && !$this->published){    //No indexamos las versiones no publicadas
-            return [];
-        }else{
+
             return [
                 'id' => $this->id,
                 'master' => $this->master,
                 'master_id' => $this->master_id,
+                'master_published' => $this->master ? $this->published : $this->masterPage->published,
                 'published' => $this->published,
                 'title'=>$this->title,
                 'objective' => strip_tags($this->objective),
@@ -74,8 +99,9 @@ class Page extends Model
                 'institution_id' => $this->institution_id,
                 'category_id' => $this->categories->pluck('id'),
                 'hit_count' => $this->hitCount(),
+                'boost' => $this->boost
             ];
-        }
+
     }
 
     public function hitCount(){
@@ -127,12 +153,16 @@ class Page extends Model
         return ($this->master ? $this->id : $this->master_id).'-'.$this->alias;
     }
 
-    public function getFeaturedAttribute(){
-        return (boolean)($this->master ? $this->attributes['featured'] : $this->masterPage->attributes['featured']);
+    public function getFeaturedAttribute($value){
+        return (boolean) ($this->master ? $value : $this->masterPage->featured);
     }
 
     public function getHowtoAttribute(){
         return $this->online || $this->office || $this->phone || $this->mail;
+    }
+
+    public function getBoostAttribute($value){
+        return $this->master ? $value : $this->masterPage->boost;
     }
 
     public function publishedVersion(){

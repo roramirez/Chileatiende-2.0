@@ -17,15 +17,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        setlocale(LC_ALL, env('PHP_LOCALE'));
+
         Schema::defaultStringLength(191);
 
-        app(EngineManager::class)->extend('elasticsearch', function($app) {
-            return new ElasticsearchEngine(ElasticBuilder::create()
-                ->setHosts(config('scout.elasticsearch.hosts'))
-                ->build(),
-                config('scout.elasticsearch.index')
-            );
-        });
+        $this->bootClaveUnicaSocialite();
+
+        $this->bootElasticsearch();
     }
 
     /**
@@ -36,5 +34,28 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         //
+    }
+
+    private function bootElasticsearch()
+    {
+        app(EngineManager::class)->extend('elasticsearch', function($app) {
+            return new ElasticsearchEngine(ElasticBuilder::create()
+                ->setHosts(config('scout.elasticsearch.hosts'))
+                ->build(),
+                config('scout.elasticsearch.index')
+            );
+        });
+    }
+    private function bootClaveUnicaSocialite()
+    {
+        $socialite = $this->app->make('Laravel\Socialite\Contracts\Factory');
+        $socialite->extend(
+            'claveunica',
+            function ($app) use ($socialite) {
+                $config = $app['config']['services.claveunica'];
+
+                return $socialite->buildProvider(\App\Socialite\Two\ClaveUnicaProvider::class, $config);
+            }
+        );
     }
 }

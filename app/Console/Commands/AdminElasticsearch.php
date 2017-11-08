@@ -73,6 +73,9 @@ class AdminElasticsearch extends Command
                                 'master_id' => [
                                     'type' => 'integer'
                                 ],
+                                'master_published' => [
+                                    'type' => 'boolean'
+                                ],
                                 'published' => [
                                     'type' => 'boolean',
                                 ],
@@ -85,6 +88,9 @@ class AdminElasticsearch extends Command
                                     'analyzer' => 'spanish'
                                 ],
                                 'hit_count' => [
+                                    'type' => 'integer'
+                                ],
+                                'boost' => [
                                     'type' => 'integer'
                                 ],
                                 'institution_id' => [

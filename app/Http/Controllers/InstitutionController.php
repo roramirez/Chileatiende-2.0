@@ -23,6 +23,7 @@ class InstitutionController extends Controller{
     public function show($id){
 
         $data['institution'] = Institution::find($id);
+        $data['pages'] = $data['institution']->pages()->masters()->published()->paginate(10);
 
         return view('layouts/layout',[
             'title' => $data['institution']->name,

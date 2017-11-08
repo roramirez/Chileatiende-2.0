@@ -1,5 +1,5 @@
 <template>
-    <el-select filterable v-model="institutionId">
+    <el-select filterable clearable v-model="institutionId">
         <el-option v-for="i in institutions" :key="i.id" :label="i.name" :value="i.id"></el-option>
     </el-select>
 </template>

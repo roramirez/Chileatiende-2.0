@@ -13,11 +13,6 @@ class HomeController extends Controller{
     public function getIndex(Request $request){
 
         $skin = $request->input('skin');
-        if($skin != null){
-            if($skin == 'default')
-                $skin = null;
-            session()->put('skin', $skin);
-        }
 
 
         $content = view('home/index',[
@@ -28,7 +23,8 @@ class HomeController extends Controller{
         return view('layouts/home-layout',[
             'suggestions' => Suggestion::orderBy('count', 'desc')->limit(5)->get(),
             'title' => 'Inicio',
-            'content' => $content
+            'content' => $content,
+            'skin' => $skin
         ]);
     }
 

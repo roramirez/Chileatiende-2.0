@@ -46,8 +46,7 @@
                                 <div class="panel-heading">Menu Principal</div>
                                 <div class="panel-body">
                                     <ul>
-                                        <li><a>Mis datos</a></li>
-                                        <li><a>Panel de control</a></li>
+                                        <li><a href="backend/perfil">Mis datos</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -64,6 +63,9 @@
                                 <div class="panel-heading">Administración</div>
                                 <div class="panel-body">
                                     <ul>
+                                        <li><a href="backend/ministerios">Ministerios</a></li>
+                                        <li><a href="backend/instituciones">Instituciones</a></li>
+                                        <li><a href="backend/usuarios">Usuarios</a></li>
                                         <li><a href="backend/oficinas">Oficinas</a></li>
                                         <li><a href="backend/categorias">Categorías</a></li>
                                     </ul>

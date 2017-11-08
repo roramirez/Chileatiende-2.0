@@ -24,8 +24,14 @@ class PageController extends Controller{
         ]);
     }
 
-    public function show($pageId){
-        $data['page'] = Page::find($pageId);
+    public function show(Request $request, $pageId){
+        $page = Page::find($pageId);
+
+        if(!$request->user()->can('view', $page)){
+            abort(403);
+        }
+
+        $data['page'] = $page;
 
         return view('layouts/backend',[
             'title' => 'Inicio',
@@ -33,8 +39,14 @@ class PageController extends Controller{
         ]);
     }
 
-    public function create(){
-        $data['page'] = new Page();
+    public function create(Request $request){
+        $page = new Page();
+
+        if(!$request->user()->can('create', $page)){
+            abort(403);
+        }
+
+        $data['page'] = $page;
         $data['edit'] = false;
 
         return view('layouts/backend',[
@@ -43,8 +55,13 @@ class PageController extends Controller{
         ]);
     }
 
-    public function edit($pageId){
+    public function edit(Request $request, $pageId){
         $page = Page::find($pageId);
+
+        if(!$request->user()->can('update', $page)){
+            abort(403);
+        }
+
         $page->published_at = \Carbon\Carbon::now();
         $page->categories = $page->categories()->pluck('id');
         $page->related_pages = $page->relatedPages()->pluck('id');;
@@ -59,7 +76,13 @@ class PageController extends Controller{
     }
 
     public function store(Request $request){
-        $page = $this->save($request, new Page());
+        $page = new Page();
+
+        if(!$request->user()->can('create', $page)){
+            abort(403);
+        }
+
+        $page = $this->save($request, $page);
 
         $request->session()->flash('status', 'Ficha creada con éxito');
 
@@ -67,7 +90,13 @@ class PageController extends Controller{
     }
 
     public function update(Request $request, $pageId){
-        $page = $this->save($request, Page::find($pageId));
+        $page = Page::find($pageId);
+
+        if(!$request->user()->can('update', $page)){
+            abort(403);
+        }
+
+        $page = $this->save($request, $page);
 
         $request->session()->flash('status', 'Ficha editada con éxito');
 
@@ -83,6 +112,7 @@ class PageController extends Controller{
             'related_pages' => 'array'
         ]);
 
+        $page->master = true;
         $page->title = $request->input('title');
         $page->alias = $request->input('alias');
         $page->published_at = \Carbon\Carbon::parse($request->input('published_at'));
@@ -108,38 +138,75 @@ class PageController extends Controller{
         //Guardamos la versión
         $version = $page->replicate();
         $version->id = null;
-        $version->master = 0;
+        $version->master = false;
         $version->master_id = $page->id;
-        $version->published = 0;
+        $version->published = false;
         $version->save();
         //Ahora guardamos las relaciones
         $version->relatedPages()->sync($request->input('related_pages'));
-        $version->save();
 
         return $page;
     }
 
+    public function destroy(Request $request, $id){
+        $page = Page::find($id);
+
+        if(!$request->user()->can('delete', $page)){
+            abort(403);
+        }
+
+        $page->delete();
+
+        $request->session()->flash('status', 'Ficha eliminada con éxito');
+
+        return redirect('backend/fichas');
+    }
+
     public function updateMaster(Request $request, $pageId){
+        $page = Page::find($pageId);
+
+        if(!$request->user()->can('updateMaster', $page)){
+            abort(403);
+        }
 
         $this->validate($request, [
             'published' => 'required|boolean',
             'featured' => 'required|boolean',
+            'boost' => 'required|numeric',
             'institution_id' => 'required|exists:institutions,id',
             'categories' => 'array',
         ]);
 
-        $page = Page::find($pageId);
+
         $page->published = $request->input('published');
         $page->featured = $request->input('featured');
+        $page->boost = $request->input('boost');
         $page->categories()->sync($request->input('categories'));
         $page->institution_id = $request->input('institution_id');
-
         $page->save();
 
+        //Actualizamos sus versiones en el indice de busquedas
+        $page->versions->searchable();
 
         $request->session()->flash('status', 'Ficha guardada con éxito');
 
         return response()->json(['redirect' => 'backend/fichas/'.$page->id]);
+    }
+
+    public function updateStatus(Request $request, $pageId){
+        $page = Page::find($pageId);
+
+        if(!$request->user()->can('updateStatus', $page)){
+            abort(403);
+        }
+
+        $page->status = $request->input('status');
+        $page->status_comment = $request->input('status_comment');
+        $page->save();
+
+        $request->session()->flash('status', 'Ficha actualizada con éxito.');
+
+        return response()->json(['redirect' => 'backend/fichas']);
     }
 
     public function versions($pageId){
@@ -154,6 +221,11 @@ class PageController extends Controller{
 
     public function publishVersion(Request $request, $pageId, $versionId){
         $page = Page::find($pageId);
+
+        if(!$request->user()->can('publishVersion', $page)){
+            abort(403);
+        }
+
         $version = Page::find($versionId);
 
         foreach($page->versions as $v){
