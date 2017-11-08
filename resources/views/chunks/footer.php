@@ -21,6 +21,8 @@
                 <div class="col-sm-3">
                     <h3>Accesos Directos</h3>
                     <ul>
+                        <li><a href="?skin=mujer">ChileAtiende Mujer</a></li>
+                        <li><a href="?skin=exterior">ChileAtiende en el Exterior</a></li>
                         <li><a>ChileAtiende en tu sitio</a></li>
                         <li><a href="/enlaces-transparencia">Enlaces para transparencia activa</a></li>
                     </ul>

@@ -110,51 +110,6 @@ ol.breadcrumb{
   }
 }
 
-.navbar-logged-in{
-  background: $blue;
-  border-radius: 0;
-  margin-bottom: 0;
-  .navbar-brand{
-    color: white;
-    font-family: "Roboto Slab";
-    font-size: 18px;
-  }
-  .nav{
-    >li{
-      >a{
-        font-size: 16px;
-        color: white;
-        border-right: 1px solid rgba(255,255,255,0.4);
-        &:hover{
-          background: none;
-        }
-      }
-      .dropdown-menu{
-        background: $blue;
-        >li{
-          >a{
-            color: white;
-            &:hover{
-              background: none;
-            }
-          }
-        }
-      }
-      &.open{
-        >a{
-          background: none;
-        }
-      }
-      &:last-child{
-        >a{
-          border-right: none;
-          padding-right: 0;
-        }
-      }
-    }
-  }
-}
-
 .navbar-default{
   height: 70px;
   background: #F7F7F7;
@@ -211,6 +166,7 @@ ol.breadcrumb{
         margin-top: 35px;
         margin-bottom: 35px;
         padding: 0 20px;
+        border-right: 1px solid #fff;
         &:hover, &:active{
           @media (min-width: 768px) {
             color: white;
@@ -218,9 +174,9 @@ ol.breadcrumb{
           }
         }
       }
-      &:first-child {
+      &:last-child {
         a {
-          border-right: 1px solid #fff;
+          border-right: none;
         }
       }
     }
@@ -240,10 +196,16 @@ ol.breadcrumb{
       position: absolute;
       border-radius: 4px;
       border: 1px solid #D7D6D7;
+      background: none;
+      border: none;
+      box-shadow: none;
       li a {
         margin: 0;
         padding: 0;
         white-space: normal;
+        &:hover{
+          background: none;
+        }
       }
     }
   }
@@ -369,51 +331,6 @@ ol.breadcrumb{
   }
 }
 }
-#cha-heading {
-  background-color: #272727;
-  height: 30px;
-  font-size: 0;
-  .container {
-    padding: 0;
-  }
-  a.cha-btn {
-    color: #fff;
-    padding: 7px 0;
-    font-size: 12px;
-    display: inline-block;
-    text-align: center;
-    width: 33.3%;
-    transition: .2s ease;
-    @media (min-width: 768px) {
-      padding: 7px 25px;
-      width: auto;
-    }
-    span {
-      display: none;
-      @media (min-width: 768px) {
-        display: inline-block;
-      }
-    }
-    &:nth-child(1) {
-      &.active, &:hover, &:focus {
-        background-color: $red;
-        text-decoration: none;
-      }
-    }
-    &:nth-child(2) {
-      &.active, &:hover, &:focus {
-        background-color: $yellow;
-        text-decoration: none;
-      }
-    }
-    &:nth-child(3) {
-      &.active, &:hover, &:focus {
-        background-color: $lighterblue;
-        text-decoration: none;
-      }
-    }
-  }
-}
 header.default{
   background: $darkblue;
   .search-area{
@@ -468,26 +385,6 @@ header.home{
       font-weight: normal;
       @media (min-width: 768px) {
         font-size: 20px;
-      }
-    }
-    .claveunica{
-      padding: 20px 25px;
-      background: rgba(11,16,46,0.60);
-      border-radius: 2px;
-      font-size: 16px;
-      a{
-        color: white;
-        text-decoration: underline;
-      }
-      .btn{
-        font-size: 16px;
-        border: 1px solid white;
-        text-decoration: none;
-        transition: .2s ease;
-        &:hover{
-          color: $darkblue;
-          background-color: #fff;
-        }
       }
     }
     label{
@@ -545,7 +442,7 @@ header.home{
   &:before {
     content: '';
     position: absolute;
-    top: 30px;
+    top: 0;
     right: 0;
     bottom: 0;
     left: 0;

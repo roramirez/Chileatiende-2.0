@@ -1,12 +1,11 @@
 <?=view('chunks/head', ['title' => $title])?>
 <div id="app">
     <header class="home"
-            <?php if(Session::get('skin') == 'ugly'):?>style="background-image: none;"<?php endif ?>
-            <?php if(Session::get('skin') == 'gob'):?>style="background-image: url(images/home-gob.jpg);"<?php endif ?>
-            <?php if(Session::get('skin') == 'mujer'):?>style="background-image: url(images/home-mujer.jpg);"<?php endif ?>
-            <?php if(Session::get('skin') == 'exterior'):?>style="background-image: url(images/home-exterior.jpg);"<?php endif ?>
+            <?php if($skin == 'ugly'):?>style="background-image: none;"<?php endif ?>
+            <?php if($skin == 'gob'):?>style="background-image: url(images/home-gob.jpg);"<?php endif ?>
+            <?php if($skin == 'mujer'):?>style="background-image: url(images/home-mujer.jpg);"<?php endif ?>
+            <?php if($skin == 'exterior'):?>style="background-image: url(images/home-exterior.jpg);"<?php endif ?>
     >
-        <?= view('chunks/siteselector') ?>
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -83,37 +82,34 @@
                                 </li>
                             </ul>
                         </li>
+                        <?php if(Auth::check()):?>
+                        <li><a href="#"><img src="images/mail.svg" alt="Notificaciones" /></a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Bienvenido/a <?=Auth::user()->first_name?> <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="perfil">Perfil</a></li>
+                                <li>
+                                    <a href="<?= route('logout') ?>" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Cerrar Sesión</a>
+                                    <form id="logout-form" action="<?= route('logout') ?>" method="POST" style="display: none;">
+                                        <?= csrf_field() ?>
+                                    </form>
+                                </li>
+                            </ul>
+                        </li>
+                        <?php else: ?>
+                        <li><a href="login/claveunica">Mi ChileAtiende</a></li>
+                        <?php endif ?>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
 
-        <?=view('chunks/navbar-logged-in') ?>
-
         <div class="main">
             <div class="container">
-                <div class="row">
-                    <div class="col-sm-7">
-                        <h2>¡Hola! Estás en ChileAtiende</h2>
-                        <h3>Guía de Trámites y Servicios del Estado</h3>
-                    </div>
-                    <div class="col-sm-5">
-                        <?php if(!Auth::check()):?>
-                        <div class="claveunica hidden-xs">
-                            <div class="media">
-                                <div class="media-left">
-                                    <img src="images/logo-claveunica.svg"/>
-                                </div>
-                                <div class="media-body">
-                                    <p>Con tu <a href="#">Clave Única</a>, accede a los trámites del Estado desde
-                                        cualquier lugar.</p>
-                                    <a class="btn" href="login/claveunica">Accede a mi ChileAtiende →</a>
-                                </div>
-                            </div>
-                        </div>
-                        <?php endif ?>
-                    </div>
-                </div>
+
+                <h2>¡Hola! Estás en ChileAtiende</h2>
+                <h3>Guía de Trámites y Servicios del Estado</h3>
+
 
                 <label>¿Qué trámite o servicio buscas?</label>
                 <form action="buscar">
