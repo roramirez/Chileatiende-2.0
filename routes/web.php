@@ -21,6 +21,7 @@ Route::get('/buscar', 'SearchController@getIndex');
 Route::get('/fichas/destacadas', 'PageController@featured');
 Route::resource('/fichas', 'PageController');
 Route::resource('/instituciones', 'InstitutionController');
+Route::get('/mi-chileatiende', 'MiChileAtiendeController@getIndex');
 Route::get('/que-es-chileatiende', 'AboutController');
 Route::get('/terminos-y-condiciones', 'TermsController');
 Route::get('/politica-de-privacidad', 'PrivacyPolicyController');

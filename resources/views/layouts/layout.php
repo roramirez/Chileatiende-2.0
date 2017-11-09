@@ -92,13 +92,14 @@
                                 </ul>
                             </li>
                         <?php else: ?>
-                            <li><a href="login/claveunica">Mi ChileAtiende</a></li>
+                            <li><a href="mi-chileatiende">Mi ChileAtiende</a></li>
                         <?php endif ?>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
 
+        <?php if(@!$hideSearch): ?>
         <div class="search-area">
             <div class="container">
                 <label>¿Qué trámite o servicio buscas?</label>
@@ -107,6 +108,7 @@
                 </form>
             </div>
         </div>
+        <?php endif ?>
     </header>
 
     <main>
