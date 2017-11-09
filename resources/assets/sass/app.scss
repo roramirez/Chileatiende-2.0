@@ -120,7 +120,7 @@ ol.breadcrumb{
     height: 90px;
   }
   .navbar-brand{
-    padding: 0 15px;
+    padding: 0;
     width: 105px;
     @media (min-width: 768px) {
       width: auto;
@@ -129,7 +129,7 @@ ol.breadcrumb{
       margin-bottom: 10px;
     }
     .logo-mobile {
-      margin: 17px;
+      margin: 15px;
     }
   }
   .navbar-header {
@@ -165,9 +165,12 @@ ol.breadcrumb{
         color: white;
         margin-top: 35px;
         margin-bottom: 35px;
-        padding: 0 20px;
+        padding: 0 15px;
         border-right: 1px solid #fff;
-        &:hover, &:active{
+        @media (min-width: 1200px) {
+          padding: 0 20px;
+        }
+        &:hover, &:active, &:focus {
           @media (min-width: 768px) {
             color: white;
             text-decoration: underline;
@@ -356,7 +359,6 @@ header.default{
 }
 
 header.home{
-  background-image: url('../images/home.jpg');
   background-size: cover;
   background-position: 0;
   color: white;
@@ -364,6 +366,7 @@ header.home{
   padding-bottom: 20px;
   @media (min-width: 768px) {
     padding-bottom: 70px;
+    background-image: url('../images/home.jpg');
   }
   .main{
     margin-top: 30px;
@@ -432,9 +435,13 @@ header.home{
           border-radius: 2px;
           display: inline-block;
           transition: .2s ease;
+          border: 1px solid #fff;
           &:hover{
             text-decoration: none;
             background: $red;
+          }
+          @media (min-width: 768px) {
+            border: 0;
           }
         }
       }
@@ -448,7 +455,9 @@ header.home{
     bottom: 0;
     left: 0;
     opacity: 0.6;
-    background-image: linear-gradient(0deg, rgba(0,0,0,0.00) 0%, #000000 100%);
+    @media (min-width: 768px) {
+      background-image: linear-gradient(0deg, rgba(0,0,0,0.00) 0%, #000000 100%);
+    }
   }
   // *{
   //   position: relative;
@@ -551,21 +560,63 @@ main {
     .categories-area{
       padding: 54px 0;
       .category{
-        margin-bottom: 65px;
+        margin-bottom: 0;
+        @media (min-width: 768px) {
+          margin-bottom: 65px;  
+        }
+        .heading {
+          color: $black;
+          display: block;
+          border-bottom: 1px solid #D7D6D7;
+          @media (min-width: 768px) {
+            border-bottom: 0;
+          }
+          .caret {
+            color: $red;
+            float: right;
+            margin-top: 30px;
+            margin-right: 10px;
+            transform: rotate(0deg);
+            transition: .2s ease;
+            @media (min-width: 768px) {
+              display: none;
+            }
+          }
+          &:hover, &:active, &:focus {
+            text-decoration: none;
+          }
+          &:not(.collapsed) .caret {
+            transform: rotate(180deg);
+          }
+        }
+        .category-body {
+          @media (min-width: 768px) {
+            display: block;
+            height: auto;
+            &.collapse, &.collapsing, &.in {
+              display: block !important;
+              height: auto !important;
+            }
+          }
+        }
         h3{
-          font-family: "Roboto Slab";
+          font-family: $robotoslab;
           font-size: 20px;
           font-weight: normal;
-          border-bottom: 3px solid $red;
-          padding-bottom: 18px;
           margin-bottom: 18px;
           display: inline-block;
+          @media (min-width: 768px) {
+            border-bottom: 3px solid $red;
+            padding-bottom: 18px;
+          }
         }
         ul{
-          height: 240px;
           color: #D7D6D7;
           padding-left: 15px;
           margin-top: 15px;
+          @media (min-width: 768px) {
+            height: 240px;
+          }
           li{
             color: #8F8F8F;
             font-weight: 500;
@@ -761,16 +812,19 @@ main {
       &.affix{
         position: fixed;
         top: 0;
+        left: 0;
+        right: 0;
         z-index: 2;
-        width: 100%;
         margin: 0 -15px;
-        padding: 0 15px;
+        padding: 0 30px;
         box-shadow: 0 2px 4px 0 rgba(203,203,203,0.50);
-        @media (min-width: 768px) {
+        @media (min-width: 992px) {
           margin: 20px 0 0 0;
           padding: 0;
           width: auto;
           box-shadow: none;
+          left: auto;
+          right: auto;
         }
         .related-pages {
           margin-top: 30px;
@@ -795,13 +849,13 @@ main {
           color: #09132E;
           font-size: 14px;
         }
-        @media (min-width: 768px) {
+        @media (min-width: 992px) {
           display: none;
         }
       }
       #collapseNav {
         background-color: #fff;
-        @media (min-width: 768px) {
+        @media (min-width: 992px) {
           display: inline-block;
           width: 100%;
         }
@@ -1874,6 +1928,27 @@ footer{
     color: $darkblue;
   }
 }
-
+.steps table {
+  border-color: transparent;
+  tr {
+    &:nth-child(even) {
+      background-color: $lightbg;
+    }
+    &:first-child {
+      color: $red;
+      text-align: left;
+      strong {
+        font-weight: normal !important;
+      }
+    }
+    td {
+      padding: 5px 0;
+      vertical-align: middle;
+      p {
+        margin: 0;
+      }
+    }
+  }
+}
 
 

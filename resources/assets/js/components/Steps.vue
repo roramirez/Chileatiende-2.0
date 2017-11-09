@@ -2,14 +2,14 @@
     <div class="steps">
         <div class="row">
             <div class="col-sm-3 col">
-                <ul class="terms">
-                    <li v-for="(t,index) in terms" @click="selectedIndex = index" :class="{active: selectedIndex == index}" v-html="t"></li>
-                </ul>
+                <div class="terms" id="terms-list">
+                    <div class="item" v-for="(t,index) in terms" @click="selectedIndex = index" :class="{active: selectedIndex == index}" v-html="t"></div>
+                </div>
             </div>
             <div class="col-sm-9 col">
-                <ul class="definitions">
-                    <li v-for="(d,index) in definitions" v-html="d" v-show="selectedIndex == index"></li>
-                </ul>
+                <div class="definitions" id="definitions-container">
+                    <div v-for="(d,index) in definitions" v-html="d" v-show="selectedIndex == index"></div>
+                </div>
             </div>
         </div>
     </div>
@@ -17,48 +17,59 @@
 <style lang="scss" scoped>
     .steps{
         .col{
-            ul.terms{
-                list-style: none;
+            .terms{
                 padding-left: 0;
                 border: 1px solid #ccc;
-                >li{
+                @media (min-width: 768px) {
+                    border-right: 0;
+                }
+                .item {
                     cursor: pointer;
                     padding: 10px;
                     border-bottom: 1px solid #ccc;
-                    &.active{
-                        font-weight: bold;
+                    transition: .2s ease;
+                    font-weight: normal;
+                    font-size: 18px;
+                    color: #757575;
+                    &.active, &:hover {
+                        background-color: #ED3232;
+                        color: #fff;
                     }
                     &:last-child{
                         border-bottom: none;
                     }
                 }
             }
-            ul.definitions{
-                list-style: none;
-                padding-left: 0;
+            .definitions{
+                padding: 20px;
                 border: 1px solid #ccc;
-                border-left: 0;
                 >li{
                     padding: 10px;
                 }
             }
-            &:first-child{
-                padding-right: 0;
-            }
-            &:last-child{
-                padding-left: 0;
+            @media (min-width: 768px) {
+                &:first-child{
+                    padding-right: 0;
+                }
+                &:last-child{
+                    padding-left: 0;
+                }
             }
         }
-
     }
 </style>
 <script>
     export default{
         data: function(){
             return {
-                selectedIndex: 0
+                selectedIndex: 0,
+                listHeight: null
             }
         },
-        props: ['terms','definitions']
+        props: ['terms','definitions'],
+        mounted() {
+            this.listHeight = document.getElementById('terms-list').offsetHeight;
+            $('#definitions-container').attr("style", "min-height:" + this.listHeight + "px");
+        }
     }
 </script>

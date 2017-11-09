@@ -1,6 +1,6 @@
 <template>
     <div class="search">
-        <el-autocomplete v-model="query" :name="name" :autofocus="true" :trigger-on-focus="false" :fetch-suggestions="querySearchAsync" placeholder="Ej: Bono marzo" @select="handleSelect">
+        <el-autocomplete v-model="query" :name="name" :autofocus="true" :trigger-on-focus="false" :fetch-suggestions="querySearchAsync" placeholder="Ej: Certificado de nacimiento" @select="handleSelect">
             <el-button ref="caca" slot="append" native-type="submit"><img src="../../images/search.svg" /> Buscar</el-button>
         </el-autocomplete>
     </div>

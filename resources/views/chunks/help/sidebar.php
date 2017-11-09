@@ -8,7 +8,7 @@
 			</div>
 			<div class="media-body">
 				<div class="option">
-					<a href="#">Ir a facebook</a>
+					<a href="https://www.facebook.com/ChileAtiende" target="_blank">Ir a facebook</a>
 				</div>
 				<div class="name">
 					/ChileAtiende
@@ -21,14 +21,14 @@
 			</div>
 			<div class="media-body">
 				<div class="option">
-					<a href="#">Ir a twitter</a>
+					<a href="https://twitter.com/ChileAtiende" target="_blank">Ir a twitter</a>
 				</div>
 				<div class="name">
 					@ChileAtiende
 				</div>
 			</div>
 		</div>
-		<div class="media">
+		<!-- <div class="media">
 			<div class="media-left">
 				<i class="material-icons">email</i>
 			</div>
@@ -37,6 +37,6 @@
 					<a href="#">Ir al formulario<br>de Contacto</a>
 				</div>
 			</div>
-		</div>
+		</div> -->
 	</div>
 </div>
