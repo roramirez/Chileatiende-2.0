@@ -1116,6 +1116,55 @@ main {
       }
     }
   }
+  #mi-chileatiende{
+    background-image: url(../images/mi-chileatiende.jpg);
+    background-repeat: no-repeat;
+    background-position: 0 -500px;
+    padding: 180px 0 300px 0;
+    color: white;
+    position: relative;
+    &:before{
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0.8;
+      background-image: linear-gradient(251deg, rgba(0,0,0,0.00) 45%, #000000 100%);
+    }
+    h3{
+      font-size: 20px;
+      font-weight: normal;
+    }
+    h4{
+      font-size: 36px;
+      font-weight: normal;
+      font-family: "Roboto Slab";
+    }
+    p{
+      font-weight: normal;
+      font-size: 20px;
+    }
+    .btn-claveunica{
+      background: $blue;
+      color: white;
+      text-decoration: none;
+      padding: 15px;
+      font-size: 16px;
+      border-radius: 2px;
+      border: 1px solid darken($blue, 10%);
+      background-image: url(../images/claveunica.png);
+      background-size: auto 50%;
+      background-repeat: no-repeat;
+      background-position: 15px 15px;
+      padding-left: 50px;
+    }
+    a{
+      color: white;
+      text-decoration: underline;
+    }
+  }
   #profile{
     padding: 40px 0;
     .profile-characterization-form{

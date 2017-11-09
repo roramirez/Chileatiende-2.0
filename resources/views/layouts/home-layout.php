@@ -97,7 +97,7 @@
                             </ul>
                         </li>
                         <?php else: ?>
-                        <li><a href="login/claveunica">Mi ChileAtiende</a></li>
+                        <li><a href="mi-chileatiende">Mi ChileAtiende</a></li>
                         <?php endif ?>
                     </ul>
                 </div><!-- /.navbar-collapse -->
