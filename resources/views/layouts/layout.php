@@ -99,7 +99,7 @@
             </div><!-- /.container-fluid -->
         </nav>
 
-        <?php if(@$search): ?>
+        <?php if(@!$hideSearch): ?>
         <div class="search-area">
             <div class="container">
                 <label>¿Qué trámite o servicio buscas?</label>

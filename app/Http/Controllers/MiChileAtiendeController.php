@@ -10,7 +10,7 @@ class MiChileAtiendeController extends Controller{
         $content = view('mi-chileatiende/index');
 
         return view('layouts/layout',[
-            'search' => false,
+            'hideSearch' => true,
             'title' => 'Mi ChileAtiende',
             'content' => $content
         ]);
