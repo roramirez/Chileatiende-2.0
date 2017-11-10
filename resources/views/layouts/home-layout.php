@@ -88,7 +88,7 @@
                                 <img src="images/clave-logo.svg" alt="Logo Claveúnica"> Mi Chileatiende <span class="caret"></span>
                             </a>
                             <ul class="mcha-dropdown dropdown-menu">
-                                <li>Bienvenido <?=Auth::user()->first_name?></li>
+                                <li>Bienvenido/a <?=Auth::user()->first_name?></li>
                                 <li>
                                     <a href="perfil">
                                         <i class="material-icons">person</i>

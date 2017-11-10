@@ -41,7 +41,7 @@
 								</svg>
                             </div>
                             <div class="media-body">
-                                <div class="media-heading">Bienvenido,<br>{{ user.first_name }}</div>
+                                <div class="media-heading">Bienvenido/a,<br>{{ user.first_name }}</div>
                             </div>
                         </div>
                         <div class="user-options">
