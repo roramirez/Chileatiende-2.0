@@ -414,9 +414,9 @@ header.home{
   color: white;
   position: relative;
   padding-bottom: 20px;
+  background-image: url('../images/home.jpg');
   @media (min-width: 768px) {
     padding-bottom: 70px;
-    background-image: url('../images/home.jpg');
   }
   .main{
     margin-top: 30px;
