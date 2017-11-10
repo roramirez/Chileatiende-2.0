@@ -14,7 +14,7 @@
                 <?php foreach ($featured as $f): ?>
                     <?php $f->publishedVersion() ?>
                     <div class="col-md-3 col-sm-6">
-                        <div class="featured">
+                        <div class="featured-item">
                             <a class="header" href="fichas/<?= $f->guid ?>" <?=$f->image ? 'style="background-image: url('.$f->image.')"':''?>>
                                 <?php if (!$f->image): ?>
                                     <div class="image <?= (strlen($f->title) > 50 ? 'long-h' : 'short-h' );  ?>">

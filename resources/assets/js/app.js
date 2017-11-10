@@ -80,5 +80,10 @@ const app = new Vue({
             offset: 100
         });
         $('[data-toggle="tooltip"]').tooltip();
+    },
+    methods: {
+        logout() {
+            this.$refs.logoutForm.submit();
+        }
     }
 });

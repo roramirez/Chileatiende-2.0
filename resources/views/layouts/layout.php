@@ -11,7 +11,7 @@
                         <img src="images/logo-color.svg" alt="ChileAtiende" class="visible-xs img-responsive logo-mobile" />
                     </a>
                     <div class="visible-xs-block text-right">
-                        <mobile-menu></mobile-menu>
+                        <mobile-menu @logout="logout" :user="<?= e(Auth::check() ? Auth::user() : 'null') ?>"></mobile-menu>
                     </div>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -19,7 +19,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="/que-es-chileatiende">¿Qué es ChileAtiende?</a></li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                 Centro de Ayuda <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu help-menu">
@@ -78,21 +78,35 @@
                             </ul>
                         </li>
                         <?php if(Auth::check()):?>
-                            <li><a href="#"><img src="images/mail.svg" alt="Notificaciones" /></a></li>
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Bienvenido/a <?=Auth::user()->first_name?> <span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="perfil">Perfil</a></li>
+                                <a href="#" class="mcha-btn dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    <img src="images/clave-logo.svg" alt="Logo Claveúnica"> Mi Chileatiende <span class="caret"></span>
+                                </a>
+                                <ul class="mcha-dropdown dropdown-menu">
+                                    <li>Bienvenido <?=Auth::user()->first_name?></li>
                                     <li>
-                                        <a href="<?= route('logout') ?>" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Cerrar Sesión</a>
-                                        <form id="logout-form" action="<?= route('logout') ?>" method="POST" style="display: none;">
+                                        <a href="perfil">
+                                            <i class="material-icons">person</i>
+                                            Perfil
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="<?= route('logout') ?>" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                            <i class="material-icons">power_settings_new</i>
+                                            Cerrar Sesión
+                                        </a>
+                                        <form id="logout-form" action="<?= route('logout') ?>" method="POST" style="display: none;" ref="logoutForm">
                                             <?= csrf_field() ?>
                                         </form>
                                     </li>
                                 </ul>
                             </li>
+                            <li><a href="#"><i class="material-icons">mail</i></a></li>
                         <?php else: ?>
-                            <li><a href="mi-chileatiende">Mi ChileAtiende</a></li>
+                            <li><a href="mi-chileatiende" class="mcha-btn">
+                                <img src="images/clave-logo.svg" alt="Logo Claveúnica">
+                                Accede a Mi ChileAtiende</a>
+                            </li>
                         <?php endif ?>
                     </ul>
                 </div><!-- /.navbar-collapse -->

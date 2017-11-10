@@ -36,7 +36,9 @@ p {
 h2 {
   font-family: $robotoslab;
 }
-
+hr {
+  color: $bordercolor;
+}
 ol.breadcrumb{
   padding-left: 0;
   background: none;
@@ -166,7 +168,6 @@ ol.breadcrumb{
         margin-top: 35px;
         margin-bottom: 35px;
         padding: 0 15px;
-        border-right: 1px solid #fff;
         @media (min-width: 1200px) {
           padding: 0 20px;
         }
@@ -176,10 +177,55 @@ ol.breadcrumb{
             text-decoration: underline;
           }
         }
+        &.mcha-btn {
+          border: 1px solid #fff;
+          padding: 6px 10px;
+          border-radius: 4px;
+          margin-top: 29px;
+          margin-left: 5px;
+          transition: .2s ease;
+          &:hover, &:active, &:focus {
+            background-color: $blue;
+            text-decoration: none;
+          }
+        }
       }
-      &:last-child {
+      &:first-child {
         a {
-          border-right: none;
+          &:not(.help-card) {
+            border-right: 1px solid #fff;
+          }
+        }
+      }
+      .mcha-dropdown {
+        top: 68px;
+        min-width: 200px;
+        li {
+          font-size: 16px;
+          font-weight: normal;
+          line-height: 1;
+          a {
+            padding: 10px;
+            background-color: $blue;
+            transition: .2s ease;
+            &:hover {
+              background-color: #004A96;
+              text-decoration: none;
+            }
+          }
+          &:first-child {
+            padding: 10px;
+            background-color: #004A96;
+          }
+          &:nth-child(2) {
+            a {
+              border-bottom: 1px solid #004A96;
+            }
+          }
+          .material-icons {
+            font-size: 20px;
+            vertical-align: middle;
+          }
         }
       }
     }
@@ -268,13 +314,17 @@ ol.breadcrumb{
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
     border-radius: 2px;
     .el-input__inner{
-      height: 60px;
+      font-size: 18px;
+      height: 50px;
       font-family: "Open Sans";
-      font-size: 20px;
       border: none;
       box-shadow: none;
       border-top-left-radius: 2px;
       border-bottom-left-radius: 2px;
+      @media (min-width: 768px) {
+        height: 60px;
+        font-size: 20px;
+      }
     }
     .el-input-group__append{
       background: $red;
@@ -499,61 +549,6 @@ main {
         &:hover {
           color: #fff;
           background-color: $red;
-        }
-      }
-    }
-    .featured-area{
-      background: $lightbg;
-      padding: 54px 0;
-      .featured{
-        background: white;
-        height: 230px;
-        margin-bottom: 20px;
-        >a.header{
-          height: 120px;
-          display: -ms-grid;
-          display: grid;
-          background-color: $black;
-          background-size: cover;
-          overflow: hidden;
-          &:hover{
-            text-decoration: none;
-          }
-          img {
-            height: 100%;
-          }
-          .image{
-            font-size: 20px;
-            font-family: $robotoslab;
-            margin: auto;
-            text-align: center;
-            color: white;
-            padding: 0 20px;
-            &.short-h {
-              font-size: 22px;
-            }
-            &.long-h {
-              font-size: 18px;
-            }
-          }
-        }
-
-        >.caption{
-          padding: 16px;
-          h3{
-            margin: 0;
-            line-height: 1;
-            a{
-              color: $black;
-              text-decoration: none;
-              font-size: 16px;
-              font-weight: normal;
-              &:hover{
-                text-decoration: underline;
-                color: $red;
-              }
-            }
-          }
         }
       }
     }
@@ -801,6 +796,59 @@ main {
         font-size: 14px;
         .material-icons{
           font-size: 20px;
+          vertical-align: middle;
+        }
+      }
+    }
+    .accessibility-bar {
+      padding: 15px 0;
+      border: 1px solid $bordercolor;
+      border-left: 0;
+      border-right: 0;
+      margin: 30px 0;
+      font-size: 16px;
+      .resize-font,.listen-page, .print-page  {
+        display: inline-block;
+        margin-right: 15px;
+      }
+      a {
+        color: $red;
+      }
+      .larger {
+        margin-right: 10px;
+      }
+      .material-icons {
+        font-size: 16px;
+        vertical-align: middle;
+      }
+      .share-buttons {
+        float: none;
+        color: $black;
+        font-weight: normal;
+        padding-top: 20px;
+        margin-top: 20px;
+        border-top: 1px solid #d7d6d7;
+        @media (min-width: 768px) {
+          float: right;
+          padding: 0;
+          margin: 0;
+          border: 0;
+        }
+        span {
+          vertical-align: top;
+          margin-right: 5px;
+          font-size: 14px;
+        }
+        .share-icon {
+          margin-left: 5px;
+          vertical-align: middle;
+          line-height: 1.7;
+          &:hover .social-icon {
+            fill: #13B0FF;
+          }
+          .social-icon {
+            transition: .2s ease;
+          }
         }
       }
     }
@@ -857,12 +905,12 @@ main {
         background-color: #fff;
         @media (min-width: 992px) {
           display: inline-block;
-          width: 100%;
         }
       }
       .index{
         margin-bottom: 20px;
         list-style: decimal inside;
+        color: #757575;
         li{
           margin-bottom: 10px;
           padding-left: 10px;
@@ -1174,9 +1222,12 @@ main {
     background-image: url(../images/mi-chileatiende.jpg);
     background-repeat: no-repeat;
     background-position: 0 -500px;
-    padding: 180px 0 300px 0;
     color: white;
     position: relative;
+    padding: 30px 0 100px;
+    @media (min-width: 768px) {
+      padding: 180px 0 300px 0;
+    }
     &:before{
       content: '';
       width: 100%;
@@ -1198,7 +1249,10 @@ main {
     }
     p{
       font-weight: normal;
-      font-size: 20px;
+      font-size: 16px;
+      @media (min-width: 768px) {
+        font-size: 20px;
+      }
     }
     .btn-claveunica{
       background: $blue;
@@ -1213,6 +1267,7 @@ main {
       background-repeat: no-repeat;
       background-position: 15px 15px;
       padding-left: 50px;
+      margin: 20px 0;
     }
     a{
       color: white;
@@ -1451,6 +1506,63 @@ main {
   }
   #backend{
     padding: 20px 0;
+  }
+}
+.featured-area {
+  background: $lightbg;
+  padding: 54px 0;
+}
+.featured-item {
+  background: white;
+  height: 230px;
+  margin-bottom: 20px;
+  &.featured-page-item {
+    border: 1px solid $bordercolor;
+  }
+  >a.header{
+    height: 120px;
+    display: -ms-grid;
+    display: grid;
+    background-color: $black;
+    background-size: cover;
+    overflow: hidden;
+    &:hover{
+      text-decoration: none;
+    }
+    img {
+      height: 100%;
+    }
+    .image{
+      font-size: 20px;
+      font-family: $robotoslab;
+      margin: auto;
+      text-align: center;
+      color: white;
+      padding: 0 20px;
+      &.short-h {
+        font-size: 22px;
+      }
+      &.long-h {
+        font-size: 18px;
+      }
+    }
+  }
+  >.caption{
+    padding: 16px;
+    h3{
+      margin: 0;
+      line-height: 1;
+      a{
+        color: $black;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: normal;
+        &:hover{
+          text-decoration: underline;
+          color: $red;
+        }
+      }
+    }
   }
 }
 .main-tabs {
