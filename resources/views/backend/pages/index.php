@@ -8,18 +8,12 @@
         <a class="btn btn-success" href="backend/fichas/create">Agregar ficha</a>
     </div>
 
-    <div class="row">
-        <div class="col-sm-offset-6 col-sm-6">
-            <form>
-                <div class="input-group">
-                    <input type="text" class="form-control" name="query" value="<?=e($query)?>" placeholder="Ej: bono marzo">
-                    <span class="input-group-btn">
-                        <button class="btn btn-primary" type="submit">Buscar</button>
-                    </span>
-                </div>
-            </form>
-        </div>
+    <br />
+
+    <div class="well">
+        <page-filter-form :filters="<?=e(json_encode($filters))?>"></page-filter-form>
     </div>
+
 
     <div class="text-center"><?=$pages->links()?></div>
 

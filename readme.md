@@ -14,6 +14,12 @@ Luego, hacer la instalación de las librerias PHP necesarias:
 composer install
 ```
 
+Se generan los links simbolicos para acceder a la carpeta de storage de imagenes desde la web pública.
+
+```
+php artisan storage:link
+```
+
 Luego, la instalación de las librerias JS necesarias:
 
 ```

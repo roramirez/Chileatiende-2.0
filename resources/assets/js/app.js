@@ -47,6 +47,7 @@ import MobileMenu from './components/MobileMenu.vue';
 import PageNav from './components/PageNav.vue';
 import TransparencyList from './components/TransparencyList.vue';
 import Expandable from './components/Expandable.vue';
+import PageFilterForm from './components/PageFilterForm.vue';
 
 const app = new Vue({
     el: '#app',
@@ -67,7 +68,8 @@ const app = new Vue({
         InstitutionForm,
         CategoryForm,
         TransparencyList,
-        Expandable
+        Expandable,
+        PageFilterForm
     },
     directives:{
         SelectFirstTab
