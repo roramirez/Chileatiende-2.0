@@ -96,7 +96,8 @@ class Page extends Model
                 'title'=>$this->title,
                 'objective' => strip_tags($this->objective),
                 'keywords' => $this->keywords,
-                'institution_id' => $this->institution_id,
+                'institution_id' => $this->institution->id,
+                'ministry_id' => $this->institution->ministry_id,
                 'category_id' => $this->categories->pluck('id'),
                 'hit_count' => $this->hitCount(),
                 'boost' => $this->boost

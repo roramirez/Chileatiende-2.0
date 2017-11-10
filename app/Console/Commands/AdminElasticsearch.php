@@ -93,6 +93,9 @@ class AdminElasticsearch extends Command
                                 'boost' => [
                                     'type' => 'integer'
                                 ],
+                                'ministry_id' => [
+                                    'type' => 'keyword'
+                                ],
                                 'institution_id' => [
                                     'type' => 'keyword'
                                 ],

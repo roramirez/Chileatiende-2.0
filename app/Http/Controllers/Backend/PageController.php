@@ -9,13 +9,24 @@ use Illuminate\Http\Request;
 class PageController extends Controller{
 
     public function index(Request $request){
-        $query = $request->input('query');
-        if($query)
-            $pages = Page::search($query)->where('master',true);
-        else
-            $pages = Page::masters();
+        $filters = $request->all();
 
-        $data['query'] = $query;
+        $query = $request->input('query');
+        $institutionId = $request->input('institution_id');
+        $ministryId = $request->input('ministry_id');
+
+        if(count($filters) > 0){
+            $pages = Page::search($query)->where('master',true);
+            if($ministryId)
+                $pages->where('ministry_id',[$ministryId]);
+            if($institutionId)
+                $pages->where('institution_id',[$institutionId]);
+        }else{
+            $pages = Page::masters();
+        }
+
+
+        $data['filters'] = $filters;
         $data['pages'] = $pages->paginate(30);
 
         return view('layouts/backend',[
