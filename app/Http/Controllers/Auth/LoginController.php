@@ -66,7 +66,7 @@ class LoginController extends Controller
         if (!$authUser) {
             $authUser = new User();
         }
-        $authUser->email = null,
+        $authUser->email = null;
         $authUser->run = $user->run;
         $authUser->dv = $user->dv;
         $authUser->first_name = $user->first_name;
