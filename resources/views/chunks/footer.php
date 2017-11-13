@@ -14,8 +14,8 @@
                 <div class="col-sm-3">
                     <h3>API para Desarrolladores</h3>
                     <ul>
-                        <li><a>API 2.0</a></li>
-                        <li><a>API 1.0</a></li>
+                        <li><a href="/desarrolladores/v2">API 2.0</a></li>
+                        <li><a href="/desarrolladores/v1">API 1.0</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-3">
@@ -23,7 +23,7 @@
                     <ul>
                         <li><a href="?skin=mujer">ChileAtiende Mujer</a></li>
                         <li><a href="?skin=exterior">ChileAtiende en el Exterior</a></li>
-                        <li><a>ChileAtiende en tu sitio</a></li>
+                        <?php /*<li><a>ChileAtiende en tu sitio</a></li>*/ ?>
                         <li><a href="/enlaces-transparencia">Enlaces para transparencia activa</a></li>
                     </ul>
                 </div>
