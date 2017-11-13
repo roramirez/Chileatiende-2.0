@@ -16,7 +16,7 @@
 
                 <h4>Misión Institucional</h4>
                 <div><?=$institution->description?></div>
-
+                <br>
                 <h4>Servicios o Beneficios de la Institución (<?=$pages->total()?>)</h4>
 
                 <hr />
@@ -25,9 +25,9 @@
                     <?php foreach($pages as $p):?>
                         <?php $p = $p->publishedVersion() ?>
                         <li>
-                            <h5><a href="fichas/<?=$p->guid?>"><?=$p->title?></a></h5>
+                            <h5><a href="fichas/<?=$p->guid?>"><?=$p->title?> →</a></h5>
                             <?php if($p->online):?><div class="online">Trámite en Línea</div><?php endif ?>
-                            <p><?=str_limit(strip_tags(\App\Twig::strip($p->objective)),500)?></p>
+                            <p><?=str_limit(strip_tags(\App\Twig::strip($p->objective)),200)?></p>
                         </li>
                     <?php endforeach ?>
                 </ul>

@@ -43,6 +43,8 @@ ol.breadcrumb{
   padding-left: 0;
   background: none;
   font-size: 14px;
+  display: none;
+  margin-top: 20px;
   >li{
     color: #8F8F8F;
     >a{
@@ -51,6 +53,9 @@ ol.breadcrumb{
         font-size: 14px;
       }
     }
+  }
+  @media (min-width: 992px) {
+    display: block;
   }
 }
 
@@ -246,7 +251,6 @@ ol.breadcrumb{
       border-radius: 4px;
       border: 1px solid #D7D6D7;
       background: none;
-      border: none;
       box-shadow: none;
       li a {
         margin: 0;
@@ -254,6 +258,11 @@ ol.breadcrumb{
         white-space: normal;
         &:hover{
           background: none;
+        }
+      }
+      li:last-child {
+        .media {
+          border: 0;
         }
       }
     }
@@ -356,17 +365,31 @@ ol.breadcrumb{
 .modal-redirect{
   .modal-dialog{
     margin-top: 300px;
+    .modal-content {
+      border-radius: 2px;
+      box-shadow: 0 0 40px 0 rgba(64,64,64,0.50);
+      border: 0;
+    }
     .modal-header{
+      h4 {
+        font-family: $robotoslab;
+        font-size: 20px;
+        font-weight: normal;
+      }
       .material-icons{
         color: $blue;
         font-size: 14px;
       }
       .close{
+        opacity: 1;
         color: $red;
+        font-size: 30px;
+        font-weight: 100;
       }
     }
     .modal-body{
       padding-bottom: 70px;
+    }
     .modal-footer{
       border-top: none;
       .btn-link{
@@ -382,7 +405,6 @@ ol.breadcrumb{
       }
     }
   }
-}
 }
 header.default{
   background: $darkblue;
@@ -776,9 +798,24 @@ main {
       color: $red;
       font-weight: bold;
     }
+    h4 {
+      font-size: 12px;
+      font-weight: normal;
+      text-transform: uppercase;
+      margin-top: 30px;
+      color: $red;
+    }
+    .main-tabs {
+      margin: 30px 0;
+    }
+    thead th {
+      font-size: 14px;
+      text-transform: uppercase;
+      font-weight: normal;
+      color: #757575;
+    }
   }
-  #page{
-    padding: 30px 0 0 0;
+  #page {
     font-weight: 300;
     font-size: 16px;
     .important{
@@ -857,6 +894,26 @@ main {
       transition: margin-top ease-out 0.3s;
       margin-top: 0;
       background-color: #fff;
+      .mobile-heading {
+        display: block;
+        .page-title {
+          padding: 10px 0;
+          color: #8F8F8F;
+          font-size: 14px;
+          display: none;
+        }
+        .current {
+          border-left: 2px solid $red;
+          margin-right: 5px;
+          padding: 3px 10px;
+          display: block;
+          color: #09132E;
+          font-size: 14px;
+        }
+        @media (min-width: 992px) {
+          display: none;
+        }
+      }
       &.affix{
         position: fixed;
         top: 0;
@@ -864,7 +921,7 @@ main {
         right: 0;
         z-index: 2;
         margin: 0 -15px;
-        padding: 0 30px;
+        padding: 0 30px 15px;
         box-shadow: 0 2px 4px 0 rgba(203,203,203,0.50);
         @media (min-width: 992px) {
           margin: 20px 0 0 0;
@@ -877,29 +934,12 @@ main {
         .related-pages {
           margin-top: 30px;
         }
+        .page-title {
+          display: block;
+        }
       }
       &.affix-bottom{
         position: absolute;
-      }
-      .mobile-heading {
-        display: block;
-        .page-title {
-          padding: 10px 0;
-          color: #8F8F8F;
-          font-size: 14px;
-        }
-        .current {
-          border-left: 2px solid $red;
-          margin-right: 5px;
-          padding: 3px 10px;
-          margin-bottom: 10px;
-          display: block;
-          color: #09132E;
-          font-size: 14px;
-        }
-        @media (min-width: 992px) {
-          display: none;
-        }
       }
       #collapseNav {
         background-color: #fff;
@@ -1035,6 +1075,30 @@ main {
         margin-bottom: 0;
         width: 100%;
         display: block;
+        min-width: 360px;
+      }
+    }
+    table {
+      border-color: transparent;
+      margin: 20px 0;
+      tr {
+        &:nth-child(even) {
+          background-color: $lightbg;
+        }
+        &:first-child {
+          color: $red;
+          text-align: left;
+          strong {
+            font-weight: normal !important;
+          }
+        }
+        td {
+          padding: 5px 10px;
+          vertical-align: middle;
+          p {
+            margin: 0;
+          }
+        }
       }
     }
     .howto{
@@ -1043,13 +1107,21 @@ main {
     .similar-pages{
       font-size: 14px;
       margin-top: 100px;
-      h3{
+      .title {
+        border-bottom: 1px solid #D7D6D7;
+        padding-bottom: 15px;
+        margin-bottom: 30px;
+        .material-icons{
+          font-size: 20px;
+          vertical-align: middle;
+        }
+      }
+      h3 {
         color: $red;
+        font-family: $roboto;
         font-size: 14px;
         text-transform: uppercase;
-        border-bottom: 1px solid #D7D6D7;
-        padding-bottom: 20px;
-        margin-bottom: 20px;
+        margin: 0;
       }
       h4{
         font-size: 20px;
@@ -1062,9 +1134,17 @@ main {
       p{
         font-size: 14px;
       }
+      .similar-page-container {
+        border-left: 1px solid $red;
+        padding: 15px 10px;
+        box-shadow: 0 2px 4px 0 rgba(220,220,220,0.50);
+        margin-bottom: 30px;
+        min-height: 230px;
+      }
     }
   }
   #institution{
+    padding-bottom: 70px;
     h3{
       font-size: 28px;
       font-family:"Roboto Slab";
@@ -1576,6 +1656,12 @@ main {
         border-color: #D7D6D7;
         font-size: 16px;
         border-bottom: 1px solid $red;
+        padding: 10px 20px;
+        .material-icons {
+          font-size: 17px;
+          margin-right: 5px;
+          vertical-align: middle;
+        }
       }
       &.active{
         >a{
@@ -1619,17 +1705,22 @@ main {
   }
 }
 .help-cards {
-  border-top: 1px solid #D7D6D7;
-  border-bottom: 1px solid #D7D6D7;
   margin-bottom: 30px;
+  @media (min-width: 768px) {
+    border-top: 1px solid #D7D6D7;
+    border-bottom: 1px solid #D7D6D7;
+  }
   .help-card {
     height: 100px;
-    margin: 20px 0;
     padding: 20px 15px;
     display: inline-block;
     border: 1px solid #D7D6D7;
     border-radius: 4px;
     transition: .2s ease;
+    margin: 0 0 20px 0;
+    @media (min-width: 768px) {
+      margin: 20px 0;
+    }
     .media-left {
       color: $red;
       .material-icons {
@@ -1728,6 +1819,11 @@ main {
     color: $red;
     background: #fff;
     border: 1px solid $red;
+    &:hover {
+      color: #fff;
+      background-color: $red;
+      text-decoration: none;
+    }
   }
 }
 .claveunica-banner {
@@ -1912,6 +2008,9 @@ footer{
     }
   }
 }
+#sucursales {
+  padding-bottom: 100px;
+}
 .sucursal-card-component {
   margin: 20px 0;
   .card {
@@ -1965,7 +2064,7 @@ footer{
 #need-help {
   background-color: $lightbg;
   padding: 40px 0;
-  margin-top: 150px;
+  margin-top: 100px;
   h3 {
     font-family: $roboto;
     color: $red;
@@ -2056,6 +2155,7 @@ footer{
         transition: .2s ease;
         margin-right: 10px;
         display: inline-block;
+        cursor: pointer;
         .material-icons {
           color: $red;
           font-size: 20px;

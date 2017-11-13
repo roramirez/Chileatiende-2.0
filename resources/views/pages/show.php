@@ -16,12 +16,12 @@
                 <?php if($page->published_at):?><div class="updated-at">Actualizado al <?=$page->published_at->formatLocalized('%d de %B, %Y')?></div><?php endif ?>
                 <div class="accessibility-bar">
                     <div class="resize-font">
-                        <a href="#" class="larger">
+                        <span class="larger" onclick="resizeText(1)">
                             A+
-                        </a>
-                        <a href="#" class="smaller">
+                        </span>
+                        <span class="smaller" onclick="resizeText(-1)">
                             A-
-                        </a>
+                        </span>
                     </div>
                     <a href="#" class="listen-page">
                         <i class="material-icons">hearing</i>
@@ -88,10 +88,10 @@
                     <h4 id="howto">¿Cómo y dónde hago el trámite?</h4>
                     <div class="howto main-tabs">
                         <ul class="nav nav-tabs" role="tablist" v-select-first-tab>
-                            <?php if($page->online):?><li role="presentation"><a href="#online" aria-controls="online" role="tab" data-toggle="tab">Online</a></li><?php endif ?>
-                            <?php if($page->office):?><li role="presentation"><a href="#office" aria-controls="office" role="tab" data-toggle="tab">Oficina</a></li><?php endif ?>
-                            <?php if($page->phone):?><li role="presentation"><a href="#phone" aria-controls="phone" role="tab" data-toggle="tab">Teléfonico</a></li><?php endif ?>
-                            <?php if($page->mail):?><li role="presentation"><a href="#mail" aria-controls="mail" role="tab" data-toggle="tab">Correo</a></li><?php endif ?>
+                            <?php if($page->online):?><li role="presentation"><a href="#online" aria-controls="online" role="tab" data-toggle="tab"><i class="material-icons">devices</i>En línea</a></li><?php endif ?>
+                            <?php if($page->office):?><li role="presentation"><a href="#office" aria-controls="office" role="tab" data-toggle="tab"><i class="material-icons">store</i>En oficina</a></li><?php endif ?>
+                            <?php if($page->phone):?><li role="presentation"><a href="#phone" aria-controls="phone" role="tab" data-toggle="tab"><i class="material-icons">phone</i>Telefónico</a></li><?php endif ?>
+                            <?php if($page->mail):?><li role="presentation"><a href="#mail" aria-controls="mail" role="tab" data-toggle="tab"><i class="material-icons">mail</i>Correo</a></li><?php endif ?>
                         </ul>
 
                         <div class="tab-content">
@@ -117,14 +117,18 @@
     </div>
     <div id="similar-pages" class="similar-pages">
         <div class="container">
-            <h3>Los usuarios también visitaron</h3>
+            <div class="title">
+                <h3><i class="material-icons">visibility</i> Los usuarios también visitaron</h3>
+            </div>
             <div class="row">
                 <?php foreach($page->masterPage->similarPages as $s):?>
                     <div class="col-sm-4">
-                        <div class="institution"><a href="buscar?institution=<?=$s->institution->id?>">Publicado por <?=$s->institution->name?></a></div>
-                        <h4><a href="fichas/<?=$s->guid?>"><?=$s->title?></a></h4>
-                        <?php if($s->online):?><div class="online">Trámite en Línea</div><?php endif ?>
-                        <p><?=str_limit(strip_tags(\App\Twig::strip($s->objective)),100)?></p>
+                        <div class="similar-page-container">
+                            <div class="institution"><a href="buscar?institution=<?=$s->institution->id?>">Publicado por <?=$s->institution->name?></a></div>
+                            <h4><a href="fichas/<?=$s->guid?>"><?=$s->title?></a></h4>
+                            <?php if($s->online):?><div class="online">Trámite en Línea</div><?php endif ?>
+                            <p><?=str_limit(strip_tags(\App\Twig::strip($s->objective)),100)?></p>
+                        </div>
                     </div>
                 <?php endforeach ?>
             </div>
@@ -162,7 +166,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-link" data-dismiss="modal">Prefiero seguir en ChileAtiende</button>
-                    <a class="btn btn-primary" href="<?=$page->online_url?>">Entendido</a>
+                    <a class="btn btn-primary" href="<?=$page->online_url?>">Entendido, Ir al trámite</a>
                 </div>
             </div>
         </div>
