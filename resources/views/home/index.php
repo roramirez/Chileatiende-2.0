@@ -10,10 +10,10 @@
                 </a>
             </div>
 
-            <div class="row">
-                <?php foreach ($featured as $f): ?>
-                    <?php $f->publishedVersion() ?>
-                    <div class="col-md-3 col-sm-6">
+            <div class="featured-list">
+                <div class="featured-items">
+                    <?php foreach ($featured as $f): ?>
+                        <?php $f->publishedVersion() ?>
                         <div class="featured-item">
                             <a class="header" href="fichas/<?= $f->guid ?>" <?=$f->image ? 'style="background-image: url('.$f->image.')"':''?>>
                                 <?php if (!$f->image): ?>
@@ -26,8 +26,8 @@
                                 <h3><a href="fichas/<?= $f->guid ?>"><?= $f->title .' →' ?></a></h3>
                             </div>
                         </div>
-                    </div>
-                <?php endforeach ?>
+                    <?php endforeach ?>
+                </div>
             </div>
         </div>
     </div>

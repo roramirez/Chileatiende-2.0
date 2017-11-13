@@ -540,6 +540,8 @@ main {
   background: white;
   color: $black;
   #home{
+    display: flex;
+    flex-direction: column;
     .title{
       padding-bottom: 12px;
       margin-bottom: 28px;
@@ -576,6 +578,10 @@ main {
     }
     .categories-area{
       padding: 54px 0;
+      order: 1;
+      @media (min-width: 768px) {
+       order: 2;
+      }
       .category{
         margin-bottom: 0;
         @media (min-width: 768px) {
@@ -847,6 +853,7 @@ main {
       .resize-font,.listen-page, .print-page  {
         display: inline-block;
         margin-right: 15px;
+        color: $red;
       }
       a {
         color: $red;
@@ -1591,11 +1598,37 @@ main {
 .featured-area {
   background: $lightbg;
   padding: 54px 0;
+  float: left;
+  order: 2;
+  @media (min-width: 768px) {
+    order: 1;
+  }
+}
+.featured-list {
+  overflow: hidden;
+  margin: 0 -15px;
+  padding: 0 15px;
+}
+.featured-items {
+  margin: 0 -15px;
+  position: relative;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+  margin-bottom: -20px;
 }
 .featured-item {
-  background: white;
   height: 230px;
-  margin-bottom: 20px;
+  width: calc(100% / 4);
+  min-width: 260px;
+  margin: 0 15px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 20px;
+  @media (min-width: 768px) {
+    
+  }
   &.featured-page-item {
     border: 1px solid $bordercolor;
   }
