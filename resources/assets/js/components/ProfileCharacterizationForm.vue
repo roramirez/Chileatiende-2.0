@@ -66,21 +66,6 @@
                                 <div class="help-block" v-for="e in errors['foreigner']">{{e}}</div>
                             </div>
                         </li>
-                        <li>
-                            <div class="form-group" :class="{'has-error': errors['rsh'], active: subStep == 5}" @click="subStep = 5">
-                                <label for="rsh" class="control-label">Puntaje Registro Social de Hogares</label>
-                                <div class="row">
-                                    <div class="col-sm-8">
-                                        <input class="form-control" id="rsh" v-model="data.rsh" type="number" placeholder="Puntaje"></input>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div class="help-block text-center"><a href="#">¿Cómo obtengo mi puntaje?</a></div>
-                                    </div>
-                                </div>
-
-                                <div class="help-block" v-for="e in errors['rsh']">{{e}}</div>
-                            </div>
-                        </li>
                     </ol>
                 </div>
                 <div class="col-sm-3">

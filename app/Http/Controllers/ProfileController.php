@@ -28,7 +28,6 @@ class ProfileController extends Controller{
             'gender' => 'required|in:m,f',
             'nationality' => 'required',
             'foreigner' => 'required|boolean',
-            'rsh' => 'nullable|integer|min:0',
             'categories' => 'array'
         ]);
 
@@ -37,7 +36,6 @@ class ProfileController extends Controller{
         $user->gender = $request->input('gender');
         $user->nationality = $request->input('nationality');
         $user->foreigner = $request->input('foreigner');
-        $user->rsh = $request->input('rsh');
         $user->save();
 
         $user->categories()->sync($request->input('categories'));
