@@ -19,7 +19,7 @@ class Twig{
     }
 
     public static function strip($string){
-        $caca = preg_replace('/{{.*}}/sU','', $string);
+        $caca = preg_replace('/{{.*(}}|$)/sU','', $string);
         return $caca;
     }
 
