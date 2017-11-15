@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Log;
 use App\Page;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PageController extends Controller{
 
@@ -73,7 +75,6 @@ class PageController extends Controller{
             abort(403);
         }
 
-        $page->published_at = \Carbon\Carbon::now();
         $page->categories = $page->categories()->pluck('id');
         $page->related_pages = $page->relatedPages()->pluck('id');;
 
@@ -123,6 +124,9 @@ class PageController extends Controller{
             'related_pages' => 'array'
         ]);
 
+        DB::beginTransaction();
+
+        //Guardamos la ficha maestra
         $page->master = true;
         $page->title = $request->input('title');
         $page->alias = $request->input('alias');
@@ -146,6 +150,9 @@ class PageController extends Controller{
         $page->relatedPages()->sync($request->input('related_pages'));
         $page->save();
 
+        //Obtenemos la última versión (Para luego comparar los cambios)
+        $lastVersion = $page->lastVersion();
+
         //Guardamos la versión
         $version = $page->replicate();
         $version->id = null;
@@ -155,6 +162,15 @@ class PageController extends Controller{
         $version->save();
         //Ahora guardamos las relaciones
         $version->relatedPages()->sync($request->input('related_pages'));
+
+        //Guardamos el log de cambios
+        $log = new Log();
+        $log->page_version_id = $version->id;
+        $log->user_id = $request->user()->id;
+        $log->description = $lastVersion ? $lastVersion->compare($version) : '<p>Se ha creado el trámite.</p>';
+        $page->logs()->save($log);
+
+        DB::commit();
 
         return $page;
     }
@@ -252,5 +268,16 @@ class PageController extends Controller{
         $request->session()->flash('status', 'Ficha publicada con éxito');
 
         return redirect('backend/fichas/'.$page->id.'/versions');
+    }
+
+    public function history(Request $request, $pageId){
+
+        $data['edit'] = true;
+        $data['page'] = Page::find($pageId);
+
+        return view('layouts/backend',[
+            'title' => 'Inicio',
+            'content' => view('backend/pages/history', $data)
+        ]);
     }
 }

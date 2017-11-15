@@ -46,6 +46,7 @@ Route::group(['middleware' => ['auth','backend'], 'prefix'=>'backend', 'namespac
     Route::put('/fichas/{id}/master', 'PageController@updateMaster');
     Route::get('/fichas/{pageId}/versions', 'PageController@versions');
     Route::get('/fichas/{pageId}/versions/{versionId}/publish', 'PageController@publishVersion');
+    Route::get('/fichas/{pageId}/history', 'PageController@history');
 
     Route::group(['prefix'=>'api','namespace'=>'API'], function (){
         Route::resource('files', 'FileController');
