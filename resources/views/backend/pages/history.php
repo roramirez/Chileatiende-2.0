@@ -28,7 +28,7 @@
             <td>
                 <h4>Ficha #<?=$l->page_id?> versión #<?=$l->page_version_id?></h4>
                 <h5>Cambios Realizados:</h5>
-                <?=\App\Twig::strip($l->description)?>
+                <div><?=\App\Twig::render($l->description)?></div>
             </td>
         </tr>
         <?php endforeach ?>
