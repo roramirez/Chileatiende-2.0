@@ -59,4 +59,12 @@ class User extends Authenticatable
     public function scopeBackend($query){
         return $query->where('backend',1);
     }
+
+    public function hasCustomizationData(){
+
+        if($this->categories()->count() == 0)
+            return false;
+
+        return true;
+    }
 }
