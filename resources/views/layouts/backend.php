@@ -80,8 +80,8 @@
                                     <ul>
                                         <li><a href="backend/ministerios">Ministerios</a></li>
                                         <li><a href="backend/instituciones">Instituciones</a></li>
-                                        <li><a href="backend/usuarios">Usuarios</a></li>
-                                        <li><a href="backend/oficinas">Oficinas</a></li>
+                                        <?php if(Auth::user()->can('view', \App\User::class)):?><li><a href="backend/usuarios">Usuarios</a></li><?php endif ?>
+                                        <?php if(Auth::user()->can('view', \App\Office::class)):?><li><a href="backend/oficinas">Oficinas</a></li><?php endif ?>
                                         <li><a href="backend/categorias">Categorías</a></li>
                                     </ul>
                                 </div>

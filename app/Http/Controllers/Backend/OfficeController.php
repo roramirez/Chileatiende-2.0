@@ -9,7 +9,8 @@ use Illuminate\Http\Request;
 class OfficeController extends Controller{
 
     public function index(Request $request){
-
+        if(!$request->user()->can('view', Office::class))
+            abort(403);
 
         $data['offices'] = Office::with('location')->get();
 
@@ -19,7 +20,10 @@ class OfficeController extends Controller{
         ]);
     }
 
-    public function create(){
+    public function create(Request $request){
+        if(!$request->user()->can('create', Office::class))
+            abort(403);
+
         $office = new Office();
 
         $data['office'] = $office;
@@ -31,8 +35,11 @@ class OfficeController extends Controller{
         ]);
     }
 
-    public function edit($id){
+    public function edit(Request $request, $id){
         $office = Office::find($id);
+
+        if(!$request->user()->can('update', $office))
+            abort(403);
 
         $data['office'] = $office;
         $data['edit'] = true;
@@ -44,7 +51,10 @@ class OfficeController extends Controller{
     }
 
     public function store(Request $request){
-        $office = $this->save($request, new Office());
+        if(!$request->user()->can('create', Office::class))
+            abort(403);
+
+        $this->save($request, new Office());
 
         $request->session()->flash('status', 'Oficina creada con éxito');
 
@@ -52,7 +62,12 @@ class OfficeController extends Controller{
     }
 
     public function update(Request $request, $id){
-        $this->save($request, Office::find($id));
+        $office =  Office::find($id);
+
+        if(!$request->user()->can('update', $office))
+            abort(403);
+
+        $this->save($request, $office);
 
         $request->session()->flash('status', 'Oficina editada con éxito');
 
@@ -90,6 +105,10 @@ class OfficeController extends Controller{
 
     public function destroy(Request $request, $id){
         $office = Office::find($id);
+
+        if(!$request->user()->can('delete', $office))
+            abort(403);
+
         $office->delete();
 
         $request->session()->flash('status', 'Oficina eliminada con éxito');
