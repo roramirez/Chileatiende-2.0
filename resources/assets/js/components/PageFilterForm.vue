@@ -18,7 +18,7 @@
         </div>
         <div class="form-group">
             <label class="control-label">Búsqueda</label>
-            <input type="text" class="form-control" v-model="data.query" name="query" placeholder="Ej: bono marzo" />
+            <input type="text" class="form-control" v-model="data.query" name="query" placeholder="Ej: certificado de nacimiento" />
         </div>
 
             <div class="text-right">
