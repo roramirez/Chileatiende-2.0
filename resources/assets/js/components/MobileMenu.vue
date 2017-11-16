@@ -49,7 +49,7 @@
                                 <i class="material-icons">person</i>
                                 Perfil
                             </a>
-                            <a href="logout" @click.prevent="logout">
+                            <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             	<i class="material-icons">power_settings_new</i>
                                 Cerrar Sesión
                             </a>
@@ -227,9 +227,6 @@
 		methods: {
 			toggleMenu: function() {
 				this.isOpen = ! this.isOpen;
-			},
-			logout() {
-				this.$emit('logout');
 			}
 		}
 	}

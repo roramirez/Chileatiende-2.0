@@ -8,7 +8,7 @@
                 <img src="images/logo-color.svg" alt="ChileAtiende" class="visible-xs img-responsive logo-mobile" />
             </a>
             <div class="visible-xs-block text-right">
-                <mobile-menu @logout="logout" :user="<?= e(Auth::check() ? Auth::user() : 'null') ?>"></mobile-menu>
+                <mobile-menu :user="<?= e(Auth::check() ? Auth::user() : 'null') ?>"></mobile-menu>
             </div>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -88,11 +88,11 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="<?= route('logout') ?>" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                     <i class="material-icons">power_settings_new</i>
                                     Cerrar Sesión
                                 </a>
-                                <form id="logout-form" action="<?= route('logout') ?>" method="POST" style="display: none;" ref="logoutForm">
+                                <form id="logout-form" action="logout" method="POST" style="display: none;">
                                     <?= csrf_field() ?>
                                 </form>
                             </li>
