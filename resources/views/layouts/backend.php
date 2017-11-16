@@ -65,15 +65,17 @@
                                     </ul>
                                 </div>
                             </div>
+                            <?php if(Auth::user()->can('view', \App\Page::class)):?>
                             <div class="panel panel-default">
                                 <div class="panel-heading">Trámites y servicios</div>
                                 <div class="panel-body">
                                     <ul>
                                         <li><a href="backend/fichas">Ver fichas</a></li>
-                                        <li><a href="backend/fichas/featured">Ver destacadas</a></li>
+                                        <?php if(Auth::user()->can('updateFeatured', \App\User::class)):?><li><a href="backend/fichas/featured">Ver destacadas</a></li><?php endif ?>
                                     </ul>
                                 </div>
                             </div>
+                            <?php endif ?>
                             <div class="panel panel-default">
                                 <div class="panel-heading">Administración</div>
                                 <div class="panel-body">

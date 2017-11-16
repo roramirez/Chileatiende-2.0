@@ -24,22 +24,28 @@ class PagePolicy
      * @param  \App\Page  $page
      * @return mixed
      */
-    public function view(User $user, Page $page)
+    public function view(User $user, Page $page = null)
     {
-        if($user->interministerial){
+        if($user->role != 'editor')
+            return false;
 
-        }else if($user->ministerial){
-            if($user->institution->ministry_id != $page->institution->ministry_id){
-                return false;
+        if($page != null){
+            if($user->interministerial){
+
+            }else if($user->ministerial){
+                if($user->institution->ministry_id != $page->institution->ministry_id){
+                    return false;
+                }
+            }else{
+                if($user->institution_id != $page->institution_id){
+                    return false;
+                }
             }
-        }else{
-            if($user->institution_id != $page->institution_id){
+
+            if($page->status == 'en_revision')
                 return false;
-            }
         }
 
-        if($page->status == 'en_revision')
-            return false;
 
 
         return true;
@@ -100,4 +106,10 @@ class PagePolicy
     {
         return false;
     }
+
+    public function updateFeatured(User $user, Page $page = null)
+    {
+        return false;
+    }
+
 }

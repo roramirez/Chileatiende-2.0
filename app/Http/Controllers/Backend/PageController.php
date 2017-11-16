@@ -11,6 +11,9 @@ use Illuminate\Support\Facades\DB;
 class PageController extends Controller{
 
     public function index(Request $request){
+        if(!$request->user()->can('view',Page::class))
+            abort(403);
+
         $filters = $request->all();
 
         $query = $request->input('query');
@@ -38,7 +41,7 @@ class PageController extends Controller{
     }
 
     public function featured(Request $request){
-        if(!$request->user()->can('update', Page::class)){
+        if(!$request->user()->can('updateFeatured', Page::class)){
             abort(403);
         }
 
@@ -51,7 +54,7 @@ class PageController extends Controller{
     }
 
     public function updateFeatured(Request $request){
-        if(!$request->user()->can('update', Page::class)){
+        if(!$request->user()->can('updateFeatured', Page::class)){
             abort(403);
         }
 
