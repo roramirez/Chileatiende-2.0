@@ -36,6 +36,7 @@ import ProfileCharacterizationForm from './components/ProfileCharacterizationFor
 import PageForm from './components/PageForm.vue';
 import PageMasterForm from './components/PageMasterForm.vue';
 import PageStatusForm from './components/PageStatusForm.vue';
+import PagesOrderForm from './components/PagesOrderForm.vue';
 import OfficeForm from './components/OfficeForm.vue';
 import MinistryForm from './components/MinistryForm.vue';
 import InstitutionForm from './components/InstitutionForm.vue';
@@ -58,6 +59,7 @@ const app = new Vue({
         PageForm,
         PageMasterForm,
         PageStatusForm,
+        PagesOrderForm,
         OfficesCollapse,
         MobileMenu,
         PageNav,

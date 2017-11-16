@@ -37,6 +37,43 @@ class PageController extends Controller{
         ]);
     }
 
+    public function featured(Request $request){
+        if(!$request->user()->can('update', Page::class)){
+            abort(403);
+        }
+
+        $data['pages'] = Page::masters()->where('featured',1)->orderBy('order')->get();
+
+        return view('layouts/backend',[
+            'title' => 'Inicio',
+            'content' => view('backend/pages/featured', $data)
+        ]);
+    }
+
+    public function updateFeatured(Request $request){
+        if(!$request->user()->can('update', Page::class)){
+            abort(403);
+        }
+
+        $this->validate($request,[
+            'pages' => 'array',
+            'pages.*.id' => 'required|exists:pages',
+            'pages.*.order' => 'required|integer'
+        ]);
+
+        DB::beginTransaction();
+        foreach($request->input('pages') as $p){
+            $page = Page::find($p['id']);
+            $page->order = $p['order'];
+            $page->save();
+        }
+        DB::commit();
+
+        $request->session()->flash('status', 'Orden de destacados actualizado con éxito.');
+
+        return response()->json(['redirect' => 'backend/fichas/featured']);
+    }
+
     public function show(Request $request, $pageId){
         $page = Page::find($pageId);
 

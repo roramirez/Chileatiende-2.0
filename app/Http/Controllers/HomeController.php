@@ -16,12 +16,12 @@ class HomeController extends Controller{
 
         if($request->user() && $request->user()->hasCustomizationData()){
             $content = view('home/index-authenticated',[
-                'featured' => Page::masters()->published()->where('featured',1)->limit(4)->get(),
+                'featured' => Page::masters()->published()->where('featured',1)->orderBy('order')->limit(4)->get(),
                 'categories' => $request->user()->categories()->orderBy('order')->get()
             ]);
         }else{
             $content = view('home/index',[
-                'featured' => Page::masters()->published()->where('featured',1)->limit(4)->get(),
+                'featured' => Page::masters()->published()->where('featured',1)->orderBy('order')->limit(4)->get(),
                 'categories' => Category::where('featured',1)->orderBy('order')->limit(9)->get()
             ]);
         }

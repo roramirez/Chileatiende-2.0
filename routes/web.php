@@ -41,6 +41,8 @@ Route::group(['middleware' => ['auth','backend'], 'prefix'=>'backend', 'namespac
     Route::resource('/usuarios', 'UserController');
     Route::resource('/oficinas', 'OfficeController');
     Route::resource('/categorias', 'CategoryController');
+    Route::put('/fichas/featured', 'PageController@updateFeatured');
+    Route::get('/fichas/featured', 'PageController@featured');
     Route::resource('/fichas', 'PageController');
     Route::put('/fichas/{id}/status', 'PageController@updateStatus');
     Route::put('/fichas/{id}/master', 'PageController@updateMaster');
