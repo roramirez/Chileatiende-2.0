@@ -71,7 +71,7 @@
                                 <div class="panel-body">
                                     <ul>
                                         <li><a href="backend/fichas">Ver fichas</a></li>
-                                        <?php if(Auth::user()->can('updateFeatured', \App\User::class)):?><li><a href="backend/fichas/featured">Ver destacadas</a></li><?php endif ?>
+                                        <?php if(Auth::user()->can('updateFeatured', \App\Page::class)):?><li><a href="backend/fichas/featured">Ver destacadas</a></li><?php endif ?>
                                     </ul>
                                 </div>
                             </div>
