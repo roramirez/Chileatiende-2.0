@@ -3,6 +3,8 @@
 namespace App;
 
 use Carbon\Carbon;
+use cogpowered\FineDiff\Diff;
+use cogpowered\FineDiff\Granularity\Word;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 use Laravel\Scout\Searchable;
@@ -62,6 +64,10 @@ class Page extends Model
 
     public function similarPages(){
         return $this->belongsToMany('\App\Page','page_similar_page','page_id','similar_page_id');
+    }
+
+    public function logs(){
+        return $this->hasMany('\App\Log');
     }
 
     public function hits(){
@@ -173,5 +179,25 @@ class Page extends Model
     public function lastVersion(){
         return $this->versions()->orderBy('id','desc')->first();
 
+    }
+
+    public function compare(Page $page){
+
+        $diff = new Diff(new Word());
+        $exclude = ['id','master','published','created_at','updated_at'];
+
+        $differences = [];
+        foreach($this->attributes as $key=>$a){
+            if(!in_array($key,$exclude) && $a != $page->attributes[$key])
+                $differences[$key] = $diff->render($a, $page->attributes[$key]);
+        }
+
+        $text = '';
+        foreach($differences as $key => $d){
+            $text.='<p>Modificación en <strong>'.$key.'</strong>:</p>';
+            $text.=html_entity_decode($d);
+        }
+
+        return $text;
     }
 }

@@ -76,7 +76,7 @@
                     <?=App\Twig::render($page->details)?>
                     <?php endif ?>
 
-                    <h4 id="beneficiaries">¿A quién esta dirigido?</h4>
+                    <h4 id="beneficiaries">¿A quién está dirigido?</h4>
                     <?=App\Twig::render($page->beneficiaries)?>
 
                     <?php if($page->requirements):?>

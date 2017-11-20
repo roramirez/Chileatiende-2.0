@@ -9,7 +9,8 @@ use Illuminate\Http\Request;
 class UserController extends Controller{
 
     public function index(Request $request){
-
+        if(!$request->user()->can('view', User::class))
+            abort(403);
 
         $data['users'] = User::backend()->get();
 
@@ -19,7 +20,10 @@ class UserController extends Controller{
         ]);
     }
 
-    public function create(){
+    public function create(Request $request){
+        if(!$request->user()->can('create', User::class))
+            abort(403);
+
         $user = new User();
 
         $data['user'] = $user;
@@ -31,8 +35,11 @@ class UserController extends Controller{
         ]);
     }
 
-    public function edit($id){
+    public function edit(Request $request, $id){
         $user = User::find($id);
+
+        if(!$request->user()->can('update', $user))
+            abort(403);
 
         $data['user'] = $user;
         $data['edit'] = true;
@@ -44,6 +51,9 @@ class UserController extends Controller{
     }
 
     public function store(Request $request){
+        if(!$request->user()->can('create', User::class))
+            abort(403);
+
         $user = $this->save($request, new User());
 
         $request->session()->flash('status', 'Usuario creado con éxito');
@@ -52,7 +62,12 @@ class UserController extends Controller{
     }
 
     public function update(Request $request, $id){
-        $this->save($request, User::find($id));
+        $user = User::find($id);
+
+        if(!$request->user()->can('update', $user))
+            abort(403);
+
+        $this->save($request, $user);
 
         $request->session()->flash('status', 'Usuario editado con éxito');
 
@@ -70,6 +85,7 @@ class UserController extends Controller{
             'password' => 'confirmed'
         ]);
 
+        $user->backend = true;
         $user->first_name = $request->input('first_name');
         $user->last_name = $request->input('last_name');
         $user->email = $request->input('email');
@@ -89,6 +105,10 @@ class UserController extends Controller{
 
     public function destroy(Request $request, $id){
         $user = User::find($id);
+
+        if(!$request->user()->can('delete', $user))
+            abort(403);
+
         $user->delete();
 
         $request->session()->flash('status', 'Usuario eliminado con éxito');

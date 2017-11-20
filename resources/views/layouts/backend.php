@@ -1,4 +1,19 @@
-<?=view('chunks/head', ['title' => $title])?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <base href="<?=url('')?>" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="<?=csrf_token()?>">
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico"  />
+    <title>ChileAtiende - <?=$title?></title>
+
+    <!-- Bootstrap -->
+    <link href="css/backend.css" rel="stylesheet">
+
+</head>
+<body>
 <div id="app">
     <header class="default">
         <nav class="navbar navbar-default navbar-static-top">
@@ -50,23 +65,25 @@
                                     </ul>
                                 </div>
                             </div>
+                            <?php if(Auth::user()->can('view', \App\Page::class)):?>
                             <div class="panel panel-default">
                                 <div class="panel-heading">Trámites y servicios</div>
                                 <div class="panel-body">
                                     <ul>
-                                        <li><a href="backend/fichas/create">Agregar ficha</a></li>
                                         <li><a href="backend/fichas">Ver fichas</a></li>
+                                        <?php if(Auth::user()->can('updateFeatured', \App\Page::class)):?><li><a href="backend/fichas/featured">Ver destacadas</a></li><?php endif ?>
                                     </ul>
                                 </div>
                             </div>
+                            <?php endif ?>
                             <div class="panel panel-default">
                                 <div class="panel-heading">Administración</div>
                                 <div class="panel-body">
                                     <ul>
                                         <li><a href="backend/ministerios">Ministerios</a></li>
                                         <li><a href="backend/instituciones">Instituciones</a></li>
-                                        <li><a href="backend/usuarios">Usuarios</a></li>
-                                        <li><a href="backend/oficinas">Oficinas</a></li>
+                                        <?php if(Auth::user()->can('view', \App\User::class)):?><li><a href="backend/usuarios">Usuarios</a></li><?php endif ?>
+                                        <?php if(Auth::user()->can('view', \App\Office::class)):?><li><a href="backend/oficinas">Oficinas</a></li><?php endif ?>
                                         <li><a href="backend/categorias">Categorías</a></li>
                                     </ul>
                                 </div>
@@ -91,7 +108,7 @@
 <script>
     window.baseUrl = "<?=url('')?>";
 </script>
-<script src="js/app.js"></script>
+<script src="js/backend.js"></script>
 
 </body>
 </html>

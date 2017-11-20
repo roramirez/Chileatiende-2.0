@@ -27,7 +27,15 @@
                 <select id="role" class="form-control" v-model="data.role">
                     <option>admin</option>
                     <option>editor</option>
+                    <option>operator</option>
                 </select>
+                <div class="help-block">
+                    <ul>
+                        <li><strong>admin:</strong> Permisos para todo</li>
+                        <li><strong>editor:</strong> Permisos solo para editar fichas. Normalmente usuario asignado a instituciones para que colaboren en la edición de fichas.</li>
+                        <li><strong>operator:</strong> Permisos para editar oficinas mobiles.</li>
+                    </ul>
+                </div>
                 <div class="help-block" v-for="e in errors['role']">{{e}}</div>
             </div>
         </div>

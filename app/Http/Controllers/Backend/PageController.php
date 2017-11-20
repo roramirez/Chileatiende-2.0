@@ -3,12 +3,17 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Log;
 use App\Page;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PageController extends Controller{
 
     public function index(Request $request){
+        if(!$request->user()->can('view',Page::class))
+            abort(403);
+
         $filters = $request->all();
 
         $query = $request->input('query');
@@ -33,6 +38,43 @@ class PageController extends Controller{
             'title' => 'Inicio',
             'content' => view('backend/pages/index', $data)
         ]);
+    }
+
+    public function featured(Request $request){
+        if(!$request->user()->can('updateFeatured', Page::class)){
+            abort(403);
+        }
+
+        $data['pages'] = Page::masters()->where('featured',1)->orderBy('order')->get();
+
+        return view('layouts/backend',[
+            'title' => 'Inicio',
+            'content' => view('backend/pages/featured', $data)
+        ]);
+    }
+
+    public function updateFeatured(Request $request){
+        if(!$request->user()->can('updateFeatured', Page::class)){
+            abort(403);
+        }
+
+        $this->validate($request,[
+            'pages' => 'array',
+            'pages.*.id' => 'required|exists:pages',
+            'pages.*.order' => 'required|integer'
+        ]);
+
+        DB::beginTransaction();
+        foreach($request->input('pages') as $p){
+            $page = Page::find($p['id']);
+            $page->order = $p['order'];
+            $page->save();
+        }
+        DB::commit();
+
+        $request->session()->flash('status', 'Orden de destacados actualizado con éxito.');
+
+        return response()->json(['redirect' => 'backend/fichas/featured']);
     }
 
     public function show(Request $request, $pageId){
@@ -73,7 +115,6 @@ class PageController extends Controller{
             abort(403);
         }
 
-        $page->published_at = \Carbon\Carbon::now();
         $page->categories = $page->categories()->pluck('id');
         $page->related_pages = $page->relatedPages()->pluck('id');;
 
@@ -123,6 +164,9 @@ class PageController extends Controller{
             'related_pages' => 'array'
         ]);
 
+        DB::beginTransaction();
+
+        //Guardamos la ficha maestra
         $page->master = true;
         $page->title = $request->input('title');
         $page->alias = $request->input('alias');
@@ -146,6 +190,9 @@ class PageController extends Controller{
         $page->relatedPages()->sync($request->input('related_pages'));
         $page->save();
 
+        //Obtenemos la última versión (Para luego comparar los cambios)
+        $lastVersion = $page->lastVersion();
+
         //Guardamos la versión
         $version = $page->replicate();
         $version->id = null;
@@ -155,6 +202,15 @@ class PageController extends Controller{
         $version->save();
         //Ahora guardamos las relaciones
         $version->relatedPages()->sync($request->input('related_pages'));
+
+        //Guardamos el log de cambios
+        $log = new Log();
+        $log->page_version_id = $version->id;
+        $log->user_id = $request->user()->id;
+        $log->description = $lastVersion ? $lastVersion->compare($version) : '<p>Se ha creado el trámite.</p>';
+        $page->logs()->save($log);
+
+        DB::commit();
 
         return $page;
     }
@@ -252,5 +308,16 @@ class PageController extends Controller{
         $request->session()->flash('status', 'Ficha publicada con éxito');
 
         return redirect('backend/fichas/'.$page->id.'/versions');
+    }
+
+    public function history(Request $request, $pageId){
+
+        $data['edit'] = true;
+        $data['page'] = Page::find($pageId);
+
+        return view('layouts/backend',[
+            'title' => 'Inicio',
+            'content' => view('backend/pages/history', $data)
+        ]);
     }
 }

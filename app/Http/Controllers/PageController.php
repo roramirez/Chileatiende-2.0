@@ -28,7 +28,7 @@ class PageController extends Controller{
     }
 
     public function featured(){
-        $data['pages'] = Page::masters()->published()->where('featured',1)->get();
+        $data['pages'] = Page::masters()->published()->where('featured',1)->orderBy('order')->get();
 
         return view('layouts/layout',[
             'title' => 'Fichas Destacadas',

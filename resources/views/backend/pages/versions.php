@@ -10,6 +10,7 @@
         <li role="presentation"><a href="backend/fichas/<?=$page->id?>">Ver</a></li>
         <li role="presentation"><a href="backend/fichas/<?=$page->id?>/edit">Editar</a></li>
         <li role="presentation" class="active"><a href="backend/fichas/<?=$page->id?>/versions">Versiones</a></li>
+        <li role="presentation"><a href="backend/fichas/<?=$page->id?>/history">Historial</a></li>
     </ul>
 
     <br />

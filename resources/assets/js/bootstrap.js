@@ -1,7 +1,5 @@
 
 window._ = require('lodash');
-window.gumshoe = require('gumshoe');
-window.SmoothScroll = require('smooth-scroll');
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
@@ -54,3 +52,20 @@ if (token) {
 //     broadcaster: 'pusher',
 //     key: 'your-pusher-key'
 // });
+
+/*
+ Vue
+ */
+
+import Vue from 'vue';
+window.Vue = Vue;
+
+/*
+* Element UI
+* Theme & Language
+*/
+
+import 'element-ui/lib/theme-default/index.css';
+import lang from 'element-ui/lib/locale/lang/es';
+import locale from 'element-ui/lib/locale';
+locale.use(lang);
