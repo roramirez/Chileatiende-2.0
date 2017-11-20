@@ -338,6 +338,7 @@ ol.breadcrumb{
     .el-input-group__append{
       background: $red;
       border: none;
+      overflow: hidden;
       .el-button{
         background: transparent;
         color: white;
@@ -901,6 +902,7 @@ main {
       transition: margin-top ease-out 0.3s;
       margin-top: 0;
       background-color: #fff;
+      padding: 15px 0;
       .mobile-heading {
         display: block;
         .page-title {
