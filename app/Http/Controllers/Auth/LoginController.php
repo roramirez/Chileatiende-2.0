@@ -55,7 +55,7 @@ class LoginController extends Controller
 
     public function redirectToProvider()
     {
-        return Socialite::driver('claveunica')->redirect();
+        return Socialite::driver('claveunica')->scopes(['email'])->redirect();
     }
 
 
@@ -71,6 +71,7 @@ class LoginController extends Controller
         $authUser->dv = $user->dv;
         $authUser->first_name = $user->first_name;
         $authUser->last_name = $user->last_name;
+        $authUser->email = $user->email;
         //$authUser->access_token = $user->token;
         //$authUser->refresh_token = $user->refreshToken;
         $authUser->save();
