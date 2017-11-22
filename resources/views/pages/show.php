@@ -33,7 +33,7 @@
                     </a>
                     <div class="share-buttons">
                         <span>Compartir</span>
-                        <a href="" class="share-icon">
+                        <a href="" class="share-icon" title="Compartir en Facebook">
                             <svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <g id="fb-icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                     <g id="Ficha-trámite/-extenso" class="social-icon" transform="translate(-821.000000, -440.000000)" fill="#D7D6D7">
@@ -42,7 +42,7 @@
                                 </g>
                             </svg>
                         </a>
-                        <a href="" class="share-icon">
+                        <a href="" class="share-icon" title="compartir en Twitter">
                             <svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <g id="twitter-icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                     <g id="Ficha-trámite/-extenso" class="social-icon" transform="translate(-853.000000, -440.000000)" fill="#D7D6D7">
@@ -51,7 +51,7 @@
                                 </g>
                             </svg>
                         </a>
-                        <a href="" class="share-icon">
+                        <a href="" class="share-icon" title="compartir por email">
                             <svg width="20px" height="17px" viewBox="0 0 20 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <g id="email-icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                     <g id="Ficha-trámite/-extenso" class="social-icon" transform="translate(-885.000000, -441.000000)" fill="#D7D6D7">

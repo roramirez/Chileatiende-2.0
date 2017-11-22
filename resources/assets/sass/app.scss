@@ -26,6 +26,10 @@
   &.highlight-green{
     border-color: $green;
     color: $green;
+    a {
+      color: $green;
+      text-decoration: underline;
+    }
   }
 }
 
@@ -813,6 +817,10 @@ main {
           counter-increment:titles;
         }
       }
+      a {
+        text-decoration: underline;
+        font-weight: normal;
+      }
     }
     p {
       strong {
@@ -850,6 +858,7 @@ main {
       font-weight: 500;
       font-size: 16px;
       color: #FFFFFF;
+      text-decoration: none;
       @media (min-width: 768px) {
         padding: 20px 40px;
         margin-bottom: 0;
@@ -1460,6 +1469,7 @@ main {
         font-size: 16px;
         border-bottom: 1px solid $red;
         padding: 10px 20px;
+        text-decoration: none !important;
         .material-icons {
           font-size: 17px;
           margin-right: 5px;
