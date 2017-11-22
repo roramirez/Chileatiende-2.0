@@ -61,10 +61,13 @@ class ClaveUnicaProvider extends AbstractProvider implements ProviderInterface
     protected function mapUserToObject(array $user)
     {
         return (new User)->setRaw($user)->map([
+            'id' => $user['RolUnico']['numero'],
+            'name' => implode(' ',$user['name']['nombres']) . ' ' . implode(' ', $user['name']['apellidos']),
             'first_name' => implode(' ',$user['name']['nombres']),
             'last_name' => implode(' ', $user['name']['apellidos']),
             'run' => $user['RolUnico']['numero'],
-            'dv' => $user['RolUnico']['DV']
+            'dv' => $user['RolUnico']['DV'],
+            'email' => isset($user['email']) ? $user['email'] : null
         ]);
     }
 }
