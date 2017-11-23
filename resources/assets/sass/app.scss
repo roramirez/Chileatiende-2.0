@@ -257,14 +257,18 @@ header.home{
       overflow: hidden;
       margin: 10px -15px 0 0;
     }
+    .search-list-items {
+      margin-bottom: -30px;
+    }
     .search-list{
       list-style: none;
       padding-left: 0;
       margin-top: 15px;
       position: relative;
       white-space: nowrap;
-      overflow-y: scroll;
+      overflow-x: scroll;
       -webkit-overflow-scrolling: touch;
+      padding-bottom: 20px;
       @media (max-width: 768px) {
         -webkit-mask-image: -webkit-gradient(linear, left bottom, right bottom, color-stop(0.00, rgba(0,0,0,1)), color-stop(0.85, rgba(0,0,0,1)), color-stop(0.95, rgba(0,0,0,0)), color-stop(1.00, rgba(0,0,0,0)));
       }
@@ -367,6 +371,7 @@ main {
           color: $black;
           display: block;
           border-bottom: 1px solid #D7D6D7;
+          cursor: default;
           @media (min-width: 768px) {
             border-bottom: 0;
           }
@@ -854,11 +859,14 @@ main {
       margin-bottom: 20px;
       background: $red;
       border: 1px solid darken($red,10%);
-      border-radius: 2px;
       font-weight: 500;
-      font-size: 16px;
       color: #FFFFFF;
       text-decoration: none;
+      font-size: 15px;
+      letter-spacing: 0.2px;
+      text-transform: uppercase;
+      box-shadow: 0 4px 6px rgba(50,50,93,0.11), 0 1px 3px rgba(0,0,0,0.08);
+      border-radius: 4px;
       @media (min-width: 768px) {
         padding: 20px 40px;
         margin-bottom: 0;
@@ -951,7 +959,7 @@ main {
       list-style: none;
       padding-left: 0;
       >li{
-        margin-bottom: 20px;
+        margin-bottom: 40px;
         >h5{
           font-size: 20px;
           font-weight: normal;
@@ -1004,6 +1012,7 @@ main {
     ul.index{
       list-style: none;
       padding-left: 0;
+      margin-bottom: 0;
       >li{
         display: inline-block;
         margin-right: 6px;
@@ -1018,6 +1027,9 @@ main {
           line-height: 26px;
           border-radius: 2px;
           margin-bottom: 10px;
+          @media (min-width: 768px) {
+            margin-bottom: 0;
+          }
           &.active {
             background-color: $red;
             color: #fff;
@@ -1041,10 +1053,14 @@ main {
           padding-left: 0;
           overflow: hidden;
           >li{
-            width: 50%;
+            width: 100%;
             float: left;
             font-size: 16px;
+            margin-bottom: 5px;
             font-weight: 300;
+            @media (min-width: 768px) {
+              width: 50%;
+            }
             a{
               color: black;
             }
@@ -1090,7 +1106,8 @@ main {
   #mi-chileatiende{
     background-image: url(../images/mi-chileatiende.jpg);
     background-repeat: no-repeat;
-    background-position: 0 -500px;
+    background-position: center center;
+    // background-position: 0 -500px;
     color: white;
     position: relative;
     padding: 30px 0 100px;
@@ -1312,6 +1329,7 @@ main {
         margin-top: 40px;
         margin-bottom: 40px;
         float: left;
+        text-align: left;
         padding: 18px 40px;
         @media (min-width: 768px) {
           margin-top: 70px;
@@ -1387,6 +1405,7 @@ main {
   overflow: hidden;
   margin: 0 -15px;
   padding: 0 15px;
+  position: relative;
 }
 .featured-items {
   margin: 0 -15px;
@@ -1410,6 +1429,9 @@ main {
   }
   &.featured-page-item {
     border: 1px solid $bordercolor;
+    width: auto;
+    margin: 0;
+    margin-bottom: 30px;
   }
   >a.header{
     height: 120px;
@@ -1499,6 +1521,8 @@ main {
         counter-increment: step-counter;
         padding: 12px 0;
         border-bottom: 1px solid #D7D6D7;
+        position: relative;
+        padding-left: 35px;
         &:before{
           content: counter(step-counter);
           font-weight: normal;
@@ -1509,9 +1533,11 @@ main {
           display: inline-block;
           border-radius: 10px;
           text-align: center;
-          margin-right: 16px;
-          padding-top: 2px;
-          font-size: 12px;
+          font-size: 13px;
+          position: absolute;
+          left: 0;
+          line-height: 20px;
+          vertical-align: middle;
         }
       }
     }
@@ -1603,6 +1629,10 @@ main {
     }
     p {
       margin: 0;
+    }
+    a {
+      text-decoration: underline;
+      color: $blue;
     }
   }
 }

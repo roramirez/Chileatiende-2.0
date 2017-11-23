@@ -2,7 +2,7 @@
     <div class="container">
         <div class="categories-area">
             <div class="title">
-                <div class="subtitle">Trámites sugeridos para tí</div>
+                <div class="subtitle">Trámites sugeridos basados en tus intereses</div>
                 <h2>Por categoría</h2>
             </div>
 
