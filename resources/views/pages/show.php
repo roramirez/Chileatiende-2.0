@@ -9,12 +9,18 @@
             <div class="col-md-4 col-md-push-8">
                 <page-nav :page="<?= e(json_encode($page)) ?>" current-url="<?= url()->current() ?>"></page-nav>
             </div>
-            <div class="col-md-8 col-md-pull-4">
+            <div class="col-md-8 col-md-pull-4" id="page-content">
                 <?php if($page->online):?><div class="online">Trámite en Línea</div><?php endif ?>
                 <h3><?= $page->title ?></h3>
                 <div class="author"><a href="instituciones/<?=$page->institution->id?>">Información proporcionada por <?= $page->institution->name ?></a></div>
                 <?php if($page->published_at):?><div class="updated-at">Actualizado al <?=$page->published_at->formatLocalized('%d de %B, %Y')?></div><?php endif ?>
-                <div class="accessibility-bar">
+                <div class="accessibility-bar rs_skip">
+                    <div id="readspeaker_button1" ref="readspeakerButton" class="rs_skip rsbtn rs_preserve" v-show="page.showReadspeakerButton">
+                        <a rel="nofollow" class="rsbtn_play" accesskey="L" title="Escucha esta p&aacute;gina utilizando ReadSpeaker" href="//app-na.readspeaker.com/cgi-bin/rsent?customerid=6404&lang=es_us&readid=page-content&url=<?= urlencode(url()->current()) ?>">
+                            <span class="rsbtn_left rsimg rspart"><span class="rsbtn_text"><span>Escuchar</span></span></span>
+                            <span class="rsbtn_right rsimg rsplay rspart"></span>
+                        </a>
+                    </div>
                     <div class="resize-font">
                         <span class="larger" onclick="resizeText(1)">
                             A+
@@ -23,7 +29,7 @@
                             A-
                         </span>
                     </div>
-                    <a href="#" class="listen-page">
+                    <a href="#" @click.prevent="toggleReadspeaker" class="listen-page">
                         <i class="material-icons">hearing</i>
                         escuchar
                     </a>

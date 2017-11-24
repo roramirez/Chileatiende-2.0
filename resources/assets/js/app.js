@@ -1,15 +1,5 @@
+/* globals SmoothScroll, Vue, $ */
 import './bootstrap';
-
-window.gumshoe = require('gumshoe');
-window.SmoothScroll = require('smooth-scroll');
-
-
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
-
 import SelectFirstTab from './directives/SelectFirstTab';
 import Search from './components/Search.vue';
 import Steps from './components/Steps.vue';
@@ -20,9 +10,12 @@ import PageNav from './components/PageNav.vue';
 import TransparencyList from './components/TransparencyList.vue';
 import Expandable from './components/Expandable.vue';
 
+window.gumshoe = require('gumshoe');
+window.SmoothScroll = require('smooth-scroll');
+
 const app = new Vue({
     el: '#app',
-    components:{
+    components: {
         Search,
         Steps,
         ProfileCharacterizationForm,
@@ -30,10 +23,17 @@ const app = new Vue({
         MobileMenu,
         PageNav,
         TransparencyList,
-        Expandable,
+        Expandable
     },
-    directives:{
+    directives: {
         SelectFirstTab
+    },
+    data() {
+        return {
+            page: {
+                showReadspeakerButton: false
+            }
+        };
     },
     mounted() {
         var scroll = new SmoothScroll('.sidebar-menu a[href*="#"]', {
@@ -43,5 +43,17 @@ const app = new Vue({
             offset: 100
         });
         $('[data-toggle="tooltip"]').tooltip();
+    },
+    methods: {
+        toggleReadspeaker() {
+            this.page.showReadspeakerButton = !this.page.showReadspeakerButton;
+            if (this.page.showReadspeakerButton) {
+                var $playBtn = $(this.$refs.readspeakerButton).find('.rsplay').first();
+                $playBtn.trigger('click');
+            } else {
+                var $stopBtn = $(this.$refs.readspeakerButton).find('.rsbtn_stop').first();
+                $stopBtn.trigger('click');
+            }
+        }
     }
 });
