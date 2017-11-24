@@ -1,9 +1,5 @@
 @import "common";
 
-
-
-
-
 .message{
   font-size: 18px;
   border: 1px solid #d5d5d5;
@@ -631,6 +627,7 @@ main {
       border-right: 0;
       margin: 30px 0;
       font-size: 16px;
+      position: relative;
       .resize-font,.listen-page, .print-page  {
         display: inline-block;
         margin-right: 15px;
@@ -645,6 +642,11 @@ main {
       .material-icons {
         font-size: 16px;
         vertical-align: middle;
+      }
+      #readspeaker_button1 {
+          position: absolute;
+          top: 45px;
+          left: 70px;
       }
       .share-buttons {
         float: none;
