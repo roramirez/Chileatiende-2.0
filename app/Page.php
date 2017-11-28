@@ -200,4 +200,20 @@ class Page extends Model
 
         return $text;
     }
+
+    /*
+    *   Atributos que serán mostrados a traves de la API pública.
+    */
+    public function toPublicArray(){
+        return [
+            'id' => $this->id,
+            'servicio' => $this->institution->name,
+            'fecha' => $this->published_at->toDateTimeString(),
+            'titulo' => $this->title,
+            'objetivo' => $this->objective,
+            'beneficiarios' => $this->beneficiaries,
+            'costo' => $this->requirements,
+            'marco_legal' => $this->legal
+        ];
+    }
 }

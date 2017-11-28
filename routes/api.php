@@ -19,3 +19,8 @@ use Illuminate\Http\Request;
 
 Route::get('/suggest', 'API\SuggestController@getIndex');
 Route::resource('/categories', 'API\CategoryController');
+
+//API Antigua
+Route::resource('/fichas', 'API\PageController');
+Route::get('/servicios/{institutionId}/fichas', 'API\PageController@indexByInstitution');
+Route::resource('/servicios', 'API\InstitutionController');

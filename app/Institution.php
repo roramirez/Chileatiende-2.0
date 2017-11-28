@@ -25,4 +25,17 @@ class Institution extends Model
         return $this->belongsTo('App\Ministry');
     }
 
+    /*
+    *   Atributos que serán mostrados a traves de la API pública.
+    */
+    public function toPublicArray(){
+        return [
+            'id' => $this->id,
+            'nombre' => $this->name,
+            'sigla' => $this->shortname,
+            'url' => $this->url,
+            'mision' => $this->description
+        ];
+    }
+
 }
