@@ -75,16 +75,16 @@
                             <?php if(Auth::user()->can('view', \App\Page::class)):?>
                             <div class="sidebar-buttons">
                                 <div class="heading">Trámites y servicios</div>
-                                <a href="backend/fichas" class="sidebar-btn">
+                                <a href="backend/fichas" class="sidebar-btn <?= Request::path() == 'backend/fichas' ? 'active' : '' ?>">
                                     <i class="material-icons">visibility</i>
                                     Ver fichas
                                 </a>
-                                <a href="backend/fichas/create" class="sidebar-btn">
+                                <a href="backend/fichas/create" class="sidebar-btn <?= Request::path() == 'backend/fichas/create' ? 'active' : '' ?>">
                                     <i class="material-icons">note_add</i> 
                                     Agregar ficha
                                 </a>
                                 <?php if(Auth::user()->can('updateFeatured', \App\Page::class)):?>
-                                    <a href="backend/fichas/featured" class="sidebar-btn">
+                                    <a href="backend/fichas/featured" class="sidebar-btn <?= Request::path() == 'backend/fichas/featured' ? 'active' : '' ?>">
                                         <i class="material-icons">visibility</i> Ver destacadas
                                     </a>
                                 <?php endif ?>
@@ -92,22 +92,22 @@
                             <?php endif ?>
                             <div class="sidebar-buttons">
                                 <div class="heading">Instituciones</div>
-                                <a href="backend/instituciones/create" class="sidebar-btn">
+                                <a href="backend/instituciones/create" class="sidebar-btn <?= Request::path() == 'backend/instituciones/create' ? 'active' : '' ?>">
                                     <i class="material-icons">note_add</i> 
                                     Agregar institución
                                 </a>
-                                <a href="backend/instituciones" class="sidebar-btn">
+                                <a href="backend/instituciones" class="sidebar-btn <?= Request::path() == 'backend/instituciones' ? 'active' : '' ?>">
                                     <i class="material-icons">visibility</i> 
                                     Ver instituciones
                                 </a>
                             </div>
                             <div class="sidebar-buttons">
                                 <div class="heading">Ministerios</div>
-                                <a href="backend/ministerios/create" class="sidebar-btn">
+                                <a href="backend/ministerios/create" class="sidebar-btn <?= Request::path() == 'backend/ministerios/create' ? 'active' : '' ?>">
                                     <i class="material-icons">note_add</i>
                                     Agregar ministerio
                                 </a>
-                                <a href="backend/ministerios" class="sidebar-btn">
+                                <a href="backend/ministerios" class="sidebar-btn <?= Request::path() == 'backend/ministerios' ? 'active' : '' ?>">
                                     <i class="material-icons">visibility</i>
                                     Ver ministerios
                                 </a>
@@ -115,18 +115,18 @@
                             <div class="sidebar-buttons">
                                 <div class="heading">Administración</div>
                                 <?php if(Auth::user()->can('view', \App\User::class)):?>
-                                <a href="backend/usuarios" class="sidebar-btn">
+                                <a href="backend/usuarios" class="sidebar-btn <?= Request::path() == 'backend/usuarios' ? 'active' : '' ?>">
                                     <i class="material-icons">person</i>
                                     Usuarios
                                 </a>
                                 <?php endif ?>
                                 <?php if(Auth::user()->can('view', \App\Office::class)):?>
-                                <a href="backend/oficinas" class="sidebar-btn">
+                                <a href="backend/oficinas" class="sidebar-btn <?= Request::path() == 'backend/oficinas' ? 'active' : '' ?>">
                                     <i class="material-icons">business</i>
                                     Oficinas
                                 </a>
                                 <?php endif ?>
-                                <a href="backend/categorias" class="sidebar-btn">
+                                <a href="backend/categorias" class="sidebar-btn <?= Request::path() == 'backend/categorias' ? 'active' : '' ?>">
                                     <i class="material-icons">format_list_bulleted</i>
                                     Categorías
                                 </a>
