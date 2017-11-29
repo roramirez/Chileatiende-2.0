@@ -14,7 +14,7 @@ class CategoryController extends Controller{
         $data['categories'] = Category::orderBy('featured', 'desc')->orderBy('order')->get();
 
         return view('layouts/backend',[
-            'title' => 'Categorias',
+            'title' => 'Categorías',
             'content' => view('backend/categories/index', $data)
         ]);
     }
@@ -26,7 +26,7 @@ class CategoryController extends Controller{
         $data['edit'] = false;
 
         return view('layouts/backend',[
-            'title' => 'Crear Categoria',
+            'title' => 'Crear Categoría',
             'content' => view('backend/categories/edit', $data)
         ]);
     }
@@ -38,7 +38,7 @@ class CategoryController extends Controller{
         $data['edit'] = true;
 
         return view('layouts/backend',[
-            'title' => 'Editar Categoria',
+            'title' => 'Editar Categoría',
             'content' => view('backend/categories/edit', $data)
         ]);
     }

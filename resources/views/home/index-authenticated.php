@@ -34,39 +34,38 @@
                     </div>
                 <?php endforeach ?>
             </div>
-            <div class="featured-area">
-                <div class="title">
-                    <div class="heading-container">
-                        <h2>Destacados</h2>
-                    </div>
-                    <a href="fichas/destacadas" class="featured-button hidden-xs">
-                        Ver todos los destacados
-                    </a>
+        </div>
+    </div>
+    <div class="featured-area">
+        <div class="container">
+            <div class="title">
+                <div class="heading-container">
+                    <h2>Destacados</h2>
                 </div>
-                <div class="featured-list">
-                    <div class="featured-items">
-                    <?php foreach ($featured as $f): ?>
-                        <?php $f->publishedVersion() ?>
-                        <div class="featured-item">
-                            <a class="header"
-                               href="fichas/<?= $f->guid ?>" <?= $f->image ? 'style="background-image: url(' . $f->image . ')"' : '' ?>>
-                                <?php if (!$f->image): ?>
-                                    <div class="image <?= (strlen($f->title) > 50 ? 'long-h' : 'short-h'); ?>">
-                                        <?= $f->title ?>
-                                    </div>
-                                <?php endif ?>
-                            </a>
-                            <div class="caption">
-                                <h3><a href="fichas/<?= $f->guid ?>"><?= $f->title . ' →' ?></a></h3>
-                            </div>
+                <a href="fichas/destacadas" class="featured-button hidden-xs">
+                    Ver todos los destacados
+                </a>
+            </div>
+            <div class="featured-list">
+                <div class="featured-items">
+                <?php foreach ($featured as $f): ?>
+                    <?php $f->publishedVersion() ?>
+                    <div class="featured-item">
+                        <a class="header"
+                           href="fichas/<?= $f->guid ?>" <?= $f->image ? 'style="background-image: url(' . $f->image . ')"' : '' ?>>
+                            <?php if (!$f->image): ?>
+                                <div class="image <?= (strlen($f->title) > 50 ? 'long-h' : 'short-h'); ?>">
+                                    <?= $f->title ?>
+                                </div>
+                            <?php endif ?>
+                        </a>
+                        <div class="caption">
+                            <h3><a href="fichas/<?= $f->guid ?>"><?= $f->title . ' →' ?></a></h3>
                         </div>
-                    <?php endforeach ?>
                     </div>
+                <?php endforeach ?>
                 </div>
             </div>
         </div>
     </div>
-
-
-
 </div>

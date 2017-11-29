@@ -35,7 +35,7 @@ class PageController extends Controller{
         $data['pages'] = $pages->paginate(30);
 
         return view('layouts/backend',[
-            'title' => 'Inicio',
+            'title' => 'Ver fichas',
             'content' => view('backend/pages/index', $data)
         ]);
     }
@@ -48,7 +48,7 @@ class PageController extends Controller{
         $data['pages'] = Page::masters()->where('featured',1)->orderBy('order')->get();
 
         return view('layouts/backend',[
-            'title' => 'Inicio',
+            'title' => 'Fichas destacadas',
             'content' => view('backend/pages/featured', $data)
         ]);
     }
@@ -87,7 +87,7 @@ class PageController extends Controller{
         $data['page'] = $page;
 
         return view('layouts/backend',[
-            'title' => 'Inicio',
+            'title' => 'Ver ficha',
             'content' => view('backend/pages/show', $data)
         ]);
     }
@@ -103,7 +103,7 @@ class PageController extends Controller{
         $data['edit'] = false;
 
         return view('layouts/backend',[
-            'title' => 'Inicio',
+            'title' => 'Editar ficha',
             'content' => view('backend/pages/edit', $data)
         ]);
     }
@@ -122,7 +122,7 @@ class PageController extends Controller{
         $data['edit'] = true;
 
         return view('layouts/backend',[
-            'title' => 'Inicio',
+            'title' => 'Editar ficha',
             'content' => view('backend/pages/edit', $data)
         ]);
     }
@@ -281,7 +281,7 @@ class PageController extends Controller{
         $data['page'] = Page::find($pageId);
 
         return view('layouts/backend',[
-            'title' => 'Inicio',
+            'title' => 'Versiones de la ficha',
             'content' => view('backend/pages/versions', $data)
         ]);
     }
@@ -316,7 +316,7 @@ class PageController extends Controller{
         $data['page'] = Page::find($pageId);
 
         return view('layouts/backend',[
-            'title' => 'Inicio',
+            'title' => 'Historial',
             'content' => view('backend/pages/history', $data)
         ]);
     }
