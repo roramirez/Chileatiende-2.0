@@ -67,7 +67,7 @@
                     <div class="col-sm-3">
                         <div class="sidebar">
                             <div class="sidebar-buttons">
-                                <a  href="backend/perfil" class="sidebar-btn">
+                                <a  href="backend/perfil" class="sidebar-btn <?= Request::path() == 'backend/perfil' ? 'active' : '' ?>">
                                     <i class="material-icons">person</i> Mis datos
                                 </a>
                             </div>
@@ -141,6 +141,7 @@
                         <?php endif ?>
                         <div class="page-title">
                             <h2>
+                                <i class="material-icons"><?= isset($iconTitle) ? $iconTitle : 'visibility' ?></i>
                                 <?= $title ?>
                             </h2>
                             <hr>

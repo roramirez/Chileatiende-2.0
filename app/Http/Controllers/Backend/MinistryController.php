@@ -27,6 +27,7 @@ class MinistryController extends Controller{
 
         return view('layouts/backend',[
             'title' => 'Agregar ministerio',
+            'iconTitle' => 'note_add',
             'content' => view('backend/ministries/edit', $data)
         ]);
     }
@@ -39,6 +40,7 @@ class MinistryController extends Controller{
 
         return view('layouts/backend',[
             'title' => 'Editar Ministerio',
+            'iconTitle' => 'edit',
             'content' => view('backend/ministries/edit', $data)
         ]);
     }

@@ -31,6 +31,7 @@ class OfficeController extends Controller{
 
         return view('layouts/backend',[
             'title' => 'Crear Oficina',
+            'iconTitle' => 'note_add',
             'content' => view('backend/offices/edit', $data)
         ]);
     }
@@ -46,6 +47,7 @@ class OfficeController extends Controller{
 
         return view('layouts/backend',[
             'title' => 'Editar Oficina',
+            'iconTitle' => 'edit',
             'content' => view('backend/offices/edit', $data)
         ]);
     }

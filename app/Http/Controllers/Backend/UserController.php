@@ -16,6 +16,7 @@ class UserController extends Controller{
 
         return view('layouts/backend',[
             'title' => 'Usuarios',
+            'iconTitle' => 'person',
             'content' => view('backend/users/index', $data)
         ]);
     }
@@ -31,6 +32,7 @@ class UserController extends Controller{
 
         return view('layouts/backend',[
             'title' => 'Crear Categoria',
+            'iconTitle' => 'note_add',
             'content' => view('backend/users/edit', $data)
         ]);
     }
@@ -46,6 +48,7 @@ class UserController extends Controller{
 
         return view('layouts/backend',[
             'title' => 'Editar Categoria',
+            'iconTitle' => 'edit',
             'content' => view('backend/users/edit', $data)
         ]);
     }

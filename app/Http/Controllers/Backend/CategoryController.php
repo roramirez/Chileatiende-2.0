@@ -15,6 +15,7 @@ class CategoryController extends Controller{
 
         return view('layouts/backend',[
             'title' => 'Categorías',
+            'iconTitle' => 'visibility',
             'content' => view('backend/categories/index', $data)
         ]);
     }
@@ -27,6 +28,7 @@ class CategoryController extends Controller{
 
         return view('layouts/backend',[
             'title' => 'Crear Categoría',
+            'iconTitle' => 'note_add',
             'content' => view('backend/categories/edit', $data)
         ]);
     }
@@ -39,6 +41,7 @@ class CategoryController extends Controller{
 
         return view('layouts/backend',[
             'title' => 'Editar Categoría',
+            'iconTitle' => 'edit',
             'content' => view('backend/categories/edit', $data)
         ]);
     }

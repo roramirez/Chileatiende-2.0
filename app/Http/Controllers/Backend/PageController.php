@@ -104,6 +104,7 @@ class PageController extends Controller{
 
         return view('layouts/backend',[
             'title' => 'Editar ficha',
+            'iconTitle' => 'edit',
             'content' => view('backend/pages/edit', $data)
         ]);
     }
