@@ -11,15 +11,15 @@
     <meta property="og:title" content="<?=$title?>" />
     <meta name="twitter:title" content="<?=$title?>">
     <?php if(isset($description)):?>
-        <meta name="description" value="<?=$description?>" />
+        <meta name="description" content="<?=$description?>" />
         <meta property="og:description" content="<?=$description?>" />
         <meta name="twitter:description" content="<?=$description?>">
     <?php endif ?>
     <?php if(isset($keywords)):?>
-        <meta name="keywords" value="<?=$keywords?>" />
+        <meta name="keywords" content="<?=$keywords?>" />
     <?php endif ?>
     <?php if(isset($author)):?>
-        <meta name="author" value="<?=$author?>" />
+        <meta name="author" content="<?=$author?>" />
         <meta name="twitter:creator" content="<?=$author?>">
     <?php endif ?>
 
