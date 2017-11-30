@@ -103,16 +103,20 @@
 
                             <div class="tab-content">
                                 <div role="tabpanel" class="tab-pane" id="online">
+                                    <div class="visible-print-block"><strong>- Instrucciones Trámite en Línea</strong></div>
                                     <?=App\Twig::render($page->online_guide)?>
                                     <a class="btn btn-online hidden-print" href="#" data-toggle="modal" data-target="#redirect-modal">Ir al trámite en línea</a>
                                 </div>
                                 <div role="tabpanel" class="tab-pane" id="office">
+                                    <div class="visible-print-block"><strong>- Instrucciones Trámite en Sucursal</strong></div>
                                     <?=App\Twig::render($page->office_guide)?>
                                 </div>
                                 <div role="tabpanel" class="tab-pane" id="phone">
+                                    <div class="visible-print-block"><strong>- Instrucciones contacto telefónico</strong></div>
                                     <?=App\Twig::render($page->phone_guide)?>
                                 </div>
                                 <div role="tabpanel" class="tab-pane" id="mail">
+                                    <div class="visible-print-block"><strong>- Instrucciones trámite por Email</strong></div>
                                     <?=App\Twig::render($page->mail_guide)?>
                                 </div>
                             </div>
