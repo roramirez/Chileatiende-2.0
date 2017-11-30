@@ -15,7 +15,7 @@
                     <h3><?= $page->title ?></h3>
                     <div class="author"><a href="instituciones/<?=$page->institution->id?>">Información proporcionada por <?= $page->institution->name ?></a></div>
                     <?php if($page->published_at):?><div class="updated-at">Actualizado al <?=$page->published_at->formatLocalized('%d de %B, %Y')?></div><?php endif ?>
-                    <div class="accessibility-bar rs_skip">
+                    <div class="accessibility-bar rs_skip hidden-print">
                         <div id="readspeaker_button1" ref="readspeakerButton" class="rs_skip rsbtn rs_preserve" v-show="page.showReadspeakerButton">
                             <a rel="nofollow" class="rsbtn_play" accesskey="L" title="Escucha esta p&aacute;gina utilizando ReadSpeaker" href="//app-na.readspeaker.com/cgi-bin/rsent?customerid=6404&lang=es_us&readid=page-content&url=<?= rawurlencode(url()->current()) ?>">
                                 <span class="rsbtn_left rsimg rspart"><span class="rsbtn_text"><span>Escuchar</span></span></span>
@@ -23,10 +23,10 @@
                             </a>
                         </div>
                         <div class="resize-font">
-                            <span class="larger" onclick="resizeText(1)">
+                            <span class="larger">
                                 A+
                             </span>
-                            <span class="smaller" onclick="resizeText(-1)">
+                            <span class="smaller">
                                 A-
                             </span>
                         </div>
@@ -34,10 +34,10 @@
                             <i class="material-icons">hearing</i>
                             escuchar
                         </a>
-                        <a href="#" class="print-page">
+                        <span class="print-page" onClick="window.print()">
                             <i class="material-icons">print</i>
                             imprimir
-                        </a>
+                        </span>
                         <div class="share-buttons">
                             <span>Compartir</span>
                             <a href="" class="share-icon" title="Compartir en Facebook">
@@ -104,7 +104,7 @@
                             <div class="tab-content">
                                 <div role="tabpanel" class="tab-pane" id="online">
                                     <?=App\Twig::render($page->online_guide)?>
-                                    <a class="btn btn-online" href="#" data-toggle="modal" data-target="#redirect-modal">Ir al trámite en línea</a>
+                                    <a class="btn btn-online hidden-print" href="#" data-toggle="modal" data-target="#redirect-modal">Ir al trámite en línea</a>
                                 </div>
                                 <div role="tabpanel" class="tab-pane" id="office">
                                     <?=App\Twig::render($page->office_guide)?>
@@ -123,7 +123,7 @@
             </div>
         </div>
     </div>
-    <div id="similar-pages" class="similar-pages">
+    <div id="similar-pages" class="similar-pages hidden-print">
         <div class="container">
             <div class="title">
                 <h3><i class="material-icons">visibility</i> Los usuarios también visitaron</h3>

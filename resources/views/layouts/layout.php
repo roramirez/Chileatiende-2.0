@@ -4,7 +4,7 @@
         <?= view('chunks/navbar') ?>
 
         <?php if(@!$hideSearch): ?>
-        <div class="search-area">
+        <div class="search-area hidden-print">
             <div class="container">
                 <label>¿Qué trámite o servicio buscas?</label>
                 <form action="buscar">
