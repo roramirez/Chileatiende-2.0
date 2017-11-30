@@ -12,7 +12,7 @@
             <div class="col-md-8 col-md-pull-4" id="page-content">
                 <div class="rs_preserve">
                     <?php if($page->online):?><div class="online">Trámite en Línea</div><?php endif ?>
-                    <h3><?= $page->title ?></h3>
+                    <h2><?= $page->title ?></h2>
                     <div class="author"><a href="instituciones/<?=$page->institution->id?>">Información proporcionada por <?= $page->institution->name ?></a></div>
                     <?php if($page->published_at):?><div class="updated-at">Actualizado al <?=$page->published_at->formatLocalized('%d de %B, %Y')?></div><?php endif ?>
                     <div class="accessibility-bar rs_skip hidden-print">
