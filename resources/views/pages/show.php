@@ -23,10 +23,10 @@
                             </a>
                         </div>
                         <div class="resize-font">
-                            <span class="larger">
+                            <span class="larger" @click.prevent="resizePageFontSize(true)">
                                 A+
                             </span>
-                            <span class="smaller">
+                            <span class="smaller" @click.prevent="resizePageFontSize(false)">
                                 A-
                             </span>
                         </div>

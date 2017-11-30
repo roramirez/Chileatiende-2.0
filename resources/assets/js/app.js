@@ -9,6 +9,7 @@ import MobileMenu from './components/MobileMenu.vue';
 import PageNav from './components/PageNav.vue';
 import TransparencyList from './components/TransparencyList.vue';
 import Expandable from './components/Expandable.vue';
+import ResizableElementsMixin from './mixins/ResizableElements.js';
 
 window.gumshoe = require('gumshoe');
 window.SmoothScroll = require('smooth-scroll');
@@ -28,6 +29,9 @@ const app = new Vue({
     directives: {
         SelectFirstTab
     },
+    mixins: [
+        ResizableElementsMixin
+    ],
     data() {
         return {
             page: {
@@ -48,10 +52,14 @@ const app = new Vue({
         toggleReadspeaker() {
             this.page.showReadspeakerButton = !this.page.showReadspeakerButton;
             if (this.page.showReadspeakerButton) {
-                var $playBtn = $(this.$refs.readspeakerButton).find('.rsplay').first();
+                var $playBtn = $(this.$refs.readspeakerButton)
+                    .find('.rsplay')
+                    .first();
                 $playBtn.trigger('click');
             } else {
-                var $stopBtn = $(this.$refs.readspeakerButton).find('.rsbtn_stop').first();
+                var $stopBtn = $(this.$refs.readspeakerButton)
+                    .find('.rsbtn_stop')
+                    .first();
                 $stopBtn.trigger('click');
             }
         }
