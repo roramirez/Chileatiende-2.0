@@ -59,7 +59,10 @@ class PagePolicy
      */
     public function create(User $user)
     {
-        //
+        if($user->role != 'editor')
+            return false;
+
+        return true;
     }
 
     /**

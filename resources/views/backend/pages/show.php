@@ -15,11 +15,13 @@
 
     <br />
 
+    <?php if (Auth::user()->can('updateMaster',$page)):?>
     <?php if(!$page->lastVersion()->published):?>
         <div class="alert alert-warning">
             <p><strong>Ficha no se encuentra publicada en su última versión:</strong></p>
             <p><a href="backend/fichas/<?=$page->id?>/versions/<?=$page->lastVersion()->id?>/publish">¿Desea publicar esta ficha en su última versión?</a></p>
         </div>
+    <?php endif ?>
     <?php endif ?>
 
     <?php if($page->status == 'rechazado'):?>

@@ -20,7 +20,7 @@ class PageController extends Controller{
         $institutionId = $request->input('institution_id');
         $ministryId = $request->input('ministry_id');
 
-        if(count($filters) > 0){
+        if($query || $institutionId || $ministryId){
             $pages = Page::search($query)->where('master',true);
             if($ministryId)
                 $pages->where('ministry_id',[$ministryId]);
