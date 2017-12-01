@@ -82,7 +82,7 @@ class UserController extends Controller{
             'first_name' => 'required',
             'email' => 'required|email',
             'role' => 'required',
-            'institution_id' => 'exists:institutions,id',
+            'institution_id' => 'required|exists:institutions,id',
             'ministerial' => 'boolean',
             'interministerial' => 'boolean',
             'password' => 'confirmed'
