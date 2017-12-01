@@ -26,7 +26,8 @@ class InstitutionController extends Controller{
         $data['edit'] = false;
 
         return view('layouts/backend',[
-            'title' => 'Crear Institucion',
+            'title' => 'Agregar Institucion',
+            'iconTitle' => 'note_add',
             'content' => view('backend/institutions/edit', $data)
         ]);
     }
@@ -39,6 +40,7 @@ class InstitutionController extends Controller{
 
         return view('layouts/backend',[
             'title' => 'Editar Institucion',
+            'iconTitle' => 'edit',
             'content' => view('backend/institutions/edit', $data)
         ]);
     }

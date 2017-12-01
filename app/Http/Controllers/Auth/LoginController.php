@@ -47,7 +47,7 @@ class LoginController extends Controller
      */
     public function showLoginForm()
     {
-        return view('layouts/layout',[
+        return view('layouts/login',[
             'title' => 'Login',
             'content' => view('auth/login')
         ]);

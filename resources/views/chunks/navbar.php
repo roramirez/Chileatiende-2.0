@@ -98,7 +98,7 @@
                             </li>
                         </ul>
                     </li>
-                    <li><a href="#"><i class="material-icons">mail</i></a></li>
+                    <li><a href="#"><i class="material-icons">notifications</i></a></li>
                 <?php else: ?>
                     <li><a href="mi-chileatiende" class="mcha-btn">
                             <img src="images/clave-logo.svg" alt="Logo Claveúnica">

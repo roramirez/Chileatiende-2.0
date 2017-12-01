@@ -1,5 +1,125 @@
 @import "common";
 
-main{
-  padding: 20px 0;
+main {
+    padding: 20px 0;
+}
+
+header.backend-header {
+    background-color: $lightbg;
+    color: #7F8080;
+    .navbar-default {
+        @media (min-width: 768px) {
+            height: 70px;
+        }
+        li {
+            color: #7F8080;
+            a {
+                color: #7F8080;
+                margin-top: 25px;
+                margin-bottom: 25px;
+                &:hover {
+                    color: #7F8080;
+                    text-decoration: underline;
+                }
+            }
+            span {
+                margin-top: 25px;
+                margin-bottom: 25px;
+                display: inline-block;
+                padding: 0 20px;
+            }
+            &:first-child a:not(.help-card) {
+                border-right: 1px solid $bordercolor;
+            }
+        }
+        .navbar-brand {
+            width: 110px;
+            img {
+                width: 100%;
+            }
+        }
+    }
+    li a.view-site-button {
+        background: $red;
+        border: 1px solid #D62D2D;
+        font-size: 16px;
+        color: #fff;
+        display: inline-block;
+        padding: 7px 30px;
+        border-radius: 4px;
+        margin: 15px 0;
+        transition: .2s ease;
+        &:hover {
+            background-color: #c71111;
+            color: #fff;
+        }
+    }
+    .navbar-brand {
+        margin-left: 0 !important;
+        margin-top: 15px;
+    }
+}
+
+.sidebar {
+    margin-top: 30px;
+    .sidebar-buttons {
+        margin-bottom: 30px;
+        .heading {
+            font-size: 18px;
+            color: #272727;
+            margin-bottom: 5px;
+        }
+        .sidebar-btn {
+            padding: 7px 15px;
+            background: #F7F7F7;
+            border: 1px solid #F7F7F7;
+            border-radius: 2px;
+            display: block;
+            color: #757575;
+            margin-bottom: 7px;
+            .material-icons {
+                font-size: 20px;
+                color: $red;
+                line-height: 1;
+                vertical-align: middle;
+            }
+            &:hover {
+                text-decoration: none;
+                border: 1px solid $red;
+            }
+            &.active {
+                background-color: $red;
+                color: #fff;
+                .material-icons {
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+
+#backend {
+    .date {
+        font-size: 14px;
+        color: #7F8080;
+        .material-icons {
+            font-size: 13px;
+            line-height: 1;
+            vertical-align: middle;
+            color: $red;
+        }
+    }
+    .page-title {
+        h2 {
+            font-family: $roboto;
+            font-size: 20px;
+            color: $black;
+            font-weight: normal;
+        }
+        .material-icons {
+            color: $red;
+            font-size: 20px;
+            vertical-align: middle;
+        }
+    }
 }

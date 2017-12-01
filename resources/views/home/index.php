@@ -12,27 +12,21 @@
 
             <div class="featured-list">
                 <div class="featured-items">
-                    <div class="row">
-                        <?php foreach ($featured as $f): ?>
-                            <?php $f->publishedVersion() ?>
-                            <div class="col-sm-3">
-                                <div class="featured-item">
-                                    <a class="header" href="fichas/<?= $f->guid ?>" <?=$f->image ? 'style="background-image: url('.$f->image.')"':''?>>
-                                        <?php if (!$f->image): ?>
-                                            <div class="image <?= (strlen($f->title) > 50 ? 'long-h' : 'short-h' );  ?>">
-                                                <?= $f->title ?>
-                                            </div>
-                                        <?php endif ?>
-                                    </a>
-                                    <div class="caption">
-                                        <h3><a href="fichas/<?= $f->guid ?>"><?= $f->title .' →' ?></a></h3>
-                                    </div>
+                    <?php foreach ($featured as $f): ?>
+                        <?php $f->publishedVersion() ?>
+                            <div class="featured-item">
+                                <a class="header" href="fichas/<?= $f->guid ?>" <?=$f->image ? 'style="background-image: url('.$f->image.')"':''?>>
+                                    <?php if (!$f->image): ?>
+                                        <div class="image <?= (strlen($f->title) > 50 ? 'long-h' : 'short-h' );  ?>">
+                                            <?= $f->title ?>
+                                        </div>
+                                    <?php endif ?>
+                                </a>
+                                <div class="caption">
+                                    <h3><a href="fichas/<?= $f->guid ?>"><?= $f->title .' →' ?></a></h3>
                                 </div>
                             </div>
-
-                        <?php endforeach ?>
-                    </div>
-
+                    <?php endforeach ?>
                 </div>
             </div>
         </div>

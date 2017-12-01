@@ -23,6 +23,7 @@
     olark.identify('7728-462-10-9835');</script>
 <!-- end olark code -->
 <!-- Hotjar Tracking Code for http://chileatiende.asimov.cl/ --> <script> (function(h,o,t,j,a,r){ h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)}; h._hjSettings={hjid:622017,hjsv:6}; a=o.getElementsByTagName('head')[0]; r=o.createElement('script');r.async=1; r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv; a.appendChild(r); })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv='); </script>
+<script src="//f1-na.readspeaker.com/script/6404/ReadSpeaker.js?pids=embhl" type="text/javascript"></script>
 <script>
     window.baseUrl = "<?=url('')?>";
 </script>

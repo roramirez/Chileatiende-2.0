@@ -14,7 +14,7 @@ class MinistryController extends Controller{
         $data['ministries'] = Ministry::all();
 
         return view('layouts/backend',[
-            'title' => 'Instituciones',
+            'title' => 'Ministerios',
             'content' => view('backend/ministries/index', $data)
         ]);
     }
@@ -26,7 +26,8 @@ class MinistryController extends Controller{
         $data['edit'] = false;
 
         return view('layouts/backend',[
-            'title' => 'Crear Institucion',
+            'title' => 'Agregar ministerio',
+            'iconTitle' => 'note_add',
             'content' => view('backend/ministries/edit', $data)
         ]);
     }
@@ -38,7 +39,8 @@ class MinistryController extends Controller{
         $data['edit'] = true;
 
         return view('layouts/backend',[
-            'title' => 'Editar Institucion',
+            'title' => 'Editar Ministerio',
+            'iconTitle' => 'edit',
             'content' => view('backend/ministries/edit', $data)
         ]);
     }
