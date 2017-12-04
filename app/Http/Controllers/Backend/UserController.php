@@ -31,7 +31,7 @@ class UserController extends Controller{
         $data['edit'] = false;
 
         return view('layouts/backend',[
-            'title' => 'Crear Categoria',
+            'title' => 'Crear Usuario',
             'iconTitle' => 'note_add',
             'content' => view('backend/users/edit', $data)
         ]);
@@ -47,7 +47,7 @@ class UserController extends Controller{
         $data['edit'] = true;
 
         return view('layouts/backend',[
-            'title' => 'Editar Categoria',
+            'title' => 'Editar Categoría',
             'iconTitle' => 'edit',
             'content' => view('backend/users/edit', $data)
         ]);

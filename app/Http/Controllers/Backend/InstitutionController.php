@@ -26,7 +26,7 @@ class InstitutionController extends Controller{
         $data['edit'] = false;
 
         return view('layouts/backend',[
-            'title' => 'Agregar Institucion',
+            'title' => 'Agregar Institución',
             'iconTitle' => 'note_add',
             'content' => view('backend/institutions/edit', $data)
         ]);
@@ -39,7 +39,7 @@ class InstitutionController extends Controller{
         $data['edit'] = true;
 
         return view('layouts/backend',[
-            'title' => 'Editar Institucion',
+            'title' => 'Editar Institución',
             'iconTitle' => 'edit',
             'content' => view('backend/institutions/edit', $data)
         ]);
@@ -48,7 +48,7 @@ class InstitutionController extends Controller{
     public function store(Request $request){
         $institution = $this->save($request, new Institution());
 
-        $request->session()->flash('status', 'Institucion creada con éxito');
+        $request->session()->flash('status', 'Institución creada con éxito');
 
         return response()->json(['redirect' => 'backend/instituciones']);
     }
@@ -85,7 +85,7 @@ class InstitutionController extends Controller{
         $institution = Institution::find($id);
         $institution->delete();
 
-        $request->session()->flash('status', 'Institucion eliminada con éxito');
+        $request->session()->flash('status', 'Institución eliminada con éxito');
 
         return redirect('backend/instituciones');
     }
