@@ -81,7 +81,7 @@ class PageController extends Controller{
         $page = Page::find($pageId);
 
         if(!$request->user()->can('view', $page)){
-            abort(403);
+            return \redirect('backend/fichas');
         }
 
         $data['page'] = $page;
