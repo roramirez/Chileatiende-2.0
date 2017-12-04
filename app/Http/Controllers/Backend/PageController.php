@@ -275,7 +275,7 @@ class PageController extends Controller{
 
         $request->session()->flash('status', 'Ficha actualizada con éxito.');
 
-        return response()->json(['redirect' => 'backend/fichas']);
+        return response()->json(['redirect' => 'backend/fichas/'.$page->id]);
     }
 
     public function versions($pageId){
