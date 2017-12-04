@@ -47,7 +47,7 @@ class UserController extends Controller{
         $data['edit'] = true;
 
         return view('layouts/backend',[
-            'title' => 'Editar Categoría',
+            'title' => 'Editar Usuario',
             'iconTitle' => 'edit',
             'content' => view('backend/users/edit', $data)
         ]);
