@@ -189,8 +189,9 @@ class PageController extends Controller{
         $page->mail_guide = $request->input('mail_guide');
         $page->legal = $request->input('legal');
         $page->keywords = $request->input('keywords');
-        $page->relatedPages()->sync($request->input('related_pages'));
         $page->save();
+        //Ahora guardamos las relacionadas
+        $page->relatedPages()->sync($request->input('related_pages'));
 
         //Obtenemos la última versión (Para luego comparar los cambios)
         $lastVersion = $page->lastVersion();
@@ -202,7 +203,7 @@ class PageController extends Controller{
         $version->master_id = $page->id;
         $version->published = false;
         $version->save();
-        //Ahora guardamos las relaciones
+        //Ahora guardamos las relacionadas
         $version->relatedPages()->sync($request->input('related_pages'));
 
         //Guardamos el log de cambios
