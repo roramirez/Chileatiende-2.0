@@ -19,5 +19,12 @@ mix.js('resources/assets/js/app.js', 'public/js')
     .sourceMaps()
     .browserSync({
         open: false,
-        proxy: 'localhost:8000'
+        proxy: {
+            target: 'localhost:8000',
+            reqHeaders: function() {
+                return {
+                    host: 'localhost:3000'
+                };
+            }
+        }
     });

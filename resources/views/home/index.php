@@ -49,8 +49,7 @@
                             </a>
                             <div class="category-body collapse" id="categoryCollapse-<?= $c->id ?>">
                                 <ul>
-                                    <?php foreach($c->pages()->masters()->published()->popular()->get() as $p):?>
-                                        <?php $p = $p->publishedVersion() ?>
+                                    <?php foreach(App\Page::popularPublishedVersions($c->id) as $p):?>
                                         <li>
                                             <a href="fichas/<?=$p->guid?>" title="<?= $p->title ?>"><?=str_limit($p->title, 80)?></a>
                                             <?php if($p->online):?><div>Trámite en Línea</div><?php endif ?>

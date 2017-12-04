@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\DB;
 use Laravel\Scout\Searchable;
 use Illuminate\Database\Eloquent\Model;
 use TwigBridge\Facade\Twig;
+use App\Category;
 
 class Page extends Model
 {
@@ -133,7 +134,7 @@ class Page extends Model
 
     public function scopePopular($query){
 
-        $cacheKey = 'pageIdsOrderedByPopularity';
+        $cacheKey = 'Page::scopePopular::pageIdsOrderedByPopularity';
 
         if(!Cache::has($cacheKey)){
             $popular = Page::masters()
@@ -174,6 +175,25 @@ class Page extends Model
 
     public function publishedVersion(){
         return $this->versions()->published()->first();
+    }
+
+    public static function popularPublishedVersions($categoryId){
+        $cacheKey = 'Page::popularPublishedVersions?categoryId='.$categoryId;
+
+        if(!Cache::has($cacheKey)){
+            $popular = self::whereHas('categories',function($q) use ($categoryId){
+                return $q->where('id',$categoryId);
+            })->masters()->published()->popular()->get();
+            
+            $publishedVersions = collect();
+            foreach($popular as $p){
+                $publishedVersions->push($p->publishedVersion());
+            }
+
+            Cache::put($cacheKey, $publishedVersions, 24 * 60);
+        }
+
+        return Cache::get($cacheKey);
     }
 
     public function lastVersion(){
