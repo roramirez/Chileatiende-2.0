@@ -3,8 +3,8 @@
 		<div class="row">
 			<div class="col-md-6">
 				<div class="not-found-container">
-					<h1>Sección en Desarrollo</h1>
-					<h2>Portal Chileatiende en etapa Beta</h2>
+					<h1>404</h1>
+					<!-- <h2>Portal Chileatiende en etapa Beta</h2> -->
 					<hr>
 					<p>Lo sentimos, la página que buscas aún no existe.</p>
 					<p>Para resolver este error puedes realizar alguna de las siguientes acciones</p>
