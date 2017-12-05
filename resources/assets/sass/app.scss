@@ -516,8 +516,14 @@ main {
                   }
                 }
                 .media-body {
-                  width: 250px;
-                  text-align: center;
+                  width: 100%;
+                  display: block;
+                  text-align: left;
+                  @media (min-width: 768px) {
+                    width: 250px;
+                    display: table-cell;
+                    text-align: right;
+                  }
                 }
             }
         }
