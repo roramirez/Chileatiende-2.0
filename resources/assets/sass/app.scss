@@ -502,6 +502,14 @@ main {
                     background: #F7F7F7;
                     padding: 10px;
                 }
+                .action-btn {
+                  padding: 12px 24px;
+                  background-color: #fff;
+                  border: 1px solid $red;
+                  border-radius: 2px;
+                  color: $red;
+                  display: inline-block;
+                }
             }
         }
         .pagination {

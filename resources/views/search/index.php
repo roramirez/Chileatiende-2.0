@@ -57,7 +57,7 @@
                                 </div>
                                 <div class="media-body media-middle">
                                     <?php if($r->online):?>
-                                        <div class="btn">ir al tramite</div>
+                                        <div class="action-btn">Ir al trámite en línea</div>
                                     <?php endif ?>
                                 </div>
                             </div>
