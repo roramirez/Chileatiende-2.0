@@ -133,9 +133,9 @@
             }
         }
         .el-input-group__append {
-            background: $red;
-            border: none;
-            overflow: hidden;
+            background: #fff;
+            //border: none;
+            //overflow: hidden;
             .el-button {
                 background: transparent;
                 color: white;
@@ -153,7 +153,7 @@
                     padding-right: 32px;
                 }
                 &:hover {
-                    background: darken($red, 10%);
+                    //background: darken($red, 10%);
                 }
             }
         }
@@ -194,12 +194,13 @@
                 text-decoration: underline;
             }
             .btn-primary {
-                background: $red;
-                border: 1px solid darken($red, 10%);
+                background: $uglyred;
+                //border: 1px solid darken($red, 10%);
                 border-radius: 2px;
                 font-weight: 500;
                 font-size: 16px;
-                color: #FFFFFF;
+                color: #000;
+                text-decoration: underline;
             }
         }
     }
@@ -520,7 +521,7 @@ main {
                   display: block;
                   text-align: left;
                   @media (min-width: 768px) {
-                    width: 250px;
+                    width: 200px;
                     display: table-cell;
                     text-align: right;
                   }
@@ -891,11 +892,11 @@ main {
             width: 100%;
             padding: 10px 0;
             margin-bottom: 20px;
-            background: $red;
-            border: 1px solid darken($red, 10%);
+            background: $uglyred;
+            //border: 1px solid darken($red, 10%);
             font-weight: 500;
-            color: #FFFFFF;
-            text-decoration: none;
+            color: #000;
+            text-decoration: underline;
             font-size: 15px;
             letter-spacing: 0.2px;
             text-transform: uppercase;
