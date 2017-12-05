@@ -87,11 +87,11 @@
                 </div>
                 <div class="modal-body">
                     Para realizar tu trámite te redirigiremos al sitio web institucional de <br />
-                    <strong><? /* =$page->institution->name */ ?></strong>
+                    <strong><?php /* =$page->institution->name */ ?></strong>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-link" data-dismiss="modal">Prefiero seguir en ChileAtiende</button>
-                    <a class="btn btn-primary" href="<? /*=$page->online_url*/ ?>">Entendido, Ir al trámite</a>
+                    <a class="btn btn-primary" href="<?php /*=$page->online_url*/ ?>">Entendido, Ir al trámite</a>
                 </div>
             </div>
         </div>
