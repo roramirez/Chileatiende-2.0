@@ -55,11 +55,11 @@
                                 <div class="media-left">
                                     <p><?=str_limit(strip_tags(\App\Twig::strip(isset($r->highlight['objective']) ? $r->highlight['objective'][0] : $r->objective),'<em>'),500)?></p>
                                 </div>
+                                <?php if($r->online):?>
                                 <div class="media-body media-middle">
-                                    <?php if($r->online):?>
-                                        <div class="action-btn">Ir al trámite en línea</div>
-                                    <?php endif ?>
+                                    <a href="#" data-toggle="modal" data-target="#redirect-modal-<?= $r->id ?>" class="action-btn">Ir al trámite en línea</a>
                                 </div>
+                                <?php endif ?>
                             </div>
                         </li>
                         <hr>
@@ -76,4 +76,24 @@
             </div>
         </div>
     </div>
+    <?php if($results->count()): foreach($results as $r):?>
+    <div class="modal modal-redirect fade" id="redirect-modal-<?= $r->$id ?>" class="" tabindex="-1" role="dialog" aria-labelledby="redirect-modal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel"><i class="material-icons">error</i> Aviso de Redirección</h4>
+                </div>
+                <div class="modal-body">
+                    Para realizar tu trámite te redirigiremos al sitio web institucional de <br />
+                    <strong><? /* =$page->institution->name */ ?></strong>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-link" data-dismiss="modal">Prefiero seguir en ChileAtiende</button>
+                    <a class="btn btn-primary" href="<? /*=$page->online_url*/ ?>">Entendido, Ir al trámite</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php endif ?>
 </div>

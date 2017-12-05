@@ -509,6 +509,15 @@ main {
                   border-radius: 2px;
                   color: $red;
                   display: inline-block;
+                  transition: .2s ease;
+                  &:hover {
+                    background-color: $red;
+                    color: #fff;
+                  }
+                }
+                .media-body {
+                  width: 250px;
+                  text-align: center;
                 }
             }
         }
