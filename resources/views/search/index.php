@@ -53,6 +53,7 @@
                             <?php if($r->online):?><div class="online">Trámite en Línea</div><?php endif ?>
                             <p><?=str_limit(strip_tags(\App\Twig::strip(isset($r->highlight['objective']) ? $r->highlight['objective'][0] : $r->objective),'<em>'),500)?></p>
                         </li>
+                        <hr>
                         <?php endforeach ?>
                     </ol>
 

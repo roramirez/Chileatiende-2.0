@@ -42,6 +42,8 @@
                             <a  href="/desarrolladores" class="sidebar-btn <?= Request::path() == 'desarrolladores' ? 'active' : '' ?>">
                                 API
                             </a>
+                        </div>
+                        <div class="sidebar-buttons">
                             <a  href="/desarrolladores/fichas" class="sidebar-btn <?= Request::path() == 'desarrolladores/fichas' ? 'active' : '' ?>">
                                 <i class="material-icons">insert_drive_file</i> Fichas
                             </a>
@@ -56,6 +58,8 @@
                                     Listar por Servicio
                                 </a>
                             </div>
+                        </div>
+                        <div class="sidebar-buttons">
                             <a  href="/desarrolladores/servicios" class="sidebar-btn <?= Request::path() == 'desarrolladores/servicios' ? 'active' : '' ?>">
                                 <i class="material-icons">insert_drive_file</i> Servicios
                             </a>
@@ -68,10 +72,19 @@
                                 </a>
                             </div>
                         </div>
+                        <div class="sidebar-buttons">
+                            <a href="" class="sidebar-btn">
+                            <i class="material-icons">vpn_key</i>
+                            Obtener API Key
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-9">
                     <?= $content ?>
+                    <div class="text-right">
+                        Última modificación: 05/12/2017
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,4 +1,4 @@
-<h1>API Portal de Servicios del Estado Beta 0.1</h1>
+<h1>API Portal de Servicios del Estado 1.0</h1>
 <hr>
 <p>La API del Portal de Servicios del Estado es la interfaz para programadores que permite integrar los contenidos de este portal en tu sitio web.</p>
 <h2>Autorización</h2>
