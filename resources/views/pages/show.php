@@ -105,7 +105,7 @@
                                 <div role="tabpanel" class="tab-pane" id="online">
                                     <div class="visible-print-block"><strong>- Instrucciones Trámite en Línea</strong></div>
                                     <?=App\Twig::render($page->online_guide)?>
-                                    <a class="btn btn-online hidden-print" href="#" data-toggle="modal" data-target="#redirect-modal">Ir al trámite en línea</a>
+                                    <a class="btn btn-online hidden-print" href="<?= $page->online_url ?>" data-toggle="modal" data-target="#redirect-modal">Ir al trámite en línea</a>
                                 </div>
                                 <div role="tabpanel" class="tab-pane" id="office">
                                     <div class="visible-print-block"><strong>- Instrucciones Trámite en Sucursal</strong></div>
