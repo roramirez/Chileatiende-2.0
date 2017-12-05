@@ -78,7 +78,7 @@
     </div>
     <?php if($results->count()):?>
     <?php foreach($results as $r):?>
-    <div class="modal modal-redirect fade" id="redirect-modal-<?= $r->$guid ?>" class="" tabindex="-1" role="dialog" aria-labelledby="redirect-modal">
+    <div class="modal modal-redirect fade" id="redirect-modal-<?= $r->guid ?>" class="" tabindex="-1" role="dialog" aria-labelledby="redirect-modal">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
