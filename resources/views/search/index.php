@@ -96,5 +96,6 @@
             </div>
         </div>
     </div>
+    <?php endforeach ?>
     <?php endif ?>
 </div>
