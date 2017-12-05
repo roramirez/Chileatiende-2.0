@@ -51,7 +51,16 @@
                             <div class="author"><a href="instituciones/<?=$r->institution->id?>">Publicado por <?= $r->institution->name ?></a></div>
                             <h4><a href="fichas/<?=$r->guid?>"><?=isset($r->highlight['title']) ? $r->highlight['title'][0] : $r->title?></a></h4>
                             <?php if($r->online):?><div class="online">Trámite en Línea</div><?php endif ?>
-                            <p><?=str_limit(strip_tags(\App\Twig::strip(isset($r->highlight['objective']) ? $r->highlight['objective'][0] : $r->objective),'<em>'),500)?></p>
+                            <div class="media">
+                                <div class="media-left">
+                                    <p><?=str_limit(strip_tags(\App\Twig::strip(isset($r->highlight['objective']) ? $r->highlight['objective'][0] : $r->objective),'<em>'),500)?></p>
+                                </div>
+                                <div class="media-body media-middle">
+                                    <?php if($r->online):?>
+                                        <div class="btn">ir al tramite</div>
+                                    <?php endif ?>
+                                </div>
+                            </div>
                         </li>
                         <hr>
                         <?php endforeach ?>
