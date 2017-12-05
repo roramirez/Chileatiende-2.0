@@ -14,8 +14,7 @@
                 <div class="col-sm-3">
                     <h3>API para Desarrolladores</h3>
                     <ul>
-                        <li><a href="/desarrolladores/v2">API 2.0</a></li>
-                        <li><a href="/desarrolladores/v1">API 1.0</a></li>
+                        <li><a href="/desarrolladores">API</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-3">

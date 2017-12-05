@@ -95,6 +95,9 @@ header.backend-header {
                 }
             }
         }
+        .child-buttons {
+            margin-left: 40px;
+        }
     }
 }
 
@@ -120,6 +123,55 @@ header.backend-header {
             color: $red;
             font-size: 20px;
             vertical-align: middle;
+        }
+    }
+}
+
+#api-layout {
+    main {
+        padding-bottom: 100px;
+        .policy-link {
+            a {
+                color: $blue;
+                text-decoration: underline;
+                font-size: 16px;
+            }
+            .material-icons {
+                color: $red;
+                font-size: 18px;
+                vertical-align: middle;
+            }
+        }
+        h1 {
+            font-size: 28px;
+            font-family: $robotoslab;
+        }
+        h2, h3 {
+            font-size: 20px;
+            font-family: $robotoslab;
+            margin-top: 30px;
+        }
+    }
+    header {
+        background-color: $lightbg;
+        width: 100%;
+        padding: 15px 0;
+        .logo-api {
+            width: 110px;
+        }
+        h1 {
+            font-size: 16px;
+            font-weight: normal;
+            font-family: $roboto;
+            a {
+                color: #7F8080;
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+            span {
+                color: $red;
+            }
         }
     }
 }

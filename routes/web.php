@@ -30,6 +30,7 @@ Route::get('/ayuda/sucursales', 'FaqController@getOffices');
 Route::get('/ayuda/oficinas-moviles', 'FaqController@getMobileOffices');
 Route::get('/ayuda/{content?}', 'FaqController');
 Route::get('/perfil','ProfileController@edit');
+Route::get('/desarrolladores/{section?}/{subSection?}','DeveloperController');
 Route::put('/perfil','ProfileController@update');
 
 Route::group(['middleware' => ['auth','backend'], 'prefix'=>'backend', 'namespace'=>'Backend'],function () {

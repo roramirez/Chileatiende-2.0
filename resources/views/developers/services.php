@@ -1,0 +1,19 @@
+<h1>Servicios</h1>
+<p>Servicios es un listado de las instituciones que publican en este portal. Los métodos de Servicios permiten obtener un servicio, listar todos los servicios.</p>
+<h3>Métodos</h3>
+<ul>
+    <li>Obtener: Obtiene un servicio</li>
+    <li>Listar: Lista todas las servicios.</li>
+</ul>
+<h3>Representación del recurso</h3>
+<p>Un servicio es representado como una estructura json. Este es un ejemplo de como se vería un servicio.</p>
+<pre>
+{
+    "servicio":{
+        "id":"AD009",
+        "nombre":"Carabineros de Chile",
+        "url":"http:\/\/www.carabineros.cl",
+        "mision":"Su misi\u00f3n es brindar seguridad a la comunidad en todo el territorio nacional mediante acciones prioritariamente preventivas, apoyadas por un permanente acercamiento a la comunidad. Privilegia la acci\u00f3n policial eficaz, eficiente, justa y transparente."
+    }
+}
+</pre>
