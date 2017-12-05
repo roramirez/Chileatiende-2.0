@@ -242,7 +242,10 @@ main{
 footer{
 	background: $darkblue;
 	color: #8F8F8F;
-	padding: 74px 0;
+	padding: 20px 0;
+  @media (min-width: 768px) {
+    padding: 74px 0;
+  }
 	a{
 		text-decoration: underline;
 		color: white;
@@ -255,10 +258,23 @@ footer{
 		font-size: 14px;
 		text-transform: uppercase;
 		font-weight: normal;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 15px;
+    margin-bottom: 0;
+    @media (min-width: 768px) {
+      border: 0;
+      padding-bottom: 0;
+      margin-bottom: 15px;
+    }
 	}
 	ul{
 		list-style: none;
 		padding-left: 0;
+    margin-bottom: 0;
+    margin-top: 15px;
+    @media (min-width: 768px) {
+      margin-top: 0;
+    }
 		li{
 			a{
 				text-decoration: none;
@@ -277,4 +293,38 @@ footer{
 			left: 15px;
 		}
 	}
+  .toggle-footer {
+    cursor: default;
+    text-decoration: none;
+    display: block;
+    position: relative;
+    &:not(.collapsed) .caret {
+      transform: rotate(180deg);
+    }
+  }
+  .links-footer {
+    @media (min-width: 768px) {
+      display: block;
+      height: auto;
+      &.collapse,
+      &.collapsing,
+      &.in {
+          display: block !important;
+          height: auto !important;
+      }
+    }
+  }
+  .contact-section {
+    margin-top: 30px;
+  }
+  .caret {
+    position: absolute;
+    right: 10px;
+    top: 7px;
+    color: #fff;
+    transition: .2s ease;
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
 }
