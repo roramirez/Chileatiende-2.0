@@ -127,6 +127,8 @@
             box-shadow: none;
             border-top-left-radius: 2px;
             border-bottom-left-radius: 2px;
+            border: 1px solid #D7D6D7;
+            border-right: none;
             @media (min-width: 768px) {
                 height: 60px;
                 font-size: 20px;
@@ -136,6 +138,8 @@
             background: #fff;
             //border: none;
             //overflow: hidden;
+            border: 1px solid #D7D6D7;
+            border-left: 0;
             .el-button {
                 background: transparent;
                 color: white;
@@ -162,7 +166,10 @@
 
 .modal-redirect {
     .modal-dialog {
-        margin-top: 300px;
+        margin-top: 30px;
+        @media (min-width: 768px) {
+          margin-top: 300px;
+        }
         .modal-content {
             border-radius: 2px;
             box-shadow: 0 0 40px 0 rgba(64, 64, 64, 0.50);
@@ -202,6 +209,7 @@
                 color: #000;
                 text-decoration: underline;
                 border: none;
+                padding: 12px 25px;
             }
         }
     }
