@@ -7,7 +7,7 @@ class DeveloperController extends Controller {
 
     private $layout;
 
-    private const SECTIONS = [
+    const SECTIONS = [
         'index' => [
             'title' => 'API Chileatiende',
             'content' => 'developers/index'
