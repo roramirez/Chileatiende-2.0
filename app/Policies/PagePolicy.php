@@ -26,7 +26,7 @@ class PagePolicy
      */
     public function view(User $user, Page $page = null)
     {
-        if($user->role != 'editor')
+        if($user->role != 'counterpart')
             return false;
 
         if($page != null){
@@ -59,7 +59,7 @@ class PagePolicy
      */
     public function create(User $user)
     {
-        if($user->role != 'editor')
+        if($user->role != 'counterpart')
             return false;
 
         return true;

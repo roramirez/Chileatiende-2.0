@@ -38,7 +38,7 @@ class User extends Authenticatable
         'first_name' => '',
         'last_name' => '',
         'email' => '',
-        'role' => 'editor',
+        'role' => 'counterpart',
         'institution_id' => null,
         'ministerial' => false,
         'interministerial' => false
