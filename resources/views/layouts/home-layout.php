@@ -54,6 +54,6 @@
             </div>
         </div>
     </div>
-    <?=view('chunks/footer')?>
+    <?=view('chunks/footer', ['skin'=>$skin])?>
 </div>
 <?=view('chunks/foot')?>
