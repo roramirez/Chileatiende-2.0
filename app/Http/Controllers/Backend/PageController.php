@@ -84,6 +84,7 @@ class PageController extends Controller{
             return \redirect('backend/fichas');
         }
 
+        $page->categories = $page->categories()->pluck('id');
         $data['page'] = $page;
 
         return view('layouts/backend',[
@@ -116,7 +117,6 @@ class PageController extends Controller{
             abort(403);
         }
 
-        $page->categories = $page->categories()->pluck('id');
         $page->related_pages = $page->relatedPages()->pluck('id');;
 
         $data['page'] = $page;
