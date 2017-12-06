@@ -169,7 +169,7 @@ class PageController extends Controller{
 
         //Guardamos la ficha maestra
         $page->master = true;
-        $page->institution_id = $request->user()->institution_id;
+        $page->institution_id = $page->institution_id ?? $request->user()->institution_id;
         $page->title = $request->input('title');
         $page->alias = $request->input('alias');
         $page->published_at = \Carbon\Carbon::parse($request->input('published_at'));
