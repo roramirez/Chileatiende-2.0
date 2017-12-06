@@ -11,7 +11,7 @@
             <ol type="1" class="nav index" data-gumshoe>
                 <li><a :href="currentUrl+'#objective'" data-target="#objective">Descripción</a></li>
                 <li v-if="page.details"><a :href="currentUrl+'#details'" data-target="#details">Detalles</a></li>
-                <li><a :href="currentUrl+'#beneficiaries'" data-target="#beneficiaries">¿A quién está dirigido?</a></li>
+                <li v-if="page.beneficiaries"><a :href="currentUrl+'#beneficiaries'" data-target="#beneficiaries">¿A quién está dirigido?</a></li>
                 <li v-if="page.requirements"><a :href="currentUrl+'#requirements'" data-target="#requirements">¿Qué necesito para hacer el trámite?</a></li>
                 <li v-if="page.howto"><a :href="currentUrl+'#howto'" data-target="#howto">¿Cómo y dónde hago el trámite? </a></li>
             </ol>

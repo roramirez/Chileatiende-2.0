@@ -83,8 +83,10 @@
                         <?=App\Twig::render($page->details)?>
                         <?php endif ?>
 
+                        <?php if($page->beneficiaries):?>
                         <h4 id="beneficiaries">¿A quién está dirigido?</h4>
                         <?=App\Twig::render($page->beneficiaries)?>
+                        <?php endif ?>
 
                         <?php if($page->requirements):?>
                         <h4 id="requirements">¿Qué necesito para hacer el trámite?</h4>
