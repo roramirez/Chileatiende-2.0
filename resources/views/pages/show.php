@@ -99,7 +99,8 @@
                                 <?php if($page->office):?><li role="presentation"><a href="#office" aria-controls="office" role="tab" data-toggle="tab"><i class="material-icons">store</i>En oficina</a></li><?php endif ?>
                                 <?php if($page->phone):?><li role="presentation"><a href="#phone" aria-controls="phone" role="tab" data-toggle="tab"><i class="material-icons">phone</i>Telefónico</a></li><?php endif ?>
                                 <?php if($page->mail):?><li role="presentation"><a href="#mail" aria-controls="mail" role="tab" data-toggle="tab"><i class="material-icons">mail</i>Correo</a></li><?php endif ?>
-                            </ul>
+                                <?php if($page->consulate):?><li role="presentation"><a href="#consulate" aria-controls="mail" role="tab" data-toggle="tab"><i class="material-icons">store</i>Consulado</a></li><?php endif ?>
+                                </ul>
 
                             <div class="tab-content">
                                 <div role="tabpanel" class="tab-pane" id="online">
@@ -118,6 +119,10 @@
                                 <div role="tabpanel" class="tab-pane" id="mail">
                                     <div class="visible-print-block"><strong>- Instrucciones trámite por Email</strong></div>
                                     <?=App\Twig::render($page->mail_guide)?>
+                                </div>
+                                <div role="tabpanel" class="tab-pane" id="consulate">
+                                    <div class="visible-print-block"><strong>- Instrucciones trámite en el Consulado</strong></div>
+                                    <?=App\Twig::render($page->consulate_guide)?>
                                 </div>
                             </div>
                         </div>

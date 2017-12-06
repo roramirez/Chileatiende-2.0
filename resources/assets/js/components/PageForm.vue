@@ -79,6 +79,7 @@
                     <li role="presentation"><a href="#office" aria-controls="office" role="tab" data-toggle="tab"><input @click.stop="" type="checkbox" v-model="data.office" /> Oficina</a></li>
                     <li role="presentation"><a href="#phone" aria-controls="phone" role="tab" data-toggle="tab"><input @click.stop="" type="checkbox" v-model="data.phone" /> Telefónico</a></li>
                     <li role="presentation"><a href="#mail" aria-controls="mail" role="tab" data-toggle="tab"><input @click.stop="" type="checkbox" v-model="data.mail" /> Correo</a></li>
+                    <li role="presentation"><a href="#consulate" aria-controls="consulate" role="tab" data-toggle="tab"><input @click.stop="" type="checkbox" v-model="data.consulate" /> Consulado</a></li>
                 </ul>
                 <div class="tab-content">
                     <div role="tabpanel" class="tab-pane active" id="online">
@@ -101,6 +102,10 @@
                     <div role="tabpanel" class="tab-pane" id="mail">
                         <editor v-model="data.mail_guide"></editor>
                         <div class="help-block" v-for="e in errors['mail_guide']">{{e}}</div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="consulate">
+                        <editor v-model="data.consulate_guide"></editor>
+                        <div class="help-block" v-for="e in errors['consulate_guide']">{{e}}</div>
                     </div>
                 </div>
             </div>

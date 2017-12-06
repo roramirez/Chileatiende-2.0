@@ -166,7 +166,7 @@ class Page extends Model
     }
 
     public function getHowtoAttribute(){
-        return $this->online || $this->office || $this->phone || $this->mail;
+        return $this->online || $this->office || $this->phone || $this->mail || $this->consulate;
     }
 
     public function getBoostAttribute($value){
