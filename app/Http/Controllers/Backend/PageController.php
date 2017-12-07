@@ -14,11 +14,17 @@ class PageController extends Controller{
         if(!$request->user()->can('view',Page::class))
             abort(403);
 
-        $filters = $request->all();
-
         $query = $request->input('query');
-        $institutionId = $request->input('institution_id');
-        $ministryId = $request->input('ministry_id');
+        $institutionId = $request->input('institution_id', function() use ($request){
+            if(!$request->user()->ministerial && !$request->user()->interministerial)
+                return $request->user()->institution_id;
+            return null;
+        });
+        $ministryId = $request->input('ministry_id', function() use ($request){
+            if(!$request->user()->interministerial)
+                return $request->user()->institution->ministry_id;
+            return null;
+        });
 
         if($query || $institutionId || $ministryId){
             $pages = Page::search($query)->where('master',true);
@@ -31,7 +37,11 @@ class PageController extends Controller{
         }
 
 
-        $data['filters'] = $filters;
+        $data['filters'] = [
+            'query' => $query,
+            'institution_id' => $institutionId,
+            'ministry_id' => $ministryId
+        ];
         $data['pages'] = $pages->paginate(30);
 
         return view('layouts/backend',[
