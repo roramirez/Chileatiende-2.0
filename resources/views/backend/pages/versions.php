@@ -31,8 +31,10 @@
             <td><?=$v->published ? 'Si':'No'?></td>
             <td><?=$v->updated_at?></td>
             <td class="text-center">
+                <?php if(Auth::user()->can('publishVersion',$page)):?>
                 <?php if(!$v->published):?>
                     <a href="backend/fichas/<?=$page->id?>/versions/<?=$v->id?>/publish" title="Publicar esta versión"><i class="material-icons">publish</i></a>
+                <?php endif ?>
                 <?php endif ?>
             </td>
         </tr>
