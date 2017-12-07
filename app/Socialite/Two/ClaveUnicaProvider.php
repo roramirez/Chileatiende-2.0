@@ -67,7 +67,8 @@ class ClaveUnicaProvider extends AbstractProvider implements ProviderInterface
             'last_name' => implode(' ', $user['name']['apellidos']),
             'run' => $user['RolUnico']['numero'],
             'dv' => $user['RolUnico']['DV'],
-            'email' => isset($user['email']) ? $user['email'] : null
+            'email' => isset($user['email']) ? $user['email'] : null,
+            'phone' => isset($user['phone']) ? $user['phone'] : null
         ]);
     }
 }
