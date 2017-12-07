@@ -20,9 +20,18 @@ class HomeController extends Controller{
                 'categories' => $request->user()->categories()->orderBy('order')->get()
             ]);
         }else{
+            $categories = Category::orderBy('order')->limit(9);
+            if($skin == 'exterior'){
+                $featured = [];
+                $categories = $categories->where('exterior',1)->get();
+            }else{
+                $featured = Page::masters()->published()->where('featured',1)->orderBy('order')->limit(4)->get();
+                $categories = $categories->where('featured',1)->get();
+            }
+
             $content = view('home/index',[
-                'featured' => Page::masters()->published()->where('featured',1)->orderBy('order')->limit(4)->get(),
-                'categories' => Category::where('featured',1)->orderBy('order')->limit(9)->get()
+                'featured' => $featured,
+                'categories' => $categories
             ]);
         }
 

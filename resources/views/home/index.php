@@ -1,4 +1,5 @@
 <div id="home">
+    <?php if(!empty($featured)):?>
     <div class="featured-area">
         <div class="container">
             <div class="title">
@@ -31,6 +32,7 @@
             </div>
         </div>
     </div>
+    <?php endif ?>
 
     <div class="categories-area">
         <div class="container">

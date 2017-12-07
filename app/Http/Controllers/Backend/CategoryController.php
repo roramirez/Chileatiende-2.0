@@ -41,7 +41,7 @@ class CategoryController extends Controller{
     public function edit(Request $request,$id){
         $category = Category::find($id);
 
-        if(!$request->user()->can('edit', $category))
+        if(!$request->user()->can('update', $category))
             abort(403);
 
         $data['category'] = $category;
@@ -74,11 +74,13 @@ class CategoryController extends Controller{
         $this->validate($request, [
             'name' => 'required',
             'featured' => 'required|boolean',
+            'exterior' => 'required|boolean',
             'order' => 'required|numeric'
         ]);
 
         $category->name = $request->input('name');
         $category->featured = $request->input('featured');
+        $category->exterior = $request->input('exterior');
         $category->order = $request->input('order');
 
         $category->save();

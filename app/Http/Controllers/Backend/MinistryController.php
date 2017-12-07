@@ -39,7 +39,7 @@ class MinistryController extends Controller{
     public function edit(Request $request, $id){
         $ministry = Ministry::find($id);
 
-        if(!$request->user()->can('view', $ministry))
+        if(!$request->user()->can('update', $ministry))
             abort(403);
 
         $data['ministry'] = $ministry;

@@ -16,6 +16,14 @@
             </div>
         </div>
 
+        <div class="form-group" :class="{'has-error': errors['exterior']}">
+            <label for="exterior" class="col-sm-2 control-label">¿Destacada para Chilenos en el Exterior?</label>
+            <div class="col-sm-10">
+                <el-switch id="exterior" v-model="data.exterior" on-text="Sí" off-text="No"></el-switch>
+                <div class="help-block" v-for="e in errors['exterior']">{{e}}</div>
+            </div>
+        </div>
+
         <div class="form-group" :class="{'has-error': errors['order']}">
             <label for="order" class="col-sm-2 control-label">Orden</label>
             <div class="col-sm-2">

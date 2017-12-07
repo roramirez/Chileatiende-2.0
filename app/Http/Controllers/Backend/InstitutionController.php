@@ -39,7 +39,7 @@ class InstitutionController extends Controller{
     public function edit(Request $request,$id){
         $institution = Institution::find($id);
 
-        if(!$request->user()->can('create', $institution))
+        if(!$request->user()->can('update', $institution))
             abort(403);
 
         $data['institution'] = $institution;

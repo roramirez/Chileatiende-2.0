@@ -7,12 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model{
 
     protected $casts = [
-        'featured' => 'boolean'
+        'featured' => 'boolean',
+        'exterior' => 'boolean'
     ];
 
     protected $attributes = [
         'order' => 0,
-        'featured' => false
+        'featured' => false,
+        'exterior' => false
     ];
 
     public function pages(){

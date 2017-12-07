@@ -14,6 +14,7 @@
         <tr>
             <th>Nombre</th>
             <th>Destacada</th>
+            <th>Chilenos en Exterior</th>
             <th>Orden</th>
             <th>Acciones</th>
         </tr>
@@ -23,6 +24,7 @@
         <tr>
             <td><?=$p->name?></td>
             <td><i class="material-icons"><?=$p->featured ? 'check' : ''?></i></td>
+            <td><i class="material-icons"><?=$p->exterior ? 'check' : ''?></i></td>
             <td><?=$p->order?></td>
             <td class="text-center">
                 <a href="backend/categorias/<?=$p->id?>/edit"><i class="material-icons">edit</i></a>
