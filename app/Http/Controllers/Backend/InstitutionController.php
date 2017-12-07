@@ -9,7 +9,8 @@ use Illuminate\Http\Request;
 class InstitutionController extends Controller{
 
     public function index(Request $request){
-
+        if(!$request->user()->can('view', Institution::class))
+            abort(403);
 
         $data['institutions'] = Institution::with('ministry')->get();
 
@@ -19,7 +20,10 @@ class InstitutionController extends Controller{
         ]);
     }
 
-    public function create(){
+    public function create(Request $request){
+        if(!$request->user()->can('create', Institution::class))
+            abort(403);
+
         $institution = new Institution();
 
         $data['institution'] = $institution;
@@ -32,8 +36,11 @@ class InstitutionController extends Controller{
         ]);
     }
 
-    public function edit($id){
+    public function edit(Request $request,$id){
         $institution = Institution::find($id);
+
+        if(!$request->user()->can('create', $institution))
+            abort(403);
 
         $data['institution'] = $institution;
         $data['edit'] = true;
@@ -83,6 +90,10 @@ class InstitutionController extends Controller{
 
     public function destroy(Request $request, $id){
         $institution = Institution::find($id);
+
+        if(!$request->user()->can('delete', $institution))
+            abort(403);
+
         $institution->delete();
 
         $request->session()->flash('status', 'Institución eliminada con éxito');

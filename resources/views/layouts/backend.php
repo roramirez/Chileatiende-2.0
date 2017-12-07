@@ -90,6 +90,7 @@
                                 <?php endif ?>
                             </div>
                             <?php endif ?>
+                            <?php if(Auth::user()->can('view', \App\Institution::class)):?>
                             <div class="sidebar-buttons">
                                 <div class="heading">Instituciones</div>
                                 <a href="backend/instituciones/create" class="sidebar-btn <?= Request::path() == 'backend/instituciones/create' ? 'active' : '' ?>">
@@ -101,6 +102,8 @@
                                     Ver instituciones
                                 </a>
                             </div>
+                            <?php endif ?>
+                            <?php if(Auth::user()->can('view', \App\Ministry::class)):?>
                             <div class="sidebar-buttons">
                                 <div class="heading">Ministerios</div>
                                 <a href="backend/ministerios/create" class="sidebar-btn <?= Request::path() == 'backend/ministerios/create' ? 'active' : '' ?>">
@@ -112,6 +115,8 @@
                                     Ver ministerios
                                 </a>
                             </div>
+                            <?php endif ?>
+                            <?php if(Auth::user()->can('view', \App\User::class)):?>
                             <div class="sidebar-buttons">
                                 <div class="heading">Administración</div>
                                 <?php if(Auth::user()->can('view', \App\User::class)):?>
@@ -126,11 +131,14 @@
                                     Oficinas
                                 </a>
                                 <?php endif ?>
+                                <?php if(Auth::user()->can('view', \App\Category::class)):?>
                                 <a href="backend/categorias" class="sidebar-btn <?= Request::path() == 'backend/categorias' ? 'active' : '' ?>">
                                     <i class="material-icons">format_list_bulleted</i>
                                     Categorías
                                 </a>
+                                <?php endif ?>
                             </div>
+                            <?php endif ?>
                         </div>
                     </div>
                     <div class="col-sm-9">

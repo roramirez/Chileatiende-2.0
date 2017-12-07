@@ -9,6 +9,8 @@ use Illuminate\Http\Request;
 class CategoryController extends Controller{
 
     public function index(Request $request){
+        if(!$request->user()->can('view', Category::class))
+            abort(403);
 
 
         $data['categories'] = Category::orderBy('featured', 'desc')->orderBy('order')->get();
@@ -20,7 +22,10 @@ class CategoryController extends Controller{
         ]);
     }
 
-    public function create(){
+    public function create(Request $request){
+        if(!$request->user()->can('create', Category::class))
+            abort(403);
+
         $category = new Category();
 
         $data['category'] = $category;
@@ -33,8 +38,11 @@ class CategoryController extends Controller{
         ]);
     }
 
-    public function edit($id){
+    public function edit(Request $request,$id){
         $category = Category::find($id);
+
+        if(!$request->user()->can('edit', $category))
+            abort(403);
 
         $data['category'] = $category;
         $data['edit'] = true;
@@ -81,6 +89,10 @@ class CategoryController extends Controller{
 
     public function destroy(Request $request, $id){
         $category = Category::find($id);
+
+        if(!$request->user()->can('delete', $category))
+            abort(403);
+
         $category->delete();
 
         $request->session()->flash('status', 'Categoría eliminada con éxito');
