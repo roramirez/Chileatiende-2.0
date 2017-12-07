@@ -9,6 +9,9 @@ use App\Institution;
 class InstitutionController extends Controller{
 
     public function index(Request $request){
+        $apiUser = ApiUser::where('token',$request->get('access_token'))->first();
+        if(!$apiUser)
+            abort(403);
 
         
         $results = Institution::all();
@@ -29,7 +32,11 @@ class InstitutionController extends Controller{
     }
 
 
-    public function show(Request $requst, $id){
+    public function show(Request $request, $id){
+        $apiUser = ApiUser::where('token',$request->get('access_token'))->first();
+        if(!$apiUser)
+            abort(403);
+
         $institution = Institution::find($id);
         
         $institution = $institution->toPublicArray();

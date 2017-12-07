@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\API;
 
+use App\ApiUser;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Page;
@@ -9,6 +10,10 @@ use App\Page;
 class PageController extends Controller{
 
     public function index(Request $request){
+        $apiUser = ApiUser::where('token',$request->get('access_token'))->first();
+        if(!$apiUser)
+            abort(403);
+
         $query = $request->input('query');
         $maxResults = $request->input('maxResults', 10);
         $pageToken = $request->input('pageToken', 1);
@@ -33,6 +38,9 @@ class PageController extends Controller{
     }
 
     public function indexByInstitution(Request $request, $institutionId){
+        $apiUser = ApiUser::where('token',$request->get('access_token'))->first();
+        if(!$apiUser)
+            abort(403);
         
         $results = Page::where('master',0)->where('published',1)->whereHas('masterPage',function($q) use ($institutionId){
             return $q->where('published',1)->where('institution_id', $institutionId);
@@ -54,7 +62,11 @@ class PageController extends Controller{
 
     }
 
-    public function show(Request $requst, $id){
+    public function show(Request $request, $id){
+        $apiUser = ApiUser::where('token',$request->get('access_token'))->first();
+        if(!$apiUser)
+            abort(403);
+
         $master = Page::find($id);
         
         if(!$master || !$master->published){

@@ -3,6 +3,11 @@
 namespace App\Http\Controllers;
 
 
+use App\ApiUser;
+use App\Mail\ApiUserCreated;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
+
 class DeveloperController extends Controller {
 
     private $layout;
@@ -66,5 +71,33 @@ class DeveloperController extends Controller {
         ]);
     }
 
+    public function createAccessToken(){
+        return view($this->layout, [
+            'title' => 'Crear API Key',
+            'content' => view('developers/create-access-token')
+        ]);
+    }
+
+    public function storeAccessToken(Request $request){
+        $this->validate($request, [
+            'email' => 'required|email|unique:api_users,email',
+            'first_name' => 'required',
+            'last_name' => 'required'
+        ]);
+
+        $apiUser = new ApiUser();
+        $apiUser->email = $request->get('email');
+        $apiUser->first_name = $request->get('first_name');
+        $apiUser->last_name = $request->get('last_name');
+        $apiUser->company = $request->get('company');
+        $apiUser->token = str_random(16);
+        $apiUser->save();
+
+        Mail::to($apiUser->email)->send(new ApiUserCreated($apiUser));
+
+        $request->session()->flash('status', 'API Key creada con éxito');
+
+        return response()->json(['redirect' => 'desarrolladores']);
+    }
 
 }

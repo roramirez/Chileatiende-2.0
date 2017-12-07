@@ -14,6 +14,8 @@ import ProfileForm from './components/ProfileForm.vue';
 import OfficesCollapse from './components/OfficesCollapse.vue';
 import MobileMenu from './components/MobileMenu.vue';
 import PageFilterForm from './components/PageFilterForm.vue';
+import AccessTokenForm from './components/AccessTokenForm.vue';
+
 
 const app = new Vue({
     el: '#app',
@@ -30,7 +32,8 @@ const app = new Vue({
         MinistryForm,
         InstitutionForm,
         CategoryForm,
-        PageFilterForm
+        PageFilterForm,
+        AccessTokenForm
     },
     mounted() {
         $('[data-toggle="tooltip"]').tooltip();
