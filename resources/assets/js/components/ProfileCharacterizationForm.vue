@@ -23,6 +23,20 @@
                 <div class="col-sm-offset-3 col-sm-6">
                     <ol>
                         <li>
+                            <div class="form-group" :class="{'has-error': errors['email'], active: subStep == 1}" @click="subStep = 1">
+                                <label for="email" class="control-label">Correo Electrónico</label>
+                                <input type="email" id="email" class="form-control" v-model="data.email">
+                                <div class="help-block" v-for="e in errors['email']">{{e}}</div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="form-group" :class="{'has-error': errors['phone'], active: subStep == 1}" @click="subStep = 1">
+                                <label for="phone" class="control-label">Teléfono Movil (Opcional)</label>
+                                <input type="phone" id="phone" class="form-control" v-model="data.phone">
+                                <div class="help-block" v-for="e in errors['phone']">{{e}}</div>
+                            </div>
+                        </li>
+                        <li>
                             <div class="form-group" :class="{'has-error': errors['birth_date'], active: subStep == 1}" @click="subStep = 1">
                                 <label for="birth_date" class="control-label">Fecha de Nacimiento</label>
                                 <el-date-picker id="birth_date" v-model="data.birth_date" format="dd/MM/yyyy" placeholder="Día/Mes/Año" @change="subStep++"></el-date-picker>
@@ -182,6 +196,7 @@
                 }).then(function(response){
                     window.location.replace(response.data.redirect);
                 }).catch(function(error){
+                    self.step = 1;
                     self.errors = error.response.data.errors;
                 });
             }

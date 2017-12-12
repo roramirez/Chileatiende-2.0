@@ -24,6 +24,7 @@ class ProfileController extends Controller{
 
     public function update(Request $request){
         $this->validate($request,[
+            'email' => 'required|email',
             'birth_date' => 'required|date',
             'gender' => 'required|in:m,f',
             'nationality' => 'required',
@@ -32,6 +33,8 @@ class ProfileController extends Controller{
         ]);
 
         $user = $request->user();
+        $user->email = $request->input('email');
+        $user->phone = $request->input('phone');
         $user->birth_date = \Carbon\Carbon::parse($request->input('birth_date'));
         $user->gender = $request->input('gender');
         $user->nationality = $request->input('nationality');
