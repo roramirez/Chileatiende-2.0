@@ -9,9 +9,17 @@
                     </a>
                     <div id="foo-coll-01" class="links-footer collapse">
                         <ul>
-                            <li><a href="/que-es-chileatiende">Sobre ChileAtiende</a></li>
+                            <?php if(@$skin == 'exterior'):?>
+                                <li><a href="/que-es-chileatiende?skin=exterior">Sobre ChileAtiende en el Exterior</a></li>
+                            <?php else: ?>
+                                <li><a href="/que-es-chileatiende">Sobre ChileAtiende</a></li>
+                            <?php endif ?>
                             <li><a href="/instituciones">Instituciones que publican en el Portal</a></li>
-                            <li><a href="/ayuda/preguntas-frecuentes">Preguntas Frecuentes</a></li>
+                            <?php if(@$skin == 'exterior'): ?>
+                                <li><a href="/ayuda/preguntas-frecuentes?skin=exterior">Preguntas Frecuentes (Exterior)</a></li>
+                            <?php else: ?>
+                                <li><a href="/ayuda/preguntas-frecuentes">Preguntas Frecuentes</a></li>
+                            <?php endif ?>
                             <li><a href="/ayuda/">Centro de Ayuda</a></li>
                             <li><a href="<?=@$skin=='exterior'?'https://contacto.chilesinpapeleo.cl/tramites/iniciar/3280':'https://www.chileatiende.gob.cl/contacto/formulario.php?origen=http://www.chileatiende.gob.cl/'?>">Contacto</a></li>
                         </ul>

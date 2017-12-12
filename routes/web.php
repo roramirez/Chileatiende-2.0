@@ -28,6 +28,7 @@ Route::get('/politica-de-privacidad', 'PrivacyPolicyController');
 Route::get('/enlaces-transparencia', 'TransparencyController');
 Route::get('/ayuda/sucursales', 'FaqController@getOffices');
 Route::get('/ayuda/oficinas-moviles', 'FaqController@getMobileOffices');
+Route::get('/ayuda/preguntas-frecuentes', 'FaqController@getFAQ');
 Route::get('/ayuda/{content?}', 'FaqController');
 Route::get('/desarrolladores/access_token','DeveloperController@createAccessToken');
 Route::post('/desarrolladores/access_token','DeveloperController@storeAccessToken');

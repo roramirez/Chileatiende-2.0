@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Office;
 use App\Page;
+use Illuminate\Http\Request;
 
 class FaqController extends Controller{
 
@@ -48,6 +49,15 @@ class FaqController extends Controller{
             'content' => view('faq/offices',[
                 'offices' => Office::with('location','location.parent','location.parent.parent')->where('mobile',0)->get()
             ])
+        ]);
+    }
+
+    public function getFAQ(Request $request){
+        $skin = $request->get('skin');
+
+        return view('layouts/layout',[
+            'title' => 'Sucursales',
+            'content' => $skin == 'exterior' ? view('faq/exterior') : view('faq/preguntas-frecuentes')
         ]);
     }
 
