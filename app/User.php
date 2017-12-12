@@ -52,6 +52,10 @@ class User extends Authenticatable
         return $this->belongsToMany('App\Category');
     }
 
+    public function notifications(){
+        return $this->hasMany('App\Notification');
+    }
+
     public function getNameAttribute(){
         return $this->first_name.' '.$this->last_name;
     }

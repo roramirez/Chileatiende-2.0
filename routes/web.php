@@ -29,13 +29,18 @@ Route::get('/enlaces-transparencia', 'TransparencyController');
 Route::get('/ayuda/sucursales', 'FaqController@getOffices');
 Route::get('/ayuda/oficinas-moviles', 'FaqController@getMobileOffices');
 Route::get('/ayuda/{content?}', 'FaqController');
-Route::get('/perfil','ProfileController@edit');
 Route::get('/desarrolladores/access_token','DeveloperController@createAccessToken');
 Route::post('/desarrolladores/access_token','DeveloperController@storeAccessToken');
 Route::get('/desarrolladores/{section?}/{subSection?}','DeveloperController');
-Route::put('/perfil','ProfileController@update');
 
-Route::group(['middleware' => ['auth','backend'], 'prefix'=>'backend', 'namespace'=>'Backend'],function () {
+Route::group(['middleware' => ['frontend']], function(){
+    Route::get('/perfil','ProfileController@edit');
+    Route::put('/perfil','ProfileController@update');
+    Route::resource('/notificaciones','NotificationController');
+});
+
+
+Route::group(['middleware' => ['backend'], 'prefix'=>'backend', 'namespace'=>'Backend'],function () {
     Route::get('/', 'HomeController@getIndex');
     Route::get('/perfil', 'ProfileController@edit');
     Route::put('/perfil', 'ProfileController@update');

@@ -637,6 +637,57 @@ main {
             color: #757575;
         }
     }
+    #notifications{
+        padding: 50px 0;
+        h3{
+            margin: 0;
+            font-family: "Roboto Slab";
+            font-size: 28px;
+        }
+        h4{
+            margin: 0;
+            font-size: 14px;
+            color: #8F8F8F;
+        }
+        .list-group{
+            .list-group-item{
+                border-radius: 0;
+                border: none;
+                font-size: 20px;
+                font-family: "Roboto Slab";
+                .badge{
+                    background: none;
+                    color: $blue;
+                    font-size: 26px;
+                }
+                &.active{
+                    .badge{
+                        color: white;
+                    }
+                }
+            }
+        }
+        .panel-group{
+            .panel-default{
+                font-size: 16px;
+                font-weight: 300;
+                box-shadow: none;
+                .panel-heading{
+
+                }
+                .panel-body{
+                    .sender{
+                        color: $lightblue;
+                        font-size: 12px;
+                    }
+                    h5{
+                        font-size: 20px;
+                        font-family: "Roboto Slab";
+                    }
+                }
+            }
+        }
+    }
     #page {
         font-weight: 300;
         font-size: 16px;
