@@ -137,6 +137,12 @@
                                     Categorías
                                 </a>
                                 <?php endif ?>
+                                <?php if(Auth::user()->can('create', \App\Notification::class)):?>
+                                <a href="backend/notificaciones/create" class="sidebar-btn <?= Request::path() == 'backend/notificaciones' ? 'active' : '' ?>">
+                                    <i class="material-icons">notifications</i>
+                                    Notificaciones
+                                </a>
+                                <?php endif ?>
                             </div>
                             <?php endif ?>
                         </div>

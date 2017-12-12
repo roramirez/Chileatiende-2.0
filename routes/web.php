@@ -49,6 +49,7 @@ Route::group(['middleware' => ['backend'], 'prefix'=>'backend', 'namespace'=>'Ba
     Route::resource('/usuarios', 'UserController');
     Route::resource('/oficinas', 'OfficeController');
     Route::resource('/categorias', 'CategoryController');
+    Route::resource('/notificaciones', 'NotificationController');
     Route::put('/fichas/featured', 'PageController@updateFeatured');
     Route::get('/fichas/featured', 'PageController@featured');
     Route::resource('/fichas', 'PageController');
