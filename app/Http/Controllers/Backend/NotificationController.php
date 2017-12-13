@@ -33,19 +33,28 @@ class NotificationController extends Controller{
             'message' => 'required'
         ]);
 
+
+
         $users = User::where('email','!=','')->get();
         $institution = Institution::find($request->get('institution_id'));
         $title = $request->get('title');
         $message = $request->get('message');
 
         foreach($users as $u){
+            $notification = new \App\Notification();
+            $notification->user_id = $u->id;
+            $notification->institution_id = $institution->id;
+            $notification->title = $title;
+            $notification->message = $message;
+            $notification->save();
+
             Mail::to($u->email)->send(new Notification($institution, $title, $message));
         }
 
 
         $request->session()->flash('status', 'Notificación enviada con éxito.');
 
-        return response()->json(['redirect' => 'backend']);
+        return response()->json(['redirect' => 'backend/fichas']);
     }
 
 
