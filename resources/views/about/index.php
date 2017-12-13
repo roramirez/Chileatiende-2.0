@@ -60,7 +60,7 @@
 						<h3>callcenter</h3>
 					</div>
 					<div class="card-body">
-						<p>El <a href="tel:101" title="llamar al 101">call center 101</a> entrega orientación sobre los servicios y beneficios que otorga el Estado.</p>
+						<p>El <a href="/ayuda/atencion-telefonica">call center 101</a> entrega orientación sobre los servicios y beneficios que otorga el Estado.</p>
 					</div>
 				</div>
 			</div>
