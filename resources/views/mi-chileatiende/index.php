@@ -17,7 +17,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <a class="btn btn-claveunica" href="login/claveunica">Ingresa con ClaveÚnica</a>
-                        <div><a href="#">Si no tienes tu claveúnica infórmate aquí como obtenerla</a></div>
+                        <div><a href="https://claveunica.gob.cl/" target="_blank">Si no tienes tu claveúnica infórmate aquí como obtenerla</a></div>
                     </div>
                 </div>
             </div>
