@@ -38,7 +38,7 @@
 						<h3>Sitio Web</h3>
 					</div>
 					<div class="card-body">
-						<p>El <a href="#">portal ChileAtiende</a> permite acceder de manera simple y directa a información sobre más de 2.200 beneficios y servicios públicos.</p>
+						<p>El <a href="/">portal ChileAtiende</a> permite acceder de manera simple y directa a información sobre más de 2.200 beneficios y servicios públicos.</p>
 					</div>
 				</div>
 			</div>
@@ -49,7 +49,7 @@
 						<h3>Módulos Autoatención</h3>
 					</div>
 					<div class="card-body">
-						<p><a href="#">Módulos Autoatención</a> que permiten acceder de manera simple y directa a información sobre más de 2.200 beneficios y servicios públicos.</p>
+						<p>Módulos Autoatención que permiten acceder de manera simple y directa a información sobre más de 2.200 beneficios y servicios públicos.</p>
 					</div>
 				</div>
 			</div>
@@ -71,7 +71,7 @@
 						<h3>Sucursales</h3>
 					</div>
 					<div class="card-body">
-						<p><a href="#">Más de 200 puntos de atención</a> a lo largo del país, con funcionarios especialmente capacitados en atención ciudadana.</p>
+						<p><a href="/ayuda/sucursales">Más de 200 puntos de atención</a> a lo largo del país, con funcionarios especialmente capacitados en atención ciudadana.</p>
 					</div>
 				</div>
 			</div>
