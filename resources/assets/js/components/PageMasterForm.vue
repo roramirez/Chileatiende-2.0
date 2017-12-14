@@ -1,14 +1,6 @@
 <template>
     <form class="page-form form-horizontal" @submit.prevent="submit()">
 
-        <div class="form-group" :class="{'has-error': errors['published']}">
-            <label for="published" class="col-sm-2 control-label">Publicado</label>
-            <div class="col-sm-10">
-                <el-switch id="published" v-model="data.published" on-text="Si" off-text="No"></el-switch>
-                <div class="help-block" v-for="e in errors['published']">{{e}}</div>
-            </div>
-        </div>
-
         <div class="form-group" :class="{'has-error': errors['featured']}">
             <label for="featured" class="col-sm-2 control-label">Destacado</label>
             <div class="col-sm-10">
