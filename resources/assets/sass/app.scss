@@ -245,6 +245,16 @@ header.home {
             @media (min-width: 768px) {
                 font-size: 36px;
             }
+            .exterior{
+                background: $lighterblue;
+                padding: 0 5px;
+                border-radius: 2px;
+            }
+            .mujer{
+                background: $yellow;
+                padding: 0 5px;
+                border-radius: 2px;
+            }
         }
         h3 {
             font-size: 16px;

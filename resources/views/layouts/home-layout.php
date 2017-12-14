@@ -11,7 +11,14 @@
         <div class="main">
             <div class="container">
 
-                <h2>¡Hola! Estás en ChileAtiende</h2>
+                <h2>
+                    ¡Hola! Estás en ChileAtiende
+                    <?php if($skin == 'exterior'):?>
+                        <span class="exterior">/ Exterior</span>
+                    <?php elseif ($skin == 'mujer'): ?>
+                        <span class="mujer">/ Mujer</span>
+                    <?php endif ?>
+                </h2>
                 <h3>Guía de Trámites y Servicios del Estado</h3>
 
 
