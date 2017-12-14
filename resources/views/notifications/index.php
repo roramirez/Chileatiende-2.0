@@ -27,7 +27,7 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="text-right">
-                                        <?=$n->date->formatLocalized('%D')?>
+                                        <?=$n->created_at->formatLocalized('%D')?>
                                     </div>
                                 </div>
                             </div>
