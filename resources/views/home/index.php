@@ -16,7 +16,7 @@
                     <?php foreach ($featured as $f): ?>
                         <?php $f->publishedVersion() ?>
                             <div class="featured-item">
-                                <a class="header" href="fichas/<?= $f->guid ?>" <?=$f->image ? 'style="background-image: url('.$f->image.')"':''?>>
+                                <a class="header" href="fichas/<?= $f->guid ?>" <?=$f->image ? 'style="background-image: url('.$f->image.')"':''?> data-ga-te-category="Tabs Fichas" data-ga-te-action="Ficha Destacadas" data-ga-te-value="<?=$f->id?>">
                                     <?php if (!$f->image): ?>
                                         <div class="image <?= (strlen($f->title) > 50 ? 'long-h' : 'short-h' );  ?>">
                                             <?= $f->title ?>
@@ -24,7 +24,7 @@
                                     <?php endif ?>
                                 </a>
                                 <div class="caption">
-                                    <h3><a href="fichas/<?= $f->guid ?>"><?= $f->title .' →' ?></a></h3>
+                                    <h3><a href="fichas/<?= $f->guid ?>" data-ga-te-category="Tabs Fichas" data-ga-te-action="Ficha Destacadas" data-ga-te-value="<?=$f->id?>"><?= $f->title .' →' ?></a></h3>
                                 </div>
                             </div>
                     <?php endforeach ?>
@@ -53,12 +53,12 @@
                                 <ul>
                                     <?php foreach(App\Page::popularPublishedVersions($c->id) as $p):?>
                                         <li>
-                                            <a href="fichas/<?=$p->guid?>" title="<?= $p->title ?>"><?=str_limit($p->title, 80)?></a>
+                                            <a href="fichas/<?=$p->guid?>" title="<?= $p->title ?>" data-ga-te-category="Tabs Fichas" data-ga-te-action="Ficha Mas Visitadas" data-ga-te-value="<?=$p->master_id?>"><?=str_limit($p->title, 80)?></a>
                                             <?php if($p->online):?><div>Trámite en Línea</div><?php endif ?>
                                         </li>
                                     <?php endforeach ?>
                                 </ul>
-                                <a class="btn" href="buscar?category=<?=$c->id?>">Ir a <?=$c->name?></a>
+                                <a class="btn" href="buscar?category=<?=$c->id?>" data-ga-te-category="Menu Accesos" data-ga-te-action="clic" data-ga-te-value="<?=$c->id?>">Ir a <?=$c->name?></a>
                             </div>
                         </div>
                     </div>

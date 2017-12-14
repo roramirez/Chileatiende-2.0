@@ -40,7 +40,7 @@
                         </span>
                         <div class="share-buttons">
                             <span>Compartir</span>
-                            <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?=url('')?>" class="share-icon" title="Compartir en Facebook">
+                            <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?=url('')?>" class="share-icon" title="Compartir en Facebook" data-ga-te-category="Acciones Ficha" data-ga-te-action="Compartir Facebook" data-ga-te-value="<?= $page->master_id ?>">
                                 <svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                     <g id="fb-icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                         <g id="Ficha-trámite/-extenso" class="social-icon" transform="translate(-821.000000, -440.000000)" fill="#D7D6D7">
@@ -49,7 +49,7 @@
                                     </g>
                                 </svg>
                             </a>
-                            <a target="_blank" href="https://twitter.com/intent/tweet?text=<?= $page->title ?>&url=<?= url('').'/'.$page->guid ?>" class="share-icon" title="compartir en Twitter">
+                            <a target="_blank" href="https://twitter.com/intent/tweet?text=<?= $page->title ?>&url=<?= url('').'/'.$page->guid ?>" class="share-icon" title="compartir en Twitter" data-ga-te-category="Acciones Ficha" data-ga-te-action="Compartir Twitter" data-ga-te-value="<?= $page->master_id ?>">
                                 <svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                     <g id="twitter-icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                         <g id="Ficha-trámite/-extenso" class="social-icon" transform="translate(-853.000000, -440.000000)" fill="#D7D6D7">
@@ -58,7 +58,7 @@
                                     </g>
                                 </svg>
                             </a>
-                            <a href="mailto:?subject=<?=$page->title ?>&amp;body=<?= url('').'/'.$page->guid ?>" class="share-icon" title="compartir por email">
+                            <a href="mailto:?subject=<?=$page->title ?>&amp;body=<?= url('').'/'.$page->guid ?>" class="share-icon" title="compartir por email" data-ga-te-category="Acciones Ficha" data-ga-te-action="Compartir Correo" data-ga-te-value="<?= $page->master_id ?>">
                                 <svg width="20px" height="17px" viewBox="0 0 20 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                     <g id="email-icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                                         <g id="Ficha-trámite/-extenso" class="social-icon" transform="translate(-885.000000, -441.000000)" fill="#D7D6D7">
@@ -98,18 +98,50 @@
                         <div class="howto main-tabs">
                             <div class="tabs-container">
                                 <ul class="nav nav-tabs" role="tablist" v-select-first-tab>
-                                <?php if($page->online):?><li role="presentation"><a href="#online" aria-controls="online" role="tab" data-toggle="tab"><i class="material-icons">devices</i>En línea</a></li><?php endif ?>
-                                <?php if($page->office):?><li role="presentation"><a href="#office" aria-controls="office" role="tab" data-toggle="tab"><i class="material-icons">store</i>En oficina</a></li><?php endif ?>
-                                <?php if($page->phone):?><li role="presentation"><a href="#phone" aria-controls="phone" role="tab" data-toggle="tab"><i class="material-icons">phone</i>Telefónico</a></li><?php endif ?>
-                                <?php if($page->mail):?><li role="presentation"><a href="#mail" aria-controls="mail" role="tab" data-toggle="tab"><i class="material-icons">mail</i>Correo</a></li><?php endif ?>
-                                <?php if($page->consulate):?><li role="presentation"><a href="#consulate" aria-controls="mail" role="tab" data-toggle="tab"><i class="material-icons">store</i>Consulado</a></li><?php endif ?>
+                                    <?php if($page->online):?>
+                                    <li role="presentation">
+                                        <a href="#online" aria-controls="online" role="tab" data-toggle="tab" data-ga-te-category="Acciones Ficha" data-ga-te-action="Tab Online" data-ga-te-value="<?= $page->master_id ?>">
+                                            <i class="material-icons">devices</i>En línea
+                                        </a>
+                                    </li>
+                                    <?php endif ?>
+                                    <?php if($page->office):?>
+                                    <li role="presentation">
+                                        <a href="#office" aria-controls="office" role="tab" data-toggle="tab" data-ga-te-category="Acciones Ficha" data-ga-te-action="Tab Oficina" data-ga-te-value="<?= $page->master_id ?>">
+                                            <i class="material-icons">store</i>En oficina
+                                        </a>
+                                    </li>
+                                    <?php endif ?>
+                                    <?php if($page->phone):?>
+                                        <li role="presentation">
+                                            <a href="#phone" aria-controls="phone" role="tab" data-toggle="tab" data-ga-te-category="Acciones Ficha" data-ga-te-action="Tab Telefónico" data-ga-te-value="<?= $page->master_id ?>">
+                                                <i class="material-icons">phone</i>Telefónico
+                                            </a>
+                                        </li>
+                                    <?php endif ?>
+                                    <?php if($page->mail):?>
+                                        <li role="presentation">
+                                            <a href="#mail" aria-controls="mail" role="tab" data-toggle="tab" data-ga-te-category="Acciones Ficha" data-ga-te-action="Tab Email" data-ga-te-value="<?= $page->master_id ?>">
+                                                <i class="material-icons">mail</i>Correo
+                                            </a>
+                                        </li>
+                                    <?php endif ?>
+                                    <?php if($page->consulate):?>
+                                        <li role="presentation">
+                                            <a href="#consulate" aria-controls="mail" role="tab" data-toggle="tab" data-ga-te-category="Acciones Ficha" data-ga-te-action="Tab Consulado" data-ga-te-value="<?= $page->master_id ?>">
+                                                <i class="material-icons">store</i>Consulado
+                                            </a>
+                                        </li>
+                                    <?php endif ?>
                                 </ul>
                             </div>
                             <div class="tab-content">
                                 <div role="tabpanel" class="tab-pane" id="online">
                                     <div class="visible-print-block"><strong>- Instrucciones Trámite en Línea</strong></div>
                                     <?=App\Twig::render($page->online_guide)?>
-                                    <a class="btn btn-online hidden-print" href="<?= $page->online_url ?>" data-toggle="modal" data-target="#redirect-modal">Ir al trámite en línea</a>
+                                    <a class="btn btn-online hidden-print" href="<?= $page->online_url ?>" data-toggle="modal" data-target="#redirect-modal" data-ga-te-category="Acciones Ficha" data-ga-te-action="Botón Trámite Online" data-ga-te-value="<?= $page->master_id ?>">
+                                        Ir al trámite en línea
+                                    </a>
                                 </div>
                                 <div role="tabpanel" class="tab-pane" id="office">
                                     <div class="visible-print-block"><strong>- Instrucciones Trámite en Sucursal</strong></div>
@@ -145,7 +177,7 @@
                     <div class="col-sm-4">
                         <div class="similar-page-container">
                             <div class="institution"><a href="buscar?institution=<?=$s->institution->id?>">Publicado por <?=$s->institution->name?></a></div>
-                            <h4><a href="fichas/<?=$s->guid?>"><?=$s->title?></a></h4>
+                            <h4><a href="fichas/<?=$s->guid?>" data-ga-te-category="Acciones Ficha" data-ga-te-action="Fichas relacionadas" data-ga-te-value="<?=$s->id?>" ><?=$s->title?></a></h4>
                             <?php if($s->online):?><div class="online">Trámite en Línea</div><?php endif ?>
                             <p><?=str_limit(strip_tags(\App\Twig::strip($s->objective)),100)?></p>
                         </div>
@@ -186,7 +218,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-link" data-dismiss="modal">Prefiero seguir en ChileAtiende</button>
-                    <a class="btn btn-primary" href="<?=$page->online_url?>">Entendido, Ir al trámite</a>
+                    <a class="btn btn-primary" href="<?=$page->online_url?>" data-ga-te-action="Modal Ir">Entendido, Ir al trámite</a>
                 </div>
             </div>
         </div>

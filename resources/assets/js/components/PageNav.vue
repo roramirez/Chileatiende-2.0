@@ -15,7 +15,7 @@
                 <li v-if="page.requirements"><a :href="currentUrl+'#requirements'" data-target="#requirements">¿Qué necesito para hacer el trámite?</a></li>
                 <li v-if="page.howto"><a :href="currentUrl+'#howto'" data-target="#howto">¿Cómo y dónde hago el trámite? </a></li>
             </ol>
-            <a v-if="page.online" class="btn btn-online" :href="page.online_url" data-toggle="modal" data-target="#redirect-modal">Ir al trámite en línea →</a>
+            <a v-if="page.online" class="btn btn-online" :href="page.online_url" data-toggle="modal" data-target="#redirect-modal" data-ga-te-category="Acciones Ficha" data-ga-te-action="Botón Trámite Online Superior" :data-ga-te-value="page.master_id">Ir al trámite en línea →</a>
         </div>
         <div class="clearfix"></div>
         <div v-if="page.related_pages.length > 0" class="hidden-xs hidden-sm">

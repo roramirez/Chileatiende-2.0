@@ -18,7 +18,7 @@
                             <?php if(@$skin == 'exterior'): ?>
                                 <li><a href="/ayuda/preguntas-frecuentes?skin=exterior">Preguntas Frecuentes (Exterior)</a></li>
                             <?php else: ?>
-                                <li><a href="/ayuda/preguntas-frecuentes">Preguntas Frecuentes</a></li>
+                                <li><a href="/ayuda/preguntas-frecuentes" data-ga-te-category="Acciones" data-ga-te-action="Ayuda" data-ga-te-value="Footer">Preguntas Frecuentes</a></li>
                             <?php endif ?>
                             <li><a href="/ayuda/">Centro de Ayuda</a></li>
                             <li><a href="<?=@$skin=='exterior'?'https://contacto.chilesinpapeleo.cl/tramites/iniciar/3280':'https://www.chileatiende.gob.cl/contacto/formulario.php?origen=http://www.chileatiende.gob.cl/'?>">Contacto</a></li>
