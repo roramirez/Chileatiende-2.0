@@ -14,14 +14,18 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
+                <?php if(@$skin == 'exterior'):?>
+                    <li><a href="/que-es-chileatiende?skin=exterior">¿Qué es ChileAtiende en el exterior?</a></li>
+                <?php else: ?>
                 <li><a href="/que-es-chileatiende">¿Qué es ChileAtiende?</a></li>
+                <?php endif ?>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                         Centro de Ayuda <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu help-menu">
                         <li>
-                            <a href="/ayuda/preguntas-frecuentes" class="help-card" title="Ir a preguntas frecuentes">
+                            <a href="/ayuda/preguntas-frecuentes<?=@$skin == 'exterior' ? '?skin=exterior':''?>" class="help-card" title="Ir a preguntas frecuentes">
                                 <div class="media <?= Request::path() == 'ayuda/preguntas-frecuentes' ? 'active' : '' ?>">
                                     <div class="media-left">
                                         <i class="material-icons">help</i>

@@ -6,7 +6,7 @@
             <?php if($skin == 'mujer'):?>style="background-image: url(images/home-mujer.jpg);"<?php endif ?>
             <?php if($skin == 'exterior'):?>style="background-image: url(images/home-exterior.jpg);"<?php endif ?>
     >
-        <?= view('chunks/navbar') ?>
+        <?= view('chunks/navbar', ['skin'=>$skin]) ?>
 
         <div class="main">
             <div class="container">
