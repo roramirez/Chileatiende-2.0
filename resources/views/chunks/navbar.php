@@ -106,7 +106,7 @@
                         <a href="notificaciones">
                             <i class="material-icons">notifications</i>
                             <span class="notification-badge">
-                                999
+                                <?=Auth::user()->notifications()->where('read',0)->count()?>
                             </span>
                         </a>
                     </li>
