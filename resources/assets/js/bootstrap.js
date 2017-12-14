@@ -1,6 +1,12 @@
 
 window._ = require('lodash');
 
+window.moment = require('moment');
+window.moment.locale('es');
+
+window.numeral = require('numeral');
+window.numeral.locale('es',require('numeral/locales/es'));
+
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
  * for JavaScript based Bootstrap features such as modals and tabs. This

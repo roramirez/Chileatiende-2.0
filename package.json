@@ -16,6 +16,7 @@
     "browser-sync-webpack-plugin": "^1.2.0",
     "clipboard": "^1.7.1",
     "cross-env": "^5.0.1",
+    "d3": "^4.12.0",
     "element-ui": "^1.4.6",
     "google-maps": "^3.2.1",
     "gumshoe": "github:cferdinandi/gumshoe",
@@ -23,8 +24,11 @@
     "jquery": "^3.1.1",
     "laravel-mix": "^1.4.5",
     "lodash": "^4.17.4",
+    "moment": "^2.19.4",
+    "numeral": "^2.0.6",
     "smooth-scroll": "^12.1.5",
     "tinymce": "^4.7.0",
+    "tippy.js": "^2.0.5",
     "vue": "^2.4.4"
   }
 }

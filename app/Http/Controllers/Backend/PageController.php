@@ -250,7 +250,6 @@ class PageController extends Controller{
         }
 
         $this->validate($request, [
-            'published' => 'required|boolean',
             'featured' => 'required|boolean',
             'boost' => 'required|numeric',
             'institution_id' => 'required|exists:institutions,id',
@@ -258,7 +257,6 @@ class PageController extends Controller{
         ]);
 
 
-        $page->published = $request->input('published');
         $page->featured = $request->input('featured');
         $page->boost = $request->input('boost');
         $page->categories()->sync($request->input('categories'));
@@ -280,9 +278,18 @@ class PageController extends Controller{
             abort(403);
         }
 
-        $page->status = $request->input('status');
+        $status = $request->input('status');
+
+        $page->status = $status;
         $page->status_comment = $request->input('status_comment');
+        if($status == 'rechazado')
+            $page->published = false;
+        elseif($status == '')
+            $page->published = true;
         $page->save();
+
+        //Actualizamos sus versiones en el indice de busquedas
+        $page->versions->searchable();
 
         $request->session()->flash('status', 'Ficha actualizada con éxito.');
 
