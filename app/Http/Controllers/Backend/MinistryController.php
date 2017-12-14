@@ -74,6 +74,7 @@ class MinistryController extends Controller{
             'name' => 'required',
         ]);
 
+        $ministry->id = $request->input('id');
         $ministry->name = $request->input('name');
         $ministry->shortname = $request->input('shortname');
         $ministry->description = $request->input('description');
