@@ -9,7 +9,6 @@
                 <div class="col-sm-2">
                     <select v-if="showTypePicker" class="form-control" v-model="type">
                         <option value="activeUsers">Visitas únicas</option>
-                        <option value="derivatedUsers">Derivaciones al trámite</option>
                     </select>
                 </div>
                 <div class="col-sm-4">
