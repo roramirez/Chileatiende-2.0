@@ -12,7 +12,7 @@ class OfficeController extends Controller{
         if(!$request->user()->can('view', Office::class))
             abort(403);
 
-        $data['offices'] = Office::with('location')->get();
+        $data['offices'] = Office::with('location')->orderBy('mobile','desc')->get();
 
         return view('layouts/backend',[
             'title' => 'Oficinas',

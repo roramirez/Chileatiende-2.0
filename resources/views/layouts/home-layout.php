@@ -6,12 +6,19 @@
             <?php if($skin == 'mujer'):?>style="background-image: url(images/home-mujer.jpg);"<?php endif ?>
             <?php if($skin == 'exterior'):?>style="background-image: url(images/home-exterior.jpg);"<?php endif ?>
     >
-        <?= view('chunks/navbar') ?>
+        <?= view('chunks/navbar', ['skin'=>$skin]) ?>
 
         <div class="main">
             <div class="container">
 
-                <h2>¡Hola! Estás en ChileAtiende</h2>
+                <h2>
+                    ¡Hola! Estás en ChileAtiende
+                    <?php if($skin == 'exterior'):?>
+                        <span class="exterior">/ Exterior</span>
+                    <?php elseif ($skin == 'mujer'): ?>
+                        <span class="mujer">/ Mujer</span>
+                    <?php endif ?>
+                </h2>
                 <h3>Guía de Trámites y Servicios del Estado</h3>
 
 

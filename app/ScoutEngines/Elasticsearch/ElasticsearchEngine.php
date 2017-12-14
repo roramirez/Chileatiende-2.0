@@ -27,7 +27,7 @@ class ElasticsearchEngine extends \ScoutEngines\Elasticsearch\ElasticsearchEngin
                                     [
                                         'field_value_factor' => [
                                             'field' => 'hit_count',
-                                            'modifier' => 'log1p'
+                                            'modifier' => 'log2p'
                                             ]
                                     ],
                                     [

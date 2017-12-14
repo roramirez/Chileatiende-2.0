@@ -1,5 +1,12 @@
 <template>
     <form class="institution-form form-horizontal" @submit.prevent="submit()">
+        <div class="form-group" :class="{'has-error': errors['id']}">
+            <label for="id" class="col-sm-2 control-label">Identificador</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="id" v-model="data.id">
+                <div class="help-block" v-for="e in errors['id']">{{e}}</div>
+            </div>
+        </div>
         <div class="form-group" :class="{'has-error': errors['name']}">
             <label for="name" class="col-sm-2 control-label">Nombre</label>
             <div class="col-sm-10">

@@ -211,7 +211,7 @@ class PageController extends Controller{
         $version->id = null;
         $version->master = false;
         $version->master_id = $page->id;
-        $version->published = false;
+        $version->published = $lastVersion ? false : true;  //Si no hay mas versiones, entonces dejamos esta como la publicada
         $version->save();
         //Ahora guardamos las relacionadas
         $version->relatedPages()->sync($request->input('related_pages'));

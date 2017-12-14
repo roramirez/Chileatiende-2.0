@@ -49,7 +49,7 @@
 						<h3>Módulos Autoatención</h3>
 					</div>
 					<div class="card-body">
-						<p>Módulos Autoatención que permiten acceder de manera simple y directa a información sobre más de 2.200 beneficios y servicios públicos.</p>
+						<p>Módulos Autoatención que permiten acceder a información del portal ChileAtiende y ejecutar servicios digitales en línea provistos por instituciones públicas.</p>
 					</div>
 				</div>
 			</div>
@@ -57,7 +57,7 @@
 				<div class="channel-card">
 					<div class="card-heading">
 						<img src="images/callcenter-02.svg" alt="ícono callcenter">
-						<h3>callcenter</h3>
+						<h3>Call Center</h3>
 					</div>
 					<div class="card-body">
 						<p>El <a href="/ayuda/atencion-telefonica">call center 101</a> entrega orientación sobre los servicios y beneficios que otorga el Estado.</p>

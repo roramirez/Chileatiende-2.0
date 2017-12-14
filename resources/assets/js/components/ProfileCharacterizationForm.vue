@@ -30,35 +30,35 @@
                             </div>
                         </li>
                         <li>
-                            <div class="form-group" :class="{'has-error': errors['phone'], active: subStep == 1}" @click="subStep = 1">
+                            <div class="form-group" :class="{'has-error': errors['phone'], active: subStep == 2}" @click="subStep = 2">
                                 <label for="phone" class="control-label">Teléfono Móvil (Opcional)</label>
                                 <input type="phone" id="phone" class="form-control" v-model="data.phone">
                                 <div class="help-block" v-for="e in errors['phone']">{{e}}</div>
                             </div>
                         </li>
                         <li>
-                            <div class="form-group" :class="{'has-error': errors['birth_date'], active: subStep == 1}" @click="subStep = 1">
+                            <div class="form-group" :class="{'has-error': errors['birth_date'], active: subStep == 3}" @click="subStep = 3">
                                 <label for="birth_date" class="control-label">Fecha de Nacimiento</label>
                                 <el-date-picker id="birth_date" v-model="data.birth_date" format="dd/MM/yyyy" placeholder="Día/Mes/Año" @change="subStep++"></el-date-picker>
                                 <div class="help-block" v-for="e in errors['birth_date']">{{e}}</div>
                             </div>
                         </li>
                         <li>
-                            <div class="form-group" :class="{'has-error': errors['gender'], active: subStep == 2}" @click="subStep = 2">
+                            <div class="form-group" :class="{'has-error': errors['gender'], active: subStep == 4}" @click="subStep = 4">
                                 <label class="control-label">Sexo</label>
                                 <div>
                                     <label class="radio-inline">
-                                        <input type="radio" v-model="data.gender" value="m" @change="subStep++"> Masculino
+                                        <input type="radio" v-model="data.gender" value="m"> Masculino
                                     </label>
                                     <label class="radio-inline">
-                                        <input type="radio" v-model="data.gender" value="f" @change="subStep++"> Femenino
+                                        <input type="radio" v-model="data.gender" value="f"> Femenino
                                     </label>
                                 </div>
                                 <div class="help-block" v-for="e in errors['gender']">{{e}}</div>
                             </div>
                         </li>
                         <li>
-                            <div class="form-group" :class="{'has-error': errors['nationality'], active: subStep == 3}" @click="subStep = 3">
+                            <div class="form-group" :class="{'has-error': errors['nationality'], active: subStep == 5}" @click="subStep = 5">
                                 <label for="nationality" class="control-label">Nacionalidad</label>
                                 <el-select id="nationality" v-model="data.nationality" filterable @change="subStep++">
                                     <el-option v-for="c in countries" :value="c.alpha3Code" :key="c.alpha3Code" :label="c.name"></el-option>
@@ -67,14 +67,14 @@
                             </div>
                         </li>
                         <li>
-                            <div class="form-group" :class="{'has-error': errors['foreigner'], active: subStep == 4}" @click="subStep = 4">
+                            <div class="form-group" :class="{'has-error': errors['foreigner'], active: subStep == 6}" @click="subStep = 6">
                                 <label class="control-label">¿Actualmente vive en Chile?</label>
                                 <div>
                                     <label class="radio-inline">
-                                        <input type="radio" v-model="data.foreigner" :value="false" @change="subStep++"> Si
+                                        <input type="radio" v-model="data.foreigner" :value="false"> Si
                                     </label>
                                     <label class="radio-inline">
-                                        <input type="radio" v-model="data.foreigner" :value="true" @change="subStep++"> No
+                                        <input type="radio" v-model="data.foreigner" :value="true"> No
                                     </label>
                                 </div>
                                 <div class="help-block" v-for="e in errors['foreigner']">{{e}}</div>
@@ -174,7 +174,7 @@
                 maxSteps: 2,
                 step: 1,
                 subStep: 1,
-                maxSubSteps: 5
+                maxSubSteps: 6
             }
         },
         props: ['user'],
