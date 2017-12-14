@@ -9,6 +9,10 @@ class Ministry extends Model
 {
     public $incrementing = false;
 
-
+    protected $attributes = [
+        'name' => '',
+        'shortname' => '',
+        'description' => '',
+    ];
 
 }
