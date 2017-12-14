@@ -107,7 +107,7 @@ class Page extends Model
                 'ministry_id' => $this->institution->ministry_id,
                 'category_id' => $this->categories->pluck('id'),
                 'hit_count' => $this->hitCount(),
-                'boost' => $this->boost
+                'boost' => $this->master ? $this->boost : $this->masterPage->boost
             ];
 
     }
@@ -120,6 +120,23 @@ class Page extends Model
 
 
         return $page->hits()->where('date','>=', Carbon::now()->subYear())->sum('count');
+    }
+
+    public function addHit(){
+        if(!$this->master)
+            return;
+
+        DB::beginTransaction();
+        $hits = $this->hits()->where('date', Carbon::now()->format('Y-m-d'))->first();
+        if(!$hits){
+            $hits = new Hit();
+            $hits->page_id = $this->id;
+            $hits->date = Carbon::now()->format('Y-m-d');
+        }
+        $hits->count++;
+        $hits->save();
+        DB::commit();
+        $this->versions->searchable();
     }
 
     public function scopeMasters($query){

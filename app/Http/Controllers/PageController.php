@@ -13,6 +13,8 @@ class PageController extends Controller{
             abort(404);
         }
 
+        $master->addHit();
+
         $page = Page::find($id)->publishedVersion();
         $page->load('relatedPages');
         $page->load('similarPages');
