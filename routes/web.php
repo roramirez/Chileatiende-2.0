@@ -67,6 +67,8 @@ Route::group(['middleware' => ['backend'], 'prefix'=>'backend', 'namespace'=>'Ba
         Route::resource('categories', 'CategoryController');
         Route::resource('locations', 'LocationController');
         Route::resource('pages', 'PageController');
+        Route::get('analytics/realtime', 'AnalyticsController@getRealtime');
+        Route::get('analytics/ga', 'AnalyticsController@getGA');
     });
 });
 

@@ -16,6 +16,7 @@ import MobileMenu from './components/MobileMenu.vue';
 import PageFilterForm from './components/PageFilterForm.vue';
 import AccessTokenForm from './components/AccessTokenForm.vue';
 import NotificationForm from './components/NotificationForm.vue';
+import PastUsers from './components/PastUsers.vue';
 
 
 const app = new Vue({
@@ -35,7 +36,8 @@ const app = new Vue({
         CategoryForm,
         PageFilterForm,
         AccessTokenForm,
-        NotificationForm
+        NotificationForm,
+        PastUsers
     },
     mounted() {
         $('[data-toggle="tooltip"]').tooltip();
