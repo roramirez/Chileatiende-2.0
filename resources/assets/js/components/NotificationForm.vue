@@ -17,7 +17,7 @@
         <div class="form-group" :class="{'has-error': errors['message']}">
             <label for="message" class="col-sm-2 control-label">Mensaje</label>
             <div class="col-sm-10">
-                <textarea class="form-control" id="message" v-model="data.message" rows="10"></textarea>
+                <editor id="message" v-model="data.message"></editor>
                 <div class="help-block" v-for="e in errors['message']">{{e}}</div>
             </div>
         </div>
@@ -35,6 +35,7 @@
 </style>
 <script>
     import InstitutionSelect from './InstitutionSelect.vue';
+    import Editor from './Editor.vue';
 
     export default {
         data: function(){
@@ -48,7 +49,8 @@
             }
         },
         components:{
-            InstitutionSelect
+            InstitutionSelect,
+            Editor
         },
         methods:{
             submit: function(){
