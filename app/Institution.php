@@ -10,6 +10,7 @@ class Institution extends Model
     public $incrementing = false;
 
     protected $attributes = [
+        'id' => '',
         'name' => '',
         'shortname' => '',
         'url' => '',

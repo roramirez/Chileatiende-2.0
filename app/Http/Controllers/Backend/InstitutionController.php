@@ -70,6 +70,7 @@ class InstitutionController extends Controller{
 
     private function save(Request $request, Institution $institution){
         $this->validate($request, [
+            'id' => 'required',
             'name' => 'required',
             'shortname' => 'required',
             'url' => 'required|url',

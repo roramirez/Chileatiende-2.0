@@ -70,6 +70,7 @@ class MinistryController extends Controller{
 
     private function save(Request $request, Ministry $ministry){
         $this->validate($request, [
+            'id' => 'required',
             'name' => 'required',
         ]);
 
