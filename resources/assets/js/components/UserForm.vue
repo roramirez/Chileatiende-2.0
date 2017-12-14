@@ -80,7 +80,7 @@
 
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
-                <a class="btn btn-default" href="backend/categorias">Cancelar</a>
+                <a class="btn btn-default" href="backend/usuarios">Cancelar</a>
                 <button type="submit" class="btn btn-primary">Guardar</button>
             </div>
         </div>
