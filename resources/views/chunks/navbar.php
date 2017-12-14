@@ -103,7 +103,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="notificaciones">
+                        <a href="notificaciones" class="notifications">
                             <i class="material-icons">notifications</i>
                             <span class="notification-badge">
                                 <?=Auth::user()->notifications()->where('read',0)->count()?>
