@@ -116,6 +116,15 @@
                                 </a>
                             </div>
                             <?php endif ?>
+                            <?php if(Auth::user()->can('view', \App\Office::class)):?>
+                                <div class="sidebar-buttons">
+                                    <div class="heading">Oficinas</div>
+                                    <a href="backend/oficinas" class="sidebar-btn <?= Request::path() == 'backend/oficinas' ? 'active' : '' ?>">
+                                        <i class="material-icons">business</i>
+                                        Oficinas
+                                    </a>
+                                </div>
+                            <?php endif ?>
                             <?php if(Auth::user()->can('view', \App\User::class)):?>
                             <div class="sidebar-buttons">
                                 <div class="heading">Administración</div>
@@ -123,12 +132,6 @@
                                 <a href="backend/usuarios" class="sidebar-btn <?= Request::path() == 'backend/usuarios' ? 'active' : '' ?>">
                                     <i class="material-icons">person</i>
                                     Usuarios
-                                </a>
-                                <?php endif ?>
-                                <?php if(Auth::user()->can('view', \App\Office::class)):?>
-                                <a href="backend/oficinas" class="sidebar-btn <?= Request::path() == 'backend/oficinas' ? 'active' : '' ?>">
-                                    <i class="material-icons">business</i>
-                                    Oficinas
                                 </a>
                                 <?php endif ?>
                                 <?php if(Auth::user()->can('view', \App\Category::class)):?>
