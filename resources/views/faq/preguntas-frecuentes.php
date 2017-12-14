@@ -44,7 +44,7 @@
 							¿Dónde se encuentran ubicados los puntos de atención IPS-ChileAtiende?
 						</div>
 						<div class="answer">
-							<p>La red presencial de IPS-ChileAtiende cuenta con más de 200 puntos de atención a lo largo de todo el país. Para buscar la oficina más cercana a su domicilio <a href="#">haga clic aquí.</a></p>
+							<p>La red presencial de IPS-ChileAtiende cuenta con más de 200 puntos de atención a lo largo de todo el país. Para buscar la oficina más cercana a su domicilio <a href="/ayuda/sucursales">haga clic aquí.</a></p>
 						</div>
 					</div>
 					<div class="question">
