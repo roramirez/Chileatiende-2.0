@@ -1,7 +1,7 @@
 <?=view('chunks/head', $__data)?>
 <div id="app">
     <header class="default">
-        <?= view('chunks/navbar', ['skin'=>$skin]) ?>
+        <?= view('chunks/navbar') ?>
 
         <?php if(@!$hideSearch): ?>
         <div class="search-area hidden-print">
