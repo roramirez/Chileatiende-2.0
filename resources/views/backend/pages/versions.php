@@ -28,7 +28,7 @@
         <?php foreach($page->versions()->orderBy('id','desc')->get() as $v):?>
         <tr>
             <td><?=$v->id?></td>
-            <td><?=$v->published ? 'Si':'No'?></td>
+            <td><?=$v->published && $v->masterPage->published ? 'Si':'No'?></td>
             <td><?=$v->updated_at?></td>
             <td class="text-center">
                 <?php if(Auth::user()->can('publishVersion',$page)):?>
