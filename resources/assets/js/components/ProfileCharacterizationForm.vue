@@ -23,28 +23,28 @@
                 <div class="col-sm-offset-3 col-sm-6">
                     <ol>
                         <li>
-                            <div class="form-group" :class="{'has-error': errors['email'], active: subStep == 1}" @click="subStep = 1">
+                            <div class="form-group" :class="{'has-error': errors['email'], active: subStep == 1}" @click="subStep = 2">
                                 <label for="email" class="control-label">Correo Electrónico</label>
                                 <input type="email" id="email" class="form-control" v-model="data.email">
                                 <div class="help-block" v-for="e in errors['email']">{{e}}</div>
                             </div>
                         </li>
                         <li>
-                            <div class="form-group" :class="{'has-error': errors['phone'], active: subStep == 1}" @click="subStep = 1">
+                            <div class="form-group" :class="{'has-error': errors['phone'], active: subStep == 2}" @click="subStep = 3">
                                 <label for="phone" class="control-label">Teléfono Movil (Opcional)</label>
                                 <input type="phone" id="phone" class="form-control" v-model="data.phone">
                                 <div class="help-block" v-for="e in errors['phone']">{{e}}</div>
                             </div>
                         </li>
                         <li>
-                            <div class="form-group" :class="{'has-error': errors['birth_date'], active: subStep == 1}" @click="subStep = 1">
+                            <div class="form-group" :class="{'has-error': errors['birth_date'], active: subStep == 3}" @click="subStep = 4">
                                 <label for="birth_date" class="control-label">Fecha de Nacimiento</label>
                                 <el-date-picker id="birth_date" v-model="data.birth_date" format="dd/MM/yyyy" placeholder="Día/Mes/Año" @change="subStep++"></el-date-picker>
                                 <div class="help-block" v-for="e in errors['birth_date']">{{e}}</div>
                             </div>
                         </li>
                         <li>
-                            <div class="form-group" :class="{'has-error': errors['gender'], active: subStep == 2}" @click="subStep = 2">
+                            <div class="form-group" :class="{'has-error': errors['gender'], active: subStep == 4}" @click="subStep = 5">
                                 <label class="control-label">Sexo</label>
                                 <div>
                                     <label class="radio-inline">
@@ -58,7 +58,7 @@
                             </div>
                         </li>
                         <li>
-                            <div class="form-group" :class="{'has-error': errors['nationality'], active: subStep == 3}" @click="subStep = 3">
+                            <div class="form-group" :class="{'has-error': errors['nationality'], active: subStep == 5}" @click="subStep = 6">
                                 <label for="nationality" class="control-label">Nacionalidad</label>
                                 <el-select id="nationality" v-model="data.nationality" filterable @change="subStep++">
                                     <el-option v-for="c in countries" :value="c.alpha3Code" :key="c.alpha3Code" :label="c.name"></el-option>
@@ -67,7 +67,7 @@
                             </div>
                         </li>
                         <li>
-                            <div class="form-group" :class="{'has-error': errors['foreigner'], active: subStep == 4}" @click="subStep = 4">
+                            <div class="form-group" :class="{'has-error': errors['foreigner'], active: subStep == 6}" @click="subStep = 7">
                                 <label class="control-label">¿Actualmente vive en Chile?</label>
                                 <div>
                                     <label class="radio-inline">
@@ -174,7 +174,7 @@
                 maxSteps: 2,
                 step: 1,
                 subStep: 1,
-                maxSubSteps: 5
+                maxSubSteps: 6
             }
         },
         props: ['user'],
