@@ -30,6 +30,8 @@ class Twig{
 
         $string = preg_replace('/{{doc\[(.+)\]:(.+)}}/sU', "<div class='doc doc-$1'>$2</div>" ,$string);
 
+        $string = preg_replace('/{{marcolegal:(.+)}}/sU', "<div class='marcolegal'>$1</div>" ,$string);
+
         $count = preg_match_all('/{{paso:(.+)}}.*{{contenido:(.+)}}/sU', $string, $matches);
         if ($count){
             $string = preg_replace('/{{paso:.+}}/sU','',$string);
