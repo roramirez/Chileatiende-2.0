@@ -1591,7 +1591,7 @@ main {
 }
 .notifications {
   &:hover {
-    text-decoration: none;
+    text-decoration: none !important;
   }
 }
 .notification-badge {
