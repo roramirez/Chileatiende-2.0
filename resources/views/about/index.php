@@ -49,7 +49,7 @@
 						<h3>Módulos Autoatención</h3>
 					</div>
 					<div class="card-body">
-						<p>Módulos Autoatención que permiten de manera simple activar el servicio de claveúnica, acceder a información del portal ChileAtiende y ejecutar servicios digitales en línea provistos por instituciones públicas .</p>
+						<p>Módulos Autoatención que permiten acceder a información del portal ChileAtiende y ejecutar servicios digitales en línea provistos por instituciones públicas.</p>
 					</div>
 				</div>
 			</div>
