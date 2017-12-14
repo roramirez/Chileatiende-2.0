@@ -31,7 +31,7 @@
                         </li>
                         <li>
                             <div class="form-group" :class="{'has-error': errors['phone'], active: subStep == 1}" @click="subStep = 1">
-                                <label for="phone" class="control-label">Teléfono Movil (Opcional)</label>
+                                <label for="phone" class="control-label">Teléfono Móvil (Opcional)</label>
                                 <input type="phone" id="phone" class="form-control" v-model="data.phone">
                                 <div class="help-block" v-for="e in errors['phone']">{{e}}</div>
                             </div>
@@ -97,11 +97,11 @@
         </fieldset>
         <fieldset v-show="step == 2">
             <div class="categories">
-                <label class="control-label">Indicanos cuales son tus temas de interes</label>
+                <label class="control-label">Indícanos cuales son tus temas de interes</label>
 
                 <el-checkbox-group v-model="data.categories">
                     <div class="row">
-                        <div v-for="c in categories" class="col-sm-4">
+                        <div v-for="c in categories" class="col-md-4">
                             <el-checkbox :label="c.id">{{c.name}}</el-checkbox>
                         </div>
                     </div>

@@ -31,7 +31,7 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-md-3">
+			<div class="col-md-6">
 				<div class="channel-card">
 					<div class="card-heading">
 						<img src="images/sitio-web.svg" alt="ícono web">
@@ -42,7 +42,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-md-3">
+			<div class="col-md-6">
 				<div class="channel-card">
 					<div class="card-heading">
 						<img src="images/sitio-web.svg" alt="ícono web">
@@ -53,7 +53,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-md-3">
+			<div class="col-md-6">
 				<div class="channel-card">
 					<div class="card-heading">
 						<img src="images/callcenter-02.svg" alt="ícono callcenter">
@@ -64,7 +64,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-md-3">
+			<div class="col-md-6">
 				<div class="channel-card">
 					<div class="card-heading">
 						<img src="images/sucursales.svg" alt="ícono Sucursales">

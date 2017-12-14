@@ -98,7 +98,14 @@
                             </li>
                         </ul>
                     </li>
-                    <li><a href="notificaciones"><i class="material-icons">notifications</i></a></li>
+                    <li>
+                        <a href="notificaciones">
+                            <i class="material-icons">notifications</i>
+                            <span class="notification-badge">
+                                999
+                            </span>
+                        </a>
+                    </li>
                 <?php else: ?>
                     <li><a href="mi-chileatiende" class="mcha-btn">
                             <img src="images/clave-logo.svg" alt="Logo Claveúnica">

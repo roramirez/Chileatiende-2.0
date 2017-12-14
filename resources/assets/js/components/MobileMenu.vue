@@ -49,6 +49,13 @@
                                 <i class="material-icons">person</i>
                                 Perfil
                             </a>
+                            <a href="notificaciones">
+                                <i class="material-icons">notifications</i>
+                                Notificaciones
+                                <span class="notification-badge">
+                                    999
+                                </span>
+                            </a>
                             <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             	<i class="material-icons">power_settings_new</i>
                                 Cerrar Sesión

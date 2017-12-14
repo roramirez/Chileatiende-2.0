@@ -24,11 +24,13 @@
 				<p>Seis oficinas móviles distribuidas en las regiones de O'Higgins, Bío Bío, La Araucanía, Metropolitana, Valparaíso y Coquimbo donde encontrarás información y orientación para postulaciones, reclamos y obtención de certificados, entre otros trámites del Estado.</p>
 				<h4>ubicación en regiones</h4>
 				<div class="main-tabs">
-	                <ul class="nav nav-tabs" role="tablist" v-select-first-tab>
-                        <?php foreach($offices->groupBy('location.parent.parent.id') as $location => $off):?>
-                            <li role="presentation"><a href="#location-<?=$location?>" aria-controls="online" role="tab" data-toggle="tab"><?=$off[0]->location->parent->parent->shortname?></a></li>
-                        <?php endforeach ?>
-	                </ul>
+                    <div class="tabs-container">
+    	                <ul class="nav nav-tabs" role="tablist" v-select-first-tab>
+                            <?php foreach($offices->groupBy('location.parent.parent.id') as $location => $off):?>
+                                <li role="presentation"><a href="#location-<?=$location?>" aria-controls="online" role="tab" data-toggle="tab"><?=$off[0]->location->parent->parent->shortname?></a></li>
+                            <?php endforeach ?>
+    	                </ul>
+                    </div>
 	                <div class="tab-content">
                         <?php foreach($offices->groupBy('location.parent.parent.id') as $location => $off):?>
 	                    <div role="tabpanel" class="tab-pane" id="location-<?=$location?>">

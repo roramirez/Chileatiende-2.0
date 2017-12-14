@@ -54,7 +54,7 @@
                         <h3>Términos y Condiciones</h3>
                         <span class="caret"></span>
                     </a>
-                    <div id="foo-coll-01" class="links-footer collapse">
+                    <div id="foo-coll-04" class="links-footer collapse">
                         <ul>
                             <li><a href="/politica-de-privacidad">Política de privacidad</a></li>
                             <li><a href="/terminos-y-condiciones">Términos de uso</a></li>

@@ -56,7 +56,7 @@ class FaqController extends Controller{
         $skin = $request->get('skin');
 
         return view('layouts/layout',[
-            'title' => 'Sucursales',
+            'title' => 'Preguntas Frecuentes',
             'content' => $skin == 'exterior' ? view('faq/exterior') : view('faq/preguntas-frecuentes')
         ]);
     }
