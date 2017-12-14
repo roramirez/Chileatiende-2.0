@@ -57,7 +57,7 @@
 				<div class="channel-card">
 					<div class="card-heading">
 						<img src="images/callcenter-02.svg" alt="ícono callcenter">
-						<h3>callcenter</h3>
+						<h3>Call Center</h3>
 					</div>
 					<div class="card-body">
 						<p>El <a href="/ayuda/atencion-telefonica">call center 101</a> entrega orientación sobre los servicios y beneficios que otorga el Estado.</p>
