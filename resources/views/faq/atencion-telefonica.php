@@ -33,14 +33,16 @@
 						</ul>
 					</div>
 					<div class="main-tabs">
-	                    <ul class="nav nav-tabs" role="tablist" v-select-first-tab>
-	                        <li role="presentation" class="active"><a href="#op1" aria-controls="online" role="tab" data-toggle="tab">Opción 1</a></li>
-	                        <li role="presentation"><a href="#op2" aria-controls="office" role="tab" data-toggle="tab">Opción 2</a></li>
-	                        <li role="presentation"><a href="#op3" aria-controls="phone" role="tab" data-toggle="tab">Opción 3</a></li>
-	                        <li role="presentation"><a href="#op4" aria-controls="mail" role="tab" data-toggle="tab">Opción 4</a></li>
-	                        <li role="presentation"><a href="#op5" aria-controls="mail" role="tab" data-toggle="tab">Opción 5</a></li>
-	                        <li role="presentation"><a href="#op6" aria-controls="mail" role="tab" data-toggle="tab">Opción 6</a></li>
-	                    </ul>
+						<div class="tabs-container">
+		                    <ul class="nav nav-tabs" role="tablist" v-select-first-tab>
+		                        <li role="presentation" class="active"><a href="#op1" aria-controls="online" role="tab" data-toggle="tab">Opción 1</a></li>
+		                        <li role="presentation"><a href="#op2" aria-controls="office" role="tab" data-toggle="tab">Opción 2</a></li>
+		                        <li role="presentation"><a href="#op3" aria-controls="phone" role="tab" data-toggle="tab">Opción 3</a></li>
+		                        <li role="presentation"><a href="#op4" aria-controls="mail" role="tab" data-toggle="tab">Opción 4</a></li>
+		                        <li role="presentation"><a href="#op5" aria-controls="mail" role="tab" data-toggle="tab">Opción 5</a></li>
+		                        <li role="presentation"><a href="#op6" aria-controls="mail" role="tab" data-toggle="tab">Opción 6</a></li>
+		                    </ul>
+		                </div>
 	                    <div class="tab-content">
 	                        <div role="tabpanel" class="tab-pane active" id="op1">
 	                        	<div class="option-details">

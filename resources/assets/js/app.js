@@ -47,6 +47,7 @@ const app = new Vue({
             offset: 100
         });
         $('[data-toggle="tooltip"]').tooltip();
+        this.bindGAEvents();
     },
     methods: {
         toggleReadspeaker() {
@@ -61,6 +62,22 @@ const app = new Vue({
                     .find('.rsbtn_stop')
                     .first();
                 $stopBtn.trigger('click');
+            }
+        },
+        bindGAEvents(){
+            if(typeof _gaq !== "undefined"){
+                $('body').on('mousedown', '[data-ga-te-category]', function(e){
+                    var elem = $(this),
+                        category = elem.data('ga-te-category')||'',
+                        action = elem.data('ga-te-action')||'',
+                        label = elem.data('ga-te-label')||'',
+                        value = elem.data('ga-te-value');
+                    if(label){
+                        _gaq.push(['_trackEvent', category, action, label, value]);
+                    } else { 
+                        _gaq.push(['_trackEvent', category, action, ''+value+'']);
+                    }
+                });
             }
         }
     }

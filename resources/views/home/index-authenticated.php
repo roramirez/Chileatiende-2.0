@@ -60,7 +60,7 @@
                             <?php endif ?>
                         </a>
                         <div class="caption">
-                            <h3><a href="fichas/<?= $f->guid ?>"><?= $f->title . ' →' ?></a></h3>
+                            <h3><a href="fichas/<?= $f->guid ?>" data-ga-te-category="Menu Accesos" data-ga-te-action="clic" data-ga-te-value="<?=$f->id?>"><?= $f->title . ' →' ?></a></h3>
                         </div>
                     </div>
                 <?php endforeach ?>
