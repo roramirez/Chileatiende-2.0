@@ -83,25 +83,19 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-md-4">
+			<div class="col-md-6">
 				<div class="video-container">
 					<div class="embed-responsive embed-responsive-16by9">
-					  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/k50SAxXy9uw"></iframe>
+					  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/JlEt9-SaKzg"></iframe>
 					</div>
-					<p class="slab">Presentación ChileAtiende 2014</p>
+					<p class="slab">¿Qué es ChileAtiende?</p>
 				</div>
 			</div>
-			<div class="col-md-4">
-				<div class="video-container">
-					<img src="images/video-placeholder.jpg" class="img-responsive" alt="Video">
-					<p class="slab">Video Testimonial ChileAtiende</p>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div class="video-container">
-					<img src="images/video-placeholder.jpg" class="img-responsive" alt="Video">
-					<p class="slab">Video Lanzamiento ChileAtiende</p>
-				</div>
+			<div class="col-md-6">
+				<div class="embed-responsive embed-responsive-16by9">
+					  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/_H_NPdtPy5U"></iframe>
+					</div>
+					<p class="slab">Cómo usar el portal ChileAtiende</p>
 			</div>
 		</div>
 	</div>
