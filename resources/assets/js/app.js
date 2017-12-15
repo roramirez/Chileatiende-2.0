@@ -77,6 +77,7 @@ const app = new Vue({
                     } else { 
                         _gaq.push(['_trackEvent', category, action, ''+value+'']);
                     }
+                    console.log('click marcado');
                 });
             }
         }

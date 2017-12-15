@@ -177,7 +177,7 @@
                     <div class="col-sm-4">
                         <div class="similar-page-container">
                             <div class="institution"><a href="buscar?institution=<?=$s->institution->id?>">Publicado por <?=$s->institution->name?></a></div>
-                            <h4><a href="fichas/<?=$s->guid?>" data-ga-te-category="Acciones Ficha" data-ga-te-action="Fichas relacionadas" data-ga-te-value="<?=$s->id?>" ><?=$s->title?></a></h4>
+                            <h4><a href="fichas/<?=$s->guid?>" data-ga-te-category="Acciones Ficha" data-ga-te-action="Fichas sugeridas" data-ga-te-value="<?=$s->id?>" ><?=$s->title?></a></h4>
                             <?php if($s->online):?><div class="online">Trámite en Línea</div><?php endif ?>
                             <p><?=str_limit(strip_tags(\App\Twig::strip($s->objective)),100)?></p>
                         </div>
