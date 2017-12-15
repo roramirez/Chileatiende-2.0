@@ -92,10 +92,12 @@
 				</div>
 			</div>
 			<div class="col-md-6">
+			<div class="video-container">
 				<div class="embed-responsive embed-responsive-16by9">
 					  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/_H_NPdtPy5U"></iframe>
 					</div>
 					<p class="slab">Cómo usar el portal ChileAtiende</p>
+				</div>
 			</div>
 		</div>
 	</div>
