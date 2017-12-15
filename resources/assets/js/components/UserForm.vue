@@ -33,7 +33,7 @@
                     <ul>
                         <li><strong>admin:</strong> Permisos para todo</li>
                         <li><strong>counterpart:</strong> Permisos solo para editar fichas. Normalmente usuario asignado a instituciones para que colaboren en la edición de fichas.</li>
-                        <li><strong>operator:</strong> Permisos para editar oficinas mobiles.</li>
+                        <li><strong>operator:</strong> Permisos para editar oficinas móviles.</li>
                     </ul>
                 </div>
                 <div class="help-block" v-for="e in errors['role']">{{e}}</div>
