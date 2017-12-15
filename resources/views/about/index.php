@@ -38,7 +38,7 @@
 						<h3>Sitio Web</h3>
 					</div>
 					<div class="card-body">
-						<p>El <a href="/">portal ChileAtiende</a> permite acceder de manera simple y directa a información sobre más de 2.200 beneficios y servicios públicos.</p>
+						<p>El <a href="/">portal ChileAtiende</a> permite acceder de manera simple y directa a información sobre más de 2.500 beneficios y servicios públicos.</p>
 					</div>
 				</div>
 			</div>
@@ -79,7 +79,6 @@
 		<div class="row">
 			<div class="col-md-12">
 				<h2>¿Cómo es usar ChileAtiende?</h2>
-				<p>Mira lo que opinan las personas que han usado nuestros servicios</p>
 			</div>
 		</div>
 		<div class="row">
