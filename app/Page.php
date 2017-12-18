@@ -245,7 +245,7 @@ class Page extends Model
         return [
             'id' => $this->id,
             'servicio' => $this->institution->name,
-            'fecha' => $this->published_at ?? $this->published_at->toDateTimeString(),
+            'fecha' => $this->published_at ? $this->published_at->toDateTimeString() : null,
             'titulo' => $this->title,
             'objetivo' => $this->objective,
             'beneficiarios' => $this->beneficiaries,
