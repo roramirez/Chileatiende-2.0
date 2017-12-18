@@ -69,7 +69,7 @@
                 var self = this;
 
                 axios({
-                    url: 'desarrolladores/access_token/',
+                    url: 'desarrolladores/access_token',
                     method: 'POST',
                     data: self.data,
                 }).then(function(response){
