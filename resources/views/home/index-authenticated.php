@@ -1,6 +1,6 @@
 <div id="home">
-    <div class="container">
-        <div class="categories-area">
+    <div class="categories-area">
+        <div class="container">
             <div class="title">
                 <div class="subtitle">Trámites sugeridos basados en tus intereses</div>
                 <h2>Por categoría</h2>
@@ -8,7 +8,7 @@
 
             <div class="row">
                 <?php foreach ($categories as $index => $c): ?>
-                    <div class="col-sm-6">
+                    <div class="col-md-4 col-sm-6">
                         <div class="category">
                             <a class="heading collapsed" role="button" data-toggle="collapse"
                                href="#categoryCollapse-<?= $c->id ?>" aria-expanded="false"
