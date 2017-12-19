@@ -243,7 +243,7 @@ class Page extends Model
     */
     public function toPublicArray(){
         return [
-            'id' => $this->id,
+            'id' => $this->masterPage->id,
             'servicio' => $this->institution->name,
             'fecha' => $this->published_at ? $this->published_at->toDateTimeString() : null,
             'titulo' => $this->title,
