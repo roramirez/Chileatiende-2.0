@@ -15,7 +15,7 @@ class InstitutionController extends Controller{
             abort(403);
 
         
-        $results = Institution::all();
+        $results = Institution::has('pages')->get();
 
         $institutions = [];
         foreach($results as $r){
