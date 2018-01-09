@@ -96,7 +96,7 @@
 	                        							Marque <span class="number">3</span>
 	                        						</div>
 	                        						<div class="category">
-	                        							Programa de capacitación y empleo, sence
+	                        							Programa de capacitación y empleo, Sence.
 	                        						</div>
 	                        						<div class="info">
 	                        							<p>Horario de atención: de lunes a viernes, de 8:00 a 20:00 horas.</p>
@@ -155,7 +155,7 @@
 	                        							Marque <span class="number">1</span>
 	                        						</div>
 	                        						<div class="category">
-	                        							Fondo nacional de salud, Fonasa.
+	                        							Fondo Nacional de Salud, Fonasa.
 	                        						</div>
 	                        						<div class="info">
 	                        							<p>Horario de atención: las 24 horas.</p>
@@ -258,7 +258,7 @@
 	                        							Marque <span class="number">0</span>
 	                        						</div>
 	                        						<div class="category">
-	                        							Otras informaciones del área vivienda y urbanismo.
+	                        							Otras informaciones del área Vivienda y Urbanismo.
 	                        						</div>
 	                        					</div>
 	                        				</div>
@@ -342,7 +342,7 @@
 	                        							Marque <span class="number">1</span>
 	                        						</div>
 	                        						<div class="category">
-	                        							Programa de beneficios del ministerio desarrollo social.
+	                        							Programa de beneficios del Ministerio Desarrollo Social.
 	                        						</div>
 	                        						<div class="info">
 	                        							<p>Horario de atención: de lunes a viernes, de 8:00 a 20:00 horas.</p>
@@ -468,7 +468,7 @@
 	                        							Marque <span class="number">3</span>
 	                        						</div>
 	                        						<div class="category">
-	                        							Asistencia jurídica, corporación de asistencia judicial.
+	                        							Asistencia jurídica, Corporación de Asistencia Judicial.
 	                        						</div>
 	                        						<div class="info">
 	                        							Horario de atención: de lunes a viernes, de 9:00 a 19:00 horas.
@@ -482,7 +482,7 @@
 	                        							Marque <span class="number">4</span>
 	                        						</div>
 	                        						<div class="category">
-	                        							Trámite registro civil e identificación.
+	                        							Trámite Registro Civil e Identificación.
 	                        						</div>
 	                        						<div class="info">
 	                        							Horario de atención: de lunes a viernes, de 8:30 a 18:00 horas.

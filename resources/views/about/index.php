@@ -85,7 +85,7 @@
 			<div class="col-md-6">
 				<div class="video-container">
 					<div class="embed-responsive embed-responsive-16by9">
-					  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/JlEt9-SaKzg"></iframe>
+					  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/JlEt9-SaKzg?rel=0"></iframe>
 					</div>
 					<p class="slab">¿Qué es ChileAtiende?</p>
 				</div>
@@ -93,7 +93,7 @@
 			<div class="col-md-6">
 			<div class="video-container">
 				<div class="embed-responsive embed-responsive-16by9">
-					  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/_H_NPdtPy5U"></iframe>
+					  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/_H_NPdtPy5U?rel=0"></iframe>
 					</div>
 					<p class="slab">Cómo usar el portal ChileAtiende</p>
 				</div>
