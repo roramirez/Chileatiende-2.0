@@ -2,7 +2,7 @@
 <hr>
 <p>La API del Portal de Servicios del Estado es la interfaz para programadores que permite integrar los contenidos de este portal en tu sitio web.</p>
 <h2>Autorización</h2>
-<p>Para hacer llamadas a esta API se requerirá un código de acceso (access_token) que se enviará como parámetro en cada request. <a href="https://www.chileatiende.gob.cl/desarrolladores/access_token">Puedes solicitar tu código de acceso haciendo click aquí.</a></p>
+<p>Para hacer llamadas a esta API se requerirá un código de acceso (access_token) que se enviará como parámetro en cada request. <a href="/desarrolladores/access_token">Puedes solicitar tu código de acceso haciendo click aquí.</a></p>
 <h3>Llamadas a la API</h3>
 <pre>GET https://www.chileatiende.gob.cl/api/fichas/{fichaId}</pre>
 <h3>Parámetros comunes</h3>
