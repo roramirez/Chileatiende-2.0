@@ -28,7 +28,7 @@
 					<div class="callcenter-schedule">
 						<div class="heading">Horarios de Atención</div>
 						<ul>
-							<li>Lunes a Jueves, <strong>de 8:00 a 20:00 horas.</strong></li>
+							<li>Lunes a jueves, <strong>de 8:00 a 20:00 horas.</strong></li>
 							<li>Viernes, de <strong>8:00 a 18:00 horas.</strong></li>
 						</ul>
 					</div>

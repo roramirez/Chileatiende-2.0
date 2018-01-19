@@ -11,7 +11,7 @@
             </div>
             <div class="col-md-8 col-md-pull-4" id="page-content">
                 <div class="rs_preserve">
-                    <?php if($page->online):?><div class="online">Trámite en Línea</div><?php endif ?>
+                    <?php if($page->online):?><div class="online">Trámite en línea</div><?php endif ?>
                     <h2><?= $page->title ?></h2>
                     <div class="author"><a href="instituciones/<?=$page->institution->id?>">Información proporcionada por <?= $page->institution->name ?></a></div>
                     <?php if($page->published_at):?><div class="updated-at">Actualizado al <?=$page->published_at->formatLocalized('%d de %B, %Y')?></div><?php endif ?>
@@ -137,7 +137,7 @@
                             </div>
                             <div class="tab-content">
                                 <div role="tabpanel" class="tab-pane" id="online">
-                                    <div class="visible-print-block"><strong>- Instrucciones Trámite en Línea</strong></div>
+                                    <div class="visible-print-block"><strong>- Instrucciones Trámite en línea</strong></div>
                                     <?=App\Twig::render($page->online_guide)?>
                                     <a class="btn btn-online hidden-print" href="<?= $page->online_url ?>" data-toggle="modal" data-target="#redirect-modal" data-ga-te-category="Acciones Ficha" data-ga-te-action="Botón Trámite Online" data-ga-te-value="<?= $page->master_id ?>">
                                         Ir al trámite en línea
@@ -178,7 +178,7 @@
                         <div class="similar-page-container">
                             <div class="institution"><a href="buscar?institution=<?=$s->institution->id?>">Publicado por <?=$s->institution->name?></a></div>
                             <h4><a href="fichas/<?=$s->guid?>" data-ga-te-category="Acciones Ficha" data-ga-te-action="Fichas sugeridas" data-ga-te-value="<?=$s->id?>" ><?=$s->title?></a></h4>
-                            <?php if($s->online):?><div class="online">Trámite en Línea</div><?php endif ?>
+                            <?php if($s->online):?><div class="online">Trámite en línea</div><?php endif ?>
                             <p><?=str_limit(strip_tags(\App\Twig::strip($s->objective)),100)?></p>
                         </div>
                     </div>
@@ -192,11 +192,11 @@
                 <div class="col-md-3">
                     <h3>¿Necesitas Ayuda?</h3>
                     <h4>Llámanos al 101</h4>
-                    <p>Lunes a Jueves, de 8:00 a 20:00 hrs.</p>
+                    <p>Lunes a jueves, de 8:00 a 20:00 hrs.</p>
                     <p>Viernes, de 8:00 a 18:00 hrs.</p>
                 </div>
                 <div class="col-md-6">
-                    <p>Para hacer tu atención más expedita, indícanos este Código de Trámite</p>
+                    <p>Para hacer tu atención más expedita, indícanos este Código de trámite</p>
                     <div class="page-id-container">
                         <div class="heading">código de trámite</div>
                         <div class="number"><?= $page->master_id ?></div>
