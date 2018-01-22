@@ -1,6 +1,6 @@
 <div class="help-cards">
     <div class="row">
-        <div class="col-md-3">
+        <div class="col-lg-3 col-md-6 col-sm-12">
             <a href="/ayuda/preguntas-frecuentes" class="help-card <?= Request::path() == 'ayuda/preguntas-frecuentes' ? 'active' : '' ?>" title="Ir a preguntas frecuentes">
                 <div class="media">
                     <div class="media-left">
@@ -13,7 +13,7 @@
                 </div>
             </a>
         </div>
-        <div class="col-md-3">
+        <div class="col-lg-3 col-md-6 col-sm-12">
         	<a href="/ayuda/sucursales" class="help-card <?= Request::path() == 'ayuda/sucursales' ? 'active' : '' ?>" title="ir a sucursales">
 	            <div class="media">
 	                <div class="media-left">
@@ -26,7 +26,7 @@
 	            </div>
             </a>
         </div>
-        <div class="col-md-3">
+        <div class="col-lg-3 col-md-6 col-sm-12">
             <a href="/ayuda/atencion-telefonica" class="help-card <?= Request::path() == 'ayuda/atencion-telefonica' ? 'active' : '' ?>" title="Ir a atención telefónica">
                 <div class="media">
                     <div class="media-left">
@@ -39,7 +39,7 @@
                 </div>
             </a>
         </div>
-        <div class="col-md-3">
+        <div class="col-lg-3 col-md-6 col-sm-12">
             <a href="/ayuda/oficinas-moviles" class="help-card <?= Request::path() == 'ayuda/oficinas-moviles' ? 'active' : '' ?>">
                 <div class="media">
                     <div class="media-left">

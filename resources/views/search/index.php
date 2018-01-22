@@ -48,18 +48,22 @@
                     <ol class="search-results">
                         <?php foreach($results as $r):?>
                         <li class="<?=$r->boost > 1 ? 'boosted' : ''?>">
-                            <div class="author"><a href="instituciones/<?=$r->institution->id?>">Publicado por <?= $r->institution->name ?></a></div>
-                            <h4><a href="fichas/<?=$r->guid?>"><?=isset($r->highlight['title']) ? $r->highlight['title'][0] : $r->title?></a></h4>
-                            <?php if($r->online):?><div class="online">Trámite en Línea</div><?php endif ?>
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="author"><a href="instituciones/<?=$r->institution->id?>">Publicado por <?= $r->institution->name ?></a></div>
+                                    <h4><a href="fichas/<?=$r->guid?>"><?=isset($r->highlight['title']) ? $r->highlight['title'][0] : $r->title?> →</a></h4>
+                                    <?php if($r->online):?><div class="online">Trámite en Línea</div><?php endif ?>
+                                </div>
+                                <div class="col-md-4 text-right">
+                                    <?php if($r->online):?>
+                                        <a href="#" data-toggle="modal" data-target="#redirect-modal-<?= $r->guid ?>" class="action-btn">Ir al trámite en línea</a>
+                                    <?php endif ?>
+                                </div>
+                            </div>
                             <div class="media">
                                 <div class="media-left">
                                     <p><?=str_limit(strip_tags(\App\Twig::strip(isset($r->highlight['objective']) ? $r->highlight['objective'][0] : $r->objective),'<em>'),500)?></p>
                                 </div>
-                                <?php if($r->online):?>
-                                <div class="media-body media-middle">
-                                    <a href="#" data-toggle="modal" data-target="#redirect-modal-<?= $r->guid ?>" class="action-btn">Ir al trámite en línea</a>
-                                </div>
-                                <?php endif ?>
                             </div>
                         </li>
                         <hr>
