@@ -1,6 +1,5 @@
 import './bootstrap';
 
-
 import PageForm from './components/PageForm.vue';
 import PageMasterForm from './components/PageMasterForm.vue';
 import PageStatusForm from './components/PageStatusForm.vue';
@@ -17,11 +16,11 @@ import PageFilterForm from './components/PageFilterForm.vue';
 import AccessTokenForm from './components/AccessTokenForm.vue';
 import NotificationForm from './components/NotificationForm.vue';
 import PastUsers from './components/PastUsers.vue';
-
+import ContentForm from './components/ContentForm.vue';
 
 const app = new Vue({
     el: '#app',
-    components:{
+    components: {
         PageForm,
         PageMasterForm,
         PageStatusForm,
@@ -37,7 +36,8 @@ const app = new Vue({
         PageFilterForm,
         AccessTokenForm,
         NotificationForm,
-        PastUsers
+        PastUsers,
+        ContentForm
     },
     mounted() {
         $('[data-toggle="tooltip"]').tooltip();

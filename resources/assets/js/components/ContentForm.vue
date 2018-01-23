@@ -1,47 +1,58 @@
 <template>
-    <form class="category-form form-horizontal" @submit.prevent="submit()">
-        <div class="form-group" :class="{'has-error': errors['name']}">
-            <label for="name" class="col-sm-2 control-label">Nombre</label>
+    <form class="content-form form-horizontal" @submit.prevent="submit()">
+        <div class="form-group" :class="{'has-error': errors['title']}">
+            <label for="title" class="col-sm-2 control-label">Título</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" id="name" v-model="data.name">
-                <div class="help-block" v-for="e in errors['name']">{{e}}</div>
+                <input type="text" class="form-control" id="title" v-model="data.title" required>
+                <div class="help-block" v-for="e in errors['title']">{{e}}</div>
             </div>
         </div>
 
-        <div class="form-group" :class="{'has-error': errors['featured']}">
-            <label for="featured" class="col-sm-2 control-label">¿Destacada?</label>
+        <div class="form-group" :class="{'has-error': errors['url']}">
+            <label for="url" class="col-sm-2 control-label">Url</label>
             <div class="col-sm-10">
-                <el-switch id="featured" v-model="data.featured" on-text="Sí" off-text="No"></el-switch>
-                <div class="help-block" v-for="e in errors['featured']">{{e}}</div>
+                <input type="text" class="form-control" id="url" v-model="data.url">
+                <div class="help-block" v-for="e in errors['url']">{{e}}</div>
             </div>
         </div>
 
-        <div class="form-group" :class="{'has-error': errors['exterior']}">
-            <label for="exterior" class="col-sm-2 control-label">¿Destacada para Chilenos en el Exterior?</label>
+        <div class="form-group" :class="{'has-error': errors['content']}">
+            <label for="content" class="col-sm-2 control-label">Contenido</label>
             <div class="col-sm-10">
-                <el-switch id="exterior" v-model="data.exterior" on-text="Sí" off-text="No"></el-switch>
-                <div class="help-block" v-for="e in errors['exterior']">{{e}}</div>
+                <textarea class="form-control" id="content" cols="30" rows="10" v-model="data.content"
+                          required></textarea>
+                <div class="help-block" v-for="e in errors['content']">{{e}}</div>
             </div>
         </div>
 
-        <div class="form-group" :class="{'has-error': errors['order']}">
-            <label for="order" class="col-sm-2 control-label">Orden</label>
-            <div class="col-sm-2">
-                <input type="number" id="order" class="form-control" v-model.number="data.order" />
-                <div class="help-block" v-for="e in errors['order']">{{e}}</div>
+        <div class="form-group" :class="{'has-error': errors['published']}">
+            <label for="published" class="col-sm-2 control-label">¿Publicada?</label>
+            <div class="col-sm-10">
+                <el-switch id="published" v-model="data.published" on-text="Sí" off-text="No"></el-switch>
+                <div class="help-block" v-for="e in errors['published']">{{e}}</div>
+            </div>
+        </div>
+
+        <div class="form-group" :class="{'has-error': errors['template']}">
+            <label for="template" class="col-sm-2 control-label">Plantilla</label>
+            <div class="col-sm-10">
+                <select class="form-control" id="template" v-model="data.template">
+                    <option :value="template" v-for="template in templates" v-text="template"></option>
+                </select>
+                <div class="help-block" v-for="e in errors['template']">{{e}}</div>
             </div>
         </div>
 
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
-                <a class="btn btn-default" href="backend/categorias">Cancelar</a>
+                <a class="btn btn-default" href="backend/contenidos">Cancelar</a>
                 <button type="submit" class="btn btn-primary">Guardar</button>
             </div>
         </div>
     </form>
 </template>
 <style lang="scss" scoped>
-    .el-select{
+    .el-select {
         display: block;
     }
 </style>
@@ -49,28 +60,26 @@
     import ElSwitch from 'element-ui/lib/switch';
 
     export default {
-        data: function(){
-            return{
-                data: _.cloneDeep(this.category),
+        data: function () {
+            return {
+                data: _.cloneDeep(this.content),
                 errors: {}
             }
         },
-        props: ['category','edit'],
+        props: ['content', 'templates', 'edit'],
         components: {
             ElSwitch
         },
-        methods:{
-            submit: function(){
-                var self = this;
-
+        methods: {
+            submit: function () {
                 axios({
-                    url: self.edit ? 'backend/categorias/'+self.data.id : 'backend/categorias',
-                    method: self.edit ? 'PUT' : 'POST',
-                    data: self.data,
-                }).then(function(response){
+                    url: this.edit ? 'backend/contenidos/' + this.data.id : 'backend/contenidos',
+                    method: this.edit ? 'PUT' : 'POST',
+                    data: this.data,
+                }).then((response) => {
                     window.location.replace(response.data.redirect);
-                }).catch(function(error){
-                    self.errors = error.response.data.errors;
+                }).catch((error) => {
+                    this.errors = error.response.data.errors;
                 });
             }
         }
