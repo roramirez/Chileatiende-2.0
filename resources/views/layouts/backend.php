@@ -148,6 +148,13 @@
                                 <?php endif ?>
                             </div>
                             <?php endif ?>
+                            <div class="sidebar-buttons">
+                                <div class="heading">Manual</div>
+                                <a href="/manual-backend/" class="sidebar-btn">
+                                    <i class="material-icons">chrome_reader_mode</i>
+                                    Manual del CMS
+                                </a>
+                            </div>
                         </div>
                     </div>
                     <div class="col-sm-9">
