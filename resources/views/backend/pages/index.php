@@ -40,7 +40,7 @@
                 <?php endif ?>
             </td>
             <td style="white-space: nowrap;">
-                <?php if($p->status == 'rechazado'):?><i class="material-icons" style="font-size: 16px; cursor: pointer;" data-toggle="tooltip" title="<?=htmlspecialchars($p->status_comment)?>">help</i><?php endif ?> <?=$p->status?>
+                <?php if($p->status == 'rechazado'):?><i class="material-icons" style="font-size: 16px; cursor: pointer;" data-toggle="tooltip" title="<?=htmlspecialchars($p->status_comment)?>">help</i><?php endif ?> <?=$p->status ? __('chileatiende.'.$p->status) : ''?>
             </td>
             <td class="text-center">
                 <?php if($p->published):?>
