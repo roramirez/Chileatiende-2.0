@@ -81,8 +81,8 @@ class OfficeController extends Controller{
             'name' => 'required',
             'address' => 'required',
             'schedules' => 'required',
-            'lat' => 'required_if:mobile,false|numeric',
-            'lng' => 'required_if:mobile,false|numeric',
+            'lat' => 'numeric',
+            'lng' => 'numeric',
             'institution_id' => 'required',
             'location_id' => 'required',
             'mobile' => 'required|boolean'
