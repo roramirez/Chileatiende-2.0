@@ -55,7 +55,7 @@
                     <form id="delete-form-<?=$p->id?>" action="backend/fichas/<?=$p->id?>" method="post" style="display: inline">
                         <?=csrf_field()?>
                         <input type="hidden" name="_method" value="delete" />
-                        <a href="#" onclick="event.preventDefault(); document.getElementById('delete-form-<?=$p->id?>').submit()"><i class="material-icons">delete</i></a>
+                        <a href="#" v-confirm onclick="event.preventDefault(); document.getElementById('delete-form-<?=$p->id?>').submit()"><i class="material-icons">delete</i></a>
                     </form>
                 <?php endif ?>
 

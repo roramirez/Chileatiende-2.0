@@ -18,6 +18,8 @@ import NotificationForm from './components/NotificationForm.vue';
 import PastUsers from './components/PastUsers.vue';
 import ContentForm from './components/ContentForm.vue';
 
+import Confirm from './directives/Confirm.js';
+
 const app = new Vue({
     el: '#app',
     components: {
@@ -38,6 +40,9 @@ const app = new Vue({
         NotificationForm,
         PastUsers,
         ContentForm
+    },
+    directives:{
+        Confirm
     },
     mounted() {
         $('[data-toggle="tooltip"]').tooltip();
