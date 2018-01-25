@@ -41,12 +41,8 @@
                     })
                     .values()
                     .orderBy(function(d){
-                        var location = d[0].location.parent.parent.id;
-                        if(location == '13')
-                            return 0;
-
-                        return 1 * location;
-                    })
+                        return d[0].location.parent.parent.lat;
+                    }, 'desc')
                     .value();
             }
         }
