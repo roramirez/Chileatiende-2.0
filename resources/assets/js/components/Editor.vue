@@ -8,6 +8,7 @@
     require('tinymce/plugins/media/plugin.js');
     require('tinymce/plugins/image/plugin.js');
     require('tinymce/plugins/table/plugin.js');
+    require('tinymce/plugins/lists/plugin.js');
     require('tinymce/themes/modern/theme');
     require('tinymce/skins/lightgray/skin.min.css');
 
@@ -21,7 +22,7 @@
                 height: 300,
                 skin: false,
                 entity_encoding : "raw",
-                plugins: 'code image media table',
+                plugins: 'code image media table lists',
                 toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | code image media | table',
                 content_css: '/css/app.css',
                 content_style: "body{background: white; color: #272727; padding: 20px;}",
