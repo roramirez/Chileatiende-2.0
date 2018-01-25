@@ -27,11 +27,15 @@ class PageController extends Controller{
         });
 
         if($query || $institutionId || $ministryId){
-            $pages = Page::search($query)->where('master',true);
-            if($ministryId)
-                $pages->where('ministry_id',[$ministryId]);
-            if($institutionId)
-                $pages->where('institution_id',[$institutionId]);
+            if(is_numeric($query)){
+                $pages = Page::masters()->where('id', $query);
+            }else{
+                $pages = Page::search($query)->where('master',true);
+                if($ministryId)
+                    $pages->where('ministry_id',[$ministryId]);
+                if($institutionId)
+                    $pages->where('institution_id',[$institutionId]);
+            }
         }else{
             $pages = Page::masters();
         }
