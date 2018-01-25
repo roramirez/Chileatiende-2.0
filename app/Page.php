@@ -24,7 +24,8 @@ class Page extends Model
         'featured' => 'boolean',
         'published' => 'boolean',
         'master' => 'boolean',
-        'published_at' => 'date'
+        'published_at' => 'date',
+        'comments' => 'object'
     ];
 
     protected $appends = ['guid', 'howto'];

@@ -203,6 +203,7 @@ class PageController extends Controller{
         $page->mail_guide = $request->input('mail_guide');
         $page->legal = $request->input('legal');
         $page->keywords = $request->input('keywords');
+        $page->comments = $request->input('comments');
         $page->save();
         //Ahora guardamos las relacionadas
         $page->relatedPages()->sync($request->input('related_pages'));
@@ -216,6 +217,7 @@ class PageController extends Controller{
         $version->master = false;
         $version->master_id = $page->id;
         $version->published = $lastVersion ? false : true;  //Si no hay mas versiones, entonces dejamos esta como la publicada
+        $version->comments = '';
         $version->save();
         //Ahora guardamos las relacionadas
         $version->relatedPages()->sync($request->input('related_pages'));
