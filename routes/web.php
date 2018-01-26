@@ -11,6 +11,16 @@
 |
 */
 
+//Redirects de ChileAtiende viejo
+use App\Page;
+
+Route::get('/fichas/ver/{pageId}', function($pageId){
+    $page = Page::find($pageId);
+    return redirect('fichas/'.$page->guid, 301);
+});
+
+
+//Rutas
 Route::auth();
 
 if (!App::environment('local')) URL::forceScheme('https');
