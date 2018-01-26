@@ -13,6 +13,8 @@
 
 Route::auth();
 
+if (!App::environment('local')) URL::forceScheme('https');
+
 Route::get('login/claveunica', 'Auth\LoginController@redirectToProvider');
 Route::get('login/claveunica/callback', 'Auth\LoginController@handleProviderCallback');
 
