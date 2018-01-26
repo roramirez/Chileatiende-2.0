@@ -73,48 +73,48 @@
                             </div>
 
                             <?php if(Auth::user()->can('view', \App\Page::class)):?>
-                            <div class="sidebar-buttons">
-                                <div class="heading">Trámites y servicios</div>
-                                <a href="backend/fichas" class="sidebar-btn <?= Request::path() == 'backend/fichas' ? 'active' : '' ?>">
-                                    <i class="material-icons">visibility</i>
-                                    Ver fichas
-                                </a>
-                                <a href="backend/fichas/create" class="sidebar-btn <?= Request::path() == 'backend/fichas/create' ? 'active' : '' ?>">
-                                    <i class="material-icons">note_add</i> 
-                                    Agregar ficha
-                                </a>
-                                <?php if(Auth::user()->can('updateFeatured', \App\Page::class)):?>
-                                    <a href="backend/fichas/featured" class="sidebar-btn <?= Request::path() == 'backend/fichas/featured' ? 'active' : '' ?>">
-                                        <i class="material-icons">visibility</i> Ver destacadas
+                                <div class="sidebar-buttons">
+                                    <div class="heading">Trámites y servicios</div>
+                                    <a href="backend/fichas" class="sidebar-btn <?= Request::path() == 'backend/fichas' ? 'active' : '' ?>">
+                                        <i class="material-icons">visibility</i>
+                                        Ver fichas
                                     </a>
-                                <?php endif ?>
-                            </div>
+                                    <a href="backend/fichas/create" class="sidebar-btn <?= Request::path() == 'backend/fichas/create' ? 'active' : '' ?>">
+                                        <i class="material-icons">note_add</i>
+                                        Agregar ficha
+                                    </a>
+                                    <?php if(Auth::user()->can('updateFeatured', \App\Page::class)):?>
+                                        <a href="backend/fichas/featured" class="sidebar-btn <?= Request::path() == 'backend/fichas/featured' ? 'active' : '' ?>">
+                                            <i class="material-icons">visibility</i> Ver destacadas
+                                        </a>
+                                    <?php endif ?>
+                                </div>
                             <?php endif ?>
                             <?php if(Auth::user()->can('view', \App\Institution::class)):?>
-                            <div class="sidebar-buttons">
-                                <div class="heading">Instituciones</div>
-                                <a href="backend/instituciones/create" class="sidebar-btn <?= Request::path() == 'backend/instituciones/create' ? 'active' : '' ?>">
-                                    <i class="material-icons">note_add</i> 
-                                    Agregar institución
-                                </a>
-                                <a href="backend/instituciones" class="sidebar-btn <?= Request::path() == 'backend/instituciones' ? 'active' : '' ?>">
-                                    <i class="material-icons">visibility</i> 
-                                    Ver instituciones
-                                </a>
-                            </div>
+                                <div class="sidebar-buttons">
+                                    <div class="heading">Instituciones</div>
+                                    <a href="backend/instituciones/create" class="sidebar-btn <?= Request::path() == 'backend/instituciones/create' ? 'active' : '' ?>">
+                                        <i class="material-icons">note_add</i>
+                                        Agregar institución
+                                    </a>
+                                    <a href="backend/instituciones" class="sidebar-btn <?= Request::path() == 'backend/instituciones' ? 'active' : '' ?>">
+                                        <i class="material-icons">visibility</i>
+                                        Ver instituciones
+                                    </a>
+                                </div>
                             <?php endif ?>
                             <?php if(Auth::user()->can('view', \App\Ministry::class)):?>
-                            <div class="sidebar-buttons">
-                                <div class="heading">Ministerios</div>
-                                <a href="backend/ministerios/create" class="sidebar-btn <?= Request::path() == 'backend/ministerios/create' ? 'active' : '' ?>">
-                                    <i class="material-icons">note_add</i>
-                                    Agregar ministerio
-                                </a>
-                                <a href="backend/ministerios" class="sidebar-btn <?= Request::path() == 'backend/ministerios' ? 'active' : '' ?>">
-                                    <i class="material-icons">visibility</i>
-                                    Ver ministerios
-                                </a>
-                            </div>
+                                <div class="sidebar-buttons">
+                                    <div class="heading">Ministerios</div>
+                                    <a href="backend/ministerios/create" class="sidebar-btn <?= Request::path() == 'backend/ministerios/create' ? 'active' : '' ?>">
+                                        <i class="material-icons">note_add</i>
+                                        Agregar ministerio
+                                    </a>
+                                    <a href="backend/ministerios" class="sidebar-btn <?= Request::path() == 'backend/ministerios' ? 'active' : '' ?>">
+                                        <i class="material-icons">visibility</i>
+                                        Ver ministerios
+                                    </a>
+                                </div>
                             <?php endif ?>
                             <?php if(Auth::user()->can('view', \App\Office::class)):?>
                                 <div class="sidebar-buttons">
@@ -125,28 +125,41 @@
                                     </a>
                                 </div>
                             <?php endif ?>
+                            <?php if(Auth::user()->can('view', \App\Content::class)):?>
+                                <div class="sidebar-buttons">
+                                    <div class="heading">Contenidos</div>
+                                    <a href="backend/contenidos/create" class="sidebar-btn <?= Request::path() == 'backend/contenidos/create' ? 'active' : '' ?>">
+                                        <i class="material-icons">note_add</i>
+                                        Agregar Contenidos
+                                    </a>
+                                    <a href="backend/contenidos" class="sidebar-btn <?= Request::path() == 'backend/contenidos' ? 'active' : '' ?>">
+                                        <i class="material-icons">visibility</i>
+                                        Ver Contenidos
+                                    </a>
+                                </div>
+                            <?php endif ?>
                             <?php if(Auth::user()->can('view', \App\User::class)):?>
-                            <div class="sidebar-buttons">
-                                <div class="heading">Administración</div>
-                                <?php if(Auth::user()->can('view', \App\User::class)):?>
-                                <a href="backend/usuarios" class="sidebar-btn <?= Request::path() == 'backend/usuarios' ? 'active' : '' ?>">
-                                    <i class="material-icons">person</i>
-                                    Usuarios
-                                </a>
-                                <?php endif ?>
-                                <?php if(Auth::user()->can('view', \App\Category::class)):?>
-                                <a href="backend/categorias" class="sidebar-btn <?= Request::path() == 'backend/categorias' ? 'active' : '' ?>">
-                                    <i class="material-icons">format_list_bulleted</i>
-                                    Categorías
-                                </a>
-                                <?php endif ?>
-                                <?php if(Auth::user()->can('create', \App\Notification::class)):?>
-                                <a href="backend/notificaciones/create" class="sidebar-btn <?= Request::path() == 'backend/notificaciones' ? 'active' : '' ?>">
-                                    <i class="material-icons">notifications</i>
-                                    Notificaciones
-                                </a>
-                                <?php endif ?>
-                            </div>
+                                <div class="sidebar-buttons">
+                                    <div class="heading">Administración</div>
+                                    <?php if(Auth::user()->can('view', \App\User::class)):?>
+                                        <a href="backend/usuarios" class="sidebar-btn <?= Request::path() == 'backend/usuarios' ? 'active' : '' ?>">
+                                            <i class="material-icons">person</i>
+                                            Usuarios
+                                        </a>
+                                    <?php endif ?>
+                                    <?php if(Auth::user()->can('view', \App\Category::class)):?>
+                                        <a href="backend/categorias" class="sidebar-btn <?= Request::path() == 'backend/categorias' ? 'active' : '' ?>">
+                                            <i class="material-icons">format_list_bulleted</i>
+                                            Categorías
+                                        </a>
+                                    <?php endif ?>
+                                    <?php if(Auth::user()->can('create', \App\Notification::class)):?>
+                                        <a href="backend/notificaciones/create" class="sidebar-btn <?= Request::path() == 'backend/notificaciones' ? 'active' : '' ?>">
+                                            <i class="material-icons">notifications</i>
+                                            Notificaciones
+                                        </a>
+                                    <?php endif ?>
+                                </div>
                             <?php endif ?>
                             <div class="sidebar-buttons">
                                 <div class="heading">Manual</div>

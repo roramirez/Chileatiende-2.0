@@ -22,26 +22,27 @@ Route::get('/fichas/destacadas', 'PageController@featured');
 Route::resource('/fichas', 'PageController');
 Route::resource('/instituciones', 'InstitutionController');
 Route::get('/mi-chileatiende', 'MiChileAtiendeController@getIndex');
-Route::get('/que-es-chileatiende', 'AboutController');
-Route::get('/terminos-y-condiciones', 'TermsController');
-Route::get('/politica-de-privacidad', 'PrivacyPolicyController');
+Route::get('/que-es-chileatiende', 'ContentController');
+Route::get('/terminos-y-condiciones', 'ContentController');
+Route::get('/politica-de-privacidad', 'ContentController');
 Route::get('/enlaces-transparencia', 'TransparencyController');
 Route::get('/ayuda/sucursales', 'FaqController@getOffices');
 Route::get('/ayuda/oficinas-moviles', 'FaqController@getMobileOffices');
-Route::get('/ayuda/preguntas-frecuentes', 'FaqController@getFAQ');
+Route::get('/ayuda/preguntas-frecuentes', 'ContentController');
+Route::get('/ayuda/atencion-telefonica', 'ContentController');
 Route::get('/ayuda/{content?}', 'FaqController');
-Route::get('/desarrolladores/access_token','DeveloperController@createAccessToken');
-Route::post('/desarrolladores/access_token','DeveloperController@storeAccessToken');
-Route::get('/desarrolladores/{section?}/{subSection?}','DeveloperController');
+Route::get('/desarrolladores/access_token', 'DeveloperController@createAccessToken');
+Route::post('/desarrolladores/access_token', 'DeveloperController@storeAccessToken');
+Route::get('/desarrolladores/{section?}/{subSection?}', 'DeveloperController');
 
-Route::group(['middleware' => ['frontend']], function(){
-    Route::get('/perfil','ProfileController@edit');
-    Route::put('/perfil','ProfileController@update');
-    Route::resource('/notificaciones','NotificationController');
+Route::group(['middleware' => ['frontend']], function () {
+    Route::get('/perfil', 'ProfileController@edit');
+    Route::put('/perfil', 'ProfileController@update');
+    Route::resource('/notificaciones', 'NotificationController');
 });
 
 
-Route::group(['middleware' => ['backend'], 'prefix'=>'backend', 'namespace'=>'Backend'],function () {
+Route::group(['middleware' => ['backend'], 'prefix' => 'backend', 'namespace' => 'Backend'], function () {
     Route::get('/', 'HomeController@getIndex');
     Route::get('/perfil', 'ProfileController@edit');
     Route::put('/perfil', 'ProfileController@update');
@@ -59,8 +60,9 @@ Route::group(['middleware' => ['backend'], 'prefix'=>'backend', 'namespace'=>'Ba
     Route::get('/fichas/{pageId}/versions', 'PageController@versions');
     Route::get('/fichas/{pageId}/versions/{versionId}/publish', 'PageController@publishVersion');
     Route::get('/fichas/{pageId}/history', 'PageController@history');
+    Route::resource('/contenidos', 'ContentController');
 
-    Route::group(['prefix'=>'api','namespace'=>'API'], function (){
+    Route::group(['prefix' => 'api', 'namespace' => 'API'], function () {
         Route::resource('files', 'FileController');
         Route::resource('institutions', 'InstitutionController');
         Route::resource('ministries', 'MinistryController');
@@ -71,4 +73,3 @@ Route::group(['middleware' => ['backend'], 'prefix'=>'backend', 'namespace'=>'Ba
         Route::get('analytics/ga', 'AnalyticsController@getGA');
     });
 });
-

@@ -9,7 +9,7 @@ class MinistryController extends Controller{
 
     public function index(){
 
-        return Ministry::all();
+        return Ministry::select('id','name','shortname','description')->get();
     }
 
 

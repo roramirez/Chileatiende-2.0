@@ -40,7 +40,7 @@
                 <?php endif ?>
             </td>
             <td style="white-space: nowrap;">
-                <?php if($p->status == 'rechazado'):?><i class="material-icons" style="font-size: 16px; cursor: pointer;" data-toggle="tooltip" title="<?=htmlspecialchars($p->status_comment)?>">help</i><?php endif ?> <?=$p->status?>
+                <?php if($p->status == 'rechazado'):?><i class="material-icons" style="font-size: 16px; cursor: pointer;" data-toggle="tooltip" title="<?=htmlspecialchars($p->status_comment)?>">help</i><?php endif ?> <?=$p->status ? __('chileatiende.'.$p->status) : ''?>
             </td>
             <td class="text-center">
                 <?php if($p->published):?>
@@ -55,7 +55,7 @@
                     <form id="delete-form-<?=$p->id?>" action="backend/fichas/<?=$p->id?>" method="post" style="display: inline">
                         <?=csrf_field()?>
                         <input type="hidden" name="_method" value="delete" />
-                        <a href="#" onclick="event.preventDefault(); document.getElementById('delete-form-<?=$p->id?>').submit()"><i class="material-icons">delete</i></a>
+                        <a href="#" class="danger" v-confirm onclick="event.preventDefault(); document.getElementById('delete-form-<?=$p->id?>').submit()"><i class="material-icons">delete</i></a>
                     </form>
                 <?php endif ?>
 
