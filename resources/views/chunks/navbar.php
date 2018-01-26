@@ -111,10 +111,12 @@
                         </a>
                     </li>
                 <?php else: ?>
+                    <?php /*
                     <li><a href="mi-chileatiende" class="mcha-btn">
                             <img src="images/clave-logo.svg" alt="Logo Claveúnica">
                             Accede a Mi ChileAtiende</a>
                     </li>
+                    */ ?>
                 <?php endif ?>
             </ul>
         </div><!-- /.navbar-collapse -->
