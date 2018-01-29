@@ -284,14 +284,38 @@ class PageController extends Controller{
             abort(403);
         }
 
-        $status = $request->input('status');
+        $action = $request->input('action');
 
+        if($action == 'publish'){
+            $page->status = '';
+            $page->status_comment = '';
+            $page->published = true;
+            $version = $page->lastVersion();
+            foreach($page->versions as $v){
+                if($v->id != $version->id && $v->published){
+                    $v->published = 0;
+                    $v->save();
+                }
+            }
+            $version->published = 1;
+            $version->save();
+        }elseif($action == 'unpublish'){
+            $page->published = false;
+            $page->status_comment = $request->input('status_comment');
+        }elseif($action == 'revise'){
+            $page->status = 'en_revision';
+        }elseif($action == 'reject'){
+            $page->status = 'rechazado';
+            $page->status_comment = $request->input('status_comment');
+        }
+        /*
         $page->status = $status;
         $page->status_comment = $request->input('status_comment');
         if($status == 'rechazado')
             $page->published = false;
         elseif($status == '')
             $page->published = true;
+        */
         $page->save();
 
         //Actualizamos sus versiones en el indice de busquedas

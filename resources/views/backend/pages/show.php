@@ -17,7 +17,14 @@
 
     <?php if($page->published):?>
     <div class="alert alert-success">
-        Ficha Publicada
+        <p><strong>Ficha Publicada</strong></p>
+    </div>
+    <?php else: ?>
+    <div class="alert alert-warning">
+        <p><strong>Ficha Despublicada</strong></p>
+        <?php if($page->status_comment):?>
+            <p><?=$page->status_comment?></p>
+        <?php endif ?>
     </div>
     <?php endif ?>
 
@@ -31,7 +38,7 @@
     <?php endif ?>
 
     <?php if($page->status == 'rechazado'):?>
-        <div class="alert alert-info">
+        <div class="alert alert-warning">
             <p><strong>Esta ficha se encuentra con las siguientes observaciones:</strong></p>
             <p><?=$page->status_comment?></p>
         </div>
