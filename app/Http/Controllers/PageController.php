@@ -17,6 +17,7 @@ class PageController extends Controller{
 
         $page = Page::find($id)->publishedVersion();
         $page->load('masterPage.similarPages.institution');
+        $page->load('relatedPages');
         $data['page'] = $page;
 
         return view('layouts/layout',[
