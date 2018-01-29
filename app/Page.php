@@ -143,7 +143,7 @@ class Page extends Model
         $sessionVisit->save();
 
         DB::commit();
-        $this->versions->searchable();
+        $this->publishedVersion()->searchable();
     }
 
     public function scopeMasters($query){
