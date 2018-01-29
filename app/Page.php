@@ -136,6 +136,12 @@ class Page extends Model
         }
         $hits->count++;
         $hits->save();
+
+        $sessionVisit = new SessionVisit();
+        $sessionVisit->page_id = $this->id;
+        $sessionVisit->session_id = session()->getId();
+        $sessionVisit->save();
+
         DB::commit();
         $this->versions->searchable();
     }
