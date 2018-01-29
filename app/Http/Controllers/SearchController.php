@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Institution;
 use App\Page;
+use App\Search;
 use App\Suggestion;
 use Illuminate\Http\Request;
 
@@ -23,10 +24,18 @@ class SearchController extends Controller{
         if($categoryId)
             $results->where('category_id',[$categoryId]);
 
+        $results = $results->paginate(10);
+
+        if($results->total() > 0){
+            $search = new Search();
+            $search->query = $query;
+            $search->save();
+        }
+
         $data['query'] = $query;
         $data['institution'] = Institution::find($institutionId);
         $data['category'] = Category::find($categoryId);
-        $data['results'] = $results->paginate(10);
+        $data['results'] = $results;
         $data['categories'] = Category::orderBy('name')->get();
         $data['institutions'] = Institution::has('pages')->orderBy('name')->get();
 
