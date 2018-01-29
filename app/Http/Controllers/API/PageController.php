@@ -30,8 +30,8 @@ class PageController extends Controller{
             'fichas' => [
                 'titulo' => 'Listado de Fichas',
                 'tipo' => 'chileatiende#fichasFeed',
-                'nextPageToken' => $pageToken + 1,
-                'items' => $pages
+                'nextPageToken' => $results->hasMorePages() ? $pageToken + 1 : null,
+                'items' => ['ficha' => $pages]
             ]
         ];
 
