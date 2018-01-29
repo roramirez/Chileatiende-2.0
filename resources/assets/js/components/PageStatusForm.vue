@@ -3,8 +3,8 @@
         <div class="text-center">
             <button v-if="page.status == ''  || page.status == 'rechazado'" class="btn btn-primary" @click.prevent="submit('en_revision')">Enviar a Revisión</button>
             <template v-else>
-                <button class="btn btn-primary" @click.prevent='submit()'>Aprobar <template v-if="!page.published">y publicar</template></button>
-                <button class="btn btn-danger" @click.prevent='dialogVisible = true'>Rechazar con observaciones</button>
+                <button class="btn btn-primary" @click.prevent='submit()'>Publicar</button>
+                <button class="btn btn-danger" @click.prevent='dialogVisible = true'>Despublicar con observaciones</button>
             </template>
             
         </div>
