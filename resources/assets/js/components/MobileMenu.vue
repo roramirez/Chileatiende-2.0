@@ -10,6 +10,7 @@
 		<transition name="dropdown" mode="out-in">
 			<div class="dropdown-content" v-if="isOpen">
 				<ul class="help-menu">
+                    <!-- 
 					<li v-if="user == null">
 						<a href="mi-chileatiende">
 							<div class="media mcha-mobile">
@@ -29,6 +30,7 @@
                             </div>
 						</a>
 					</li>
+                    -->
 					<li v-if="user">
 						<div class="media mcha-mobile">
                             <div class="media-left">
