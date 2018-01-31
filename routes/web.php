@@ -18,7 +18,10 @@ Route::get('/fichas/ver/{pageId}', function($pageId){
     $page = Page::find($pageId);
     if(!$page)
         abort(404);
-    return redirect('fichas/'.$page->guid, 301);
+    return redirect('/fichas/'.$page->guid, 301);
+});
+Route::get('/oficinas', function(){
+    return redirect('/ayuda/sucursales');
 });
 
 
