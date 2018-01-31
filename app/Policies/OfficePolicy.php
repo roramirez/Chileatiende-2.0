@@ -41,7 +41,10 @@ class OfficePolicy
      */
     public function create(User $user)
     {
-        return false;
+        if($user->role != 'operator')
+            return false;
+
+        return true;
     }
 
     /**
