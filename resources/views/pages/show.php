@@ -98,6 +98,11 @@
                             <?=App\Twig::render($page->cost)?>
                         <?php endif ?>
 
+                        <?php if($page->validity):?>
+                            <h4 id="validity">¿Qué vigencia tiene?</h4>
+                            <?=App\Twig::render($page->validity)?>
+                        <?php endif ?>
+
                         <?php if($page->howto):?>
                         <h4 id="howto">¿Cómo y dónde hago el trámite?</h4>
                         <div class="howto main-tabs">

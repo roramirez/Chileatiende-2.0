@@ -40,6 +40,7 @@ class Page extends Model
         'beneficiaries' => '',
         'requirements' => '',
         'cost' => '',
+        'validity' => '',
         'online' => false,
         'online_guide' => '',
         'online_url' => '',

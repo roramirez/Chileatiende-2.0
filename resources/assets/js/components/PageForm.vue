@@ -96,6 +96,17 @@
             </div>
         </div>
 
+        <div class="form-group" :class="{'has-error': errors['validity']}">
+            <label for="validity" class="col-sm-2 control-label">Vigencia
+                <a v-if="comments.validity" v-tooltip :title="comments.validity" href="#" @click.prevent><i class="material-icons">comment</i></a>
+            </label>
+            <div class="col-sm-10">
+                <editor id="validity" v-model="data.validity" @input="showComments.validity = true"></editor>
+                <div class="help-block" v-for="e in errors['validity']">{{e}}</div>
+                <field-comments v-if="showComments.validity" v-model="data.comments.validity"></field-comments>
+            </div>
+        </div>
+
         <div class="form-group">
             <label class="col-sm-2 control-label">Guías</label>
 
