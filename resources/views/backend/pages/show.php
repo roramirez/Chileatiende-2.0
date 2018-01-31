@@ -71,6 +71,53 @@
             <td>Descripción</td>
             <td><?=App\Twig::render($page->objective)?></td>
         </tr>
+        <tr>
+            <td>Detalles</td>
+            <td><?=App\Twig::render($page->details)?></td>
+        </tr>
+        <tr>
+            <td>Beneficiarios</td>
+            <td><?=App\Twig::render($page->beneficiaries)?></td>
+        </tr>
+        <tr>
+            <td>Requerimientos</td>
+            <td><?=App\Twig::render($page->requirements)?></td>
+        </tr>
+        <tr>
+            <td>Costo</td>
+            <td><?=App\Twig::render($page->cost)?></td>
+        </tr>
+        <tr>
+            <td>Vigencia</td>
+            <td><?=App\Twig::render($page->validity)?></td>
+        </tr>
+        <tr>
+            <td>Guía Online</td>
+            <td><?=App\Twig::render($page->online_guide)?></td>
+        </tr>
+        <tr>
+            <td>Guía Oficina</td>
+            <td>
+                <?=App\Twig::render($page->office_guide)?>
+                <?php if($page->online_url):?><p><a href="<?=$page->online_url?>" target="_blank"><?=$page->online_url?></a></p><?php endif ?>
+            </td>
+        </tr>
+        <tr>
+            <td>Guía Correo</td>
+            <td><?=App\Twig::render($page->mail_guide)?></td>
+        </tr>
+        <tr>
+            <td>Guía Telefónico</td>
+            <td><?=App\Twig::render($page->phone_guide)?></td>
+        </tr>
+        <tr>
+            <td>Guía Consulado</td>
+            <td><?=App\Twig::render($page->consulate_guide)?></td>
+        </tr>
+        <tr>
+            <td>Keywords</td>
+            <td><?=App\Twig::render($page->keywords)?></td>
+        </tr>
         </tbody>
     </table>
 </div>
