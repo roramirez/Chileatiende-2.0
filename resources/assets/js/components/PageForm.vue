@@ -85,6 +85,17 @@
             </div>
         </div>
 
+        <div class="form-group" :class="{'has-error': errors['cost']}">
+            <label for="cost" class="col-sm-2 control-label">Costo
+                <a v-if="comments.cost" v-tooltip :title="comments.cost" href="#" @click.prevent><i class="material-icons">comment</i></a>
+            </label>
+            <div class="col-sm-10">
+                <editor id="cost" v-model="data.cost" @input="showComments.cost = true"></editor>
+                <div class="help-block" v-for="e in errors['cost']">{{e}}</div>
+                <field-comments v-if="showComments.cost" v-model="data.comments.cost"></field-comments>
+            </div>
+        </div>
+
         <div class="form-group">
             <label class="col-sm-2 control-label">Guías</label>
 

@@ -192,6 +192,7 @@ class PageController extends Controller{
         $page->details = $request->input('details');
         $page->beneficiaries = $request->input('beneficiaries');
         $page->requirements = $request->input('requirements');
+        $page->cost = $request->input('cost');
         $page->online = $request->input('online');
         $page->online_guide = $request->input('online_guide');
         $page->online_url = $request->input('online_url');

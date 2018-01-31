@@ -93,6 +93,11 @@
                         <?=App\Twig::render($page->requirements)?>
                         <?php endif ?>
 
+                        <?php if($page->cost):?>
+                            <h4 id="cost">¿Cual es el costo del trámite?</h4>
+                            <?=App\Twig::render($page->cost)?>
+                        <?php endif ?>
+
                         <?php if($page->howto):?>
                         <h4 id="howto">¿Cómo y dónde hago el trámite?</h4>
                         <div class="howto main-tabs">
