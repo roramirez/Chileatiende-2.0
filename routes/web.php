@@ -21,7 +21,22 @@ Route::get('/fichas/ver/{pageId}', function($pageId){
     return redirect('/fichas/'.$page->guid, 301);
 });
 Route::get('/oficinas', function(){
-    return redirect('/ayuda/sucursales');
+    return redirect('/ayuda/sucursales', 301);
+});
+Route::get('/contenidos/en-linea', function(){
+    return redirect('/ayuda/atencion-telefonica', 301);
+});
+Route::get('/contenidos/callcenter', function(){
+    return redirect('/ayuda/atencion-telefonica', 301);
+});
+Route::get('/serviciosdisponibles', function(){
+    return redirect('/instituciones', 301);
+});
+Route::get('/servicios/ver/{institutionId}', function($institutionId){
+    return redirect('/instituciones/'.$institutionId, 301);
+});
+Route::get('/contenidos/preguntas-frecuentesa', function(){
+    return redirect('/ayuda/preguntas-frecuentes', 301);
 });
 
 
