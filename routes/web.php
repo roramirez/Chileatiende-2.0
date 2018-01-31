@@ -35,7 +35,7 @@ Route::get('/serviciosdisponibles', function(){
 Route::get('/servicios/ver/{institutionId}', function($institutionId){
     return redirect('/instituciones/'.$institutionId, 301);
 });
-Route::get('/contenidos/preguntas-frecuentesa', function(){
+Route::get('/contenidos/preguntas-frecuentes', function(){
     return redirect('/ayuda/preguntas-frecuentes', 301);
 });
 
