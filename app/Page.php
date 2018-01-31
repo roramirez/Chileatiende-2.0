@@ -50,7 +50,8 @@ class Page extends Model
         'mail' => false,
         'mail_guide' => '',
         'legal' => '',
-        'keywords' => ''
+        'keywords' => '',
+        'comments' => '{}'
     ];
 
     public function masterPage(){
