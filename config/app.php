@@ -170,7 +170,6 @@ return [
         Laravel\Scout\ScoutServiceProvider::class,
         TwigBridge\ServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
-        Bugsnag\BugsnagLaravel\BugsnagServiceProvider::class,
         //ScoutEngines\Elasticsearch\ElasticsearchProvider::class,
 
         /*
@@ -231,8 +230,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Twig' => TwigBridge\Facade\Twig::class,
-        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
-        'Bugsnag' => Bugsnag\BugsnagLaravel\Facades\Bugsnag::class,
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class
 
     ],
 
