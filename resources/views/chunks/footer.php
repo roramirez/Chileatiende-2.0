@@ -68,6 +68,7 @@
                     </div>
                     <div class="col-sm-6">
                         <div class="text-right">
+                            <a href="https://www.chileatiende.gob.cl/contacto/formulario.php?origen=http://www.chileatiende.gob.cl/" target="_blank"><i class="material-icons email">email</i></a>
                             <a href="https://www.facebook.com/ChileAtiende" target="_blank"><img src="images/facebook.svg" alt="Facebook" /></a>
                             &nbsp;
                             <a href="https://twitter.com/ChileAtiende" target="_blank"><img src="images/twitter.svg" alt="Twitter" /></a>

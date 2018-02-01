@@ -9,7 +9,7 @@
 							Es la Red Multiservicios del Estado, que busca acercar los beneficios y servicios de las instituciones públicas a las personas
 						</div>
 					</div>
-					<div class="col-md-6 text-right">
+					<div class="col-md-7 text-right">
 						<a href="instituciones" class="main-btn red-btn">
 							Instituciones que publican en este portal →
 						</a>
