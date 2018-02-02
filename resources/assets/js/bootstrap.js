@@ -40,6 +40,7 @@ window.token = token;
 
 if (token) {
     window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
+    window.axios.defaults.xsrfHeaderName = 'AXIOS-TOKEN';   //Fix para que Axios no trate de enviar el CRSF token por su cuenta.
 } else {
     console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
 }
