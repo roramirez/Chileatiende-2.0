@@ -93,14 +93,14 @@
         </tr>
         <tr>
             <td>Guía Online</td>
-            <td><?=App\Twig::render($page->online_guide)?></td>
+            <td>
+                <?=App\Twig::render($page->online_guide)?>
+                <?php if($page->online_url):?><p><a href="<?=$page->online_url?>" target="_blank"><?=$page->online_url?></a></p><?php endif ?>
+            </td>
         </tr>
         <tr>
             <td>Guía Oficina</td>
-            <td>
-                <?=App\Twig::render($page->office_guide)?>
-                <?php if($page->online_url):?><p><a href="<?=$page->online_url?>" target="_blank"><?=$page->online_url?></a></p><?php endif ?>
-            </td>
+            <td><?=App\Twig::render($page->office_guide)?></td>
         </tr>
         <tr>
             <td>Guía Correo</td>
