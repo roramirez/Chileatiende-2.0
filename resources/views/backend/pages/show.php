@@ -92,6 +92,10 @@
             <td><?=App\Twig::render($page->validity)?></td>
         </tr>
         <tr>
+            <td>Marco Legal</td>
+            <td><?=App\Twig::render($page->legal)?></td>
+        </tr>
+        <tr>
             <td>Guía Online</td>
             <td>
                 <?=App\Twig::render($page->online_guide)?>
