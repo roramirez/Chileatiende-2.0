@@ -1,13 +1,13 @@
 <template>
 	<div id="page-nav" class="page-mobile-menu-component sidebar-menu" v-bind:class="{ affix: isAffix,'affix-bottom': isAffixBottom  }" style="">
-		<div class="mobile-heading" data-gumshoe-header>
+		<div class="mobile-heading hidden-xs hidden-sm" data-gumshoe-header>
 			<div class="page-title">{{ page.title }}</div>
 			<a class="current" role="button" data-toggle="collapse" href="#collapseNav">
 				{{ activeNavPage }}
 				<span class="caret"></span>
 			</a>
 		</div>
-        <div id="collapseNav" class="collapse">
+        <div id="collapseNav" class="collapse hidden-xs hidden-sm">
             <ol type="1" class="nav index" data-gumshoe>
                 <li><a :href="currentUrl+'#objective'" data-target="#objective">Descripción</a></li>
                 <li v-if="page.details"><a :href="currentUrl+'#details'" data-target="#details">Detalles</a></li>
@@ -17,8 +17,8 @@
 				<li v-if="page.validity"><a :href="currentUrl+'#validity'" data-target="#validity">¿Qué vigencia tiene?</a></li>
                 <li v-if="page.howto"><a :href="currentUrl+'#howto'" data-target="#howto">¿Cómo y dónde hago el trámite? </a></li>
             </ol>
-            <a v-if="page.online" class="btn btn-online" :href="page.online_url" data-toggle="modal" data-target="#redirect-modal" data-ga-te-category="Acciones Ficha" data-ga-te-action="Botón Trámite Online Superior - 2.0" :data-ga-te-value="page.master_id">Ir al trámite en línea →</a>
         </div>
+        <a v-if="page.online" class="btn btn-online" :href="page.online_url" data-toggle="modal" data-target="#redirect-modal" data-ga-te-category="Acciones Ficha" data-ga-te-action="Botón Trámite Online Superior - 2.0" :data-ga-te-value="page.master_id">Ir al trámite en línea →</a>
         <div class="clearfix"></div>
         <div v-if="page.related_pages.length > 0" class="hidden-xs hidden-sm">
         	<div class="related-pages">
