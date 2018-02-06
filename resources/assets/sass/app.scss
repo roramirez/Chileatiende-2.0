@@ -822,7 +822,8 @@ main {
                 right: 0;
                 z-index: 2;
                 margin: 0 -15px;
-                padding: 0 30px 15px;
+                //padding: 0 30px 15px;
+                padding: 0;
                 box-shadow: 0 -2px 4px 0 rgba(203, 203, 203, 0.50);
                 @media (min-width: 992px) {
                     margin: 20px 0 0 0;
@@ -838,6 +839,9 @@ main {
                 }
                 .page-title {
                     display: block;
+                }
+                .btn-online {
+                    margin: 0;
                 }
             }
             &.affix-bottom {
