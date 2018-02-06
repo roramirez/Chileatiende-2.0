@@ -48,6 +48,8 @@ class Page extends Model
         'office_guide' => '',
         'phone' => false,
         'phone_guide' => '',
+        'consulate' => false,
+        'consulate_guide' => '',
         'mail' => false,
         'mail_guide' => '',
         'legal' => '',

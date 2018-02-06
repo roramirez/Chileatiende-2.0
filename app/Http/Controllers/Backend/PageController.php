@@ -203,6 +203,8 @@ class PageController extends Controller{
         $page->phone_guide = $request->input('phone_guide');
         $page->mail = $request->input('mail');
         $page->mail_guide = $request->input('mail_guide');
+        $page->consulate = $request->input('consulate');
+        $page->consulate_guide = $request->input('consulate_guide');
         $page->legal = $request->input('legal');
         $page->keywords = $request->input('keywords');
         $page->comments = $request->input('comments');

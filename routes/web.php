@@ -12,6 +12,7 @@
 */
 
 //Redirects de ChileAtiende viejo
+use App\Institution;
 use App\Page;
 
 Route::get('/fichas/ver/{pageId}', function($pageId){
@@ -38,7 +39,12 @@ Route::get('/servicios/ver/{institutionId}', function($institutionId){
 Route::get('/contenidos/preguntas-frecuentes', function(){
     return redirect('/ayuda/preguntas-frecuentes', 301);
 });
-
+Route::get('/transparencia/{institutionShortname}', function($institutionShortname){
+    $institution = Institution::where('shortname',$institutionShortname)->first();
+    if(!$institution)
+        abort(404);
+    return redirect('/instituciones/'.$institution->id, 301);
+});
 
 //Rutas
 Route::auth();
