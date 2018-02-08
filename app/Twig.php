@@ -34,9 +34,7 @@ class Twig{
 
         $count = preg_match_all('/{{paso:(.+)}}.*{{contenido:(.+)}}/sU', $string, $matches);
         if ($count){
-            $string = preg_replace('/{{paso:.+}}/sU','',$string);
-            $string = preg_replace('/{{contenido:.+}}/sU','',$string);
-            $string .= "<steps :terms='".json_encode($matches[1])."' :definitions='".json_encode($matches[2])."'></steps>";
+            $string = preg_replace('/{{paso:(.+)}}.*{{contenido:(.+)}}/s', "<steps :terms='".json_encode($matches[1])."' :definitions='".json_encode($matches[2])."'></steps>", $string);
         }
 
         return $string;
