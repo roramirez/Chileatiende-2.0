@@ -65,7 +65,7 @@ const app = new Vue({
             }
         },
         bindGAEvents(){
-            if(typeof _gaq !== "undefined"){
+            if(typeof ga !== "undefined"){
                 $('body').on('mousedown', '[data-ga-te-category]', function(e){
                     var elem = $(this),
                         category = elem.data('ga-te-category')||'',
@@ -73,11 +73,10 @@ const app = new Vue({
                         label = elem.data('ga-te-label')||'',
                         value = elem.data('ga-te-value');
                     if(label){
-                        _gaq.push(['_trackEvent', category, action, label, value]);
+                        ga('send', 'event' ,category, action, label, value);
                     } else { 
-                        _gaq.push(['_trackEvent', category, action, ''+value+'']);
+                        ga('send', 'event' ,category, action, ''+value+'');
                     }
-                    console.log('click marcado');
                 });
             }
         }
