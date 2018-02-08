@@ -27,7 +27,7 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="text-right">
-                                        <?=$n->created_at->formatLocalized('%D')?>
+                                        <span v-text="moment('<?=$n->created_at?>').format('L')"></span>
                                     </div>
                                 </div>
                             </div>

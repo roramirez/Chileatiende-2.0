@@ -14,7 +14,7 @@
                     <?php if($page->online):?><div class="online">Trámite en línea</div><?php endif ?>
                     <h2><?= $page->title ?></h2>
                     <div class="author"><a href="instituciones/<?=$page->institution->id?>">Información proporcionada por <?= $page->institution->name ?></a></div>
-                    <?php if($page->published_at):?><div class="updated-at">Actualizado al <?=$page->published_at->formatLocalized('%d de %B, %Y')?></div><?php endif ?>
+                    <?php if($page->published_at):?><div class="updated-at">Actualizado al <span v-text="moment('<?=$page->published_at?>').format('D [de] MMMM, YYYY')"></span></div><?php endif ?>
                     <div class="accessibility-bar rs_skip hidden-print">
                         <div id="readspeaker_button1" ref="readspeakerButton" class="rs_skip rsbtn rs_preserve" v-show="page.showReadspeakerButton">
                             <a rel="nofollow" class="rsbtn_play" accesskey="L" title="Escucha esta p&aacute;gina utilizando ReadSpeaker" href="//app-na.readspeaker.com/cgi-bin/rsent?customerid=6404&lang=es_us&readid=page-content&url=<?= rawurlencode(url()->current()) ?>">

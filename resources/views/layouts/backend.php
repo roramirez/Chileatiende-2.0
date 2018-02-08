@@ -59,7 +59,7 @@
                             <div class="text-right">
                                 <div class="date">
                                     <i class="material-icons">date_range</i>
-                                    <?=\Carbon\Carbon::now()->formatLocalized('%A, %e de %B')?>
+                                    <span v-text="moment().format('dddd, D [de] MMMM')"></span>
                                 </div>
                             </div>
                         </div>

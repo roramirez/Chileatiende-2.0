@@ -10,7 +10,7 @@
         <div class="row">
             <div class="col-sm-8">
                 <h3><?=$institution->name?></h3>
-                <div>Actualizado al <?=Carbon\Carbon::now()->formatLocalized('%d de %B, %Y')?></div>
+                <div>Actualizado al <span v-text="moment().format('D [de] MMMM, YYYY')"></span></div>
 
                 <hr />
 

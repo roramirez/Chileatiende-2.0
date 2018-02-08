@@ -21,7 +21,7 @@
         <tr>
             <td style="width: 33%;">
                 <h4>Fecha de Modificación:</h4>
-                <p><?=$l->updated_at->formatLocalized('%c')?></p>
+                <p><span v-text="moment('<?=$l->updated_at?>').format('lll')"></span></p>
                 <h4>Usuario:</h4>
                 <p><?=$l->user ? $l->user->name : 'Usuario no existente'?></p>
             </td>

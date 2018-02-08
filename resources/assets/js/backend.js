@@ -44,6 +44,9 @@ const app = new Vue({
     directives:{
         Confirm
     },
+    methods:{
+        moment: moment
+    },
     mounted() {
         $('[data-toggle="tooltip"]').tooltip();
     }

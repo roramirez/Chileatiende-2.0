@@ -50,6 +50,7 @@ const app = new Vue({
         this.bindGAEvents();
     },
     methods: {
+        moment: moment,
         toggleReadspeaker() {
             this.page.showReadspeakerButton = !this.page.showReadspeakerButton;
             if (this.page.showReadspeakerButton) {
