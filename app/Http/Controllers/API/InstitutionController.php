@@ -22,13 +22,14 @@ class InstitutionController extends Controller{
             $institutions[] = $r->toPublicArray();
         }
 
-        return [
+        return response()->json([
             'servicios' => [
                 'titulo' => 'Listado de Servicios',
                 'tipo' => 'chileatiende#serviciosFeed',
-                'items' => $institutions
+                'items' => ['servicio' => $institutions],
+                'total' => $results->count()
             ]
-        ];
+        ])->withCallback($request->input('callback'));
 
     }
 

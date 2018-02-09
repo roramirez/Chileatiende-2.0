@@ -26,14 +26,15 @@ class PageController extends Controller{
             $pages[] = $r->toPublicArray();
         }
 
-        return [
+        return response()->json([
             'fichas' => [
                 'titulo' => 'Listado de Fichas',
                 'tipo' => 'chileatiende#fichasFeed',
                 'nextPageToken' => $results->hasMorePages() ? $pageToken + 1 : null,
-                'items' => ['ficha' => $pages]
+                'items' => ['ficha' => $pages],
+                'total' => $results->total()
             ]
-        ];
+        ])->withCallback($request->input('callback'));
 
     }
 
