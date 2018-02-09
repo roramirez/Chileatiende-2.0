@@ -262,7 +262,13 @@ class Page extends Model
             'objetivo' => $this->objective,
             'beneficiarios' => $this->beneficiaries,
             'costo' => $this->requirements,
-            'marco_legal' => $this->legal
+            'marco_legal' => $this->legal,
+            'guia_online' => $this->online_guide,
+            'guia_online_url' => $this->online_url,
+            'guia_oficina' => $this->office_guide,
+            'guia_correo' => $this->mail_guide,
+            'guia_telefonico' => $this->phone_guide,
+            'guia_consulado' => $this->consulate_guide
         ];
     }
 }
