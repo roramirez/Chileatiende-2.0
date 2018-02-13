@@ -18,7 +18,7 @@ class PageController extends Controller{
         $maxResults = $request->input('maxResults', 10);
         $pageToken = $request->input('pageToken', 1);
 
-        if(!is_integer($pageToken))
+        if(!is_numeric($pageToken))
             $pageToken = 1;
         
         $results = Page::search($query)->where('published',true)->where('master',false)->where('master_published',true)->paginate($maxResults,'page',$pageToken);
