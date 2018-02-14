@@ -825,6 +825,7 @@ main {
                 //padding: 0 30px 15px;
                 padding: 0;
                 box-shadow: 0 -2px 4px 0 rgba(203, 203, 203, 0.50);
+                text-align: center;
                 @media (min-width: 992px) {
                     margin: 20px 0 0 0;
                     padding: 0;
@@ -833,6 +834,7 @@ main {
                     left: auto;
                     right: auto;
                     top: 0;
+                    text-align: left;
                 }
                 .related-pages {
                     margin-top: 30px;
@@ -841,7 +843,10 @@ main {
                     display: block;
                 }
                 .btn-online {
-                    margin: 0;
+                    margin: 10px 0;
+                    @media (min-width: 768px) {
+                        margin: 0;
+                    }
                 }
             }
             &.affix-bottom {
@@ -971,7 +976,7 @@ main {
             font-size: 14px;
         }
         .btn.btn-online {
-            width: 100%;
+            width: 85%;
             padding: 10px 0;
             margin: 10px 0 0;
             background: $uglyred;
