@@ -2,7 +2,7 @@
 <p>Fichas es un listado de fichas de este portal. Los métodos permiten obtener una ficha, listar una serie de fichas o listar fichas pertenecientes a un servicio en particular.</p>
 <h3>Métodos</h3>
 <ul>
-    <li><a href="https://www.chileatiende.gob.cl/desarrolladores/fichas_obtener">Obtener</a>: Obtiene una ficha</li>
+    <li><a href="https://www.chileatiende.gob.cl/desarrolladores/fichas/fichas_obtener">Obtener</a>: Obtiene una ficha</li>
     <li>Listar: Lista todas las fichas</li>
     <li>listarPorServicio: Lista todas las fichas de un servicio/institución en particular.</li>
 </ul>

@@ -64,7 +64,14 @@
             <div class="row">
                 <div class="contact-section">
                     <div class="col-sm-6">
-                        <div><a href="/ayuda/atencion-telefonica"><img src="images/callcenter.svg" alt="callcenter" /></a> <a href="/ayuda/atencion-telefonica">Callcenter 101</a></div>
+                        <div class="hidden-xs hidden-sm">
+                            <a href="/ayuda/atencion-telefonica"><img src="images/callcenter.svg" alt="callcenter" /></a>
+                            <a href="/ayuda/atencion-telefonica">Callcenter 101</a>
+                        </div>
+                        <div class="hidden-md hidden-lg">
+                            <a href="tel:101"><img src="images/callcenter.svg" alt="callcenter" /></a>
+                            <a href="tel:101">Callcenter 101</a>
+                        </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="text-right">
