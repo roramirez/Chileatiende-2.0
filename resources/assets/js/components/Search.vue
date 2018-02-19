@@ -1,7 +1,7 @@
 <template>
     <div class="search">
         <el-autocomplete v-model="query" :name="name" :autofocus="true" :trigger-on-focus="false" :fetch-suggestions="querySearchAsync" placeholder="Ej: Certificado de nacimiento" @select="handleSelect">
-            <el-button slot="append" aria-label="Botón buscar" native-type="submit"><img src="../../images/search.svg" /></el-button>
+            <el-button slot="append" aria-label="Botón buscar" :disabled="!query" native-type="submit"><img src="../../images/search.svg" /></el-button>
         </el-autocomplete>
     </div>
 </template>
