@@ -89,6 +89,9 @@ class PagePolicy
      */
     public function delete(User $user, Page $page)
     {
+        if($user->role != 'admin')
+            return false;
+
         if($page->status)
             return false;
 
