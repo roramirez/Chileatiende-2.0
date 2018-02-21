@@ -8,6 +8,12 @@ Primero se debe copiar el archivo .env.example a .env y editar las variables de 
 cp .env.example .env
 ```
 
+Generar la llave de instalación
+
+```
+php artisan key:generate
+```
+
 Luego, hacer la instalación de las librerias PHP necesarias:
 
 ```
