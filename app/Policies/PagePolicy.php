@@ -113,6 +113,11 @@ class PagePolicy
         return false;
     }
 
+    public function unpublishVersion(User $user, Page $page)
+    {
+        return false;
+    }
+
     public function updateFeatured(User $user, Page $page = null)
     {
         return false;

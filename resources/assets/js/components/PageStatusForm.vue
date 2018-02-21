@@ -8,7 +8,7 @@
             <template v-else>
                 <button class="btn btn-success" @click.prevent='data.action = "revise"; submit();'>Enviar a Revisión</button>
             </template>
-            <button v-if="page.published" class="btn btn-danger" @click.prevent='data.action = "unpublish"; dialogVisible = true;'>Despublicar</button>
+            <button v-if="page.published && canUnpublish" class="btn btn-danger" @click.prevent='data.action = "unpublish"; dialogVisible = true;'>Despublicar</button>
 
 
 
@@ -52,7 +52,7 @@
                 errors: {}
             }
         },
-        props: ['page'],
+        props: ['page','canUnpublish'],
         components:{
             ElDialog
         },

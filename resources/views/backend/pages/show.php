@@ -50,7 +50,7 @@
     </div>
     <?php endif ?>
 
-    <page-status-form :page="<?=e($page)?>"></page-status-form>
+    <page-status-form :page="<?=e($page)?>" :can-unpublish="<?=Auth::user()->can('unpublishVersion',$page) ? 'true' : 'false'?>"></page-status-form>
 
     <br />
 
