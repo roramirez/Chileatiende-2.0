@@ -58,3 +58,11 @@ Para indexar solo sugerencias de búsqueda (Esto es recomendable dejarlo en un c
 ```
 php artisan elasticsearch:admin index suggestions
 ```
+
+## Algoritmo Machine Learning para similitud de fichas
+
+Es recomendable dejar en un cron todos los días este comando para calcular las fichas similares de acuerdo a las visitas de los usuarios.
+
+```
+php artisan ml:similarity
+```
