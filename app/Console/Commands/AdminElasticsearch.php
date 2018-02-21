@@ -14,7 +14,7 @@ class AdminElasticsearch extends Command
      *
      * @var string
      */
-    protected $signature = 'elasticsearch:admin {operation}';
+    protected $signature = 'elasticsearch:admin {operation} {model?}';
 
     /**
      * The console command description.
@@ -44,6 +44,7 @@ class AdminElasticsearch extends Command
         $client = new Client();
 
         $operation = $this->argument('operation');
+        $model = $this->argument('model');
 
         if($operation == 'create'){
             try {
@@ -115,10 +116,13 @@ class AdminElasticsearch extends Command
                 ]
             ]);
         }elseif ($operation == 'index'){
-            $this->call('scout:import', ['model' => 'App\Page']);
-
-            Suggestion::refreshData();
-            $this->call('scout:import', ['model' => 'App\Suggestion']);
+            if(!$model || $model == 'pages'){
+                $this->call('scout:import', ['model' => 'App\Page']);
+            }
+            if(!$model || $model == 'suggestions'){
+                Suggestion::refreshData();
+                $this->call('scout:import', ['model' => 'App\Suggestion']);
+            }
         }
 
 

@@ -41,8 +41,20 @@ Para crear el indice:
 php artisan elasticsearch:admin create
 ```
 
-Para indexar:
+Para indexar todo (Realizar esto en instalación inicial):
 
 ```
 php artisan elasticsearch:admin index
+```
+
+Para indexar solo páginas:
+
+```
+php artisan elasticsearch:admin index pages
+```
+
+Para indexar solo sugerencias de búsqueda (Esto es recomendable dejarlo en un cron cada día para ir recalculando las sugerencias de acuerdo a las búsquedas populares de los usuarios):
+
+```
+php artisan elasticsearch:admin index suggestions
 ```
