@@ -17,6 +17,7 @@ import AccessTokenForm from './components/AccessTokenForm.vue';
 import NotificationForm from './components/NotificationForm.vue';
 import PastUsers from './components/PastUsers.vue';
 import ContentForm from './components/ContentForm.vue';
+import Steps from './components/Steps.vue';
 
 import Confirm from './directives/Confirm.js';
 
@@ -39,7 +40,8 @@ const app = new Vue({
         AccessTokenForm,
         NotificationForm,
         PastUsers,
-        ContentForm
+        ContentForm,
+        Steps
     },
     directives:{
         Confirm
