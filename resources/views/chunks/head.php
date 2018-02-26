@@ -8,7 +8,8 @@
     <meta name="csrf-token" content="<?=csrf_token()?>">
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico"  />
     <title>ChileAtiende - <?=$title?></title>
-    <meta property="og:title" content="<?=$title?>" />
+    <meta property="og:title" content="Chileatiende - <?=$title?>" />
+    <meta property="og:image" content="images/og_chatiende.png">
     <meta name="twitter:title" content="<?=$title?>">
     <?php if(isset($description)):?>
         <meta name="description" content="<?=$description?>" />
