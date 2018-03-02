@@ -89,7 +89,7 @@
         </div>
         <hr />
         <div>ChileAtiende es una marca registrada por: <br><a href="http://www.ips.gob.cl" target="_blank">Instituto de Previsión Social (MINTRAB)</a></div>
-        <div>Portal desarrollado por: <br><a href="http://www.modernizacion.gob.cl" target="_blank">Unidad de Modernización y Gobierno Digital (MINSEGPRES)</a></div>
+        <div>Portal desarrollado por: <br><a href="http://www.modernizacion.gob.cl" target="_blank">División de Gobierno Digital (MINSEGPRES)</a></div>
         <br />
         <div><a href="http://creativecommons.org/licenses/by/3.0/cl/" target="_blank"><img src="images/by.svg" /></a> <a href="http://creativecommons.org/licenses/by/3.0/cl/" target="_blank"><img src="images/cc.svg" /></a> A menos que se indique lo contrario, todo el contenido en ChileAtiende.gob.cl está bajo una licencia <a href="http://creativecommons.org/licenses/by/3.0/cl/" target="_blank">Creative Commons 3.0 (CC BY 3.0 CL)</a></div>
         <img class="gob" src="images/gob.svg" alt="Gobierno de Chile" />
