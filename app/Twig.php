@@ -34,7 +34,9 @@ class Twig{
 
         $count = preg_match_all('/{{paso:(.+)}}.*{{contenido:(.+)}}/sU', $string, $matches);
         if ($count){
-            $string = preg_replace('/{{paso:(.+)}}.*{{contenido:(.+)}}/s', "<steps :terms='".e(json_encode($matches[1]))."' :definitions='".e(json_encode($matches[2]))."'></steps>", $string);
+            $replacement = "<steps :terms='".e(json_encode($matches[1]))."' :definitions='".e(json_encode($matches[2]))."'></steps>";
+            $replacement = str_replace('$','\$',$replacement);  //Escapamos los caracteres especiales de preg_replace
+            $string = preg_replace('/{{paso:(.+)}}.*{{contenido:(.+)}}/s', $replacement, $string);
         }
 
         return $string;
