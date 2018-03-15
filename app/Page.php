@@ -256,19 +256,29 @@ class Page extends Model
     public function toPublicArray(){
         return [
             'id' => $this->masterPage->id,
+            'codigo' => $this->masterPage->id,
             'servicio' => $this->institution->name,
             'fecha' => $this->published_at ? $this->published_at->toDateTimeString() : null,
             'titulo' => $this->title,
             'objetivo' => $this->objective,
             'beneficiarios' => $this->beneficiaries,
-            'costo' => $this->requirements,
+            'costo' => $this->cost,
             'marco_legal' => $this->legal,
             'guia_online' => $this->online_guide,
             'guia_online_url' => $this->online_url,
             'guia_oficina' => $this->office_guide,
             'guia_correo' => $this->mail_guide,
             'guia_telefonico' => $this->phone_guide,
-            'guia_consulado' => $this->consulate_guide
+            'guia_consulado' => $this->consulate_guide,
+            'vigencia' => $this->validity,
+            'plazo' => '',
+            'doc_requeridos' => $this->requirements,
+            'updated_data_at' => $this->published_at ? $this->published_at->toDateTimeString() : null,
+            'observaciones' => '',
+            'temas' => ['tema' => []],
+            'tags' => ['tag' => []],
+            'chileclic_id' => null,
+            'permalink' => url('fichas/'.$this->guid),
         ];
     }
 }
