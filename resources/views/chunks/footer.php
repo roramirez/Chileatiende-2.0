@@ -75,7 +75,7 @@
                     </div>
                     <div class="col-sm-6">
                         <div class="text-right">
-                            <?php if($_GET['skin']="exterior"){?>
+                            <?php if($_GET['skin']=="exterior"){?>
                             <a href="https://contacto.chilesinpapeleo.cl/tramites/iniciar/3280" target="_blank"><i class="material-icons email">email</i></a>
                             <?php } else{ ?>
                             <a href="https://www.chileatiende.gob.cl/contacto/formulario.php?origen=http://www.chileatiende.gob.cl/" target="_blank"><i class="material-icons email">email</i></a>
