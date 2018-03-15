@@ -75,14 +75,9 @@
                     </div>
                     <div class="col-sm-6">
                         <div class="text-right">
-                            <?php if (isset($_GET['skin']){ 
-                            if($_GET['skin']=="exterior"){?>
-                            <a href="https://contacto.chilesinpapeleo.cl/tramites/iniciar/3280" target="_blank"><i class="material-icons email">email</i></a>
-                            <?php } else{ ?>
+              
                             <a href="https://www.chileatiende.gob.cl/contacto/formulario.php?origen=http://www.chileatiende.gob.cl/" target="_blank"><i class="material-icons email">email</i></a>
-                            <?php }  else{ ?>
-                            <a href="https://www.chileatiende.gob.cl/contacto/formulario.php?origen=http://www.chileatiende.gob.cl/" target="_blank"><i class="material-icons email">email</i></a>
-                            <?php } ?>
+                
                             <a href="https://www.facebook.com/ChileAtiende" target="_blank"><img src="images/facebook.svg" alt="Facebook" /></a>
                             &nbsp;
                             <a href="https://twitter.com/ChileAtiende" target="_blank"><img src="images/twitter.svg" alt="Twitter" /></a>
