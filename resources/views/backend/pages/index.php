@@ -15,7 +15,7 @@
     </div>
 
 
-    <div class="text-center"><?=$pages->links()?></div>
+    <div class="text-center"><?=$pages->appends($filters)->links()?></div>
 
     <table class="table">
         <thead>
@@ -65,5 +65,5 @@
         </tbody>
     </table>
 
-    <div class="text-center"><?=$pages->links()?></div>
+    <div class="text-center"><?=$pages->appends($filters)->links()?></div>
 </div>
