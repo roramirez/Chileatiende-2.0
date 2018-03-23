@@ -251,12 +251,23 @@ class Page extends Model
     }
 
     /*
+     * Deprecated
+     */
+    public function getCodeAttribute(){
+        $correlative = $this->masterPage->correlative;
+        if(!$correlative)
+            $correlative = $this->masterPage->id;
+
+        return $this->institution->ministry_id.'-'.$correlative;
+    }
+
+    /*
     *   Atributos que serán mostrados a traves de la API pública.
     */
     public function toPublicArray(){
         return [
             'id' => $this->masterPage->id,
-            'codigo' => $this->masterPage->id,
+            'codigo' => $this->code,
             'servicio' => $this->institution->name,
             'fecha' => $this->published_at ? $this->published_at->toDateTimeString() : null,
             'titulo' => $this->title,
