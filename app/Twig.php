@@ -19,8 +19,9 @@ class Twig{
     }
 
     public static function strip($string){
-        $caca = preg_replace('/{{.*(}}|$)/sU','', $string);
-        return $caca;
+        $newString = preg_replace('/{{.*:/','', $string);
+        $newString = preg_replace('/}}/','', $newString);
+        return $newString;
     }
 
     public static function convertPMLToHTML($string){
