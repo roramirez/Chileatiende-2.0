@@ -4,12 +4,14 @@ namespace App\Http\Controllers\API;
 
 use App\ApiUser;
 use App\Http\Controllers\Controller;
+use App\XML;
 use Illuminate\Http\Request;
 use App\Institution;
 
 class InstitutionController extends Controller{
 
     public function index(Request $request){
+        $type = $request->get('type','json');
         $apiUser = ApiUser::where('token',$request->get('access_token'))->first();
         if(!$apiUser)
             abort(403);
@@ -22,19 +24,25 @@ class InstitutionController extends Controller{
             $institutions[] = $r->toPublicArray();
         }
 
-        return response()->json([
+        $content = [
             'servicios' => [
                 'titulo' => 'Listado de Servicios',
                 'tipo' => 'chileatiende#serviciosFeed',
                 'items' => ['servicio' => $institutions],
                 'total' => $results->count()
             ]
-        ])->withCallback($request->input('callback'));
+        ];
+
+        if($type == 'xml')
+            return response(XML::xml_encode($content))->header('Content-Type','text/xml');
+        else
+            return response()->json($content)->withCallback($request->input('callback'));
 
     }
 
 
     public function show(Request $request, $id){
+        $type = $request->get('type','json');
         $apiUser = ApiUser::where('token',$request->get('access_token'))->first();
         if(!$apiUser)
             abort(403);
@@ -43,7 +51,12 @@ class InstitutionController extends Controller{
         
         $institution = $institution->toPublicArray();
 
-        return ['servicio' => $institution];
+        $content = ['servicio' => $institution];
+
+        if($type == 'xml')
+            return response(XML::xml_encode($content))->header('Content-Type','text/xml');
+        else
+            return $content;
     }
 
 

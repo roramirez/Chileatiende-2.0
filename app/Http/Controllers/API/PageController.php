@@ -4,12 +4,14 @@ namespace App\Http\Controllers\API;
 
 use App\ApiUser;
 use App\Http\Controllers\Controller;
+use App\XML;
 use Illuminate\Http\Request;
 use App\Page;
 
 class PageController extends Controller{
 
     public function index(Request $request){
+        $type = $request->get('type','json');
         $apiUser = ApiUser::where('token',$request->get('access_token'))->first();
         if(!$apiUser)
             abort(403);
@@ -29,7 +31,7 @@ class PageController extends Controller{
             $pages[] = $r->toPublicArray();
         }
 
-        return response()->json([
+        $content = [
             'fichas' => [
                 'titulo' => 'Listado de Fichas',
                 'tipo' => 'chileatiende#fichasFeed',
@@ -37,11 +39,17 @@ class PageController extends Controller{
                 'items' => ['ficha' => $pages],
                 'total' => $results->total()
             ]
-        ])->withCallback($request->input('callback'));
+        ];
+
+        if($type == 'xml')
+            return response(XML::xml_encode($content))->header('Content-Type','text/xml');
+        else
+            return response()->json($content)->withCallback($request->input('callback'));
 
     }
 
     public function indexByInstitution(Request $request, $institutionId){
+        $type = $request->get('type','json');
         $apiUser = ApiUser::where('token',$request->get('access_token'))->first();
         if(!$apiUser)
             abort(403);
@@ -56,7 +64,7 @@ class PageController extends Controller{
             $pages[] = $r->toPublicArray();
         }
 
-        return [
+        $content = [
             'fichas' => [
                 'titulo' => 'Listado de Fichas',
                 'tipo' => 'chileatiende#fichasFeed',
@@ -64,9 +72,16 @@ class PageController extends Controller{
             ]
         ];
 
+        if($type == 'xml')
+            return response(XML::xml_encode($content))->header('Content-Type','text/xml');
+        else
+            return $content;
+
     }
 
     public function show(Request $request, $id){
+        $type = $request->get('type','json');
+
         $apiUser = ApiUser::where('token',$request->get('access_token'))->first();
         if(!$apiUser)
             abort(403);
@@ -79,7 +94,12 @@ class PageController extends Controller{
         
         $page = $master->publishedVersion()->toPublicArray();
 
-        return ['ficha' => $page];
+        $content = ['ficha' => $page];
+
+        if($type == 'xml')
+            return response(XML::xml_encode($content))->header('Content-Type','text/xml');
+        else
+            return $content;
     }
 
 }
