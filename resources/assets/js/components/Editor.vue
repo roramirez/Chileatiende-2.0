@@ -24,7 +24,7 @@
                 skin: false,
                 entity_encoding : "raw",
                 plugins: 'code image media table lists link',
-                toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | code image media | link table',
+                toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | code image media | link unlink table',
                 content_css: '/css/app.css',
                 content_style: "body{background: white; color: #272727; padding: 20px;}",
                 body_id: 'page',
