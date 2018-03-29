@@ -96,6 +96,7 @@ class UserController extends Controller{
         $user->institution_id = $request->input('institution_id');
         $user->ministerial = $request->input('ministerial');
         $user->interministerial = $request->input('interministerial');
+        $user->active = $request->input('active');
 
         if($password = $request->input('password'))
             $user->password = bcrypt($password);

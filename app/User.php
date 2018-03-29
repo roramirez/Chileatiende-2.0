@@ -31,7 +31,8 @@ class User extends Authenticatable
         'ministerial' => 'boolean',
         'interministerial' => 'boolean',
         'birth_date' => 'date',
-        'foreigner' => 'boolean'
+        'foreigner' => 'boolean',
+        'active' => 'boolean'
     ];
 
     protected $attributes = [
@@ -41,7 +42,8 @@ class User extends Authenticatable
         'role' => 'counterpart',
         'institution_id' => null,
         'ministerial' => false,
-        'interministerial' => false
+        'interministerial' => false,
+        'active' => true
     ];
 
     public function institution(){

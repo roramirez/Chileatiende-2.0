@@ -18,6 +18,7 @@
             <th>E-Mail</th>
             <th>Institución</th>
             <th>Rol</th>
+            <th>¿Activo?</th>
             <th>Acciones</th>
         </tr>
         </thead>
@@ -28,6 +29,7 @@
             <td><?=$p->email?></td>
             <td><?=$p->institution ? $p->institution->name : 'No tiene'?></td>
             <td><?=$p->role?></td>
+            <td><?=$p->active ?'Si':'No'?></td>
             <td class="text-center">
                 <?php if(Auth::user()->can('update',$p)): ?><a href="backend/usuarios/<?=$p->id?>/edit"><i class="material-icons">edit</i></a><?php endif ?>
                 <?php if(Auth::user()->can('delete',$p)): ?>

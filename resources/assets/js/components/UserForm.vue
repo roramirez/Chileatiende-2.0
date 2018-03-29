@@ -1,5 +1,12 @@
 <template>
     <form class="category-form form-horizontal" @submit.prevent="submit()">
+        <div class="form-group" :class="{'has-error': errors['active']}">
+            <label for="active" class="col-sm-2 control-label">¿Activo?</label>
+            <div class="col-sm-10">
+                <el-switch id="active" v-model="data.active"></el-switch>
+                <div class="help-block" v-for="e in errors['active']">{{e}}</div>
+            </div>
+        </div>
         <div class="form-group" :class="{'has-error': errors['first_name']}">
             <label for="first_name" class="col-sm-2 control-label">Nombre</label>
             <div class="col-sm-10">
