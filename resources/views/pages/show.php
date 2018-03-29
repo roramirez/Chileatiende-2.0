@@ -75,7 +75,7 @@
 
                         <?php if($page->legal):?>
                             <br />
-                            <expandable class="important" :max-length="100" title="Marco Legal" content="<?=e($page->legal)?>"></expandable>
+                            <expandable class="important" :max-length="100" title="Marco Legal" content="<?=e(App\Twig::render($page->legal))?>"></expandable>
                         <?php endif ?>
 
                         <?php if($page->details):?>
