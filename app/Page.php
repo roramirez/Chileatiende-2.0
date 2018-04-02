@@ -258,7 +258,7 @@ class Page extends Model
         if(!$correlative)
             $correlative = $this->masterPage->id;
 
-        return $this->institution->ministry_id.'-'.$correlative;
+        return $this->institution->id.'-'.$correlative;
     }
 
     /*
