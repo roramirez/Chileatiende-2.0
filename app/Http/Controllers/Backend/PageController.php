@@ -208,6 +208,7 @@ class PageController extends Controller{
         $page->legal = $request->input('legal');
         $page->keywords = $request->input('keywords');
         $page->comments = $request->input('comments');
+        $page->boost = 1;
         $page->save();
         //Ahora guardamos las relacionadas
         $page->relatedPages()->sync($request->input('related_pages'));
