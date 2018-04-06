@@ -86,7 +86,13 @@ class PageController extends Controller{
         if(!$apiUser)
             abort(403);
 
-        $master = Page::find($id);
+        if(is_numeric($id)){
+            $master = Page::find($id);
+        }else{
+            $idArr = explode('-',$id);
+            $master = Page::masters()->where('institution_id',$idArr[0])->where('correlative',$idArr[1])->first();
+        }
+
         
         if(!$master || !$master->published){
             abort(404);
