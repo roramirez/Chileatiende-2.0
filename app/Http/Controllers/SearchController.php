@@ -26,7 +26,7 @@ class SearchController extends Controller{
 
         $results = $results->paginate(10);
 
-        if($results->total() > 0){
+        if($query && $results->total() > 0){
             $search = new Search();
             $search->query = $query;
             $search->save();
