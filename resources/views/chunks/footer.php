@@ -42,7 +42,7 @@
                     </a>
                     <div id="foo-coll-03" class="links-footer collapse">
                         <ul>
-                            <li><a href="?skin=mujer">ChileAtiende Mujer</a></li>
+       
                             <li><a href="?skin=exterior">ChileAtiende en el Exterior</a></li>
                             <li><a href="/enlaces-transparencia">Enlaces para transparencia activa</a></li>
                         </ul>
