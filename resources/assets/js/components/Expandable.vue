@@ -1,6 +1,6 @@
 <template>
     <div class="expandable">
-        <a class="truncate-button" href="#" @click.prevent="truncated = !truncated">{{truncated ? 'Expandir' : 'Contraer'}}<i class="material-icons">{{truncated ? 'expand_more' : 'expand_less'}}</i></a>
+        <a class="truncate-button" v-if="realTextLength >= maxLength" href="#" @click.prevent="truncated = !truncated">{{truncated ? 'Expandir' : 'Contraer'}}<i class="material-icons">{{truncated ? 'expand_more' : 'expand_less'}}</i></a>
         <h5 class="title">{{title}}</h5>
         <div v-html="truncatedContent"></div>
     </div>
@@ -35,10 +35,14 @@
         },
         props: ['maxLength','title','content'],
         computed:{
+            realTextLength: function() {
+                var div = document.createElement("div");
+                div.innerHTML = this.content;
+                return div.innerText.trim().length;
+            },
             truncatedContent: function(){
                 if(!this.truncated)
                     return this.content;
-
                 return truncate(this.content, this.maxLength);
             }
         }
