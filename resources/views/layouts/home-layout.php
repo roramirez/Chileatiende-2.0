@@ -38,6 +38,10 @@
                 </div>
             </div>
         </div>
+        <a class="photo-credit" href="https://unsplash.com/@diegojimenez" target="_blank">
+            <i class="material-icons">photo_camera</i>
+            Diego Jimenez
+        </a>
     </header>
 
     <main>

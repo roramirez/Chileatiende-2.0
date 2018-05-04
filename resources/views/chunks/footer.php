@@ -99,5 +99,8 @@
         <br />
         <div><a href="http://creativecommons.org/licenses/by/3.0/cl/" target="_blank"><img src="images/by.svg" /></a> <a href="http://creativecommons.org/licenses/by/3.0/cl/" target="_blank"><img src="images/cc.svg" /></a> A menos que se indique lo contrario, todo el contenido en ChileAtiende.gob.cl está bajo una licencia <a href="http://creativecommons.org/licenses/by/3.0/cl/" target="_blank">Creative Commons 3.0 (CC BY 3.0 CL)</a></div>
         <img class="gob" src="images/gob.svg" alt="Gobierno de Chile" />
+        <div class="hidden-md hidden-lg">
+            Crédito de la foto de portada: <a class="photo-credit" href="https://unsplash.com/@diegojimenez" target="_blank">Diego Jimenez</a>
+        </div>
     </div>
 </footer>
