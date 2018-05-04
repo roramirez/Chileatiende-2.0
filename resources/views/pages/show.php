@@ -15,6 +15,7 @@
                     <h2><?= $page->title ?></h2>
                     <div class="author"><a href="instituciones/<?=$page->institution->id?>">Información proporcionada por <?= $page->institution->name ?></a></div>
                     <?php if($page->published_at):?><div class="updated-at">Actualizado al <span v-text="moment('<?=$page->published_at?>').format('D [de] MMMM, YYYY')"></span></div><?php endif ?>
+                    <script src="//f1-na.readspeaker.com/script/6404/ReadSpeaker.js?pids=embhl" type="text/javascript"></script>
                     <div class="accessibility-bar rs_skip hidden-print">
                         <div id="readspeaker_button1" ref="readspeakerButton" class="rs_skip rsbtn rs_preserve" v-show="page.showReadspeakerButton">
                             <a rel="nofollow" class="rsbtn_play" accesskey="L" title="Escucha esta p&aacute;gina utilizando ReadSpeaker" href="//app-na.readspeaker.com/cgi-bin/rsent?customerid=6404&lang=es_us&readid=page-content&url=<?= rawurlencode(url()->current()) ?>">
