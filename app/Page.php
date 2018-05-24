@@ -11,10 +11,11 @@ use Laravel\Scout\Searchable;
 use Illuminate\Database\Eloquent\Model;
 use TwigBridge\Facade\Twig;
 use App\Category;
+use Kyslik\ColumnSortable\Sortable;
 
 class Page extends Model
 {
-    use Searchable;
+    use Searchable, Sortable;
 
     protected $casts = [
         'online' => 'boolean',
@@ -56,6 +57,8 @@ class Page extends Model
         'keywords' => '',
         'comments' => '{}'
     ];
+
+    public $sortable = ['id', 'title'];
 
     public function masterPage(){
         return $this->belongsTo('\App\Page','master_id');

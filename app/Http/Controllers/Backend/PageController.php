@@ -46,7 +46,9 @@ class PageController extends Controller{
             'institution_id' => $institutionId,
             'ministry_id' => $ministryId
         ];
-        $data['pages'] = $pages->paginate(30);
+        $pages = $pages->get()->pluck('id');
+        $sortablePages = Page::whereIn('id',$pages)->sortable();
+        $data['pages'] = $sortablePages->paginate(30);
 
         return view('layouts/backend',[
             'title' => 'Ver fichas',
