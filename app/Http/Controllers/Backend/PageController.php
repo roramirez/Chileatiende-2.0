@@ -47,7 +47,7 @@ class PageController extends Controller{
             'ministry_id' => $ministryId
         ];
         $pages = $pages->get()->pluck('id');
-        $sortablePages = Page::whereIn('id',$pages)->sortable();
+        $sortablePages = Page::whereIn('id',$pages)->sortable(['id' => 'asc']);
         $data['pages'] = $sortablePages->paginate(30);
 
         return view('layouts/backend',[

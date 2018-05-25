@@ -58,7 +58,7 @@ class Page extends Model
         'comments' => '{}'
     ];
 
-    public $sortable = ['id', 'title'];
+    public $sortable = ['id','title','status','published','updated_at'];
 
     public function masterPage(){
         return $this->belongsTo('\App\Page','master_id');

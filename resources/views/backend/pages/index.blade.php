@@ -20,11 +20,11 @@
     <table class="table">
         <thead>
         <tr>
-            <th>@sortablelink('id')</th>
-            <th>Nombre del trámite</th>
-            <th>Estado</th>
-            <th>Publicado</th>
-            <th>Última modificación</th>
+            <th>@sortablelink('id','Id',['filter' => 'active, visible'])</th>
+            <th>@sortablelink('title','Nombre del trámite')</th>
+            <th>@sortablelink('status','Estado')</th>
+            <th>@sortablelink('published','Publicado')</th>
+            <th>@sortablelink('updated_at','Última modificación')</th>
             <th>Acciones</th>
         </tr>
         </thead>
