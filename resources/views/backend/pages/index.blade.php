@@ -20,7 +20,7 @@
     <table class="table">
         <thead>
         <tr>
-            <th>@sortablelink('id','Id',['filter' => 'active, visible'])</th>
+            <th>@sortablelink('id','Id')</th>
             <th>@sortablelink('title','Nombre del trámite')</th>
             <th>@sortablelink('status','Estado')</th>
             <th>@sortablelink('published','Publicado')</th>

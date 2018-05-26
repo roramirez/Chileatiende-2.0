@@ -17,7 +17,7 @@
         "laravel/tinker": "~1.0",
         "rcrowe/twigbridge": "^0.9.5",
         "rollbar/rollbar-laravel": "^2.2",
-        "tamayo/laravel-scout-elastic": "^3.0",
+        "tamayo/laravel-scout-elastic": "^3.0"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.1",

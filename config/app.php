@@ -232,6 +232,7 @@ return [
         'Twig' => TwigBridge\Facade\Twig::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
         'ColumnSortable' => Kyslik\ColumnSortable\ColumnSortable::class,
+        'Input' => Illuminate\Support\Facades\Input::class
 
     ],
 
