@@ -7,6 +7,7 @@ use App\Log;
 use App\Page;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Input;
 
 class PageController extends Controller{
 
@@ -21,6 +22,8 @@ class PageController extends Controller{
             return null;
         });
         $ministryId = $request->input('ministry_id', function() use ($request){
+            if($request->user()->role=='admin')
+                return null;
             if(!$request->user()->interministerial)
                 return $request->user()->institution->ministry_id;
             return null;
@@ -46,7 +49,9 @@ class PageController extends Controller{
             'institution_id' => $institutionId,
             'ministry_id' => $ministryId
         ];
-        $data['pages'] = $pages->paginate(30);
+        $pages = $pages->get()->pluck('id');
+        $sortablePages = Page::whereIn('id',$pages)->sortable(['id' => 'asc']);
+        $data['pages'] = $sortablePages->paginate(10)->appends(Input::except('page'));
 
         return view('layouts/backend',[
             'title' => 'Ver fichas',
