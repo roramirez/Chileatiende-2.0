@@ -26,6 +26,7 @@
             <th>@sortablelink('published','Publicado')</th>
             <th>@sortablelink('updated_at','Última modificación')</th>
             <th>Acciones</th>
+            <th>Comunicación</th>
         </tr>
         </thead>
         <tbody>
@@ -59,6 +60,9 @@
                     </form>
                 <?php endif ?>
 
+            </td>
+            <td class="text-center">
+                <i class="material-icons">message</i>
             </td>
         </tr>
         <?php endforeach ?>
