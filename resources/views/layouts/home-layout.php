@@ -19,10 +19,14 @@
                         <span class="mujer">/ Mujer</span>
                     <?php endif ?>
                 </h2>
-                <h3>Guía de Trámites y Servicios del Estado</h3>
+              <!--  <h3>Guía de Trámites y Servicios del Estado</h3> -->
+                
+                <h3> El Estado a tu alcance.
+                </h3>
+              
+     <?= view('chunks/help/canales') ?>
 
-
-                <label>¿Qué trámite o servicio buscas?</label>
+                <label>Busca aquí información de trámites</label>
                 <form action="buscar">
                     <search id="search" class="search" name="query" value=""></search>
                 </form>
