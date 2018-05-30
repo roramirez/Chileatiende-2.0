@@ -2306,3 +2306,92 @@ main {
         visibility: visible !important;
     }
 }
+
+
+.canales {
+    margin: 0px; 
+    padding: 0px;
+    @media (min-width: 768px) {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    
+    .col-xs-3{
+        padding:0px;
+    }
+    
+    
+    .help-card {
+        background-color: #fff;
+        padding: 5px;
+        margin: 5px;
+        height: 100px;
+            
+         @media (min-width: 768px) {
+           
+           padding: 20px 15px;
+           height: 100px;
+           margin: 20px 10px 20px 10px;
+       
+        }
+ 
+        display: inline-block;
+        border: 1px solid #D7D6D7;
+        border-radius: 4px;
+        transition: .2s ease;
+
+ 
+        .media-left {
+             @media (max-width: 768px) {
+                 clear:both;
+                 display:block;
+             }
+            color: $red;
+            .material-icons {
+                font-size: 30px;
+            }
+        }
+        .media-body {
+            .media-heading {
+                color: $darkblue;
+                font-size:13px;
+                @media (min-width: 768px) {
+                font-size: 18px;
+                }
+                font-family: $robotoslab;
+                line-height: 1;
+            }
+            p {
+                display:none;
+                
+                @media (min-width: 768px) {
+                display:block;
+                font-size: 14px;
+                color: #757575;
+                font-weight: 400;
+                line-height: 1.3;
+                }
+            }
+        }
+        &:hover {
+            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+            text-decoration: none;
+            background-color: #fefefe;
+            .media-heading {
+                text-decoration: underline;
+            }
+            .media-heading {
+                color: $red;
+            }
+        }
+        &.active {
+            background-color: $red;
+            border: 0;
+            .media-left,
+            .media-heading,
+            p {
+                color: #fff;
+            }
+        }
+    }
+}
