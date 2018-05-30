@@ -23,16 +23,18 @@ sudo apt-get install php
 Instalar composer
 ```
 sudo apt-get install composer
+```
+
+Luego, hacer la instalación de las librerias PHP necesarias (x = version actual):
+
+```
+sudo apt-get install php7.x-mbstring
+sudo apt-get install php7.x-curl
+sudo apt-get install php7.x-dom
+sudo apt-get install php7.x-mysql
+sudo apt-get install libpng-dev
+
 composer update --no-scripts
-```
-
-Luego, hacer la instalación de las librerias PHP necesarias:
-
-```
-sudo apt-get install php7.0-mbstring
-sudo apt-get install php-curl
-sudo apt-get install php-dom
-sudo apt-get install php7.0-mysql
 composer install
 ```
 
@@ -53,9 +55,6 @@ Luego, la instalación de las librerias JS necesarias:
 
 ```
 npm install
-npm install ajv-keywords
-npm install gumshoe
-npm rebuild --no-bin-links
 ```
 
 Compilación de JS
@@ -80,9 +79,18 @@ php artisan serve
 
 Para instalar elasticsearch debe descargarse directamente de la página oficial (https://www.elastic.co/downloads/past-releases/elasticsearch-5-5-3), y correr una instancia utilizando:
 
+En el caso del .zip o .tar:
+
 ```
 ./elasticsearch
 ```
+
+En el caso del .deb:
+
+```
+./elasticsearch
+```
+
 ### Solo funciona con elasticsearch 5.5
 
 Para crear el indice:
