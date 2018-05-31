@@ -39,14 +39,14 @@
                         </li>
                         
                          <li>
-                            <a href="https://www.chileatiende.gob.cl/contacto/formulario.php?origen=http://www.chileatiende.gob.cl/" class="help-card" title="Contactenos">
+                            <a href="/ayuda/contacto" class="help-card" title="Contactenos">
                                 <div class="media">
                                     <div class="media-left">
                                         <i class="material-icons">mail</i>
                                     </div>
                                     <div class="media-body">
                                         <div class="media-heading">Contactenos</div>
-                                        <p>Formulario de contacto</p>
+                                        <p>Ir a formulario de contacto</p>
                                     </div>
                                 </div>
                             </a>
