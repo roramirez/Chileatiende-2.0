@@ -11,7 +11,8 @@ class FaqController extends Controller{
 	const TITLES = [
 		'preguntas-frecuentes' => 'Preguntas Frecuentes',
 		'atencion-telefonica' => 'Atención Telefónica',
-		'oficinas-moviles' => 'Oficinas Móviles'
+		'oficinas-moviles' => 'Oficinas Móviles',
+		'contacto' => 'Contactenos'
 	];
 
     public function __invoke($page = 'preguntas-frecuentes')
