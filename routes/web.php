@@ -107,6 +107,7 @@ Route::group(['middleware' => ['backend'], 'prefix' => 'backend', 'namespace' =>
         Route::resource('categories', 'CategoryController');
         Route::resource('locations', 'LocationController');
         Route::resource('pages', 'PageController');
+        Route::resource('pages.messages', 'MessagesController')->only(['index', 'store']);
         Route::get('analytics/realtime', 'AnalyticsController@getRealtime');
         Route::get('analytics/ga', 'AnalyticsController@getGA');
     });

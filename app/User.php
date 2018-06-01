@@ -62,6 +62,10 @@ class User extends Authenticatable
         return $this->first_name.' '.$this->last_name;
     }
 
+    public function messages(){
+        return $this->hasMany('\App\Message','user_id');
+    }
+
     public function scopeBackend($query){
         return $query->where('backend',1);
     }

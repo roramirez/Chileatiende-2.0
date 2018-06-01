@@ -18,10 +18,13 @@ import NotificationForm from './components/NotificationForm.vue';
 import PastUsers from './components/PastUsers.vue';
 import ContentForm from './components/ContentForm.vue';
 import Steps from './components/Steps.vue';
+import Messages from './components/Messages.vue';
 
 import Confirm from './directives/Confirm.js';
 
-const app = new Vue({
+Vue.prototype.$eventHub = new Vue();
+
+new Vue({
     el: '#app',
     components: {
         PageForm,
@@ -41,13 +44,18 @@ const app = new Vue({
         NotificationForm,
         PastUsers,
         ContentForm,
-        Steps
+        Steps,
+        Messages
     },
     directives:{
         Confirm
     },
     methods:{
-        moment: moment
+        moment: moment,
+        showMessages (e, pageId) {
+            e.preventDefault();
+            this.$eventHub.$emit('show-messages', pageId);
+        }
     },
     mounted() {
         $('[data-toggle="tooltip"]').tooltip();
