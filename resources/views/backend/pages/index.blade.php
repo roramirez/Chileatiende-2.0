@@ -72,7 +72,7 @@
             </tbody>
         </table>
 
-        <Messages></Messages>
+        <Messages :owner="<?=Auth::user()->id?>"></Messages>
     </div>
 
     <div class="text-center"><?=$pages->appends($filters)->links()?></div>

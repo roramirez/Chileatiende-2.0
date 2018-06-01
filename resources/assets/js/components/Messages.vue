@@ -6,9 +6,28 @@
                 <span class="page-title">
                     ID {{page.id}} - {{page.title}}
                 </span>
+                <div class="messages-header-options">
+                    <a href="#" @click.prevent="openFilter">
+                        <i class="material-icons">search</i>
+                    </a>
+                    <a href="#" @click.prevent="closeMessages">
+                        <i class="material-icons">close</i>
+                    </a>
+                </div>
             </div>
             <div class="messages-body">
-                <div class="message" v-for="message in page.messages">
+                <div class="messages-filter" v-if="isFilterVisible">
+                    <label class="sr-only" for="filter">Escribe aquí para buscar</label>
+                    <div class="input-group">
+                        <input type="text" id="filter" v-model="filter" class="form-control" placeholder="Escribe aquí para buscar"/>
+                        <div class="input-group-btn">
+                            <button class="btn btn-primary" type="button">
+                                <i class="material-icons">search</i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="message" v-bind:class="{ me: message.user.id === owner }" v-for="message in messagesFiltered()">
                     <div class="user-photo">
                         <img :src="`https://ui-avatars.com/api/?name=${message.user.first_name}+${message.user.last_name}`" />
                     </div>
@@ -26,8 +45,9 @@
                 </div>
             </div>
             <div class="messages-footer">
+                <label class="sr-only" for="text">Escribe aquí el mensaje que quieres enviar</label>
                 <div class="input-group">
-                    <input type="text" v-model="text" class="form-control"/>
+                    <input type="text" id="text" v-model="text" class="form-control" placeholder="Escribe aquí el mensaje que quieres enviar"/>
                     <div class="input-group-btn">
                         <button class="btn btn-primary" type="button" @click="storeMessage">Enviar</button>
                     </div>
@@ -50,9 +70,25 @@
                 vertical-align: top;
                 line-height: 26px;
             }
+
+            .messages-header-options {
+                float: right;
+                .material-icons {
+                    color: #FFFFFF;
+                }
+            }
         }
 
         .messages-body {
+
+            .messages-filter {
+                padding: 20px;
+
+                .btn {
+                    padding: 3px 12px;
+                    font-size: 6px;
+                }
+            }
 
             .message {
                 margin: 20px;
@@ -126,12 +162,15 @@
         components: {
             Modal
         },
+        props: ['owner'],
         data () {
             return {
                 isModalVisible: false,
+                isFilterVisible: false,
                 id: null,
                 page: {},
-                text: ''
+                text: '',
+                filter: ''
             };
         },
         created () {
@@ -156,6 +195,9 @@
             closeMessages () {
                 this.isModalVisible = false;
                 this.id = null;
+            },
+            openFilter() {
+                this.isFilterVisible = true;
             },
             findPage () {
                 axios({
@@ -182,6 +224,14 @@
                     .catch(error => {
                         this.errors = error.response.data.errors;
                     });
+            },
+            messagesFiltered () {
+                if (this.filter) {
+                    return this.page.messages
+                        .filter(message => message.text.includes(this.filter));
+                }
+
+                return this.page.messages;
             }
         }
     }
