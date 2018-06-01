@@ -28,10 +28,10 @@ sudo apt-get install composer
 Luego, hacer la instalación de las librerias PHP necesarias (x = version actual):
 
 ```
-sudo apt-get install php7.x-mbstring
-sudo apt-get install php7.x-curl
-sudo apt-get install php7.x-dom
-sudo apt-get install php7.x-mysql
+sudo apt-get install php7.0-mbstring
+sudo apt-get install php7.0-curl
+sudo apt-get install php7.0-dom
+sudo apt-get install php7.0-mysql
 sudo apt-get install libpng-dev
 
 composer update --no-scripts
