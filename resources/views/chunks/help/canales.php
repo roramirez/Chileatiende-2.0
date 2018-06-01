@@ -14,7 +14,7 @@
             </a>
         </div>
 
-         <div class="hidden-xs hidden-md col-lg-3">
+         <div class="hidden-xs hidden-sm col-md-6 col-lg-3">
             <a href="/ayuda/atencion-telefonica" class="help-card <?= Request::path() == 'ayuda/atencion-telefonica' ? 'active' : '' ?>" title="Ir a atención telefónica">
                 <div class="media">
                     <div class="media-left">
@@ -29,7 +29,7 @@
         </div>
     
     
-        <div class="hidden-lg col-xs-3">
+        <div class="hidden-lg hidden-md col-sm-12 col-xs-3">
             <a href="tel:101" class="help-card" title="Ir a atención telefónica">
                 <div class="media">
                     <div class="media-left">
