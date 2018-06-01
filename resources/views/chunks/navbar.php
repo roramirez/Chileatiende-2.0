@@ -14,14 +14,14 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
-                <?php if(@$skin == 'exterior'):?>
+                <?php if(@$skin == 'exterior'):   $ayuda_contacto="https://contacto.chilesinpapeleo.cl/etapas/ejecutar/974767"?>
                     <li><a href="/que-es-chileatiende?skin=exterior">¿Qué es ChileAtiende en el exterior?</a></li>
-                <?php else: ?>
+                <?php else: $ayuda_contacto="/ayuda/contacto"?>
                 <li><a href="/que-es-chileatiende">¿Qué es ChileAtiende?</a></li>
                 <?php endif ?>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                        Centro de Ayuda <span class="caret"></span>
+                        Contactenos <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu help-menu">
                         <li>
@@ -39,14 +39,14 @@
                         </li>
                         
                          <li>
-                            <a href="/ayuda/contacto" class="help-card" title="Contactenos">
+                            <a href="<?= $ayuda_contacto?>" class="help-card" title="Contactenos">
                                 <div class="media">
                                     <div class="media-left">
                                         <i class="material-icons">mail</i>
                                     </div>
                                     <div class="media-body">
                                         <div class="media-heading">Contactenos</div>
-                                        <p>Ir a formulario de contacto</p>
+                                        <p>Ir al formulario de contacto</p>
                                     </div>
                                 </div>
                             </a>
