@@ -1,5 +1,5 @@
 
-       <div class="hidden-md hidden-lg col-xs-3">
+       <div class="hidden-md hidden-lg hidden-sm col-xs-3">
              
             <a href="https://es-la.facebook.com/ChileAtiende/" class="help-card" >
                 <div class="media">
