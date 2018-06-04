@@ -90,7 +90,34 @@
                             </div>
                         </a>
                     </li>
-                    <li>
+             
+	                <li>
+	                    <a href="tel:101" class="help-card" title="Ir a atención telefónica">
+	                        <div class="media">
+	                            <div class="media-left">
+	                                <i class="material-icons">perm_phone_msg</i>
+	                            </div>
+	                            <div class="media-body">
+	                                <div class="media-heading">Atención Telefónica</div>
+	                                <p>Aprende a utilizar el servicio de telefónica 101.</p>
+	                            </div>
+	                        </div>
+	                    </a>
+	                </li>
+                        <li>
+	                    <a href="/ayuda/contacto" class="help-card" title="ir a contacto">
+	                        <div class="media">
+	                            <div class="media-left">
+	                                <i class="material-icons">mail</i>
+	                            </div>
+	                            <div class="media-body">
+	                                <div class="media-heading">Contactenos</div>
+	                                <p>Ir al formulario de contacto.</p>
+	                            </div>
+	                        </div>
+	                    </a>
+	                </li>
+                         <li>
 	                    <a href="/ayuda/sucursales" class="help-card" title="ir a sucursales">
 	                        <div class="media">
 	                            <div class="media-left">
@@ -99,19 +126,6 @@
 	                            <div class="media-body">
 	                                <div class="media-heading">Sucursales</div>
 	                                <p>Busca tu sucursal de ChileAtiende más cercana.</p>
-	                            </div>
-	                        </div>
-	                    </a>
-	                </li>
-	                <li>
-	                    <a href="/ayuda/atencion-telefonica" class="help-card" title="Ir a atención telefónica">
-	                        <div class="media">
-	                            <div class="media-left">
-	                                <i class="material-icons">perm_phone_msg</i>
-	                            </div>
-	                            <div class="media-body">
-	                                <div class="media-heading">Atención Telefónica</div>
-	                                <p>Aprende a utilizar el servicio de telefónica 101.</p>
 	                            </div>
 	                        </div>
 	                    </a>
