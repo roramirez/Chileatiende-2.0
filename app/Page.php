@@ -68,6 +68,10 @@ class Page extends Model
         return $this->hasMany('\App\Page','master_id');
     }
 
+    public function messages(){
+        return $this->hasMany('\App\Message','page_id');
+    }
+
     public function relatedPages(){
         return $this->belongsToMany('\App\Page','page_related_page','page_id','related_page_id');
     }
