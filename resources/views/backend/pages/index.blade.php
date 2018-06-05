@@ -21,11 +21,11 @@
         <table class="table">
             <thead>
             <tr>
-                <th>@sortablelink('id','Id')</th>
-                <th>@sortablelink('title','Nombre del trámite')</th>
-                <th>@sortablelink('status','Estado')</th>
-                <th>@sortablelink('published','Publicado')</th>
-                <th>@sortablelink('updated_at','Última modificación')</th>
+                <th>@sortablelink('id','Id', ['page' => Request::get('page')])</th>
+                <th>@sortablelink('title','Nombre del trámite', ['page' => Request::get('page')])</th>
+                <th>@sortablelink('status','Estado', ['page' => Request::get('page')])</th>
+                <th>@sortablelink('published','Publicado', ['page' => Request::get('page')])</th>
+                <th>@sortablelink('updated_at','Última modificación', ['page' => Request::get('page')])</th>
                 <th>Acciones</th>
                 <th>Comunicación</th>
             </tr>

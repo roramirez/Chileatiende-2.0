@@ -9,40 +9,39 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
 
-class PageController extends Controller{
+class PageController extends Controller {
 
-    public function index(Request $request){
+    public function index(Request $request) {
         if(!$request->user()->can('view',Page::class))
             abort(403);
 
         $query = $request->input('query');
-        $institutionId = $request->input('institution_id', function() use ($request){
-            if(!$request->user()->ministerial && !$request->user()->interministerial)
+        $institutionId = $request->input('institution_id', function() use ($request) {
+            if (!$request->user()->ministerial && !$request->user()->interministerial)
                 return $request->user()->institution_id;
             return null;
         });
-        $ministryId = $request->input('ministry_id', function() use ($request){
-            if($request->user()->role=='admin')
+        $ministryId = $request->input('ministry_id', function() use ($request) {
+            if ($request->user()->role=='admin')
                 return null;
-            if(!$request->user()->interministerial)
+            if (!$request->user()->interministerial)
                 return $request->user()->institution->ministry_id;
             return null;
         });
 
-        if($query || $institutionId || $ministryId){
-            if(is_numeric($query)){
+        if ($query || $institutionId || $ministryId) {
+            if (is_numeric($query)) {
                 $pages = Page::masters()->where('id', $query);
-            }else{
+            } else {
                 $pages = Page::search($query)->where('master',true);
                 if($ministryId)
                     $pages->where('ministry_id',[$ministryId]);
                 if($institutionId)
                     $pages->where('institution_id',[$institutionId]);
             }
-        }else{
+        } else {
             $pages = Page::masters();
         }
-
 
         $data['filters'] = [
             'query' => $query,
